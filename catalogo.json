@@ -773,11 +773,11 @@
       }
     ]
   },
-  "Sport caballero": {
+  "SPORT CABALLERO": {
     "HOMBRES": [
       {
         "PRODUCTOID": "2C26E2E2",
-        "CATEGORIA": "Sport caballero",
+        "CATEGORIA": "SPORT CABALLERO",
         "SUBCATEGORIA": "HOMBRES",
         "PRODUCTO": "ESQUELETO CON CAPOTA",
         "MATERIAL": "LICRA",
@@ -806,16 +806,12 @@
         "COSTO": 27000,
         "PROVEEDOR": "CA308D97",
         "IMAGEN": "",
-        "BOTON": "https://wa.me/+573006498710?text=Hola%20AnmagoStore%20estoy%20interesad%40%20en%20Sport%20caballero%20HOMBRES%20ESQUELETO%20CON%20CAPOTA.%20te%20comparto%20imagen%20del%20producto%20aqu%C3%AD%3A%20https%3A%2F%2Fik.imagekit.io%2Fmbsk9dati%2Fproducto_109%2FPRODUCTOS_Images_2c26e2e2.IMAGEN_1.103035.jpg",
+        "BOTON": "https://wa.me/+573006498710?text=Hola%20AnmagoStore%20estoy%20interesad%40%20en%20SPORT%20CABALLERO%20HOMBRES%20ESQUELETO%20CON%20CAPOTA.%20te%20comparto%20imagen%20del%20producto%20aqu%C3%AD%3A%20https%3A%2F%2Fik.imagekit.io%2Fmbsk9dati%2Fproducto_109%2FPRODUCTOS_Images_2c26e2e2.IMAGEN_1.103035.jpg",
         "URL": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_1.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_2.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_3.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_4.103038.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_5.103038.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_6.103041.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_7.103042.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_8.103044.jpg"
-      }
-    ]
-  },
-  "ROPA DEPORTIVA": {
-    "HOMBRES": [
+      },
       {
         "PRODUCTOID": "2656291B",
-        "CATEGORIA": "ROPA DEPORTIVA",
+        "CATEGORIA": "SPORT CABALLERO",
         "SUBCATEGORIA": "HOMBRES",
         "PRODUCTO": "CAMISETA",
         "MATERIAL": "LICRA NYLON",
@@ -844,7 +840,7 @@
         "COSTO": 27000,
         "PROVEEDOR": "CA308D97",
         "IMAGEN": "",
-        "BOTON": "https://wa.me/+573006498710?text=Hola%20AnmagoStore%20estoy%20interesad%40%20en%20ROPA%20DEPORTIVA%20HOMBRES%20CAMISETA.%20te%20comparto%20imagen%20del%20producto%20aqu%C3%AD%3A%20https%3A%2F%2Fik.imagekit.io%2Fmbsk9dati%2Fproducto_110%2FPRODUCTOS_Images_2656291b.IMAGEN_1.103520.jpg",
+        "BOTON": "https://wa.me/+573006498710?text=Hola%20AnmagoStore%20estoy%20interesad%40%20en%20SPORT%20CABALLERO%20HOMBRES%20CAMISETA.%20te%20comparto%20imagen%20del%20producto%20aqu%C3%AD%3A%20https%3A%2F%2Fik.imagekit.io%2Fmbsk9dati%2Fproducto_110%2FPRODUCTOS_Images_2656291b.IMAGEN_1.103520.jpg",
         "URL": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_1.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_2.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_3.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_4.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_5.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_6.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_7.103525.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_8.103525.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_9.103526.jpg"
       }
     ]
