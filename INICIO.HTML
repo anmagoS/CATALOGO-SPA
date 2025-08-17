@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio | Anmago Store</title>
+  <link rel="stylesheet" href="ESTILO.CSS" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">ANMAGO STORE</div>
+    <nav class="nav">
+      <a href="INICIO.HTML" class="nav-link">Inicio</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle" id="toggle-categorias">Productos</button>
+        <div class="dropdown-menu" id="menu-categorias"></div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank" class="nav-link">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor-categoria">
+    <h1 class="titulo-categoria">Explora nuestras colecciones</h1>
+    <div id="grid-categorias" class="grid-productos"></div>
+
+    <!-- VIDEO DE PRESENTACIÓN -->
+    <section style="text-align: center; margin: 40px 0;">
+      <h2 style="color: #1B4557;">Conoce más sobre Anmago Store</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/E8_rkF1957Y"
+        title="Video de presentación" frameborder="0" allowfullscreen
+        style="max-width: 560px; border-radius: 12px;"></iframe>
+    </section>
+
+    <!-- FRASE INSPIRADORA -->
+    <div style="text-align: center; margin-top: 40px;">
+      <p style="font-size: 1.2rem; color: #1B4557; font-weight: bold;">
+        “La ropa no solo cubre tu cuerpo, sino que también expresa tu alma. En cada prenda, encuentras confianza, elegancia y la magia de ser tú mismo”
+      </p>
+      <p style="font-size: 1.1rem; color: #1B4557;">¡Disfruta la experiencia de vestir tus sueños en Anmago Store!</p>
+      <a class="boton-comprar" href="https://forms.gle/tu-formulario-google" target="_blank">Deja tus datos</a>
+    </div>
+  </main>
+
+  <!-- SCRIPT -->
+  <script>
+    async function cargarCatalogo() {
+      const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
+      const respuesta = await fetch(url);
+      const data = await respuesta.json();
+      renderCategoriasDestacadas(data);
+      renderMenuCategorias(data);
+    }
+
+    function renderCategoriasDestacadas(data) {
+      const contenedor = document.getElementById("grid-categorias");
+      contenedor.innerHTML = "";
+
+      for (const categoria in data) {
+        const subcategorias = data[categoria];
+        const primeraSub = Object.values(subcategorias)[0];
+        const primerProducto = primeraSub[0];
+
+        const imagen = primerProducto["IMAGEN 1"];
+        const nombre = categoria;
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "producto";
+        tarjeta.innerHTML = `
+          <div class="imagen-producto">
+            <img src="${imagen}" alt="${nombre}">
+          </div>
+          <div class="nombre-producto">${nombre}</div>
+          <a class="boton-vermas" href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
+        `;
+        contenedor.appendChild(tarjeta);
+      }
+    }
+
+   function renderCategoriasDestacadas(data) {
+  const contenedor = document.getElementById("grid-categorias");
+  contenedor.innerHTML = "";
+
+  for (const categoria in data) {
+    const subcategorias = Object.values(data[categoria])[0];
+    const primerProducto = subcategorias[0];
+
+    const imagen = primerProducto["IMAGEN 1"];
+    const nombre = categoria;
+
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "producto";
+    tarjeta.innerHTML = `
+      <a href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
+        <img src="${imagen}" alt="${nombre}">
+      </a>
+      <div class="nombre-producto">${nombre}</div>
+      <a class="boton-vermas" href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
+    `;
+    contenedor.appendChild(tarjeta);
+  }
+}
+
+
+
+    // Alternar menú en móviles con clic
+    document.getElementById("toggle-categorias").addEventListener("click", () => {
+      const menu = document.getElementById("menu-categorias");
+      const isVisible = menu.style.display === "block";
+      menu.style.display = isVisible ? "none" : "block";
+    });
+
+    cargarCatalogo();
+  </script>
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+
+
+</body>
+</html>
+

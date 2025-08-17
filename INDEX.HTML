@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANMAGO STORE</title>
+  <link rel="stylesheet" href="ESTILO.CSS" />
+</head>
+<body>
+  <!-- HEADER FIJO -->
+  <header class="header">
+    <div class="logo">ANMAGO STORE</div>
+    <nav class="nav">
+      <a href="INICIO.HTML" class="nav-link">Inicio</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle" id="toggle-categorias">Productos</button>
+        <div class="dropdown-menu" id="menu-categorias"></div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank" class="nav-link">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido-productos" class="grid-productos"></main>
+
+  <!-- MODAL GALERÍA CON CARRUSEL -->
+  <div id="modal-galeria" class="modal-imagen">
+    <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+    <button id="prev" class="nav-galeria">&#10094;</button>
+    <img id="imagen-actual" class="imagen-modal" src="" alt="Producto">
+    <button id="next" class="nav-galeria">&#10095;</button>
+  </div>
+
+  <!-- SCRIPT PRINCIPAL -->
+  <script>
+    let catalogoGlobal = {};
+    let imagenesGaleria = [];
+    let indiceActual = 0;
+
+    async function cargarCatalogo() {
+      const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
+      const respuesta = await fetch(url);
+      const data = await respuesta.json();
+      catalogoGlobal = data;
+      renderMenuCategorias(data);
+
+      const categoriaGuardada = localStorage.getItem('categoriaSeleccionada');
+      if (categoriaGuardada && data[categoriaGuardada]) {
+        mostrarProductosPorCategoria(categoriaGuardada);
+        localStorage.removeItem('categoriaSeleccionada');
+      } else {
+        mostrarProductosPorCategoria(Object.keys(data)[0]);
+      }
+    }
+
+    function renderMenuCategorias(data) {
+      const menu = document.getElementById("menu-categorias");
+      menu.innerHTML = "";
+      for (const categoria in data) {
+        const item = document.createElement("a");
+        item.className = "dropdown-item";
+        item.textContent = categoria;
+        item.href = "#";
+        item.onclick = (e) => {
+          e.preventDefault();
+          mostrarProductosPorCategoria(categoria);
+          menu.style.display = "none"; // solo se oculta en móviles si fue abierto por clic
+        };
+        menu.appendChild(item);
+      }
+    }
+
+    function mostrarProductosPorCategoria(categoria) {
+      const contenedor = document.getElementById("contenido-productos");
+      contenedor.innerHTML = "";
+
+      const subcategorias = catalogoGlobal[categoria];
+      for (const subcategoria in subcategorias) {
+        const productos = subcategorias[subcategoria];
+        productos.forEach(producto => {
+          const imagen = producto["IMAGEN 1"];
+          const nombre = producto["PRODUCTO"];
+          const precio = producto["PRECIO"];
+          const boton = producto["BOTON"];
+          const urls = producto["URL"]?.split(",").map(u => u.trim()).filter(u => u);
+
+          const tarjeta = document.createElement("div");
+          tarjeta.className = "producto";
+          tarjeta.innerHTML = `
+            <div class="imagen-producto" onclick='abrirGaleria(${JSON.stringify(urls)})'>
+              <img src="${imagen}" alt="${nombre}">
+            </div>
+            <div class="nombre-producto">${nombre}</div>
+            <div class="precio-producto">$${precio} COP</div>
+            <a class="boton-comprar" href="${boton}" target="_blank">Comprar</a>
+          `;
+          contenedor.appendChild(tarjeta);
+        });
+      }
+    }
+
+    function abrirGaleria(imagenes) {
+      imagenesGaleria = imagenes;
+      indiceActual = 0;
+      actualizarImagenModal();
+      document.getElementById("modal-galeria").style.display = "flex";
+    }
+
+    function actualizarImagenModal() {
+      const img = document.getElementById("imagen-actual");
+      img.src = imagenesGaleria[indiceActual];
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal-galeria").style.display = "none";
+    }
+
+    document.getElementById("prev").onclick = () => {
+      indiceActual = (indiceActual - 1 + imagenesGaleria.length) % imagenesGaleria.length;
+      actualizarImagenModal();
+    };
+
+    document.getElementById("next").onclick = () => {
+      indiceActual = (indiceActual + 1) % imagenesGaleria.length;
+      actualizarImagenModal();
+    };
+
+    // Alternar menú en móviles con clic
+    document.getElementById("toggle-categorias").addEventListener("click", () => {
+      const menu = document.getElementById("menu-categorias");
+      const isVisible = menu.style.display === "block";
+      menu.style.display = isVisible ? "none" : "block";
+    });
+
+    cargarCatalogo();
+  </script>
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+
+
+</body>
+</html>
+
