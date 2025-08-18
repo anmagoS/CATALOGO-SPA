@@ -76,7 +76,23 @@
         `;
         contenedor.appendChild(tarjeta);
       }
+    }function renderMenuCategorias(data) {
+      const menu = document.getElementById("menu-categorias");
+      menu.innerHTML = "";
+      for (const categoria in data) {
+        const item = document.createElement("a");
+        item.className = "dropdown-item";
+        item.textContent = categoria;
+        item.href = "#";
+        item.onclick = (e) => {
+          e.preventDefault();
+          mostrarProductosPorCategoria(categoria);
+          menu.style.display = "none"; // solo se oculta en móviles si fue abierto por clic
+        };
+        menu.appendChild(item);
+      }
     }
+
 
    function renderCategoriasDestacadas(data) {
   const contenedor = document.getElementById("grid-categorias");
