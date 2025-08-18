@@ -92,7 +92,34 @@
         menu.appendChild(item);
       }
     }
+function mostrarProductosPorCategoria(categoria) {
+      const contenedor = document.getElementById("contenido-productos");
+      contenedor.innerHTML = "";
 
+      const subcategorias = catalogoGlobal[categoria];
+      for (const subcategoria in subcategorias) {
+        const productos = subcategorias[subcategoria];
+        productos.forEach(producto => {
+          const imagen = producto["IMAGEN 1"];
+          const nombre = producto["PRODUCTO"];
+          const precio = producto["PRECIO"];
+          const boton = producto["BOTON"];
+          const urls = producto["URL"]?.split(",").map(u => u.trim()).filter(u => u);
+
+          const tarjeta = document.createElement("div");
+          tarjeta.className = "producto";
+          tarjeta.innerHTML = `
+            <div class="imagen-producto" onclick='abrirGaleria(${JSON.stringify(urls)})'>
+              <img src="${imagen}" alt="${nombre}">
+            </div>
+            <div class="nombre-producto">${nombre}</div>
+            <div class="precio-producto">$${precio} COP</div>
+            <a class="boton-comprar" href="${boton}" target="_blank">Comprar</a>
+          `;
+          contenedor.appendChild(tarjeta);
+        });
+      }
+    }
 
    function renderCategoriasDestacadas(data) {
   const contenedor = document.getElementById("grid-categorias");
