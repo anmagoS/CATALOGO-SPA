@@ -575,3 +575,38 @@ body {
   transform: translateX(100%);
   opacity: 0;
 }
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .collapse.navbar-collapse {
+    background-color: #1B4557;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .nav-link, .dropdown-toggle {
+    font-size: 14px;
+    padding: 8px 12px;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .btn_shopping {
+    margin-top: 8px;
+  }
+}
