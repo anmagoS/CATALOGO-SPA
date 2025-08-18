@@ -17,32 +17,33 @@
 </head>
 <body>
     <!-- HEADER FIJO -->
-  <header class="header">
-          <div class="logo" style="color: #bfd8e2;">ANMAGO STORE</div>
-    <nav class="nav">
-      <a href="INICIO.HTML" class="nav-link">Inicio</a>
-      <div class="dropdown">
-        <button class="dropdown-toggle" id="toggle-categorias">Productos</button>
-        <div class="dropdown-menu" id="menu-categorias"></div>
-      </div>
-         </nav>
-    <div class="carrito">
-      <!-- Botón del carrito -->
+  <header class="navbar navbar-expand-lg bg-dark px-3">
+  <a class="navbar-brand text-white" href="#">ANMAGO STORE</a>
+  <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#menuSuperior" aria-controls="menuSuperior" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="menuSuperior">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="INICIO.HTML">Inicio</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="toggle-categorias" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Productos
+        </a>
+        <ul class="dropdown-menu" id="menu-categorias" aria-labelledby="toggle-categorias"></ul>
+      </li>
+    </ul>
     <div class="position-relative">
-      <a
-        href="#"
-        class="btn btn_shopping cart-badge position-fixed top-0 end-0 me-4 mt-3 swing-on-hover border bg-white"
-      >
-        <i class="bi-bag-heart"></i>
-        <span
-          id="contador-carrito"
-          class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger"
-        >
-          0
-        </span>
+      <a href="#" class="btn btn_shopping cart-badge position-relative text-white">
+        <i class="bi bi-bag-heart"></i>
+        <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
       </a>
     </div>
-      </header>
+  </div>
+</header>
+
            <!-- CONTENIDO PRINCIPAL -->
   <main id="contenido-productos" class="grid-productos"></main>
   
