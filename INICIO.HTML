@@ -54,8 +54,8 @@
       const respuesta = await fetch(url);
       const data = await respuesta.json();
       renderCategoriasDestacadas(data);
-      renderMenuCategorias(data);
-    const categoriaGuardada = localStorage.getItem('categoriaSeleccionada');
+      renderMenuCategorias(data); // 🔧 MODIFICADO
+      const categoriaGuardada = localStorage.getItem('categoriaSeleccionada');
       if (categoriaGuardada && data[categoriaGuardada]) {
         mostrarProductosPorCategoria(categoriaGuardada);
         localStorage.removeItem('categoriaSeleccionada');
@@ -69,9 +69,8 @@
       contenedor.innerHTML = "";
 
       for (const categoria in data) {
-        const subcategorias = data[categoria];
-        const primeraSub = Object.values(subcategorias)[0];
-        const primerProducto = primeraSub[0];
+        const subcategorias = Object.values(data[categoria])[0];
+        const primerProducto = subcategorias[0];
 
         const imagen = primerProducto["IMAGEN 1"];
         const nombre = categoria;
@@ -79,32 +78,34 @@
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
-          <div class="imagen-producto">
+          <a href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
             <img src="${imagen}" alt="${nombre}">
-          </div>
+          </a>
           <div class="nombre-producto">${nombre}</div>
           <a class="boton-vermas" href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
         `;
         contenedor.appendChild(tarjeta);
       }
-    }function renderMenuCategorias(data) {
+    }
+
+    function renderMenuCategorias(data) {
       const menu = document.getElementById("menu-categorias");
       menu.innerHTML = "";
       for (const categoria in data) {
         const item = document.createElement("a");
         item.className = "dropdown-item";
         item.textContent = categoria;
-        item.href = "#";
+        item.href = "INDEX.HTML"; // 🔧 MODIFICADO
         item.onclick = (e) => {
-          e.preventDefault();
-          mostrarProductosPorCategoria(categoria);
-          menu.style.display = "none"; // solo se oculta en móviles si fue abierto por clic
+          localStorage.setItem('categoriaSeleccionada', categoria); // 🔧 MODIFICADO
         };
         menu.appendChild(item);
       }
     }
-function mostrarProductosPorCategoria(categoria) {
+
+    function mostrarProductosPorCategoria(categoria) {
       const contenedor = document.getElementById("contenido-productos");
+      if (!contenedor) return; // Evita error en INICIO.HTML
       contenedor.innerHTML = "";
 
       const subcategorias = catalogoGlobal[categoria];
@@ -132,31 +133,6 @@ function mostrarProductosPorCategoria(categoria) {
       }
     }
 
-   function renderCategoriasDestacadas(data) {
-  const contenedor = document.getElementById("grid-categorias");
-  contenedor.innerHTML = "";
-
-  for (const categoria in data) {
-    const subcategorias = Object.values(data[categoria])[0];
-    const primerProducto = subcategorias[0];
-
-    const imagen = primerProducto["IMAGEN 1"];
-    const nombre = categoria;
-
-    const tarjeta = document.createElement("div");
-    tarjeta.className = "producto";
-    tarjeta.innerHTML = `
-      <a href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
-        <img src="${imagen}" alt="${nombre}">
-      </a>
-      <div class="nombre-producto">${nombre}</div>
-      <a class="boton-vermas" href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
-    `;
-    contenedor.appendChild(tarjeta);
-  }
-}
-
-    // Alternar menú en móviles con clic
     document.getElementById("toggle-categorias").addEventListener("click", () => {
       const menu = document.getElementById("menu-categorias");
       const isVisible = menu.style.display === "block";
@@ -165,16 +141,14 @@ function mostrarProductosPorCategoria(categoria) {
 
     cargarCatalogo();
   </script>
-<div id="footer-container"></div>
-<script>
-  fetch('footer.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('footer-container').innerHTML = data;
-    });
-</script>
 
-
+  <div id="footer-container"></div>
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
-
