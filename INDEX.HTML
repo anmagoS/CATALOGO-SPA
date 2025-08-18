@@ -18,6 +18,32 @@
 <body>
     <!-- HEADER FIJO -->
 <header class="header">
+<!-- Botón hamburguesa visible solo en móvil -->
+<button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuResponsive" aria-controls="menuResponsive" aria-expanded="false" aria-label="Toggle navigation" style="background-color: transparent; border: none;">
+  <i class="bi bi-list text-white fs-3"></i>
+</button>
+
+<!-- Menú colapsable -->
+<div class="collapse navbar-collapse d-lg-flex" id="menuResponsive">
+  <nav class="nav flex-column flex-lg-row">
+    <a class="nav-link" href="INICIO.HTML">Inicio</a>
+    <div class="dropdown">
+      <button class="dropdown-toggle" id="toggle-categorias" data-bs-toggle="dropdown" aria-expanded="false">
+        Productos
+      </button>
+      <ul class="dropdown-menu" id="menu-categorias" aria-labelledby="toggle-categorias"></ul>
+    </div>
+  </nav>
+
+  <!-- Ícono del carrito -->
+  <div class="position-relative ms-lg-auto mt-2 mt-lg-0">
+    <a href="#" class="btn btn_shopping cart-badge position-relative">
+      <i class="bi bi-bag-heart"></i>
+      <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+    </a>
+  </div>
+</div>
+
   <div class="logo">ANMAGO STORE</div>
 
   <!-- Botón hamburguesa solo visible en móvil -->
