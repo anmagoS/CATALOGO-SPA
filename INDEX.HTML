@@ -6,23 +6,78 @@
   <title>ANMAGO STORE</title>
   <link rel="stylesheet" href="ESTILO.CSS" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+          />
 </head>
 <body>
-  <!-- HEADER FIJO -->
+    <!-- HEADER FIJO -->
   <header class="header">
-    <div class="logo" style="color: #1b4557;">ANMAGO STORE</div>
+          <div class="logo" style="color: #bfd8e2;">ANMAGO STORE</div>
     <nav class="nav">
       <a href="INICIO.HTML" class="nav-link">Inicio</a>
       <div class="dropdown">
         <button class="dropdown-toggle" id="toggle-categorias">Productos</button>
         <div class="dropdown-menu" id="menu-categorias"></div>
       </div>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank" class="nav-link">Contacto</a>
-    </nav>
-  </header>
-
-  <!-- CONTENIDO PRINCIPAL -->
+         </nav>
+    <div class="carrito">
+      <!-- Botón del carrito -->
+    <div class="position-relative">
+      <a
+        href="#"
+        class="btn btn_shopping cart-badge position-fixed top-0 end-0 me-4 mt-3 swing-on-hover border bg-white"
+      >
+        <i class="bi-bag-heart"></i>
+        <span
+          id="contador-carrito"
+          class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          0
+        </span>
+      </a>
+    </div>
+      </header>
+           <!-- CONTENIDO PRINCIPAL -->
   <main id="contenido-productos" class="grid-productos"></main>
+  
+<!-- Offcanvas del carrito -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header border-bottom">
+        <h4 class="offcanvas-title text-center">Carrito de compras</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body border-bottom"></div>
+
+      <div class="offcanvas-footer mt-4">
+        <h5 class="justify-content-between mb-2">
+          <span class="fw-bold px-3">SUBTOTAL:</span>
+          <span id="subtotal" class="fw-bold float-end px-2 fs-2"> $0.00 </span>
+        </h5>
+        <div class="text-center mb-5 px-3">
+          <button class="btn btn-primary mt-5 w-100" onclick="generarPedidoWhatsApp()">
+            Enviar pedido por WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+    
 
   <!-- MODAL GALERÍA CON CARRUSEL -->
   <div id="modal-galeria" class="modal-imagen">
@@ -30,8 +85,8 @@
     <button id="prev" class="nav-galeria">&#10094;</button>
     <img id="imagen-actual" class="imagen-modal" src="" alt="Producto">
     <button id="next" class="nav-galeria">&#10095;</button>
-  </div>
-
+    </div>
+  
   <!-- FOOTER DINÁMICO -->
   <div id="footer-container"></div>
 
@@ -96,8 +151,11 @@
             </div>
             <div class="nombre-producto">${nombre}</div>
             <div class="precio-producto">$${precio} COP</div>
-            <a class="boton-comprar" href="${boton}" target="_blank">Comprar</a>
-          `;
+            <button class="btn-cart w-100 mt-auto"
+            data-categoria="${producto["CATEGORIA"]}"
+    data-subcategoria="${producto["SUBCATEGORIA"]}">
+          Agregar al carrito &nbsp; <i class="bi bi-cart-plus"></i>
+      </button>`;
           contenedor.appendChild(tarjeta);
         });
       }
@@ -108,11 +166,12 @@
       indiceActual = 0;
       actualizarImagenModal();
       document.getElementById("modal-galeria").style.display = "flex";
-    }
-
+     }
+    
     function actualizarImagenModal() {
       const img = document.getElementById("imagen-actual");
       img.src = imagenesGaleria[indiceActual];
+      
     }
 
     function cerrarModal() {
@@ -137,7 +196,7 @@
 
     cargarCatalogo();
   </script>
-
+  
   <!-- FOOTER DINÁMICO -->
   <script>
     fetch('footer.html')
@@ -146,5 +205,8 @@
         document.getElementById('footer-container').innerHTML = data;
       });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="app.js"></script>
+        <script src="obtener_productos.js"></script>
 </body>
 </html>
