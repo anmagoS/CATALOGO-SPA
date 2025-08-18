@@ -155,7 +155,15 @@ function mostrarProductosPorCategoria(categoria) {
     contenedor.appendChild(tarjeta);
   }
 }
+ document.getElementById("prev").onclick = () => {
+      indiceActual = (indiceActual - 1 + imagenesGaleria.length) % imagenesGaleria.length;
+      actualizarImagenModal();
+    };
 
+    document.getElementById("next").onclick = () => {
+      indiceActual = (indiceActual + 1) % imagenesGaleria.length;
+      actualizarImagenModal();
+    };
     // Alternar menú en móviles con clic
     document.getElementById("toggle-categorias").addEventListener("click", () => {
       const menu = document.getElementById("menu-categorias");
