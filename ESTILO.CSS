@@ -16,8 +16,6 @@ body {
   background-color: #f9f9f9;
   /* box-sizing: border-box; ← quítalo de aquí */
 }
-
-
 /* === HEADER Y NAVEGACIÓN === */
 .header {
   background-color: #1B4557;
