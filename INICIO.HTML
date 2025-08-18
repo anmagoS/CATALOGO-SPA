@@ -45,6 +45,10 @@
 
   <!-- SCRIPT -->
   <script>
+    let catalogoGlobal = {};
+    let imagenesGaleria = [];
+    let indiceActual = 0;
+
     async function cargarCatalogo() {
       const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
       const respuesta = await fetch(url);
