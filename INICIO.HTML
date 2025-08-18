@@ -8,36 +8,40 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header d-flex flex-wrap align-items-center justify-content-between px-3 py-2">
-  <!-- Logo -->
-  <div class="logo text-white fw-bold fs-4">ANMAGO</div>
+  <header class="header bg-dark text-white px-3 py-2">
+  <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between">
+    <!-- Logo -->
+    <div class="logo fw-bold fs-4">ANMAGO STORE</div>
 
-  <!-- Botón hamburguesa visible solo en móvil -->
-  <button class="navbar-toggler d-lg-none border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#menuResponsive" aria-controls="menuResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="bi bi-list text-white fs-3"></i>
-  </button>
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button class="navbar-toggler d-lg-none border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#menuResponsive" aria-controls="menuResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list text-white fs-3"></i>
+    </button>
 
-  <!-- Menú colapsable -->
-  <div class="collapse navbar-collapse d-lg-flex flex-grow-1 mt-2 mt-lg-0" id="menuResponsive">
-    <nav class="nav flex-column flex-lg-row gap-2">
-      <a class="nav-link text-white fw-bold" href="INICIO.HTML">Inicio</a>
-      <div class="dropdown">
-        <button class="dropdown-toggle text-white fw-bold bg-transparent border-0" id="toggle-categorias" data-bs-toggle="dropdown" aria-expanded="false">
-          Productos
-        </button>
-        <ul class="dropdown-menu" id="menu-categorias" aria-labelledby="toggle-categorias"></ul>
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse d-lg-flex flex-grow-1 mt-2 mt-lg-0" id="menuResponsive">
+      <nav class="nav flex-column flex-lg-row gap-3">
+        <a class="nav-link text-white fw-bold" href="#" onclick="location.reload()">Inicio</a>
+        <div class="dropdown">
+          <button class="dropdown-toggle text-white fw-bold bg-transparent border-0" id="toggle-categorias" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </button>
+          <ul class="dropdown-menu" id="menu-categorias" aria-labelledby="toggle-categorias"></ul>
+        </div>
+        <a class="nav-link text-white fw-bold" href="https://forms.gle/tu-formulario-google" target="_blank">Contacto</a>
+      </nav>
+
+      <!-- Ícono del carrito -->
+      <div class="position-relative ms-lg-auto mt-3 mt-lg-0">
+        <a href="#" class="btn btn_shopping cart-badge position-relative">
+          <i class="bi bi-bag-heart"></i>
+          <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
       </div>
-    </nav>
-
-    <!-- Ícono del carrito -->
-    <div class="position-relative ms-lg-auto mt-3 mt-lg-0">
-      <a href="#" class="btn btn_shopping cart-badge position-relative">
-        <i class="bi bi-bag-heart"></i>
-        <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-      </a>
     </div>
   </div>
 </header>
+
 
 
   <!-- CONTENIDO PRINCIPAL -->
