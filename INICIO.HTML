@@ -55,6 +55,13 @@
       const data = await respuesta.json();
       renderCategoriasDestacadas(data);
       renderMenuCategorias(data);
+    const categoriaGuardada = localStorage.getItem('categoriaSeleccionada');
+      if (categoriaGuardada && data[categoriaGuardada]) {
+        mostrarProductosPorCategoria(categoriaGuardada);
+        localStorage.removeItem('categoriaSeleccionada');
+      } else {
+        mostrarProductosPorCategoria(Object.keys(data)[0]);
+      }
     }
 
     function renderCategoriasDestacadas(data) {
