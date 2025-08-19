@@ -24,7 +24,7 @@ body {
 .header {
   background-color: #1B4557;
   color: white;
-  padding: 0 12px;
+  padding: 0 10px;
   height: 60px;
   display: flex;
   flex-wrap: nowrap;
