@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANMAGO STORE</title>
+<script>
+  const categoria = localStorage.getItem('categoriaSeleccionada');
+  if (!categoria) {
+    window.location.href = "INICIO.HTML";
+  }
+</script>
   <link rel="stylesheet" href="ESTILO.CSS" />
   <link rel="icon" href="logo.png" type="image/x-icon" />
       <link
