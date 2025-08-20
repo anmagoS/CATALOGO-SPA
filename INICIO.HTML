@@ -63,7 +63,6 @@
         mostrarProductosPorCategoria(Object.keys(data)[0]);
       }
     }
-
     function renderCategoriasDestacadas(data) {
       const contenedor = document.getElementById("grid-categorias");
       contenedor.innerHTML = "";
@@ -102,12 +101,10 @@
         menu.appendChild(item);
       }
     }
-
     function mostrarProductosPorCategoria(categoria) {
       const contenedor = document.getElementById("contenido-productos");
       if (!contenedor) return; // Evita error en INICIO.HTML
       contenedor.innerHTML = "";
-
       const subcategorias = catalogoGlobal[categoria];
       for (const subcategoria in subcategorias) {
         const productos = subcategorias[subcategoria];
@@ -132,13 +129,11 @@
         });
       }
     }
-
     document.getElementById("toggle-categorias").addEventListener("click", () => {
       const menu = document.getElementById("menu-categorias");
       const isVisible = menu.style.display === "block";
       menu.style.display = isVisible ? "none" : "block";
     });
-
     cargarCatalogo();
   </script>
 <section class="social-icons">
@@ -150,7 +145,6 @@
   <a href="#" class="icon google" aria-label="Google"></a>
   <a href="#" class="icon telegram" aria-label="Telegram"></a>
 </section>
-
   <div id="footer-container"></div>
   <script>
     fetch('footer.html')
