@@ -585,3 +585,40 @@ body {
   transform: translateX(100%);
   opacity: 0;
 }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #25D366; /* Verde WhatsApp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* Aquí puedes usar imágenes como fondo o SVG inline */
+.icon.tiktok    { background-image: url('tiktok.svg'); }
+.icon.whatsapp  { background-image: url('whatsapp.svg'); }
+.icon.facebook  { background-image: url('facebook.svg'); }
+.icon.youtube   { background-image: url('youtube.svg'); }
+.icon.instagram { background-image: url('instagram.svg'); }
+.icon.google    { background-image: url('google.svg'); }
+.icon.telegram  { background-image: url('telegram.svg'); }
+
+.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
