@@ -10,7 +10,6 @@ const closeButton = document.querySelector(".btn-close"); // Botón para cerrar 
 // Espera a que el DOM se cargue, agrega un evento de click para añadir al carrito y renderiza el carrito.
 document.addEventListener("DOMContentLoaded", () => {
   const contenedorProductos = document.getElementById("contenido-productos");
-
   if (contenedorProductos) {
     contenedorProductos.addEventListener("click", agregarAlCarrito);
   } else {
@@ -19,8 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderizarCarrito();
 });
-
-
 // Función para agregar al carrito
 function agregarAlCarrito(e) {
   // Asegurarse de que el clic proviene de un botón con la clase 'btn-cart'
@@ -45,7 +42,6 @@ function agregarAlCarrito(e) {
       cantidad: 1, // Siempre lo agregamos con cantidad 1
       imagen: card.querySelector("img").src, // Imagen del producto
     };
-
     // Verificar si el producto ya existe en el carrito
     const existe = articulosCarrito.find((item) => item.id === producto.id);
     if (existe) {
