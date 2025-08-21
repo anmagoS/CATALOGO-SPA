@@ -1205,5 +1205,42 @@
         "": ""
       }
     ]
+  },
+  "CAMISAS DAMA": {
+    "MANGA LARGA": [
+      {
+        "PRODUCTOID": "4077A93E",
+        "CATEGORIA": "CAMISAS DAMA",
+        "SUBCATEGORIA": "MANGA LARGA",
+        "PRODUCTO": "CAMISA MANGA LARGA",
+        "MATERIAL": "",
+        "TALLAS": "S-M-L-XL",
+        "IMAGEN 1": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_1.215820.jpg",
+        "IMAGEN 2": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_2.215820.jpg",
+        "IMAGEN 3": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_3.215820.jpg",
+        "IMAGEN 4": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_4.215822.jpg",
+        "IMAGEN 5": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_5.215823.jpg",
+        "IMAGEN 6": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_6.215824.jpg",
+        "IMAGEN 7": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_7.215826.jpg",
+        "IMAGEN 8": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_8.215827.jpg",
+        "IMAGEN 9": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_9.215827.jpg",
+        "IMAGEN 10": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_10.215829.jpg",
+        "IMAGEN 11": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_11.215829.jpg",
+        "IMAGEN 12": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_12.215829.jpg",
+        "IMAGEN 13": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_13.215831.jpg",
+        "IMAGEN 14": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_14.215831.jpg",
+        "IMAGEN 15": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_15.215832.jpg",
+        "IMAGEN 16": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_16.215833.jpg",
+        "IMAGEN 17": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_17.215835.jpg",
+        "IMAGEN 18": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_18.215835.jpg",
+        "IMAGEN 19": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_19.215836.jpg",
+        "IMAGEN 20": "",
+        "PRECIO": 54000,
+        "COSTO": 34000,
+        "PROVEEDOR": "C7164251",
+        "URL": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_12.215829.jpg",
+        "": ""
+      }
+    ]
   }
 }
