@@ -176,7 +176,7 @@ function generarPedidoWhatsApp() {
   let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
   articulosCarrito.forEach((producto, index) => {
     mensaje += `*${index + 1}.* ${producto.nombre}\n`;
-   mensaje += `🖼️ Imagen: ${producto.imagen}\n🔗 Ver imagen: ${producto.imagen}\n`;
+  mensaje += `🔗 Ver imagen:\n${producto.imagen}\n`;
     mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
   });
   const total = articulosCarrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
