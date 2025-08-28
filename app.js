@@ -169,10 +169,8 @@ function generarPedidoWhatsApp() {
   let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
 
   articulosCarrito.forEach((producto, index) => {
-    // Codifica la URL de la imagen correctamente para WhatsApp
-    let imagenURL = encodeURI(producto.imagen);
     mensaje += `*${index + 1}.* ${producto.nombre}\n`;
-    mensaje += `🔗 Imagen: ${imagenURL}\n`;
+    mensaje += `🔗 Imagen: ${producto.imagen}\n`; // No codifiques la URL aquí
     mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
   });
 
@@ -180,7 +178,7 @@ function generarPedidoWhatsApp() {
   mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
   mensaje += "✅ *¡Gracias por tu atención!*";
 
-  // Codifica el mensaje final para WhatsApp
+  // Solo codifica el mensaje final, NO las URLs internas
   const mensajeCodificado = encodeURIComponent(mensaje);
   const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
   window.open(urlWhatsApp, "_blank");
@@ -193,7 +191,6 @@ function generarPedidoWhatsApp() {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
-
 // Función para mostrar/ocultar el carrito con animación
 function toggleOffcanvas(show) {
   // Añadir transiciones para el efecto visual de apertura/cierre
