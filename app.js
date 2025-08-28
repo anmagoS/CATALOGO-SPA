@@ -172,18 +172,23 @@ function actualizarContadorCarrito() {
 // Función para generar y enviar un pedido a través de WhatsApp
 function generarPedidoWhatsApp() {
   if (articulosCarrito.length === 0) return alert("Tu carrito está vacío.");
+
   let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
+
   articulosCarrito.forEach((producto, index) => {
     mensaje += `*${index + 1}.* ${producto.nombre}\n`;
-     mensaje += `🔗 Ver imagen:\n${decodeURIComponent(producto.imagen)}\n`;
+    mensaje += `🔗 Imagen:\n${producto.imagen}\n`; // No usar decodeURIComponent
     mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
   });
+
   const total = articulosCarrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
   mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
   mensaje += "✅ *¡Gracias por tu atención!*";
+
   const mensajeCodificado = encodeURIComponent(mensaje);
   const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
   window.open(urlWhatsApp, "_blank");
+
   // Limpiar carrito después de enviar
   articulosCarrito = [];
   guardarCarrito();
@@ -192,7 +197,6 @@ function generarPedidoWhatsApp() {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
-
 // Calcular el total del pedido
 const total = articulosCarrito.reduce(
   (acc, producto) => acc + producto.precio * producto.cantidad,
