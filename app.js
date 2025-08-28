@@ -108,7 +108,6 @@ function renderizarCarrito() {
   // Agregar eventos de eliminación de producto
   agregarEventosBorrar();
 }
-
 // Función para eliminar un producto del carrito
 function agregarEventosBorrar() {
   // Obtener todos los botones de eliminar del carrito
