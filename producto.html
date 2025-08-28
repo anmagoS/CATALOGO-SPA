@@ -150,16 +150,18 @@ actualizarCarrito(); // ← Esto renderiza el carrito al cargar la página
       actualizarCarrito();
     }
 
-    function generarPedidoWhatsApp() {
-      if (carrito.length === 0) return alert("Tu carrito está vacío.");
-      let mensaje = "Hola, quiero pedir los siguientes productos:%0A";
-      carrito.forEach(p => {
-        mensaje += `• ${p.nombre} - $${p.precio.toLocaleString()} COP%0A`;
-      });
-      const total = carrito.reduce((sum, p) => sum + parseFloat(p.precio), 0);
-      mensaje += `%0ATotal: $${total.toLocaleString()} COP`;
-      window.open(`https://wa.me/573006498710?text=${mensaje}`, "_blank");
-    }
+   function generarPedidoWhatsApp() {
+  if (carrito.length === 0) return alert("Tu carrito está vacío.");
+  let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
+  carrito.forEach((p, i) => {
+    mensaje += `*${i + 1}.* ${p.nombre}\n`;
+    mensaje += `🖼️ Imagen: ${p.imagen}\n`; // <-- Aquí la corrección
+    mensaje += `💲 Precio: $${p.precio.toLocaleString("es-CO")}\n\n`;
+  });
+  const total = carrito.reduce((sum, p) => sum + parseFloat(p.precio), 0);
+  mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
+  window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
+}
 
     function renderMenuCategorias(productos) {
       const menu = document.getElementById("menu-categorias");
