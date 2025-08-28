@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
   actualizarContadorCarrito();
 });
+
 // Función para agregar al carrito
 function agregarAlCarrito(e) {
   // Asegurarse de que el clic proviene de un botón con la clase 'btn-cart'
@@ -108,6 +109,7 @@ function renderizarCarrito() {
   // Agregar eventos de eliminación de producto
   agregarEventosBorrar();
 }
+
 // Función para eliminar un producto del carrito
 function agregarEventosBorrar() {
   // Obtener todos los botones de eliminar del carrito
@@ -161,7 +163,6 @@ function actualizarSubtotal() {
   subtotalElement.textContent = `$${subtotalFormateado}`;
 }
 
-
 // Función para actualizar el contador de productos en el carrito
 function actualizarContadorCarrito() {
   const contador = document.getElementById("contador-carrito");
@@ -176,8 +177,13 @@ function generarPedidoWhatsApp() {
   let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
 
   articulosCarrito.forEach((producto, index) => {
+    // Aquí mostramos la URL de la imagen y la codificamos para que WhatsApp la reciba correctamente
+    let imagenURL = producto.imagen;
+    // Si la URL contiene caracteres especiales, asegúrate de codificarla
+    // encodeURI codifica la URL correctamente para que WhatsApp la muestre bien
+    let imagenURLCodificada = encodeURI(imagenURL);
     mensaje += `*${index + 1}.* ${producto.nombre}\n`;
-    mensaje += `🔗 Imagen:\n${producto.imagen}\n`; // No usar decodeURIComponent
+    mensaje += `🔗 Imagen:\n${imagenURLCodificada}\n`;
     mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
   });
 
@@ -197,28 +203,6 @@ function generarPedidoWhatsApp() {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
-// Calcular el total del pedido
-const total = articulosCarrito.reduce(
-  (acc, producto) => acc + producto.precio * producto.cantidad,
-  0
-);
-const totalFormateado = total.toLocaleString("es-CO");
-mensaje += `*🧾 Total del pedido:* $${totalFormateado}\n\n`;
-mensaje += "✅ *¡Gracias por tu atención!*";
-
-// Codificar el mensaje para la URL de WhatsApp
-const mensajeCodificado = encodeURIComponent(mensaje);
-
-// Generar el enlace de WhatsApp
-const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
-window.open(urlWhatsApp, "_blank");
-// Limpiar carrito después de enviar
-articulosCarrito = [];
-guardarCarrito();
-renderizarCarrito();
-actualizarSubtotal();
-actualizarContadorCarrito();
-actualizarEstadoBotonWhatsApp();  
 
 // Función para mostrar/ocultar el carrito con animación
 function toggleOffcanvas(show) {
