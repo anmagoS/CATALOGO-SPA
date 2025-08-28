@@ -6,7 +6,6 @@ const btn_shopping = document.querySelector(".btn_shopping"); // Botón para mos
 const subtotalElement = document.getElementById("subtotal"); // Seleccionar el elemento del subtotal para mostrar el total
 const contadorCarrito = document.querySelector("#contador-carrito"); // Elemento que muestra el número de productos en el carrito
 const closeButton = document.querySelector(".btn-close"); // Botón para cerrar el carrito
-
 // Espera a que el DOM se cargue, agrega un evento de click para añadir al carrito y renderiza el carrito.
 document.addEventListener("DOMContentLoaded", () => {
   const contenedorProductos = document.getElementById("contenido-productos");
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.warn("⚠️ No se encontró el contenedor de productos con ID 'contenido-productos'.");
   }
-
   renderizarCarrito();
   actualizarContadorCarrito();
 });
@@ -24,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function agregarAlCarrito(e) {
   // Asegurarse de que el clic proviene de un botón con la clase 'btn-cart'
   const btn = e.target.closest(".btn-cart");
-
   if (btn) {
     // Muestra el offcanvas y aplica un efecto visual al botón del carrito
     if (!localStorage.getItem("carritoMostrado")) {
@@ -51,7 +48,6 @@ function agregarAlCarrito(e) {
       // Si el producto no está, lo agregamos al carrito
       articulosCarrito.push(producto);
     }
-
     guardarCarrito();
     // Renderizar el carrito actualizado
     renderizarCarrito();
@@ -63,7 +59,6 @@ function agregarAlCarrito(e) {
     actualizarEstadoBotonWhatsApp(); // Actualizar el estado del botón de WhatsApp
   }
 }
-
 // Función para renderizar el carrito
 function renderizarCarrito() {
   // Limpiar contenido previo del carrito
@@ -105,11 +100,9 @@ function renderizarCarrito() {
     // Insertar el HTML del producto en el contenedor del carrito
     carritoContainer.insertAdjacentHTML("beforeend", itemHTML);
   });
-
   // Agregar eventos de eliminación de producto
   agregarEventosBorrar();
 }
-
 // Función para eliminar un producto del carrito
 function agregarEventosBorrar() {
   // Obtener todos los botones de eliminar del carrito
@@ -145,7 +138,6 @@ function agregarEventosBorrar() {
     });
   });
 }
-
 // Función para calcular y actualizar el subtotal
 function actualizarSubtotal() {
   const subtotal = articulosCarrito.reduce((total, producto) => {
