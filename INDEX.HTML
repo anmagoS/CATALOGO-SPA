@@ -142,36 +142,35 @@
     const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
 
     function actualizarCarrito() {
-      const contenedor = document.getElementById("carrito-contenido");
-      contenedor.innerHTML = "";
-      let subtotal = 0;
+  const contenedor = document.getElementById("carrito-contenido");
+  contenedor.innerHTML = "";
+  let subtotal = 0;
 
-      carrito.forEach((p, i) => {
-        subtotal += parseFloat(p.precio);
-        const item = document.createElement("div");
-        item.className = "mb-3 border-bottom pb-2";
-        item.innerHTML = `
-          <div class="d-flex align-items-center gap-3">
-            <img src="${p.imagen}" width="60" style="border-radius:6px;">
-            <div>
-              <strong>${p.nombre}</strong><br>
-              <small>$${p.precio.toLocaleString()} COP</small>
-            </div>
-            <button class="btn btn-sm btn-danger ms-auto" onclick="eliminarDelCarrito(${i})">
-              <i class="bi bi-trash3"></i>
-            </button>
-          </div>
-        `;
-        contenedor.appendChild(item);
-      });
+  carrito.forEach((p, i) => {
+    subtotal += parseFloat(p.precio);
+    const item = document.createElement("div");
+    item.className = "mb-3 border-bottom pb-2";
+    item.innerHTML = `
+      <div class="d-flex align-items-center gap-3">
+        <img src="${p.imagen}" width="60" style="border-radius:6px;">
+        <div>
+          <strong>${p.nombre}</strong><br>
+          <small>$${p.precio.toLocaleString()} COP</small>
+        </div>
+        <button class="btn btn-sm btn-danger ms-auto" onclick="eliminarDelCarrito(${i})">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </div>
+    `;
+    contenedor.appendChild(item);
+  });
 
-      // Actualiza subtotal y contador si tienes esos elementos
-      // document.getElementById("subtotal").textContent = `$${subtotal.toLocaleString()} COP`;
-      // document.getElementById("contador-carrito").textContent = carrito.length;
+  // ✅ DESCOMENTAR ESTAS LÍNEAS:
+  document.getElementById("subtotal").textContent = `$${subtotal.toLocaleString()} COP`;
+  document.getElementById("contador-carrito").textContent = carrito.length;
 
-      localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
-    }
-
+  localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
+}
     function eliminarDelCarrito(index) {
       carrito.splice(index, 1);
       actualizarCarrito();
