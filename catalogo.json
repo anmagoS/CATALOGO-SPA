@@ -490,5 +490,17 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_1.234831.jpg",
     "color": "?nico",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_1.234831.jpg, https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_2.234831.jpg, https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_3.234831.jpg"
+  },
+  {
+    "id": "1D454348",
+    "categoria": "JEANS DAMA",
+    "subcategoria": "BOTA CAMPANA",
+    "producto": "JEAN BOTA CAMPANA",
+    "material": "LICRADO",
+    "tallas": "TALLAS  6-8-10-12-14",
+    "precio": 78000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_1.153635.jpg",
+    "color": "?nico",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_1.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_2.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_3.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_4.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_5.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_6.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_7.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_8.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_9.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_10.153641.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_11.153641.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_12.153642.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_13.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_14.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_15.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_16.153645.jpg"
   }
 ]
