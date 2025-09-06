@@ -298,6 +298,12 @@ footer {
   font-size: 16px;
   color: white;
 }
+.seccion-centrada {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .logos-pago {
   display: flex;
