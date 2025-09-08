@@ -223,11 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarCarrito(); // Si tienes una función para renderizar el carrito
 });
   </script>
-
-  <!-- FOOTER DINÁMICO -->
-  <script>
 <!-- FOOTER -->
 <div id="footer-container"></div>
+  <!-- FOOTER DINÁMICO -->
+  <script>
     fetch('footer.html')
       .then(res => res.text())
       .then(data => {
