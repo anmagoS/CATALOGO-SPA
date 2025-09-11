@@ -374,3 +374,21 @@ footer {
   left: 10px;
   z-index: 10;
 }
+.navbar-toggler {
+  background-color: transparent;
+}
+.offcanvas {
+  background-color: #ffffff;
+  color: #1B4557;
+}
+.offcanvas .nav-link {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+.offcanvas .nav-link:hover {
+  background-color: #1B4557;
+  color: white;
+}
