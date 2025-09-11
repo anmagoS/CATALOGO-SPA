@@ -89,7 +89,19 @@ actualizarCarrito(); // ← Esto renderiza el carrito al cargar la página
         }
 
         document.getElementById("nombre").textContent = producto.producto;
-        document.getElementById("precio").textContent = `$${producto.precio.toLocaleString()} COP`;
+        const precioContainer = document.getElementById("precio");
+if (producto.promo === true) {
+  const precioOriginal = producto.precio;
+  const precioFinal = producto.precio * 0.9;
+  precioContainer.innerHTML = `
+    <s>$${precioOriginal.toLocaleString()} COP</s>
+    <span class="text-success fw-bold ms-2">$${precioFinal.toLocaleString()} COP</span>
+    <span class="badge bg-danger ms-2">-10%</span>
+  `;
+} else {
+  precioContainer.textContent = `$${producto.precio.toLocaleString()} COP`;
+}
+
         if (producto.tallas) {
           document.getElementById("tallas").textContent = `Tallas disponibles: ${producto.tallas}`;
         }
