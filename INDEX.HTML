@@ -106,7 +106,7 @@
   <a href="producto.html?id=${producto.id}">
     <div class="imagen-producto">
       <img src="${producto.imagen}" alt="${producto.id}">
-      ${producto.promo ? '<span class="etiqueta-promo">🔥 En promoción</span>' : ''}
+      ${producto.promo ? '<span class="etiqueta-promo">🔥 10%</span>' : ''}
     </div>
   </a>
   <div class="nombre-producto">${producto.producto}</div>
@@ -115,7 +115,7 @@
   <div class="precio-producto">
     ${
       producto.promo
-        ? `<s>$${producto.precio.toLocaleString()} COP</s> <span class="text-success fw-bold">$${(producto.precio * 0.9).toLocaleString()} COP</span>`
+        ? `<s>$${producto.precio.toLocaleString()} COP</s> <span class="text-success fw-bold">$${(producto.precio * 0.5).toLocaleString()} COP</span>`
         : `$${producto.precio.toLocaleString()} COP`
     }
   </div>
