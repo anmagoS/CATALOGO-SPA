@@ -392,3 +392,18 @@ footer {
   background-color: #1B4557;
   color: white;
 }
+#precio {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+#precio s {
+  color: #888;
+}
+#precio .text-success {
+  font-size: 1.6rem;
+}
+.badge.bg-danger {
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
