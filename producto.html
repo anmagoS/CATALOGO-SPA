@@ -121,11 +121,16 @@ if (producto.promo === true) {
             <button class="boton-comprar">Agregar al carrito</button>
           `;
           tarjeta.querySelector(".boton-comprar").onclick = () => {
-            agregarAlCarrito({
-              nombre: producto.producto,
-              precio: producto.precio,
-              imagen: img
-            });
+            const precioFinal = producto.promo === true ? producto.precio * 0.9 : producto.precio;
+
+agregarAlCarrito({
+  nombre: producto.producto,
+  imagen: img,
+  precioOriginal: producto.precio,
+  precioFinal: precioFinal,
+  promo: producto.promo === true
+});
+
             document.querySelector('[data-bs-target="#offcanvasRight"]').click();
           };
           galeria.appendChild(tarjeta);
@@ -145,7 +150,7 @@ if (producto.promo === true) {
   let subtotal = 0;
 
   carrito.forEach((p, i) => {
-    subtotal += parseFloat(p.precio);
+   subtotal += parseFloat(p.precioFinal);
     const item = document.createElement("div");
     item.className = "mb-3 border-bottom pb-2";
     item.innerHTML = `
@@ -153,7 +158,11 @@ if (producto.promo === true) {
         <img src="${p.imagen}" width="60" style="border-radius:6px;">
         <div>
           <strong>${p.nombre}</strong><br>
-          <small>$${p.precio.toLocaleString()} COP</small>
+         ${
+  p.promo
+    ? `<small><s>$${p.precioOriginal.toLocaleString()} COP</s> <span class="text-success fw-bold">$${p.precioFinal.toLocaleString()} COP</span></small>`
+    : `<small>$${p.precioFinal.toLocaleString()} COP</small>`
+}
         </div>
         <button class="btn btn-sm btn-danger ms-auto" onclick="eliminarDelCarrito(${i})">
           <i class="bi bi-trash3"></i>
@@ -182,9 +191,12 @@ if (producto.promo === true) {
   carrito.forEach((p, i) => {
     mensaje += `*${i + 1}.* ${p.nombre}\n`;
     mensaje += `🖼️ Imagen: ${p.imagen}\n`; // <-- Aquí la corrección
-    mensaje += `💲 Precio: $${p.precio.toLocaleString("es-CO")}\n\n`;
+   mensaje += p.promo
+  ? `💲 Precio original: $${p.precioOriginal.toLocaleString("es-CO")}\n🔻 Descuento: 10%\n💰 Precio final: $${p.precioFinal.toLocaleString("es-CO")}\n\n`
+  : `💲 Precio: $${p.precioFinal.toLocaleString("es-CO")}\n\n`;
+
   });
-  const total = carrito.reduce((sum, p) => sum + parseFloat(p.precio), 0);
+  const total = carrito.reduce((sum, p) => sum + parseFloat(p.precioFinal), 0);
   mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
   window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
 }
