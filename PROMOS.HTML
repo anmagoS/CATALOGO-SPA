@@ -30,14 +30,12 @@
       </a>
     </div>
   </header>
-
   <!-- TÍTULO Y TEMPORIZADOR -->
   <main class="contenedor-categoria">
     <h1 class="titulo-categoria">🔥 Productos en Promoción</h1>
     <div id="temporizador" class="descripcion-producto text-center"></div>
     <div id="contenedor-promos" class="grid-productos"></div>
   </main>
-
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header border-bottom">
@@ -55,14 +53,11 @@
       </div>
     </div>
   </div>
-
   <!-- FOOTER -->
   <div id="footer-container"></div>
-
   <!-- SCRIPT PRINCIPAL -->
   <script>
     let carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
-
     const finPromo = new Date(Date.now() + 48 * 60 * 60 * 1000);
     const temporizador = document.getElementById("temporizador");
     setInterval(() => {
@@ -77,18 +72,15 @@
       const segundos = Math.floor((restante % (1000 * 60)) / 1000);
       temporizador.textContent = `⏰ Tiempo restante: ${horas}h ${minutos}m ${segundos}s`;
     }, 1000);
-
     fetch("catalogo.json")
       .then(res => res.json())
       .then(productos => {
         const promociones = productos.filter(p => String(p.promo).toLowerCase() === "true");
         const contenedor = document.getElementById("contenedor-promos");
-
         promociones.forEach(p => {
           const imagenes = p.url?.split(",").map(u => u.trim()).filter(Boolean);
           const tarjeta = document.createElement("div");
           tarjeta.className = "producto position-relative";
-
           tarjeta.innerHTML = `
             <span class="etiqueta-promo">🔥 10%</span>
             <div class="imagen-producto">
@@ -107,22 +99,18 @@
 
         renderMenuCategorias(productos);
       });
-
     function verProducto(id) {
       window.location.href = `producto.html?id=${id}`;
     }
-
     function agregarAlCarrito(nombre, precio, imagen) {
       carrito.push({ nombre, precio, imagen });
       localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
       actualizarCarrito();
     }
-
     function actualizarCarrito() {
       const contenedor = document.getElementById("carrito-contenido");
       contenedor.innerHTML = "";
       let subtotal = 0;
-
       carrito.forEach((p, i) => {
         subtotal += parseFloat(p.precio);
         const item = document.createElement("div");
@@ -141,17 +129,14 @@
         `;
         contenedor.appendChild(item);
       });
-
       document.getElementById("subtotal").textContent = `$${subtotal.toLocaleString()} COP`;
       document.getElementById("contador-carrito").textContent = carrito.length;
     }
-
     function eliminarDelCarrito(index) {
       carrito.splice(index, 1);
       localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
       actualizarCarrito();
     }
-
     function generarPedidoWhatsApp() {
       if (carrito.length === 0) return alert("Tu carrito está vacío.");
       let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
@@ -167,9 +152,7 @@
     function renderMenuCategorias(productos) {
       const menu = document.getElementById("menu-categorias");
       menu.innerHTML = "";
-
       const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
-
       categoriasUnicas.forEach(categoria => {
         const item = document.createElement("a");
         item.className = "dropdown-item";
@@ -181,17 +164,14 @@
         menu.appendChild(item);
       });
     }
-
     document.getElementById("toggle-categorias").addEventListener("click", () => {
       const menu = document.getElementById("menu-categorias");
       menu.style.display = menu.style.display === "block" ? "none" : "block";
     });
-
     document.addEventListener("DOMContentLoaded", () => {
       actualizarCarrito();
     });
   </script>
-
   <!-- FOOTER DINÁMICO -->
   <script>
     fetch('footer.html')
@@ -200,10 +180,7 @@
         document.getElementById('footer-container').innerHTML = data;
       });
   </script>
-
   <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-   
