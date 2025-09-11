@@ -35,3 +35,37 @@ function actualizarCarrito() {
   const contador = document.getElementById("contador-carrito");
   if (contador) contador.textContent = carrito.length;
 }
+
+function eliminarDelCarrito(index) {
+  const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+  carrito.splice(index, 1);
+  localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
+  actualizarCarrito();
+}
+
+function agregarAlCarrito(producto) {
+  const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+  carrito.push(producto);
+  localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
+  actualizarCarrito();
+}
+
+function generarPedidoWhatsApp() {
+  const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+  if (carrito.length === 0) return alert("Tu carrito está vacío.");
+
+  let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
+
+  carrito.forEach((p, i) => {
+    mensaje += `*${i + 1}.* ${p.nombre}\n`;
+    mensaje += `🖼️ Imagen: ${p.imagen}\n`;
+    mensaje += p.promo
+      ? `💲 Precio original: $${p.precioOriginal.toLocaleString("es-CO")}\n🔻 Descuento: 10%\n💰 Precio final: $${p.precioFinal.toLocaleString("es-CO")}\n\n`
+      : `💲 Precio: $${p.precioFinal.toLocaleString("es-CO")}\n\n`;
+  });
+
+  const total = carrito.reduce((sum, p) => sum + parseFloat(p.precioFinal), 0);
+  mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
+
+  window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
+}
