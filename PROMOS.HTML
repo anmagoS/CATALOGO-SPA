@@ -64,23 +64,25 @@
         const contenedor = document.getElementById("contenedor-promos");
 
         promociones.forEach(p => {
-          const imagenes = p.url?.split(",").map(u => u.trim()).filter(Boolean);
-          const tarjeta = document.createElement("div");
-          tarjeta.className = "producto";
-          tarjeta.innerHTML = `
-          <span class="etiqueta-promo">🔥 10%</span>
-            <div class="imagen-producto">
-              <img src="${imagenes[0]}" alt="${p.producto}" class="zoomable">
-            </div>
-            <div class="nombre-producto">🔥 ${p.producto}</div>
-            <div class="precio-producto">$${p.precio.toLocaleString()} COP</div>
-            <div class="descripcion-producto">Tallas: ${p.tallas}<br>Material: ${p.material}</div>
-            <button class="boton-comprar" onclick="verProducto('${p.id}')">Ver más</button>
-          `;
-          contenedor.appendChild(tarjeta);
-        });
-      });
+  const imagenes = p.url?.split(",").map(u => u.trim()).filter(Boolean);
+  const tarjeta = document.createElement("div");
+  tarjeta.className = "producto position-relative"; // ← necesario para posicionar la etiqueta
 
+  tarjeta.innerHTML = `
+    <span class="etiqueta-promo">🔥 10%</span>
+    <div class="imagen-producto">
+      <img src="${imagenes[0]}" alt="${p.producto}" class="zoomable">
+    </div>
+    <div class="nombre-producto">${p.producto}</div>
+    <div class="precio-producto">$${p.precio.toLocaleString()} COP</div>
+    <div class="descripcion-producto">Tallas: ${p.tallas}<br>Material: ${p.material}</div>
+    <div class="d-grid gap-2 mt-2">
+      <button class="boton-comprar" onclick="verProducto('${p.id}')">Ver más</button>
+      <button class="boton-comprar" onclick="agregarAlCarrito('${p.producto}', ${p.precio}, '${imagenes[0]}')">Agregar al carrito</button>
+    </div>
+  `;
+  contenedor.appendChild(tarjeta);
+});
     function verProducto(id) {
       window.location.href = `producto.html?id=${id}`;
     }
