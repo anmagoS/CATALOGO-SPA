@@ -164,5 +164,46 @@
       mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
       window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
     }
+    function renderMenuCategorias(productos) {
+      const menu = document.getElementById("menu-categorias");
+      menu.innerHTML = "";
+
+      const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+
+      categoriasUnicas.forEach(categoria => {
+        const item = document.createElement("a");
+        item.className = "dropdown-item";
+        item.textContent = categoria;
+        item.href = "INDEX.HTML";
+        item.onclick = () => {
+          localStorage.setItem('categoriaSeleccionada', categoria);
+        };
+        menu.appendChild(item);
+      });
+    }
+
+    document.getElementById("toggle-categorias").addEventListener("click", () => {
+      const menu = document.getElementById("menu-categorias");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      actualizarCarrito();
+    });
+  </script>
+
+  <!-- FOOTER DINÁMICO -->
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
    
