@@ -103,17 +103,25 @@
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
-          <a href="producto.html?id=${producto.id}">
-            <div class="imagen-producto">
-              <img src="${producto.imagen}" alt="${producto.id}">
-            </div>
-          </a>
-          <div class="nombre-producto">${producto.producto}</div>
-          <div class="nombre-producto">${producto.material}</div>
-          <div class="nombre-producto">${producto.tallas}</div>
-          <div class="precio-producto">$${producto.precio.toLocaleString()} COP</div>
-          <a href="producto.html?id=${producto.id}" class="boton-comprar">Ver más</a>
-        `;
+  <a href="producto.html?id=${producto.id}">
+    <div class="imagen-producto">
+      <img src="${producto.imagen}" alt="${producto.id}">
+      ${producto.promo ? '<span class="etiqueta-promo">🔥 En promoción</span>' : ''}
+    </div>
+  </a>
+  <div class="nombre-producto">${producto.producto}</div>
+  <div class="nombre-producto">${producto.material}</div>
+  <div class="nombre-producto">${producto.tallas}</div>
+  <div class="precio-producto">
+    ${
+      producto.promo
+        ? `<s>$${producto.precio.toLocaleString()} COP</s> <span class="text-success fw-bold">$${(producto.precio * 0.9).toLocaleString()} COP</span>`
+        : `$${producto.precio.toLocaleString()} COP`
+    }
+  </div>
+  <a href="producto.html?id=${producto.id}" class="boton-comprar">Ver más</a>
+`;
+
         // NO agregues aquí el botón "Agregar al carrito" ni el de eliminar
         contenedor.appendChild(tarjeta);
       });
