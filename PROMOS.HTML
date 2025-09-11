@@ -7,58 +7,38 @@
   <link rel="stylesheet" href="ESTILO.CSS" />
   <link rel="icon" href="logo.png" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #FFFFFF;
-      color: #1B4557;
-    }
-    .promo-titulo {
-      background-color: #1B4557;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    .producto-promo {
-      border: 2px solid #1B4557;
-      border-radius: 10px;
-      padding: 1rem;
-      margin: 1rem;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(27, 69, 87, 0.1);
-      transition: transform 0.3s;
-    }
-    .producto-promo:hover {
-      transform: scale(1.02);
-    }
-    .etiqueta-promo {
-      background-color: #FF5733;
-      color: white;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-    .temporizador {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #FF5733;
-      margin-bottom: 1rem;
-    }
-  </style>
 </head>
 <body>
-  <header class="promo-titulo">🔥 Productos en Promoción</header>
-  <div class="container">
-    <div id="temporizador" class="temporizador text-center"></div>
-    <div id="contenedor-promos" class="row"></div>
-  </div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo"><img src="logo.jpg" alt="ANMAGO STORE" /></div>
+    <nav class="nav">
+      <a href="INICIO.HTML" class="nav-link">Inicio</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle" id="toggle-categorias">Productos</button>
+        <div class="dropdown-menu" id="menu-categorias"></div>
+      </div>
+    </nav>
+    <div class="position-relative">
+      <a href="#" class="btn btn_shopping cart-badge position-fixed top-0 end-0 me-4 mt-3 swing-on-hover border bg-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+        <i class="bi-bag-heart"></i>
+        <span id="contador-carrito" class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      </a>
+    </div>
+  </header>
 
+  <!-- TÍTULO Y TEMPORIZADOR -->
+  <main class="contenedor-categoria">
+    <h1 class="titulo-categoria">🔥 Productos en Promoción</h1>
+    <div id="temporizador" class="descripcion-producto text-center"></div>
+    <div id="contenedor-promos" class="grid-productos"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- SCRIPT PRINCIPAL -->
   <script>
-    // TEMPORIZADOR DE PROMOCIÓN (ejemplo: 48 horas desde ahora)
     const finPromo = new Date(Date.now() + 48 * 60 * 60 * 1000);
     const temporizador = document.getElementById("temporizador");
     setInterval(() => {
@@ -74,32 +54,44 @@
       temporizador.textContent = `⏰ Tiempo restante: ${horas}h ${minutos}m ${segundos}s`;
     }, 1000);
 
-    // CARGAR PRODUCTOS EN PROMOCIÓN
     fetch("catalogo.json")
       .then(res => res.json())
       .then(productos => {
-        const promociones = productos.filter(p => p.promo === true);
+        const promociones = productos.filter(p => String(p.promo).toLowerCase() === "true");
         const contenedor = document.getElementById("contenedor-promos");
 
         promociones.forEach(p => {
           const imagenes = p.url?.split(",").map(u => u.trim()).filter(Boolean);
           const tarjeta = document.createElement("div");
-          tarjeta.className = "col-md-4 producto-promo position-relative";
+          tarjeta.className = "producto";
           tarjeta.innerHTML = `
-            <span class="etiqueta-promo">🔥 En promoción</span>
-            <img src="${imagenes[0]}" alt="${p.producto}" class="img-fluid rounded mb-3">
-            <h4>${p.producto}</h4>
-            <p><strong>Precio:</strong> $${p.precio.toLocaleString()} COP</p>
-            <p><strong>Tallas:</strong> ${p.tallas}</p>
-            <p><strong>Material:</strong> ${p.material}</p>
-            <div class="d-grid gap-2">
-              <button class="btn btn-outline-primary">Ver más</button>
-              <button class="btn btn-success">Agregar al carrito</button>
+            <div class="imagen-producto">
+              <img src="${imagenes[0]}" alt="${p.producto}" class="zoomable">
             </div>
+            <div class="nombre-producto">🔥 ${p.producto}</div>
+            <div class="precio-producto">$${p.precio.toLocaleString()} COP</div>
+            <div class="descripcion-producto">Tallas: ${p.tallas}<br>Material: ${p.material}</div>
+            <button class="boton-comprar" onclick="verProducto('${p.id}')">Ver más</button>
           `;
           contenedor.appendChild(tarjeta);
         });
       });
+
+    function verProducto(id) {
+      window.location.href = `producto.html?id=${id}`;
+    }
+
+    document.getElementById("toggle-categorias").addEventListener("click", () => {
+      const menu = document.getElementById("menu-categorias");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
