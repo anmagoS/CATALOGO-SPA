@@ -362,3 +362,14 @@ footer {
 .btn-whatsapp:hover {
   background: #16394a;
 }
+.etiqueta-promo {
+  background-color: #FF5733;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
