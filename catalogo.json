@@ -387,7 +387,7 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_2.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_3.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_4.022100.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_5.022100.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_6.022101.jpg",
     "subtipo": "DAMA ",
-    "promo": false
+    "promo": true
   },
   {
     "id": "8C73E98E",
@@ -569,6 +569,6 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_2.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_3.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_4.021654.jpg",
     "subtipo": "DAMA ",
-    "promo": false
+    "promo": true
   }
 ]
