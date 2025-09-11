@@ -34,7 +34,7 @@ body {
 .nav {
   display: flex;
   gap: 20px;
-  color: white;
+  color: #ffffff;
 }
 .nav-link {
   color: white;
