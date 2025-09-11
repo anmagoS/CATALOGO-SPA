@@ -109,32 +109,31 @@ if (producto.promo === true) {
         const galeria = document.getElementById("galeria");
         const imagenes = producto.url?.split(",").map(url => url.trim()).filter(Boolean) || [];
 
-        imagenes.forEach((img, i) => {
-          const tarjeta = document.createElement("div");
-          tarjeta.className = "producto";
-          tarjeta.innerHTML = `
-            <div class="imagen-producto">
-              <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
-            </div>
-            <div class="nombre-producto">${producto.producto}</div>
-            <div class="precio-producto">$${producto.precio.toLocaleString()} COP</div>
-            <button class="boton-comprar">Agregar al carrito</button>
-          `;
-          tarjeta.querySelector(".boton-comprar").onclick = () => {
-            const precioFinal = producto.promo === true ? producto.precio * 0.9 : producto.precio;
+       imagenes.forEach((img, i) => {
+  const tarjeta = document.createElement("div");
+  tarjeta.className = "producto";
+  tarjeta.innerHTML = `
+    <div class="imagen-producto">
+      <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
+    </div>
+    <button class="boton-comprar">Agregar al carrito</button>
+  `;
+  tarjeta.querySelector(".boton-comprar").onclick = () => {
+    const precioFinal = producto.promo === true ? producto.precio * 0.9 : producto.precio;
 
-agregarAlCarrito({
-  nombre: producto.producto,
-  imagen: img,
-  precioOriginal: producto.precio,
-  precioFinal: precioFinal,
-  promo: producto.promo === true
+    agregarAlCarrito({
+      nombre: producto.producto,
+      imagen: img,
+      precioOriginal: producto.precio,
+      precioFinal: precioFinal,
+      promo: producto.promo === true
+    });
+
+    document.querySelector('[data-bs-target="#offcanvasRight"]').click();
+  };
+  galeria.appendChild(tarjeta);
 });
 
-            document.querySelector('[data-bs-target="#offcanvasRight"]').click();
-          };
-          galeria.appendChild(tarjeta);
-        });
 
         renderMenuCategorias(productos);
       });
