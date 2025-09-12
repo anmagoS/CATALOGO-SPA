@@ -11,6 +11,7 @@
 </head>
 <body>
   <div id="header-container"></div>
+
   <!-- VISTA DEL PRODUCTO -->
   <main class="vista-producto">
     <h1 id="nombre" class="titulo-categoria">Cargando...</h1>
@@ -37,254 +38,242 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER DINÁMICO -->
   <div id="footer-container"></div>
 
-  <!-- SCRIPT PRINCIPAL -->
+  <!-- SCRIPTS -->
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-   let carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
-actualizarCarrito(); // ← Esto renderiza el carrito al cargar la página
+    document.addEventListener("DOMContentLoaded", () => {
+      // Cargar HEADER en mayúsculas
+      fetch('HEADER.HTML')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
 
+          // Activar menú lateral
+          document.getElementById("toggle-categorias").addEventListener("click", () => {
+            const menu = document.getElementById("menu-categorias");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+          });
 
-    fetch("catalogo.json")
-      .then(res => res.json())
-      .then(productos => {
-        const producto = productos.find(p => p.id === id);
-        if (!producto) {
-          document.getElementById("nombre").textContent = "Producto no encontrado";
-          return;
-        }
+          // Activar buscador
+          const buscador = document.getElementById("buscador");
+          const sugerencias = document.getElementById("sugerencias");
 
-        document.getElementById("nombre").textContent = producto.producto;
-        const precioContainer = document.getElementById("precio");
-if (producto.promo === true) {
-  const precioOriginal = producto.precio;
-  const precioFinal = producto.precio * 0.9;
-  precioContainer.innerHTML = `
-    <s>$${precioOriginal.toLocaleString()} COP</s>
-    <span class="text-success fw-bold ms-2">$${precioFinal.toLocaleString()} COP</span>
-    <span class="badge bg-danger ms-2">-10%</span>
-  `;
-} else {
-  precioContainer.textContent = `$${producto.precio.toLocaleString()} COP`;
-}
+          buscador.addEventListener("input", () => {
+            const texto = buscador.value.toLowerCase().trim();
+            sugerencias.innerHTML = "";
 
-        if (producto.tallas) {
-          document.getElementById("tallas").textContent = `Tallas disponibles: ${producto.tallas}`;
-        }
+            if (texto.length < 2 || !window.catalogoGlobal) return;
 
-        const galeria = document.getElementById("galeria");
-        const imagenes = producto.url?.split(",").map(url => url.trim()).filter(Boolean) || [];
+            const coincidencias = window.catalogoGlobal.filter(p =>
+              p.producto.toLowerCase().includes(texto) ||
+              p.categoria.toLowerCase().includes(texto) ||
+              p.subcategoria?.toLowerCase().includes(texto) ||
+              p.id.toLowerCase().includes(texto) ||
+              p.precio.toString().includes(texto)
+            );
 
-       imagenes.forEach((img, i) => {
-  const tarjeta = document.createElement("div");
-  tarjeta.className = "producto";
-  const opcionesTalla = producto.tallas
-  .split(",")
-  .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
-  .join("");
+            coincidencias.slice(0, 5).forEach(p => {
+              const item = document.createElement("a");
+              item.className = "dropdown-item";
+              item.textContent = `${p.producto} (${p.categoria})`;
+              item.href = `detalle.html?id=${p.id}`;
+              sugerencias.appendChild(item);
+            });
 
-tarjeta.innerHTML = `
-  <div class="imagen-producto">
-    <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
-  </div>
-  <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
-  <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
-    ${opcionesTalla}
-  </select>
-  <button class="boton-comprar">Agregar al carrito</button>
-`;
+            sugerencias.classList.add("show");
+          });
 
-  tarjeta.querySelector(".boton-comprar").onclick = () => {
-    const precioFinal = producto.promo === true ? producto.precio * 0.9 : producto.precio;
-    const selector = tarjeta.querySelector(".selector-talla");
-    const tallaSeleccionada = selector ? selector.value : "No especificada";
-agregarAlCarrito({
-  nombre: producto.producto,
-  imagen: img,
-  precioOriginal: producto.precio,
-  precioFinal: precioFinal,
-  promo: producto.promo === true,
-  talla: tallaSeleccionada
-});
-    document.querySelector('[data-bs-target="#offcanvasRight"]').click();
-  };
-  galeria.appendChild(tarjeta);
-});
+          document.addEventListener("click", () => {
+            sugerencias.classList.remove("show");
+          });
 
+          // Activar carrito
+          actualizarCarrito();
 
-        renderMenuCategorias(productos);
-      });
-
-    function agregarAlCarrito(producto) {
-      carrito.push(producto);
-      actualizarCarrito();
-    }
-
- function actualizarCarrito() {
-  const contenedor = document.getElementById("carrito-contenido");
-  contenedor.innerHTML = "";
-  let subtotal = 0;
-
-  carrito.forEach((p, i) => {
-   subtotal += parseFloat(p.precioFinal);
-    const item = document.createElement("div");
-    item.className = "mb-3 border-bottom pb-2";
-    item.innerHTML = `
-  <div class="d-flex align-items-center gap-3">
-    <img src="${p.imagen}" width="60" style="border-radius:6px;">
-    <div>
-      <strong>${p.nombre}</strong><br>
-      <p class="mb-0 detalles-product">Talla: ${p.talla || "No especificada"}</p>
-      ${
-        p.promo
-          ? `<small><s>$${p.precioOriginal.toLocaleString()} COP</s> <span class="text-success fw-bold">$${p.precioFinal.toLocaleString()} COP</span></small>`
-          : `<small>$${p.precioFinal.toLocaleString()} COP</small>`
-      }
-    </div>
-    <button class="btn btn-sm btn-danger ms-auto" onclick="eliminarDelCarrito(${i})">
-      <i class="bi bi-trash3"></i>
-    </button>
-  </div>
-`;
-    contenedor.appendChild(item);
-  });
-
-  document.getElementById("subtotal").textContent = `$${subtotal.toLocaleString()} COP`;
-  document.getElementById("contador-carrito").textContent = carrito.length;
-
-  // ✅ Aquí guardamos el carrito en localStorage
-  localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
-}
-
-
-    function eliminarDelCarrito(index) {
-      carrito.splice(index, 1);
-      actualizarCarrito();
-    }
-
-   function generarPedidoWhatsApp() {
-  if (carrito.length === 0) return alert("Tu carrito está vacío.");
-  let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
-  carrito.forEach((p, i) => {
-    mensaje += `*${i + 1}.* ${p.nombre}\n`;
-    mensaje += `🖼️ Imagen: ${p.imagen}\n`; // <-- Aquí la corrección
-    mensaje += `📏 Talla: ${p.talla || "No especificada"}\n`;
-    mensaje += p.promo
-  ? `💲 Precio original: $${p.precioOriginal.toLocaleString("es-CO")}\n🔻 Descuento: 10%\n💰 Precio final: $${p.precioFinal.toLocaleString("es-CO")}\n\n`
-  : `💲 Precio: $${p.precioFinal.toLocaleString("es-CO")}\n\n`;
-
-  });
-  const total = carrito.reduce((sum, p) => sum + parseFloat(p.precioFinal), 0);
-  mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
-  window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
-     // Vaciar el carrito después de enviar
-carrito = [];
-localStorage.removeItem("carritoAnmago");
-actualizarCarrito();
-}
-
-    function renderMenuCategorias(productos) {
-      const menu = document.getElementById("menu-categorias");
-      menu.innerHTML = "";
-
-      const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
-
-      categoriasUnicas.forEach(categoria => {
-        const item = document.createElement("a");
-        item.className = "dropdown-item";
-        item.textContent = categoria;
-        item.href = "INDEX.HTML";
-        item.onclick = () => {
-          localStorage.setItem('categoriaSeleccionada', categoria);
-        };
-        menu.appendChild(item);
-      });
-    }
-
-    document.getElementById("toggle-categorias").addEventListener("click", () => {
-      const menu = document.getElementById("menu-categorias");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    });
-  </script>
-<script>
-  fetch('header.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('header-container').innerHTML = data;
-
-      // Activar menú de categorías
-      document.getElementById("toggle-categorias").addEventListener("click", () => {
-        const menu = document.getElementById("menu-categorias");
-        menu.style.display = menu.style.display === "block" ? "none" : "block";
-      });
-
-      // Activar buscador
-      const buscador = document.getElementById("buscador");
-      const sugerencias = document.getElementById("sugerencias");
-
-      buscador.addEventListener("input", () => {
-        const texto = buscador.value.toLowerCase().trim();
-        sugerencias.innerHTML = "";
-
-        if (texto.length < 2 || !window.catalogoGlobal) return;
-
-        const coincidencias = window.catalogoGlobal.filter(p =>
-          p.producto.toLowerCase().includes(texto) ||
-          p.categoria.toLowerCase().includes(texto) ||
-          p.subcategoria?.toLowerCase().includes(texto) ||
-          p.id.toLowerCase().includes(texto) ||
-          p.precio.toString().includes(texto)
-        );
-
-        coincidencias.slice(0, 5).forEach(p => {
-          const item = document.createElement("a");
-          item.className = "dropdown-item";
-          item.textContent = `${p.producto} (${p.categoria})`;
-          item.href = `detalle.html?id=${p.id}`;
-          sugerencias.appendChild(item);
+          // Cargar producto
+          cargarProducto();
         });
 
-        sugerencias.classList.add("show");
-      });
-
-      document.addEventListener("click", () => {
-        sugerencias.classList.remove("show");
-      });
+      // Cargar footer dinámico
+      fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
     });
-</script>
 
-  <!-- FOOTER DINÁMICO -->
-  <script>
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
+    async function cargarProducto() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const res = await fetch("https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json");
+      const productos = await res.json();
+      window.catalogoGlobal = productos;
+
+      const producto = productos.find(p => p.id === id);
+      if (!producto) {
+        document.getElementById("nombre").textContent = "Producto no encontrado";
+        return;
+      }
+
+      document.getElementById("nombre").textContent = producto.producto;
+
+      const precioContainer = document.getElementById("precio");
+      const precioFinal = producto.promo ? producto.precio * 0.9 : producto.precio;
+
+      if (producto.promo) {
+        precioContainer.innerHTML = `
+          <s>$${producto.precio.toLocaleString()} COP</s>
+          <span class="text-success fw-bold ms-2">$${precioFinal.toLocaleString()} COP</span>
+          <span class="badge bg-danger ms-2">-10%</span>
+        `;
+      } else {
+        precioContainer.textContent = `$${producto.precio.toLocaleString()} COP`;
+      }
+
+      if (producto.tallas) {
+        document.getElementById("tallas").textContent = `Tallas disponibles: ${producto.tallas}`;
+      }
+
+      const galeria = document.getElementById("galeria");
+      const imagenes = producto.url?.split(",").map(url => url.trim()).filter(Boolean) || [];
+
+      imagenes.forEach((img, i) => {
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "producto";
+
+        const opcionesTalla = producto.tallas
+          .split(",")
+          .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
+          .join("");
+
+        tarjeta.innerHTML = `
+          <div class="imagen-producto">
+            <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
+          </div>
+          <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
+          <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
+            ${opcionesTalla}
+          </select>
+          <button class="boton-comprar">Agregar al carrito</button>
+        `;
+
+        tarjeta.querySelector(".boton-comprar").onclick = () => {
+          const selector = tarjeta.querySelector(".selector-talla");
+          const tallaSeleccionada = selector ? selector.value : "No especificada";
+
+          agregarAlCarrito({
+            nombre: producto.producto,
+            imagen: img,
+            precioOriginal: producto.precio,
+            precioFinal: precioFinal,
+            promo: producto.promo === true,
+            talla: tallaSeleccionada
+          });
+
+          document.querySelector('[data-bs-target="#offcanvasRight"]').click();
+        };
+
+        galeria.appendChild(tarjeta);
       });
-    
+    }
+
+    function agregarAlCarrito(producto) {
+      const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+      carrito.push(producto);
+      localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const contenedor = document.getElementById("carrito-contenido");
+      const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+      contenedor.innerHTML = "";
+      let subtotal = 0;
+
+      carrito.forEach((p, i) => {
+        subtotal += parseFloat(p.precioFinal);
+        const item = document.createElement("div");
+        item.className = "mb-3 border-bottom pb-2";
+        item.innerHTML = `
+          <div class="d-flex align-items-center gap-3">
+            <img src="${p.imagen}" width="60" style="border-radius:6px;">
+            <div>
+              <strong>${p.nombre}</strong><br>
+              <p class="mb-0 detalles-product">Talla: ${p.talla || "No especificada"}</p>
+              ${
+                p.promo
+                  ? `<small><s>$${p.precioOriginal.toLocaleString()} COP</s> <span class="text-success fw-bold">$${p.precioFinal.toLocaleString()} COP</span></small>`
+                  : `<small>$${p.precioFinal.toLocaleString()} COP</small>`
+              }
+            </div>
+                        <button class="btn btn-sm btn-danger ms-auto" onclick="eliminarDelCarrito(${i})">
+              <i class="bi bi-trash3"></i>
+            </button>
+          </div>
+        `;
+        contenedor.appendChild(item);
+      });
+
+      document.getElementById("subtotal").textContent = `$${subtotal.toLocaleString()} COP`;
+      document.getElementById("contador-carrito").textContent = carrito.length;
+    }
+
+    function eliminarDelCarrito(index) {
+      const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+      carrito.splice(index, 1);
+      localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
+      actualizarCarrito();
+    }
+
+    function generarPedidoWhatsApp() {
+      const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+      if (carrito.length === 0) return alert("Tu carrito está vacío.");
+
+      let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
+      carrito.forEach((p, i) => {
+        mensaje += `*${i + 1}.* ${p.nombre}\n`;
+        mensaje += `🖼️ Imagen: ${p.imagen}\n`;
+        mensaje += `📏 Talla: ${p.talla || "No especificada"}\n`;
+        mensaje += p.promo
+          ? `💲 Precio original: $${p.precioOriginal.toLocaleString("es-CO")}\n🔻 Descuento: 10%\n💰 Precio final: $${p.precioFinal.toLocaleString("es-CO")}\n\n`
+          : `💲 Precio: $${p.precioFinal.toLocaleString("es-CO")}\n\n`;
+      });
+
+      const total = carrito.reduce((sum, p) => sum + parseFloat(p.precioFinal), 0);
+      mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
+
+      window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
+
+      // Vaciar el carrito después de enviar
+      localStorage.removeItem("carritoAnmago");
+      actualizarCarrito();
+    }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <!-- MODAL DE ZOOM -->
-<div class="modal fade" id="zoomModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-transparent border-0">
-      <div class="modal-body text-center">
-        <img id="zoomImagen" src="" class="img-fluid rounded shadow" alt="Zoom" />
+  <div class="modal fade" id="zoomModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body text-center">
+          <img id="zoomImagen" src="" class="img-fluid rounded shadow" alt="Zoom" />
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script>
-  document.addEventListener("click", function (e) {
-    if (e.target.classList.contains("zoomable")) {
-      const src = e.target.getAttribute("src");
-      document.getElementById("zoomImagen").setAttribute("src", src);
-      const modal = new bootstrap.Modal(document.getElementById("zoomModal"));
-      modal.show();
-    }
-  });
-</script>
+  <script>
+    document.addEventListener("click", function (e) {
+      if (e.target.classList.contains("zoomable")) {
+        const src = e.target.getAttribute("src");
+        document.getElementById("zoomImagen").setAttribute("src", src);
+        const modal = new bootstrap.Modal(document.getElementById("zoomModal"));
+        modal.show();
+      }
+    });
+  </script>
 </body>
 </html>
