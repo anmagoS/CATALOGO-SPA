@@ -394,7 +394,7 @@ footer {
 .btn_shopping {
   position: absolute;
   right: 20px;
-  top: 60px; /* ajusta según la altura real del header */
+  top: 12px; /* ajusta según la altura del header */
   z-index: 1050;
   background-color: #ffffff;
   border: 2px solid #198754;
@@ -405,6 +405,7 @@ footer {
   font-size: 18px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .btn_shopping:hover {
   background-color: #198754;
   color: #ffffff;
