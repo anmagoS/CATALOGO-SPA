@@ -23,10 +23,12 @@
         title="Video de presentación" frameborder="0" allowfullscreen
         style="max-width: 560px; border-radius: 12px;"></iframe>
     </section>
+
     <section class="seccion-centrada">
       <h1 class="titulo-categoria">Aliados</h1>
       <a class="boton-comprar" href="https://sites.google.com/view/anmagostore/aliados" target="_blank">Catálogos Aliados</a>
     </section>
+
     <section class="seccion-centrada">
       <p class="frase-destacada">
         “La ropa no solo cubre tu cuerpo, sino que también expresa tu alma. En cada prenda, encuentras confianza, elegancia y la magia de ser tú mismo”
@@ -65,7 +67,7 @@
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
 
-          // Esperar a que el botón esté renderizado antes de alinear
+          // Ajustar posición del carrito flotante después de renderizar
           setTimeout(() => {
             const carritoBtn = document.querySelector(".btn_shopping");
             const header = document.getElementById("header-container");
@@ -165,11 +167,11 @@
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
-          <a href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;" class="imagen-producto">
+          <a href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;" class="imagen-producto">
             <img src="${imagen}" alt="${nombre}">
           </a>
           <div class="nombre-producto">${nombre}</div>
-          <a class="boton-comprar" href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;">Ver más</a>
+          <a class="boton-comprar" href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;">Ver más</a>
         `;
         contenedor.appendChild(tarjeta);
       });
@@ -186,7 +188,7 @@
         const item = document.createElement("a");
         item.className = "dropdown-item";
         item.textContent = categoria;
-        item.href = "index.html";
+        item.href = "INDEX.HTML";
         item.onclick = () => {
           localStorage.setItem('categoriaSeleccionada', categoria);
         };
