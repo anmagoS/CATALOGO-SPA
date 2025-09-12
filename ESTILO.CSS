@@ -407,3 +407,10 @@ footer {
   padding: 4px 8px;
   border-radius: 6px;
 }
+.btn_shopping {
+  position: fixed;
+  right: 20px;
+  top: 72px; /* se ajusta dinámicamente en JS */
+  z-index: 1050;
+  background-color: white;
+  border
