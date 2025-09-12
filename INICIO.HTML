@@ -11,15 +11,12 @@
 </head>
 <body>
   <div id="header-container"></div>
-  <!-- Botón flotante del carrito -->
-  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-    <i class="bi bi-bag-heart"></i>
-    <span id="contador-carrito" class="contador-carrito">0</span>
-  </a>
+
   <!-- CONTENIDO PRINCIPAL -->
   <main class="contenedor-categoria">
     <h1 class="titulo-categoria">Explora nuestras colecciones</h1>
     <div id="grid-categorias" class="grid-productos"></div>
+
     <section class="seccion-centrada">
       <h1 class="titulo-categoria">Conoce más sobre Anmago Store</h1>
       <iframe width="100%" height="315" src="https://www.youtube.com/embed/E8_rkF1957Y"
@@ -31,6 +28,7 @@
       <h1 class="titulo-categoria">Aliados</h1>
       <a class="boton-comprar" href="https://sites.google.com/view/anmagostore/aliados" target="_blank">Catálogos Aliados</a>
     </section>
+
     <section class="seccion-centrada">
       <p class="frase-destacada">
         “La ropa no solo cubre tu cuerpo, sino que también expresa tu alma. En cada prenda, encuentras confianza, elegancia y la magia de ser tú mismo”
@@ -39,6 +37,7 @@
       <a class="boton-comprar" href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank">Deja tus datos</a>
     </section>
   </main>
+
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header border-bottom">
@@ -56,8 +55,10 @@
       </div>
     </div>
   </div>
+
   <!-- FOOTER DINÁMICO -->
   <div id="footer-container"></div>
+
   <!-- SCRIPTS -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -65,53 +66,79 @@
         .then(res => res.text())
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
-          // Ajustar posición del carrito según altura del header
+
+          // Ajustar posición del carrito flotante si está en el header
           const carritoBtn = document.querySelector(".btn_shopping");
           const header = document.getElementById("header-container");
+
           const ajustarCarrito = () => {
-            const alturaHeader = header.offsetHeight;
-            carritoBtn.style.top = `${alturaHeader}px`;
+            if (carritoBtn && header) {
+              const alturaHeader = header.offsetHeight;
+              carritoBtn.style.top = `${alturaHeader}px`;
+            }
           };
+
           ajustarCarrito();
           window.addEventListener("resize", ajustarCarrito);
-          document.getElementById("toggle-categorias").addEventListener("click", () => {
-            const menu = document.getElementById("menu-categorias");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-          });
+
+          // Activar menú lateral
+          const toggle = document.getElementById("toggle-categorias");
+          if (toggle) {
+            toggle.addEventListener("click", () => {
+              const menu = document.getElementById("menu-categorias");
+              if (menu) {
+                menu.style.display = menu.style.display === "block" ? "none" : "block";
+              }
+            });
+          }
+
+          // Activar buscador
           const buscador = document.getElementById("buscador");
           const sugerencias = document.getElementById("sugerencias");
-          buscador.addEventListener("input", () => {
-            const texto = buscador.value.toLowerCase().trim();
-            sugerencias.innerHTML = "";
-            if (texto.length < 2 || !window.catalogoGlobal) return;
-            const coincidencias = window.catalogoGlobal.filter(p =>
-              p.producto.toLowerCase().includes(texto) ||
-              p.categoria.toLowerCase().includes(texto) ||
-              p.subcategoria?.toLowerCase().includes(texto) ||
-              p.id.toLowerCase().includes(texto) ||
-              p.precio.toString().includes(texto)
-            );
-            coincidencias.slice(0, 5).forEach(p => {
-              const item = document.createElement("a");
-              item.className = "dropdown-item";
-              item.textContent = `${p.producto} (${p.categoria})`;
-              item.href = `producto.html?id=${p.id}`;
-              sugerencias.appendChild(item);
+
+          if (buscador && sugerencias) {
+            buscador.addEventListener("input", () => {
+              const texto = buscador.value.toLowerCase().trim();
+              sugerencias.innerHTML = "";
+
+              if (texto.length < 2 || !window.catalogoGlobal) return;
+
+              const coincidencias = window.catalogoGlobal.filter(p =>
+                p.producto.toLowerCase().includes(texto) ||
+                p.categoria.toLowerCase().includes(texto) ||
+                p.subcategoria?.toLowerCase().includes(texto) ||
+                p.id.toLowerCase().includes(texto) ||
+                p.precio.toString().includes(texto)
+              );
+
+              coincidencias.slice(0, 5).forEach(p => {
+                const item = document.createElement("a");
+                item.className = "dropdown-item";
+                item.textContent = `${p.producto} (${p.categoria})`;
+                item.href = `producto.html?id=${p.id}`;
+                sugerencias.appendChild(item);
+              });
+
+              sugerencias.classList.add("show");
             });
-            sugerencias.classList.add("show");
-          });
-          document.addEventListener("click", () => {
-            sugerencias.classList.remove("show");
-          });
+
+            document.addEventListener("click", () => {
+              sugerencias.classList.remove("show");
+            });
+          }
+
           cargarCatalogo();
         });
+
       fetch('footer.html')
         .then(res => res.text())
         .then(data => {
           document.getElementById('footer-container').innerHTML = data;
         });
+
       actualizarCarrito();
     });
+
     async function cargarCatalogo() {
       const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
       const respuesta = await fetch(url);
@@ -121,6 +148,7 @@
       renderCategoriasDestacadas(productos);
       renderMenuCategorias(productos);
     }
+
     function renderCategoriasDestacadas(productos) {
       const contenedor = document.getElementById("grid-categorias");
       contenedor.innerHTML = "";
@@ -130,17 +158,18 @@
       categoriasUnicas.forEach(categoria => {
         const productoDestacado = productos.find(p => p.categoria === categoria);
         if (!productoDestacado) return;
+
         const imagen = productoDestacado.imagen;
         const nombre = categoria;
 
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
-          <a href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
+          <a href="productos.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
             <img src="${imagen}" alt="${nombre}">
           </a>
           <div class="nombre-producto">${nombre}</div>
-          <a class="boton-comprar" href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
+          <a class="boton-comprar" href="productos.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
         `;
         contenedor.appendChild(tarjeta);
       });
@@ -148,15 +177,16 @@
 
     function renderMenuCategorias(productos) {
       const menu = document.getElementById("menu-categorias");
-      menu.innerHTML = "";
+      if (!menu) return;
 
+      menu.innerHTML = "";
       const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
 
       categoriasUnicas.forEach(categoria => {
         const item = document.createElement("a");
         item.className = "dropdown-item";
         item.textContent = categoria;
-        item.href = "INDEX.HTML";
+        item.href = "productos.html";
         item.onclick = () => {
           localStorage.setItem('categoriaSeleccionada', categoria);
         };
