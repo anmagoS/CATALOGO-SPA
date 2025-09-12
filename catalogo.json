@@ -570,5 +570,18 @@
     "url": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_2.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_3.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_4.021654.jpg",
     "subtipo": "DAMA ",
     "promo": true
+  },
+  {
+    "id": "9405735F",
+    "categoria": "CAMISAS",
+    "subcategoria": "SATIN",
+    "producto": "CAMISA SATIN LICRADO",
+    "material": "SATIN LICRADO",
+    "tallas": "S,M,L,XL",
+    "precio": 70000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_1.144758.jpg",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_1.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_2.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_3.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_4.144800.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_5.144801.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_6.144801.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_7.144803.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_8.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_9.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_10.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_11.144807.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_12.144807.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_13.144808.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_14.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_15.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_16.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_18.144813.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_19.144813.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_20.144815.jpg",
+    "subtipo": "CABALLERO",
+    "promo": false
   }
 ]
