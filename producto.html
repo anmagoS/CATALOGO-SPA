@@ -112,23 +112,34 @@ if (producto.promo === true) {
        imagenes.forEach((img, i) => {
   const tarjeta = document.createElement("div");
   tarjeta.className = "producto";
-  tarjeta.innerHTML = `
-    <div class="imagen-producto">
-      <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
-    </div>
-    <button class="boton-comprar">Agregar al carrito</button>
-  `;
+  const opcionesTalla = producto.tallas
+  .split(",")
+  .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
+  .join("");
+
+tarjeta.innerHTML = `
+  <div class="imagen-producto">
+    <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
+  </div>
+  <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
+  <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
+    ${opcionesTalla}
+  </select>
+  <button class="boton-comprar">Agregar al carrito</button>
+`;
+
   tarjeta.querySelector(".boton-comprar").onclick = () => {
     const precioFinal = producto.promo === true ? producto.precio * 0.9 : producto.precio;
-
-    agregarAlCarrito({
-      nombre: producto.producto,
-      imagen: img,
-      precioOriginal: producto.precio,
-      precioFinal: precioFinal,
-      promo: producto.promo === true
-    });
-
+    const selector = tarjeta.querySelector(".selector-talla");
+    const tallaSeleccionada = selector ? selector.value : "No especificada";
+agregarAlCarrito({
+  nombre: producto.producto,
+  imagen: img,
+  precioOriginal: producto.precio,
+  precioFinal: precioFinal,
+  promo: producto.promo === true,
+  talla: tallaSeleccionada
+});
     document.querySelector('[data-bs-target="#offcanvasRight"]').click();
   };
   galeria.appendChild(tarjeta);
@@ -191,7 +202,8 @@ if (producto.promo === true) {
   carrito.forEach((p, i) => {
     mensaje += `*${i + 1}.* ${p.nombre}\n`;
     mensaje += `🖼️ Imagen: ${p.imagen}\n`; // <-- Aquí la corrección
-   mensaje += p.promo
+    mensaje += `📏 Talla: ${p.talla || "No especificada"}\n`;
+    mensaje += p.promo
   ? `💲 Precio original: $${p.precioOriginal.toLocaleString("es-CO")}\n🔻 Descuento: 10%\n💰 Precio final: $${p.precioFinal.toLocaleString("es-CO")}\n\n`
   : `💲 Precio: $${p.precioFinal.toLocaleString("es-CO")}\n\n`;
 
