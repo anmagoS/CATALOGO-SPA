@@ -120,6 +120,9 @@
           ajustarCarrito(); // Ajustar posición del botón flotante
         });
 
+      // ✅ Cargar catálogo fuera del fetch del header
+      cargarCatalogo();
+
       fetch('footer.html')
         .then(res => res.text())
         .then(data => {
