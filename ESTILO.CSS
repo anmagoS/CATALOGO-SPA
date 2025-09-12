@@ -392,9 +392,9 @@ footer {
   border-radius: 6px;
 }
 .btn_shopping {
-  position: absolute;
+  position: absolute; /* flotante dentro del header */
   right: 20px;
-  top: 12px; /* ajusta según la altura del header */
+  top: 12px; /* ajusta según tu diseño */
   z-index: 1050;
   background-color: #ffffff;
   border: 2px solid #198754;
@@ -403,9 +403,12 @@ footer {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   color: #198754;
   font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .btn_shopping:hover {
   background-color: #198754;
   color: #ffffff;
