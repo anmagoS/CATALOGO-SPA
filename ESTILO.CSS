@@ -11,7 +11,6 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #f9f9f9;
 }
-
 /* === HEADER Y NAVEGACIÓN === */
 .header {
   background-color: #1B4557;
@@ -231,21 +230,6 @@ footer {
 }
 .footer-links a:hover {
   color: #f0f0f0;
-}
-
-.contador-carrito {
-  background: #dc3545; /* Rojo Bootstrap */
-  color: #fff;
-  border-radius: 50%;
-  padding: 2px 8px;
-  font-size: 14px;
-  font-weight: bold;
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  min-width: 22px;
-  text-align: center;
-  z-index: 2;
 }
 .carrito-icono {
   position: relative;
