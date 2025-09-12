@@ -33,7 +33,7 @@ html, body {
 .btn_shopping {
   position: fixed;
   right: 20px;
-  z-index: 1050;
+  z-index: 1030;
   background-color: #ffffff;
   border: 2px solid #198754;
   border-radius: 50px;
