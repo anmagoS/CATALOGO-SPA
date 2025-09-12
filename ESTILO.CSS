@@ -31,8 +31,7 @@ html, body {
 
 /* === BOTÓN FLOTANTE DEL CARRITO === */
 .btn_shopping {
-  position: absolute;
-  top: 12px;
+  position: fixed;
   right: 20px;
   z-index: 1050;
   background-color: #ffffff;
@@ -47,8 +46,8 @@ html, body {
   align-items: center;
   gap: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
 }
+
 .btn_shopping:hover {
   background-color: #198754;
   color: #ffffff;
