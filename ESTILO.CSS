@@ -410,7 +410,22 @@ footer {
 .btn_shopping {
   position: fixed;
   right: 20px;
-  top: 72px; /* se ajusta dinámicamente en JS */
+  top: 72px; /* este valor se ajusta dinámicamente en JS */
   z-index: 1050;
   background-color: white;
-  border
+  border-radius: 50px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: top 0.3s ease;
+}
+
+.contador-carrito {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
