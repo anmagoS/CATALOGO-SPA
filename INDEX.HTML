@@ -11,13 +11,11 @@
 </head>
 <body>
   <div id="header-container"></div>
-
   <!-- BOTÓN FLOTANTE DEL CARRITO -->
   <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
     <i class="bi bi-bag-heart"></i>
     <span id="contador-carrito" class="contador-carrito">0</span>
   </a>
-
   <!-- CONTENIDO PRINCIPAL -->
   <main id="contenido-productos" class="grid-productos"></main>
 
@@ -86,13 +84,13 @@
                   item.href = `producto.html?id=${p.id}`;
                 } else if (p.subcategoria?.toLowerCase() === texto) {
                   item.textContent = `📁 Subcategoría: ${p.subcategoria}`;
-                  item.href = `INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}&subcategoria=${encodeURIComponent(p.subcategoria)}`;
+                  item.href = `INICIO.HTML?categoria=${encodeURIComponent(p.categoria)}&subcategoria=${encodeURIComponent(p.subcategoria)}`;
                 } else if (p.categoria.toLowerCase() === texto) {
                   item.textContent = `📂 Categoría: ${p.categoria}`;
-                  item.href = `INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}`;
+                  item.href = `INICIO.HTML?categoria=${encodeURIComponent(p.categoria)}`;
                 } else if (p.subtipo?.toLowerCase() === texto) {
                   item.textContent = `🏷️ Subtipo: ${p.subtipo}`;
-                  item.href = `INDEX.HTML?subtipo=${encodeURIComponent(p.subtipo)}`;
+                  item.href = `INICIO.HTML?subtipo=${encodeURIComponent(p.subtipo)}`;
                 } else {
                   item.textContent = `${p.producto} (${p.categoria})`;
                   item.href = `producto.html?id=${p.id}`;
