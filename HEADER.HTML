@@ -16,25 +16,25 @@
   <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
     <i class="bi bi-list fs-1 text-white"></i>
   </button>
-
-  <!-- MENÚ LATERAL OFFCANVAS -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Menú</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body d-flex flex-column gap-3">
-      <a href="INICIO.HTML" class="nav-link">Inicio</a>
-      <a href="PROMOS.HTML" class="nav-link">Promociones</a>
-      <button class="dropdown-toggle nav-link text-start" id="toggle-categorias">Productos</button>
-      <div class="dropdown-menu" id="menu-categorias"></div>
-      <a href="https://docs.google.com/forms/..." target="_blank" class="nav-link">Contacto</a>
-    </div>
-  </div>
-
-  <!-- BOTÓN FLOTANTE DEL CARRITO -->
-  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-    <i class="bi bi-bag-heart"></i>
-    <span id="contador-carrito" class="contador-carrito">0</span>
-  </a>
 </header>
+
+<!-- MENÚ LATERAL OFFCANVAS -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menú</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column gap-3">
+    <a href="INICIO.HTML" class="nav-link">Inicio</a>
+    <a href="PROMOS.HTML" class="nav-link">Promociones</a>
+    <button class="dropdown-toggle nav-link text-start" id="toggle-categorias">Productos</button>
+    <div class="dropdown-menu" id="menu-categorias"></div>
+    <a href="https://docs.google.com/forms/..." target="_blank" class="nav-link">Contacto</a>
+  </div>
+</div>
+
+<!-- BOTÓN FLOTANTE DEL CARRITO (fuera del header) -->
+<a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+  <i class="bi bi-bag-heart"></i>
+  <span id="contador-carrito" class="contador-carrito">0</span>
+</a>
