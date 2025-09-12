@@ -1,10 +1,13 @@
 <header class="header d-flex justify-content-between align-items-center px-3 position-relative">
+  <!-- LOGO -->
   <div class="logo">
-    <img src="logo.jpg" alt="ANMAGO STORE" />
+    <a href="INICIO.HTML">
+      <img src="logo.jpg" alt="ANMAGO STORE" />
+    </a>
   </div>
 
   <!-- BARRA DE BÚSQUEDA -->
-  <div class="buscador-container w-50">
+  <div class="buscador-container w-50 position-relative">
     <input type="text" id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
     <div id="sugerencias" class="dropdown-menu position-absolute mt-1 w-100"></div>
   </div>
@@ -30,10 +33,8 @@
   </div>
 
   <!-- BOTÓN FLOTANTE DEL CARRITO -->
-  <div class="position-relative">
-    <a href="#" class="btn btn_shopping cart-badge position-fixed top-0 end-0 me-4 mt-3 swing-on-hover border bg-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-      <i class="bi-bag-heart"></i>
-      <span id="contador-carrito" class="contador-carrito">0</span>
-    </a>
-  </div>
+  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+    <i class="bi bi-bag-heart"></i>
+    <span id="contador-carrito" class="contador-carrito">0</span>
+  </a>
 </header>
