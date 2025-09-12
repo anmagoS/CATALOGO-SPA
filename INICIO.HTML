@@ -61,7 +61,7 @@
       const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
       const respuesta = await fetch(url);
       const productos = await respuesta.json();
-
+      window.catalogoGlobal = productos;
       renderCategoriasDestacadas(productos);
       renderMenuCategorias(productos);
     }
