@@ -137,6 +137,11 @@
 const categoriaParam = params.get("categoria");
 const subcategoriaParam = params.get("subcategoria");
 const subtipoParam = params.get("subtipo");
+const productosFiltrados = catalogoGlobal.filter(p =>
+  (!categoria || p.categoria === categoria) &&
+  (!subcategoria || p.subcategoria === subcategoria) &&
+  (!subtipo || p.subtipo === subtipo)
+);
 
 // Si no hay parámetros, usa la categoría guardada o la primera del catálogo
 const categoriaBase = categoriaParam || localStorage.getItem('categoriaSeleccionada') || data[0]?.categoria;
