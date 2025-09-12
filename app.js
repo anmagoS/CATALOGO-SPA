@@ -8,16 +8,47 @@ const contadorCarrito = document.querySelector("#contador-carrito"); // Elemento
 const closeButton = document.querySelector(".btn-close"); // Botón para cerrar el carrito
 // Espera a que el DOM se cargue, agrega un evento de click para añadir al carrito y renderiza el carrito.
 document.addEventListener("DOMContentLoaded", () => {
-  const contenedorProductos = document.getElementById("contenido-productos");
-  if (contenedorProductos) {
-    contenedorProductos.addEventListener("click", agregarAlCarrito);
-  } else {
-    console.warn("⚠️ No se encontró el contenedor de productos con ID 'contenido-productos'.");
-  }
-  renderizarCarrito();
-  actualizarContadorCarrito();
+  fetch("catalogo.json")
+    .then(res => res.json())
+    .then(data => {
+      renderizarProductos(data); // Nuevo render dinámico
+      renderizarCarrito();
+      actualizarContadorCarrito();
+    })
+    .catch(err => console.error("Error al cargar el catálogo:", err));
 });
+function renderizarProductos(catalogo) {
+  const contenedor = document.getElementById("contenido-productos");
+  contenedor.innerHTML = "";
 
+  catalogo.forEach(producto => {
+    const tallas = producto.tallas.split(",").map(t => t.trim());
+    const opcionesTalla = tallas.map(t => `<option value="${t}">${t}</option>`).join("");
+
+    const productoHTML = `
+      <div class="producto card mb-3" data-id="${producto.id}">
+        <img src="${producto.imagen}" alt="${producto.id}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="nombre-producto">${producto.nombre}</h5>
+          <p class="precio-producto">$${producto.precio.toLocaleString("es-CO")}</p>
+          <label for="talla-${producto.id}">Talla:</label>
+          <select class="selector-talla form-select mb-2" id="talla-${producto.id}">
+            ${opcionesTalla}
+          </select>
+          <button class="btn btn-primary btn-cart"
+            data-categoria="${producto.categoria}"
+            data-subcategoria="${producto.subcategoria}">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    `;
+    contenedor.insertAdjacentHTML("beforeend", productoHTML);
+  });
+
+  // Activar eventos de agregar al carrito
+  contenedor.addEventListener("click", agregarAlCarrito);
+}
 // Función para agregar al carrito
 function agregarAlCarrito(e) {
   // Asegurarse de que el clic proviene de un botón con la clase 'btn-cart'
@@ -31,8 +62,18 @@ function agregarAlCarrito(e) {
     // El carrito no se abre automáticamente después de la primera vez
     // Se obtiene el card relacionado con el botón para extraer la información del producto
     const card = btn.closest(".producto");
-    const producto = {
-      id: card.querySelector("img").alt, // Usamos el alt de la imagen como identificador único
+   const selectorTalla = card.querySelector(".selector-talla");
+const tallaSeleccionada = selectorTalla ? selectorTalla.value : "Sin talla";
+
+const producto = {
+  id: card.querySelector("img").alt + "-" + tallaSeleccionada, // ID único por talla
+  nombre: card.querySelector(".nombre-producto").textContent,
+  categoria: btn.dataset.categoria + " - " + btn.dataset.subcategoria,
+  precio: parseFloat(card.querySelector(".precio-producto").textContent.replace(/[^\d.]/g, "")),
+  cantidad: 1,
+  imagen: card.querySelector("img").src,
+  talla: tallaSeleccionada
+};
       nombre: card.querySelector(".nombre-producto").textContent, // Nombre del producto
       categoria: btn.dataset.categoria + " - " + btn.dataset.subcategoria, // Categoría del producto
       precio: parseFloat(card.querySelector(".precio-producto").textContent.replace(/[^\d.]/g, "")), // Precio del producto (sin el símbolo $)
