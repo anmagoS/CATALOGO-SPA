@@ -94,13 +94,13 @@
 
                   if (p.subcategoria?.toLowerCase() === texto) {
                     item.textContent = `📁 Subcategoría: ${p.subcategoria}`;
-                    item.href = `index.html?categoria=${encodeURIComponent(p.categoria)}&subcategoria=${encodeURIComponent(p.subcategoria)}`;
+                    item.href = `INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}&subcategoria=${encodeURIComponent(p.subcategoria)}`;
                   } else if (p.categoria.toLowerCase() === texto) {
                     item.textContent = `📂 Categoría: ${p.categoria}`;
-                    item.href = `index.html?categoria=${encodeURIComponent(p.categoria)}`;
+                    item.href = ``INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}`;
                   } else if (p.subtipo?.toLowerCase() === texto) {
                     item.textContent = `🏷️ Subtipo: ${p.subtipo}`;
-                    item.href = `index.html?subtipo=${encodeURIComponent(p.subtipo)}`;
+                    item.href = ``INDEX.HTML?subtipo=${encodeURIComponent(p.subtipo)}`;
                   } else {
                     item.textContent = `${p.producto} (${p.categoria})`;
                     item.href = `producto.html?id=${p.id}`;
