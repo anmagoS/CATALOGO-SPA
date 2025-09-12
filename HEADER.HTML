@@ -1,0 +1,39 @@
+<header class="header d-flex justify-content-between align-items-center px-3 position-relative">
+  <div class="logo">
+    <img src="logo.jpg" alt="ANMAGO STORE" />
+  </div>
+
+  <!-- BARRA DE BÚSQUEDA -->
+  <div class="buscador-container w-50">
+    <input type="text" id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
+    <div id="sugerencias" class="dropdown-menu position-absolute mt-1 w-100"></div>
+  </div>
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+    <i class="bi bi-list fs-1 text-white"></i>
+  </button>
+
+  <!-- MENÚ LATERAL OFFCANVAS -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-3">
+      <a href="INICIO.HTML" class="nav-link">Inicio</a>
+      <a href="PROMOS.HTML" class="nav-link">Promociones</a>
+      <button class="dropdown-toggle nav-link text-start" id="toggle-categorias">Productos</button>
+      <div class="dropdown-menu" id="menu-categorias"></div>
+      <a href="https://docs.google.com/forms/..." target="_blank" class="nav-link">Contacto</a>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE DEL CARRITO -->
+  <div class="position-relative">
+    <a href="#" class="btn btn_shopping cart-badge position-fixed top-0 end-0 me-4 mt-3 swing-on-hover border bg-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+      <i class="bi-bag-heart"></i>
+      <span id="contador-carrito" class="contador-carrito">0</span>
+    </a>
+  </div>
+</header>
