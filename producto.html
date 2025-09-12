@@ -211,6 +211,10 @@ agregarAlCarrito({
   const total = carrito.reduce((sum, p) => sum + parseFloat(p.precioFinal), 0);
   mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
   window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
+     // Vaciar el carrito después de enviar
+carrito = [];
+localStorage.removeItem("carritoAnmago");
+actualizarCarrito();
 }
 
     function renderMenuCategorias(productos) {
