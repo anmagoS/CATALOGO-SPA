@@ -209,6 +209,52 @@ actualizarCarrito();
       menu.style.display = menu.style.display === "block" ? "none" : "block";
     });
   </script>
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+
+      // Activar menú de categorías
+      document.getElementById("toggle-categorias").addEventListener("click", () => {
+        const menu = document.getElementById("menu-categorias");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      });
+
+      // Activar buscador
+      const buscador = document.getElementById("buscador");
+      const sugerencias = document.getElementById("sugerencias");
+
+      buscador.addEventListener("input", () => {
+        const texto = buscador.value.toLowerCase().trim();
+        sugerencias.innerHTML = "";
+
+        if (texto.length < 2 || !window.catalogoGlobal) return;
+
+        const coincidencias = window.catalogoGlobal.filter(p =>
+          p.producto.toLowerCase().includes(texto) ||
+          p.categoria.toLowerCase().includes(texto) ||
+          p.subcategoria?.toLowerCase().includes(texto) ||
+          p.id.toLowerCase().includes(texto) ||
+          p.precio.toString().includes(texto)
+        );
+
+        coincidencias.slice(0, 5).forEach(p => {
+          const item = document.createElement("a");
+          item.className = "dropdown-item";
+          item.textContent = `${p.producto} (${p.categoria})`;
+          item.href = `detalle.html?id=${p.id}`;
+          sugerencias.appendChild(item);
+        });
+
+        sugerencias.classList.add("show");
+      });
+
+      document.addEventListener("click", () => {
+        sugerencias.classList.remove("show");
+      });
+    });
+</script>
 
   <!-- FOOTER DINÁMICO -->
   <script>
