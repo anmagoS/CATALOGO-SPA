@@ -397,13 +397,13 @@ footer {
   top: -9999px; /* oculto hasta que JS lo alinee correctamente */
   z-index: 1050;
   background-color: #ffffff;
-  border: 2px solid #198754; /* verde institucional */
+  border: 2px solid #198754;
   border-radius: 50px;
   padding: 10px 14px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   color: #198754;
   font-size: 18px;
-  transition: top 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  transition: top 0.3s ease;
 }
 
 .btn_shopping:hover {
