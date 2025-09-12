@@ -5,13 +5,11 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   width: 100%;
-}
-body {
-  padding: 60px 12px 0 12px;
   font-family: 'Roboto', sans-serif;
   background-color: #f9f9f9;
 }
-/* === HEADER Y NAVEGACIÓN === */
+
+/* === HEADER FIJO === */
 .header {
   background-color: #1B4557;
   color: white;
@@ -30,11 +28,50 @@ body {
   height: 40px;
   margin-right: 8px;
 }
-.nav {
+
+/* === BOTÓN FLOTANTE DEL CARRITO === */
+.btn_shopping {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  z-index: 1050;
+  background-color: #ffffff;
+  border: 2px solid #198754;
+  border-radius: 50px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  color: #198754;
+  font-size: 18px;
+  font-weight: bold;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.btn_shopping:hover {
+  background-color: #198754;
   color: #ffffff;
 }
+.btn_shopping i {
+  color: inherit;
+  font-size: 20px;
+}
+.contador-carrito {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* === NAVEGACIÓN === */
 .nav-link {
   color: white;
   text-decoration: none;
@@ -46,10 +83,8 @@ body {
 }
 .nav-link:hover {
   background-color: #ffffff;
+  color: #1B4557;
 }
-
-/* === DROPDOWN === */
-.dropdown { position: relative; }
 .dropdown-toggle {
   cursor: pointer;
   background: none;
@@ -83,6 +118,7 @@ body {
 
 /* === CATÁLOGO Y PRODUCTOS === */
 .contenedor-categoria {
+  margin-top: 80px;
   margin-bottom: 60px;
   padding: 10px;
 }
@@ -143,21 +179,10 @@ body {
   color: #1B4557;
   font-weight: bold;
 }
+
+/* === BOTONES === */
 .boton-comprar,
 .btn-whatsapp {
-  background: #1b4557;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-.boton-comprar:hover,
-.btn-whatsapp:hover {
-  background: #16394a;
-}
-.boton-comprar {
   background: #fff;
   color: #1b4557;
   border: 2px solid #1b4557;
@@ -168,7 +193,8 @@ body {
   transition: background 0.2s, color 0.2s;
   display: inline-block;
 }
-.boton-comprar:hover {
+.boton-comprar:hover,
+.btn-whatsapp:hover {
   background: #1b4557;
   color: #fff;
 }
@@ -219,85 +245,29 @@ footer {
 }
 .footer-links {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-.footer-links a:hover {
-  color: #f0f0f0;
-}
-.carrito-icono {
-  position: relative;
-  display: inline-block;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 600px) {
-  .header { height: 56px; padding: 0 8px; }
-  body { padding-top: 56px; }
-  .grid-productos { grid-template-columns: repeat(2, 1fr); }
-  .boton-comprar { width: 90%; font-size: 13px; }
-}
-@media (max-width: 600px) {
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.footer {
-  width: 100%;
-  background-color: #1B4557;
-  color: white;
-  padding: 24px 16px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-size: 1rem;
-  gap: 20px;
-}
-
-.footer-links {
-  display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .footer-links a {
   color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
-
 .footer-links a:hover {
   color: #f0f0f0;
 }
-
 .medios-pago h4 {
   margin-bottom: 10px;
   font-size: 16px;
   color: white;
 }
-.seccion-centrada {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .logos-pago {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   align-items: center;
 }
-
 .logos-pago img {
   height: 32px;
   object-fit: contain;
@@ -305,7 +275,6 @@ footer {
   border-radius: 4px;
   padding: 4px;
 }
-
 .copyright {
   width: 100%;
   text-align: center;
@@ -313,40 +282,8 @@ footer {
   font-size: 0.9rem;
   color: white;
 }
-.medios-pago h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: white;
-}
 
-.logos-pago {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.logos-pago img {
-  height: 32px;
-  object-fit: contain;
-  background-color: white;
-  border-radius: 4px;
-  padding: 4px;
-}
-
-/* ESTILO.CSS */
-.btn-whatsapp {
-  background: #1b4557;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-.btn-whatsapp:hover {
-  background: #16394a;
-}
+/* === PROMOCIONES === */
 .etiqueta-promo {
   background-color: #FF5733;
   color: white;
@@ -358,24 +295,18 @@ footer {
   left: 10px;
   z-index: 10;
 }
-.navbar-toggler {
-  background-color: transparent;
-}
+
+/* === OFFCANVAS === */
 .offcanvas {
   background-color: #ffffff;
   color: #1B4557;
-}
-.offcanvas .nav-link {
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
 }
 .offcanvas .nav-link:hover {
   background-color: #1B4557;
   color: white;
 }
+
+/* === PRECIO Y PROMOCIONES === */
 #precio {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -391,50 +322,62 @@ footer {
   padding: 4px 8px;
   border-radius: 6px;
 }
-/* BOTÓN FLOTANTE DEL CARRITO */
-.btn_shopping {
-  position: absolute;              /* Se posiciona dentro del header */
-  top: 12px;                       /* Ajustado para alinearse visualmente */
-  right: 20px;
-  z-index: 1050;
-  background-color: #ffffff;       /* Fondo blanco para contraste */
-  border: 2px solid #198754;       /* Verde institucional */
-  border-radius: 50px;
-  padding: 10px 14px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  color: #198754;
-  font-size: 18px;
-  font-weight: bold;
+
+/* === SECCIONES CENTRADAS === */
+.seccion-centrada {
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
+  gap: 12px;
+  margin: 20px 0;
 }
-
-/* Hover visual */
-.btn_shopping:hover {
-  background-color: #198754;
-  color: #ffffff;
-}
-
-/* Ícono dentro del botón */
-.btn_shopping i {
-  color: inherit;
-  font-size: 20px;
-}
-
-/* CONTADOR DEL CARRITO */
-.contador-carrito {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 50%;
+.frase-destacada {
+  font-size: 1.2rem;
   font-weight: bold;
-  line-height: 1;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: #1B4557;
+  max-width: 600px;
+}
+.frase-secundaria {
+  font-size: 1rem;
+  color: #333;
+  max-width: 500px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .header {
+    height: 56px;
+    padding: 0 8px;
+  }
+  .btn_shopping {
+    top: 8px;
+    right: 12px;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .boton-comprar {
+    width: 90%;
+    font-size: 13px;
+  }
+  .vista-producto {
+    margin: 100px 10px 40px;
+    padding: 16px;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+  .logos-pago {
+    justify-content: center;
+  }
 }
