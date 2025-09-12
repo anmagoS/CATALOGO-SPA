@@ -65,19 +65,21 @@
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
 
-          // Ajustar posición del carrito flotante
-          const carritoBtn = document.querySelector(".btn_shopping");
-          const header = document.getElementById("header-container");
+          // Esperar a que el botón esté renderizado antes de alinear
+          setTimeout(() => {
+            const carritoBtn = document.querySelector(".btn_shopping");
+            const header = document.getElementById("header-container");
 
-          const ajustarCarrito = () => {
-            if (carritoBtn && header) {
-              const alturaHeader = header.offsetHeight;
-              carritoBtn.style.top = `${alturaHeader}px`;
-            }
-          };
+            const ajustarCarrito = () => {
+              if (carritoBtn && header) {
+                const alturaHeader = header.offsetHeight;
+                carritoBtn.style.top = `${alturaHeader}px`;
+              }
+            };
 
-          ajustarCarrito();
-          window.addEventListener("resize", ajustarCarrito);
+            ajustarCarrito();
+            window.addEventListener("resize", ajustarCarrito);
+          }, 100);
 
           // Activar menú lateral
           const toggle = document.getElementById("toggle-categorias");
@@ -163,11 +165,11 @@
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
-          <a href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
+          <a href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;" class="imagen-producto">
             <img src="${imagen}" alt="${nombre}">
           </a>
           <div class="nombre-producto">${nombre}</div>
-          <a class="boton-comprar" href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
+          <a class="boton-comprar" href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;">Ver más</a>
         `;
         contenedor.appendChild(tarjeta);
       });
