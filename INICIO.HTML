@@ -12,6 +12,12 @@
 <body style="margin: 0; padding: 0;">
   <div id="header-container"></div>
 
+  <!-- BOTÓN FLOTANTE DEL CARRITO -->
+  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+    <i class="bi bi-bag-heart"></i>
+    <span id="contador-carrito" class="contador-carrito">0</span>
+  </a>
+
   <!-- CONTENIDO PRINCIPAL -->
   <main class="contenedor-categoria">
     <h1 class="titulo-categoria">Explora nuestras colecciones</h1>
@@ -111,17 +117,26 @@
             });
           }
 
-          cargarCatalogo();
+          ajustarCarrito(); // Ajustar posición del botón flotante
         });
 
       fetch('footer.html')
         .then(res => res.text())
         .then(data => {
-                    document.getElementById('footer-container').innerHTML = data;
+          document.getElementById('footer-container').innerHTML = data;
         });
 
       actualizarCarrito();
     });
+
+    function ajustarCarrito() {
+      const header = document.querySelector(".header");
+      const carritoBtn = document.querySelector(".btn_shopping");
+      if (header && carritoBtn) {
+        const alturaHeader = header.offsetHeight;
+        carritoBtn.style.top = `${alturaHeader + 12}px`;
+      }
+    }
 
     async function cargarCatalogo() {
       const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
