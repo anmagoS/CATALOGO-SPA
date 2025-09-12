@@ -17,6 +17,13 @@
 </head>
 <body>
   <div id="header-container"></div>
+
+  <!-- BOTÓN FLOTANTE DEL CARRITO -->
+  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+    <i class="bi bi-bag-heart"></i>
+    <span id="contador-carrito" class="contador-carrito">0</span>
+  </a>
+
   <!-- CONTENIDO PRINCIPAL -->
   <main id="contenido-productos" class="grid-productos"></main>
 
@@ -44,65 +51,77 @@
   <!-- SCRIPTS -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Cargar header dinámico
       fetch('HEADER.HTML')
         .then(res => res.text())
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
 
-          // Activar menú lateral
-          document.getElementById("toggle-categorias").addEventListener("click", () => {
-            const menu = document.getElementById("menu-categorias");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-          });
+          const toggle = document.getElementById("toggle-categorias");
+          if (toggle) {
+            toggle.addEventListener("click", () => {
+              const menu = document.getElementById("menu-categorias");
+              if (menu) {
+                menu.style.display = menu.style.display === "block" ? "none" : "block";
+              }
+            });
+          }
 
-          // Activar buscador
           const buscador = document.getElementById("buscador");
           const sugerencias = document.getElementById("sugerencias");
 
-          buscador.addEventListener("input", () => {
-            const texto = buscador.value.toLowerCase().trim();
-            sugerencias.innerHTML = "";
+          if (buscador && sugerencias) {
+            buscador.addEventListener("input", () => {
+              const texto = buscador.value.toLowerCase().trim();
+              sugerencias.innerHTML = "";
 
-            if (texto.length < 2 || !window.catalogoGlobal) return;
+              if (texto.length < 2 || !window.catalogoGlobal) return;
 
-            const coincidencias = window.catalogoGlobal.filter(p =>
-              p.producto.toLowerCase().includes(texto) ||
-              p.categoria.toLowerCase().includes(texto) ||
-              p.subcategoria?.toLowerCase().includes(texto) ||
-              p.id.toLowerCase().includes(texto) ||
-              p.precio.toString().includes(texto)
-            );
+              const coincidencias = window.catalogoGlobal.filter(p =>
+                p.producto.toLowerCase().includes(texto) ||
+                p.categoria.toLowerCase().includes(texto) ||
+                p.subcategoria?.toLowerCase().includes(texto) ||
+                p.id.toLowerCase().includes(texto) ||
+                p.precio.toString().includes(texto)
+              );
 
-            coincidencias.slice(0, 5).forEach(p => {
-              const item = document.createElement("a");
-              item.className = "dropdown-item";
-              item.textContent = `${p.producto} (${p.categoria})`;
-              item.href = `producto.html?id=${p.id}`;
-              sugerencias.appendChild(item);
+              coincidencias.slice(0, 5).forEach(p => {
+                const item = document.createElement("a");
+                item.className = "dropdown-item";
+                item.textContent = `${p.producto} (${p.categoria})`;
+                item.href = `producto.html?id=${p.id}`;
+                sugerencias.appendChild(item);
+              });
+
+              sugerencias.classList.add("show");
             });
 
-            sugerencias.classList.add("show");
-          });
+            document.addEventListener("click", () => {
+              sugerencias.classList.remove("show");
+            });
+          }
 
-          document.addEventListener("click", () => {
-            sugerencias.classList.remove("show");
-          });
-
-          // Cargar catálogo
-          cargarCatalogo();
+          ajustarCarrito(); // ✅ Posiciona el botón flotante dinámicamente
         });
 
-      // Cargar footer dinámico
+      cargarCatalogo();
+
       fetch('footer.html')
         .then(res => res.text())
         .then(data => {
           document.getElementById('footer-container').innerHTML = data;
         });
 
-      // Activar carrito
       actualizarCarrito();
     });
+
+    function ajustarCarrito() {
+      const header = document.querySelector(".header");
+      const carritoBtn = document.querySelector(".btn_shopping");
+      if (header && carritoBtn) {
+        const alturaHeader = header.offsetHeight;
+        carritoBtn.style.top = `${alturaHeader + 12}px`;
+      }
+    }
 
     let catalogoGlobal = [];
 
@@ -173,10 +192,7 @@
     }
   </script>
 
-  <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- CARRITO MODULAR -->
   <script src="carrito.js"></script>
 </body>
 </html>
