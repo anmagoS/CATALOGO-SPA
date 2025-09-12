@@ -11,6 +11,7 @@
 </head>
 <body>
   <div id="header-container"></div>
+
   <!-- CONTENIDO PRINCIPAL -->
   <main class="contenedor-categoria">
     <h1 class="titulo-categoria">Explora nuestras colecciones</h1>
@@ -22,10 +23,12 @@
         title="Video de presentación" frameborder="0" allowfullscreen
         style="max-width: 560px; border-radius: 12px;"></iframe>
     </section>
+
     <section class="seccion-centrada">
       <h1 class="titulo-categoria">Aliados</h1>
       <a class="boton-comprar" href="https://sites.google.com/view/anmagostore/aliados" target="_blank">Catálogos Aliados</a>
     </section>
+
     <section class="seccion-centrada">
       <p class="frase-destacada">
         “La ropa no solo cubre tu cuerpo, sino que también expresa tu alma. En cada prenda, encuentras confianza, elegancia y la magia de ser tú mismo”
@@ -34,6 +37,7 @@
       <a class="boton-comprar" href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank">Deja tus datos</a>
     </section>
   </main>
+
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header border-bottom">
@@ -62,17 +66,21 @@
         .then(res => res.text())
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
-          // Ajustar posición del botón flotante del carrito
+
+          // Ajustar posición del carrito flotante
           const carritoBtn = document.querySelector(".btn_shopping");
           const header = document.getElementById("header-container");
+
           const ajustarCarrito = () => {
             if (carritoBtn && header) {
               const alturaHeader = header.offsetHeight;
               carritoBtn.style.top = `${alturaHeader}px`;
             }
           };
+
           ajustarCarrito();
           window.addEventListener("resize", ajustarCarrito);
+
           // Activar menú lateral
           const toggle = document.getElementById("toggle-categorias");
           if (toggle) {
@@ -150,30 +158,35 @@
       categoriasUnicas.forEach(categoria => {
         const productoDestacado = productos.find(p => p.categoria === categoria);
         if (!productoDestacado) return;
+
         const imagen = productoDestacado.imagen;
         const nombre = categoria;
+
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
-          <a href="productos.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
+          <a href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')" class="imagen-producto">
             <img src="${imagen}" alt="${nombre}">
           </a>
           <div class="nombre-producto">${nombre}</div>
-          <a class="boton-comprar" href="productos.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
+          <a class="boton-comprar" href="index.html" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}')">Ver más</a>
         `;
         contenedor.appendChild(tarjeta);
       });
     }
+
     function renderMenuCategorias(productos) {
       const menu = document.getElementById("menu-categorias");
       if (!menu) return;
+
       menu.innerHTML = "";
       const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+
       categoriasUnicas.forEach(categoria => {
         const item = document.createElement("a");
         item.className = "dropdown-item";
         item.textContent = categoria;
-        item.href = "productos.html";
+        item.href = "index.html";
         item.onclick = () => {
           localStorage.setItem('categoriaSeleccionada', categoria);
         };
@@ -181,6 +194,7 @@
       });
     }
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="carrito.js"></script>
 </body>
