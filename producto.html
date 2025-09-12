@@ -153,21 +153,22 @@ if (producto.promo === true) {
     const item = document.createElement("div");
     item.className = "mb-3 border-bottom pb-2";
     item.innerHTML = `
-      <div class="d-flex align-items-center gap-3">
-        <img src="${p.imagen}" width="60" style="border-radius:6px;">
-        <div>
-          <strong>${p.nombre}</strong><br>
-         ${
-  p.promo
-    ? `<small><s>$${p.precioOriginal.toLocaleString()} COP</s> <span class="text-success fw-bold">$${p.precioFinal.toLocaleString()} COP</span></small>`
-    : `<small>$${p.precioFinal.toLocaleString()} COP</small>`
-}
-        </div>
-        <button class="btn btn-sm btn-danger ms-auto" onclick="eliminarDelCarrito(${i})">
-          <i class="bi bi-trash3"></i>
-        </button>
-      </div>
-    `;
+  <div class="d-flex align-items-center gap-3">
+    <img src="${p.imagen}" width="60" style="border-radius:6px;">
+    <div>
+      <strong>${p.nombre}</strong><br>
+      <p class="mb-0 detalles-product">Talla: ${p.talla || "No especificada"}</p>
+      ${
+        p.promo
+          ? `<small><s>$${p.precioOriginal.toLocaleString()} COP</s> <span class="text-success fw-bold">$${p.precioFinal.toLocaleString()} COP</span></small>`
+          : `<small>$${p.precioFinal.toLocaleString()} COP</small>`
+      }
+    </div>
+    <button class="btn btn-sm btn-danger ms-auto" onclick="eliminarDelCarrito(${i})">
+      <i class="bi bi-trash3"></i>
+    </button>
+  </div>
+`;
     contenedor.appendChild(item);
   });
 
