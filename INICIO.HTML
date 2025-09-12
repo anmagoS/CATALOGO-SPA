@@ -34,7 +34,6 @@
       <a class="boton-comprar" href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank">Deja tus datos</a>
     </section>
   </main>
-
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header border-bottom">
@@ -63,21 +62,17 @@
         .then(res => res.text())
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
-
           // Ajustar posición del botón flotante del carrito
           const carritoBtn = document.querySelector(".btn_shopping");
           const header = document.getElementById("header-container");
-
           const ajustarCarrito = () => {
             if (carritoBtn && header) {
               const alturaHeader = header.offsetHeight;
               carritoBtn.style.top = `${alturaHeader}px`;
             }
           };
-
           ajustarCarrito();
           window.addEventListener("resize", ajustarCarrito);
-
           // Activar menú lateral
           const toggle = document.getElementById("toggle-categorias");
           if (toggle) {
@@ -155,10 +150,8 @@
       categoriasUnicas.forEach(categoria => {
         const productoDestacado = productos.find(p => p.categoria === categoria);
         if (!productoDestacado) return;
-
         const imagen = productoDestacado.imagen;
         const nombre = categoria;
-
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
@@ -171,14 +164,11 @@
         contenedor.appendChild(tarjeta);
       });
     }
-
     function renderMenuCategorias(productos) {
       const menu = document.getElementById("menu-categorias");
       if (!menu) return;
-
       menu.innerHTML = "";
       const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
-
       categoriasUnicas.forEach(categoria => {
         const item = document.createElement("a");
         item.className = "dropdown-item";
@@ -191,7 +181,6 @@
       });
     }
   </script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="carrito.js"></script>
 </body>
