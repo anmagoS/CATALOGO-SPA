@@ -68,39 +68,56 @@
 
               if (texto.length < 2 || !window.catalogoGlobal) return;
 
-              const coincidencias = window.catalogoGlobal.filter(p =>
-                p.producto.toLowerCase().includes(texto) ||
-                p.categoria.toLowerCase().includes(texto) ||
-                p.subcategoria?.toLowerCase().includes(texto) ||
-                p.subtipo?.toLowerCase().includes(texto)
-              );
+             buscador.addEventListener("input", () => {
+  const texto = buscador.value.toLowerCase().trim();
+  sugerencias.innerHTML = "";
 
-              coincidencias.slice(0, 5).forEach(p => {
-                const item = document.createElement("a");
-                item.className = "dropdown-item";
+  if (texto.length < 2 || !window.catalogoGlobal) return;
 
-                if (p.producto.toLowerCase() === texto) {
-                  item.textContent = `🛍️ Producto: ${p.producto}`;
-                  item.href = `producto.html?id=${p.id}`;
-                } else if (p.subcategoria?.toLowerCase() === texto) {
-                  item.textContent = `📁 Subcategoría: ${p.subcategoria}`;
-                  item.href = `INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}&subcategoria=${encodeURIComponent(p.subcategoria)}`;
-                } else if (p.categoria.toLowerCase() === texto) {
-                  item.textContent = `📂 Categoría: ${p.categoria}`;
-                  item.href = `INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}`;
-                } else if (p.subtipo?.toLowerCase() === texto) {
-                  item.textContent = `🏷️ Subtipo: ${p.subtipo}`;
-                  item.href = `INDEX.HTML?subtipo=${encodeURIComponent(p.subtipo)}`;
-                } else {
-                  item.textContent = `${p.producto} (${p.categoria})`;
-                  item.href = `producto.html?id=${p.id}`;
-                }
+  const exacto = window.catalogoGlobal.find(p =>
+    p.producto.toLowerCase().trim() === texto
+  );
 
-                sugerencias.appendChild(item);
-              });
+  const coincidencias = window.catalogoGlobal.filter(p =>
+    p.producto.toLowerCase().includes(texto) ||
+    p.categoria.toLowerCase().includes(texto) ||
+    p.subcategoria?.toLowerCase().includes(texto) ||
+    p.subtipo?.toLowerCase().includes(texto)
+  );
 
-              sugerencias.classList.add("show");
-            });
+  if (exacto) {
+    const item = document.createElement("a");
+    item.className = "dropdown-item";
+    item.textContent = `🛍️ Producto: ${exacto.producto}`;
+    item.href = `producto.html?id=${exacto.id}`;
+    sugerencias.appendChild(item);
+  } else {
+    coincidencias.slice(0, 5).forEach(p => {
+      const item = document.createElement("a");
+      item.className = "dropdown-item";
+
+      if (p.subcategoria?.toLowerCase() === texto) {
+        item.textContent = `📁 Subcategoría: ${p.subcategoria}`;
+        item.href = `index.html?categoria=${encodeURIComponent(p.categoria)}&subcategoria=${encodeURIComponent(p.subcategoria)}`;
+      } else if (p.categoria.toLowerCase() === texto) {
+        item.textContent = `📂 Categoría: ${p.categoria}`;
+        item.href = `index.html?categoria=${encodeURIComponent(p.categoria)}`;
+      } else if (p.subtipo?.toLowerCase() === texto) {
+        item.textContent = `🏷️ Subtipo: ${p.subtipo}`;
+        item.href = `index.html?subtipo=${encodeURIComponent(p.subtipo)}`;
+      } else {
+        item.textContent = `${p.producto} (${p.categoria})`;
+        item.href = `producto.html?id=${p.id}`;
+      }
+
+      sugerencias.appendChild(item);
+    });
+  }
+
+  sugerencias.classList.add("show");
+});
+
+
 
             document.addEventListener("click", () => {
               sugerencias.classList.remove("show");
