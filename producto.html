@@ -80,30 +80,12 @@ if (buscador && sugerencias) {
     );
 
     coincidencias.slice(0, 5).forEach(p => {
-      const item = document.createElement("a");
-      item.className = "dropdown-item";
-
-      if (p.producto.toLowerCase() === texto) {
-  item.textContent = `🛍️ Producto: ${p.producto}`;
-  item.href = `producto.html?id=${p.id}`;
-} else if (p.subcategoria?.toLowerCase() === texto) {
-  item.textContent = `📁 Subcategoría: ${p.subcategoria}`;
-  item.href = `INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}&subcategoria=${encodeURIComponent(p.subcategoria)}`;
-} else if (p.categoria.toLowerCase() === texto) {
-  item.textContent = `📂 Categoría: ${p.categoria}`;
-  item.href = `INDEX.HTML?categoria=${encodeURIComponent(p.categoria)}`;
-} else if (p.subtipo?.toLowerCase() === texto) {
-  item.textContent = `🏷️ Subtipo: ${p.subtipo}`;
-  item.href = `INDEX.HTML?subtipo=${encodeURIComponent(p.subtipo)}`;
-} else {
-  item.textContent = `${p.producto} (${p.categoria})`;
-  item.href = `producto.html?id=${p.id}`;
-}
-
-
-
-      sugerencias.appendChild(item);
-    });
+                const item = document.createElement("a");
+                item.className = "dropdown-item";
+                item.textContent = `${p.producto} (${p.categoria})`;
+                item.href = `producto.html?id=${p.id}`;
+                sugerencias.appendChild(item);
+              });
 
     sugerencias.classList.add("show");
   });
@@ -112,7 +94,6 @@ if (buscador && sugerencias) {
     sugerencias.classList.remove("show");
   });
 }
-
 
           ajustarCarrito();
           cargarProducto();
