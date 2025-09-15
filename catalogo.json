@@ -54,7 +54,7 @@
   {
     "id": "C9E8EEF3",
     "categoria": "VESTIDOS",
-    "subcategoria": "RIB",
+    "subcategoria": "FALDA LARGA",
     "producto": "IRENE",
     "material": "TELA RIB",
     "tallas": "UNICA",
@@ -67,7 +67,7 @@
   {
     "id": "03B56FA8",
     "categoria": "VESTIDOS",
-    "subcategoria": "RIB",
+    "subcategoria": "FALDA LARGA",
     "producto": "VICTORIA",
     "material": "TELA RIB",
     "tallas": "UNICA",
@@ -80,8 +80,8 @@
   {
     "id": "04C9FF63",
     "categoria": "VESTIDOS",
-    "subcategoria": "RIB",
-    "producto": "CAPRI",
+    "subcategoria": "CAPRI",
+    "producto": "VESTIDO CAPRI",
     "material": "TELA RIB",
     "tallas": "UNICA",
     "precio": 49000,
@@ -119,7 +119,7 @@
   {
     "id": "2FBB715D",
     "categoria": "VESTIDOS",
-    "subcategoria": "RIB",
+    "subcategoria": "GEMELA",
     "producto": "CONJUNTO GEMELA",
     "material": "TELA RIB",
     "tallas": "UNICA",
