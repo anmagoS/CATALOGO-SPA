@@ -15,8 +15,8 @@
   {
     "id": "8F9CAE6D",
     "categoria": "BODYS",
-    "subcategoria": "BODYS",
-    "producto": "BODYS",
+    "subcategoria": "MANGA LARGA",
+    "producto": "BODY CON TRANSPARENCIA",
     "material": "MALLA TEX W CON VARILLA",
     "tallas": "UNICA",
     "precio": 38000,
@@ -158,7 +158,7 @@
   {
     "id": "E8949BF3",
     "categoria": "BODYS",
-    "subcategoria": "BODYS",
+    "subcategoria": "MANGA LARGA",
     "producto": "BODYS",
     "material": "MALLA TEX Y JABON",
     "tallas": "UNICA",
@@ -210,8 +210,8 @@
   {
     "id": "24E3B3A5",
     "categoria": "BODYS",
-    "subcategoria": "BODYS",
-    "producto": "BODYS",
+    "subcategoria": "SIN MANGAS",
+    "producto": "BODY",
     "material": "MALLATEX CON VARILLA",
     "tallas": "UNICA",
     "precio": 35000,
@@ -249,7 +249,7 @@
   {
     "id": "342568EB",
     "categoria": "BODYS",
-    "subcategoria": "BODYS",
+    "subcategoria": "SIN MANGAS",
     "producto": "BODY BELLA",
     "material": "ENERGICA",
     "tallas": "UNICA",
@@ -262,7 +262,7 @@
   {
     "id": "5CBAF940",
     "categoria": "BODYS",
-    "subcategoria": "BODYS",
+    "subcategoria": "MANGA LARGA",
     "producto": "BURBUJA",
     "material": "JABON",
     "tallas": "UNICA",
@@ -275,7 +275,7 @@
   {
     "id": "D821A3F1",
     "categoria": "BODYS",
-    "subcategoria": "BODYS",
+    "subcategoria": "MANGA UNICA",
     "producto": "BODYS",
     "material": "VARILLA",
     "tallas": "UNICA",
@@ -288,8 +288,8 @@
   {
     "id": "93E5344B",
     "categoria": "BLUSAS",
-    "subcategoria": "BLUSAS",
-    "producto": "ESTRAPLE WILL",
+    "subcategoria": "STRAPLE",
+    "producto": "STRAPLE WILL",
     "material": "WILL",
     "tallas": "UNICA",
     "precio": 40000,
@@ -340,8 +340,8 @@
   {
     "id": "C48DF983",
     "categoria": "BODYS",
-    "subcategoria": "BODYS",
-    "producto": "COSTILLERO",
+    "subcategoria": "COSTILLERO",
+    "producto": "BODY COSTILLERO",
     "material": "MALLA TEX CON PEDRERIA",
     "tallas": "UNICA",
     "precio": 38000,
