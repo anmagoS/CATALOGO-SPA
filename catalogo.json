@@ -327,8 +327,8 @@
   {
     "id": "9EB99BAF",
     "categoria": "PANTALONES",
-    "subcategoria": "DAMA",
-    "producto": "PALAZZO",
+    "subcategoria": "PALAZZO",
+    "producto": "PANTALON PALAZZO",
     "material": "ESCUBA",
     "tallas": "UNICA",
     "precio": 52000,
@@ -353,8 +353,8 @@
   {
     "id": "0EB21E71",
     "categoria": "BLUSAS",
-    "subcategoria": "BLUSAS",
-    "producto": "ESTRAPLE CUERINA",
+    "subcategoria": "STRAPLE",
+    "producto": "STRAPLE CUERINA",
     "material": "CUERTOTEX",
     "tallas": "UNICA",
     "precio": 45000,
@@ -366,8 +366,8 @@
   {
     "id": "2B2B4BD1",
     "categoria": "BLUSAS",
-    "subcategoria": "BLUSAS",
-    "producto": "HENILLA",
+    "subcategoria": "CROP TOP",
+    "producto": "HEBILLA",
     "material": "ENERGICA",
     "tallas": "UNICA",
     "precio": 42000,
@@ -470,7 +470,7 @@
   {
     "id": "91E832A3",
     "categoria": "CAMISAS DAMA",
-    "subcategoria": "DAMA",
+    "subcategoria": "OVERSIZE",
     "producto": "OVERSIZE MANGA CORTA",
     "material": "POPELINA",
     "tallas": "UNICA",
