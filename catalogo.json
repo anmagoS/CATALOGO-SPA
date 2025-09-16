@@ -648,5 +648,31 @@
     "url": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_2.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_3.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_4.212909.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_5.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_6.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_7.212911.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_8.212912.jpg",
     "subtipo": "DAMA ",
     "promo": false
+  },
+  {
+    "id": "084BC5B4",
+    "categoria": "BLUSONES",
+    "subcategoria": "MANGA CORTA",
+    "producto": "BLUSON MANGA CORTA",
+    "material": "POPELINA",
+    "tallas": "S,M,L,XL",
+    "precio": 58000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_1.213220.jpg",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_1.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_2.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_3.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_4.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_5.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_6.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_7.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_8.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_9.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_10.213226.jpg",
+    "subtipo": "DAMA ",
+    "promo": false
+  },
+  {
+    "id": "9B1D26EB",
+    "categoria": "CAMISAS DAMA",
+    "subcategoria": "RAYADA MANGA CORTA",
+    "producto": "CAMISA RAYADA MANGA CORTA",
+    "material": "POPELINA",
+    "tallas": "S,M,L,XL",
+    "precio": 55000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_2.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_3.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_4.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_5.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_6.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_8.213520.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_9.213520.jpg",
+    "subtipo": "DAMA ",
+    "promo": false
   }
 ]
