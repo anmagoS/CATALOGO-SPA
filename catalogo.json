@@ -635,5 +635,18 @@
     "url": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_2.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_3.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_4.164143.jpg",
     "subtipo": "DAMA ",
     "promo": false
+  },
+  {
+    "id": "9BA4568F",
+    "categoria": "CAMISAS DAMA",
+    "subcategoria": "MANGA LARGA",
+    "producto": "RAYADA MANGA LARGA",
+    "material": "POPELINA",
+    "tallas": "S,M,L,XL",
+    "precio": 58000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_2.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_3.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_4.212909.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_5.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_6.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_7.212911.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_8.212912.jpg",
+    "subtipo": "DAMA ",
+    "promo": false
   }
 ]
