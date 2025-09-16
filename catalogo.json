@@ -674,5 +674,18 @@
     "url": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_2.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_3.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_4.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_5.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_6.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_8.213520.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_9.213520.jpg",
     "subtipo": "DAMA ",
     "promo": false
+  },
+  {
+    "id": "93B59852",
+    "categoria": "CAMISAS DAMA",
+    "subcategoria": "OVERZISE RAYADA MANGA CORTA",
+    "producto": "OVERZISE RAYADA MANGA CORTA",
+    "material": "POPELINA",
+    "tallas": "UNICA",
+    "precio": 55000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_1.214406.jpg",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_1.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_2.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_3.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_4.214408.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_5.214408.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_6.214409.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_7.214410.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_8.214410.jpg",
+    "subtipo": "DAMA ",
+    "promo": false
   }
 ]
