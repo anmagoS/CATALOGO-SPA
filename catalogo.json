@@ -622,5 +622,18 @@
     "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_1.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_2.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_3.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_4.164013.jpg",
     "subtipo": "DAMA ",
     "promo": false
+  },
+  {
+    "id": "CD8E11A2",
+    "categoria": "CHALECOS",
+    "subcategoria": "CUERINA",
+    "producto": "CHALECO CUERINA",
+    "material": "CUERINA",
+    "tallas": "UNICA",
+    "precio": 68000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_2.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_3.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_4.164143.jpg",
+    "subtipo": "DAMA ",
+    "promo": false
   }
 ]
