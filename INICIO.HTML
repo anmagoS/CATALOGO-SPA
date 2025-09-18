@@ -21,7 +21,7 @@
   <!-- CONTENIDO PRINCIPAL -->
   <main class="contenedor-categoria">
     <h1 class="titulo-categoria">Explora nuestras colecciones</h1>
-    <div id="menu-categorias" class="dropdown-menu"></div> <!-- ✅ Menú dinámico -->
+    <div id="menu-categorias" class="dropdown-menu"></div>
     <div id="grid-categorias" class="grid-productos"></div>
 
     <section class="seccion-centrada">
@@ -178,21 +178,82 @@
       if (header && carritoBtn) {
         const alturaHeader = header.offsetHeight;
         carritoBtn.style.top = `${alturaHeader + 12}px`;
-    }
-  }
+      }
+       }
 
-  function actualizarCarrito() {
-    // Esta función debe estar definida en carrito.js
-    // Aquí solo se asegura que se invoque al cargar
-    if (typeof cargarCarritoDesdeStorage === "function") {
-      cargarCarritoDesdeStorage();
+    function actualizarCarrito() {
+      if (typeof cargarCarritoDesdeStorage === "function") {
+        cargarCarritoDesdeStorage();
+      }
     }
-  }
-</script>
 
-<!-- Librerías externas -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="carrito.js"></script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('HEADER.HTML')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+
+          const toggle = document.getElementById("toggle-categorias");
+          if (toggle) {
+            toggle.addEventListener("click", () => {
+              const menu = document.getElementById("menu-categorias");
+              if (menu) {
+                menu.style.display = menu.style.display === "block" ? "none" : "block";
+              }
+            });
+          }
+
+          const buscador = document.getElementById("buscador");
+          const sugerencias = document.getElementById("sugerencias");
+
+          if (buscador && sugerencias) {
+            buscador.addEventListener("input", () => {
+              const texto = buscador.value.toLowerCase().trim();
+              sugerencias.innerHTML = "";
+
+              if (texto.length < 2 || !window.catalogoGlobal) return;
+
+              const coincidencias = window.catalogoGlobal.filter(p =>
+                p.producto.toLowerCase().includes(texto) ||
+                p.categoria.toLowerCase().includes(texto) ||
+                p.subcategoria?.toLowerCase().includes(texto) ||
+                p.id.toLowerCase().includes(texto) ||
+                p.precio.toString().includes(texto)
+              );
+
+              coincidencias.slice(0, 5).forEach(p => {
+                const item = document.createElement("a");
+                item.className = "dropdown-item";
+                item.textContent = `${p.producto} (${p.categoria})`;
+                item.href = `producto.html?id=${p.id}`;
+                sugerencias.appendChild(item);
+              });
+
+              sugerencias.classList.add("show");
+            });
+
+            document.addEventListener("click", () => {
+              sugerencias.classList.remove("show");
+            });
+          }
+
+          ajustarCarrito();
+        });
+
+      cargarCatalogo();
+
+      fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+
+      actualizarCarrito();
+    });
+  </script>
+
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="carrito.js"></script>
 </body>
 </html>
-
