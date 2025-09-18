@@ -5,6 +5,7 @@
       <img src="logo.jpg" alt="ANMAGO STORE" style="height: 48px;" />
     </a>
   </div>
+
   <!-- BOTÓN HAMBURGUESA -->
   <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
     <i class="bi bi-list fs-1 text-white"></i>
@@ -17,11 +18,27 @@
     <h5 class="offcanvas-title">Menú</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
   </div>
+
   <div class="offcanvas-body d-flex flex-column gap-3">
     <a href="INICIO.HTML" class="nav-link">Inicio</a>
     <a href="PROMOS.HTML" class="nav-link">Promociones</a>
-    <button class="nav-link text-start" id="toggle-categorias">Categorías ▾</button>
-<div id="menu-categorias" class="d-flex flex-column ps-3 gap-2" style="display: none;"></div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank" class="nav-link">Contacto</a>
+
+    <!-- BOTÓN CATEGORÍAS -->
+    <button class="nav-link text-start" id="toggle-categorias" style="cursor: pointer;">
+      Categorías ▾
+    </button>
+
+    <!-- MENÚ DESPLEGABLE DE CATEGORÍAS -->
+    <div id="menu-categorias"
+         class="d-flex flex-column ps-3 gap-2"
+         style="display: none; background: #f8f9fa; padding: 0.5rem 0;">
+      <!-- Las categorías se insertan dinámicamente desde app.js -->
+    </div>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
+       target="_blank"
+       class="nav-link">
+      Contacto
+    </a>
   </div>
 </div>
