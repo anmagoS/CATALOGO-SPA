@@ -32,3 +32,46 @@
     <a href="https://docs.google.com/forms/..." target="_blank" class="nav-link">Contacto</a>
   </div>
 </div>
+
+<!-- SCRIPT DE BÚSQUEDA INTELIGENTE -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buscador = document.getElementById("buscador");
+    const sugerencias = document.getElementById("sugerencias");
+
+    if (!buscador || !sugerencias) return;
+
+    buscador.addEventListener("input", () => {
+      const texto = buscador.value.toLowerCase().trim();
+      sugerencias.innerHTML = "";
+
+      if (texto.length < 2 || !window.catalogoGlobal) return;
+
+      const coincidencias = window.catalogoGlobal.filter(p =>
+        p.producto?.toLowerCase().includes(texto) ||
+        p.tipo?.toLowerCase().includes(texto) ||
+        p.subtipo?.toLowerCase().includes(texto) ||
+        p.categoria?.toLowerCase().includes(texto) ||
+        p.material?.toLowerCase().includes(texto) ||
+        p.precio?.toString().includes(texto)
+      );
+
+      coincidencias.slice(0, 6).forEach(p => {
+        const item = document.createElement("a");
+        item.className = "dropdown-item d-flex align-items-center gap-2";
+        item.href = `producto.html?id=${p.id}`;
+        item.innerHTML = `
+          <img src="${p.imagen}" alt="${p.producto}" style="width:40px; height:40px; object-fit:cover; border-radius:4px;">
+          <span>${p.producto} <small class="text-muted">(${p.tipo} > ${p.subtipo})</small></span>
+        `;
+        sugerencias.appendChild(item);
+      });
+
+      sugerencias.classList.add("show");
+    });
+
+    document.addEventListener("click", () => {
+      sugerencias.classList.remove("show");
+    });
+  });
+</script>
