@@ -258,5 +258,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (document.getElementById("contenido-productos")) {
     renderizarProductos(window.catalogoGlobal);
   }
+  function renderMenuCategorias(productos) {
+  const menu = document.getElementById("menu-categorias");
+  if (!menu) return;
+
+  menu.innerHTML = "";
+
+  const categoriasUnicas = [...new Set(productos.map(p => p.categoria).filter(Boolean))];
+
+  categoriasUnicas.forEach(categoria => {
+    const item = document.createElement("a");
+    item.className = "dropdown-item";
+    item.textContent = categoria;
+    item.href = `PRODUCTOS.HTML?categoria=${encodeURIComponent(categoria)}`;
+    menu.appendChild(item);
+}
 });
 
