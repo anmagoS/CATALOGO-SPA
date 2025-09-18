@@ -1,24 +1,74 @@
-// Variables
-let articulosCarrito = []; // Array para almacenar los productos agregados al carrito
-const carritoContainer = document.getElementById("carrito-contenido"); // Corregido
-const offcanvas = document.querySelector(".offcanvas"); // Elemento del carrito (offcanvas)
-const btn_shopping = document.querySelector(".btn_shopping"); // Botón para mostrar el carrito
-const subtotalElement = document.getElementById("subtotal"); // Seleccionar el elemento del subtotal para mostrar el total
-const contadorCarrito = document.querySelector("#contador-carrito"); // Elemento que muestra el número de productos en el carrito
-const closeButton = document.querySelector(".btn-close"); // Botón para cerrar el carrito
-// Espera a que el DOM se cargue, agrega un evento de click para añadir al carrito y renderiza el carrito.
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("catalogo.json")
-    .then(res => res.json())
-    .then(data => {
-      renderizarProductos(data); // Nuevo render dinámico
-      renderizarCarrito();
-      actualizarContadorCarrito();
-    })
-    .catch(err => console.error("Error al cargar el catálogo:", err));
-});
+// Variables globales
+let articulosCarrito = [];
+const carritoContainer = document.getElementById("carrito-contenido");
+const offcanvas = document.querySelector(".offcanvas");
+const btn_shopping = document.querySelector(".btn_shopping");
+const subtotalElement = document.getElementById("subtotal");
+const contadorCarrito = document.querySelector("#contador-carrito");
+const closeButton = document.querySelector(".btn-close");
+const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
+
+// Cargar catálogo global para buscador y productos
+async function cargarCatalogoGlobal() {
+  try {
+    const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
+    const respuesta = await fetch(url);
+    const productos = await respuesta.json();
+    window.catalogoGlobal = productos;
+  } catch (err) {
+    console.error("Error al cargar el catálogo:", err);
+  }
+}
+
+// Activar buscador inteligente
+function activarBuscador() {
+  const buscador = document.getElementById("buscador");
+  const sugerencias = document.getElementById("sugerencias");
+
+  if (!buscador || !sugerencias || !window.catalogoGlobal) return;
+
+  buscador.addEventListener("input", () => {
+    const texto = buscador.value.toLowerCase().trim();
+    sugerencias.innerHTML = "";
+
+    if (texto.length < 2) return;
+
+    const coincidencias = window.catalogoGlobal.filter(p => {
+      const normalizar = str => str?.toString().toLowerCase().trim();
+      return (
+        normalizar(p.producto).includes(texto) ||
+        normalizar(p.tipo).includes(texto) ||
+        normalizar(p.subtipo).includes(texto) ||
+        normalizar(p.categoria).includes(texto) ||
+        normalizar(p.material).includes(texto) ||
+        normalizar(p.precio).includes(texto)
+      );
+    });
+
+    coincidencias.slice(0, 6).forEach(p => {
+      const item = document.createElement("a");
+      item.className = "dropdown-item d-flex align-items-center gap-2";
+      item.href = `producto.html?id=${p.id}`;
+      item.innerHTML = `
+        <img src="${p.imagen}" alt="${p.producto}" style="width:40px; height:40px; object-fit:cover; border-radius:4px;">
+        <span>${p.producto} <small class="text-muted">(${p.tipo} > ${p.subtipo})</small></span>
+      `;
+      sugerencias.appendChild(item);
+    });
+
+    sugerencias.classList.add("show");
+  });
+
+  document.addEventListener("click", () => {
+    sugerencias.classList.remove("show");
+  });
+}
+
+// Render dinámico de productos (si aplica)
 function renderizarProductos(catalogo) {
   const contenedor = document.getElementById("contenido-productos");
+  if (!contenedor) return;
+
   contenedor.innerHTML = "";
 
   catalogo.forEach(producto => {
@@ -29,7 +79,7 @@ function renderizarProductos(catalogo) {
       <div class="producto card mb-3" data-id="${producto.id}">
         <img src="${producto.imagen}" alt="${producto.id}" class="card-img-top" />
         <div class="card-body">
-          <h5 class="nombre-producto">${producto.nombre}</h5>
+          <h5 class="nombre-producto">${producto.producto}</h5>
           <p class="precio-producto">$${producto.precio.toLocaleString("es-CO")}</p>
           <label for="talla-${producto.id}">Talla:</label>
           <select class="selector-talla form-select mb-2" id="talla-${producto.id}">
@@ -46,72 +96,52 @@ function renderizarProductos(catalogo) {
     contenedor.insertAdjacentHTML("beforeend", productoHTML);
   });
 
-  // Activar eventos de agregar al carrito
   contenedor.addEventListener("click", agregarAlCarrito);
 }
+
 // Función para agregar al carrito
 function agregarAlCarrito(e) {
-  // Asegurarse de que el clic proviene de un botón con la clase 'btn-cart'
   const btn = e.target.closest(".btn-cart");
-  if (btn) {
-    // Muestra el offcanvas y aplica un efecto visual al botón del carrito
-    if (!localStorage.getItem("carritoMostrado")) {
-      offcanvas.classList.add("show");
-      localStorage.setItem("carritoMostrado", "true");
-    }
-    // El carrito no se abre automáticamente después de la primera vez
-    // Se obtiene el card relacionado con el botón para extraer la información del producto
-    const card = btn.closest(".producto");
-   const selectorTalla = card.querySelector(".selector-talla");
-const tallaSeleccionada = selectorTalla ? selectorTalla.value : "Sin talla";
+  if (!btn) return;
 
-const producto = {
-  id: card.querySelector("img").alt + "-" + tallaSeleccionada, // ID único por talla
-  nombre: card.querySelector(".nombre-producto").textContent,
-  categoria: btn.dataset.categoria + " - " + btn.dataset.subcategoria,
-  precio: parseFloat(card.querySelector(".precio-producto").textContent.replace(/[^\d.]/g, "")),
-  cantidad: 1,
-  imagen: card.querySelector("img").src,
-  talla: tallaSeleccionada
-};
-      nombre: card.querySelector(".nombre-producto").textContent, // Nombre del producto
-      categoria: btn.dataset.categoria + " - " + btn.dataset.subcategoria, // Categoría del producto
-      precio: parseFloat(card.querySelector(".precio-producto").textContent.replace(/[^\d.]/g, "")), // Precio del producto (sin el símbolo $)
-      cantidad: 1, // Siempre lo agregamos con cantidad 1
-      imagen: card.querySelector("img").src, // Imagen del producto
-    };
-    // Verificar si el producto ya existe en el carrito
-    const existe = articulosCarrito.find((item) => item.id === producto.id);
-    if (existe) {
-      // Si el producto ya está en el carrito, solo incrementamos su cantidad
-      existe.cantidad++;
-    } else {
-      // Si el producto no está, lo agregamos al carrito
-      articulosCarrito.push(producto);
-    }
-    guardarCarrito();
-    // Renderizar el carrito actualizado
-    renderizarCarrito();
-    // Actualizar el subtotal del carrito
-    actualizarSubtotal();
-    // Actualizar el contador de productos en el carrito
-    actualizarContadorCarrito();
+  const card = btn.closest(".producto");
+  const selectorTalla = card.querySelector(".selector-talla");
+  const tallaSeleccionada = selectorTalla ? selectorTalla.value : "Sin talla";
 
-    actualizarEstadoBotonWhatsApp(); // Actualizar el estado del botón de WhatsApp
+  const producto = {
+    id: card.querySelector("img").alt + "-" + tallaSeleccionada,
+    nombre: card.querySelector(".nombre-producto").textContent,
+    categoria: btn.dataset.categoria + " - " + btn.dataset.subcategoria,
+    precio: parseFloat(card.querySelector(".precio-producto").textContent.replace(/[^\d.]/g, "")),
+    cantidad: 1,
+    imagen: card.querySelector("img").src,
+    talla: tallaSeleccionada
+  };
+
+  const existe = articulosCarrito.find(item => item.id === producto.id);
+  if (existe) {
+    existe.cantidad++;
+  } else {
+    articulosCarrito.push(producto);
   }
+
+  guardarCarrito();
+  renderizarCarrito();
+  actualizarSubtotal();
+  actualizarContadorCarrito();
+  actualizarEstadoBotonWhatsApp();
 }
+
 // Función para renderizar el carrito
 function renderizarCarrito() {
-  // Limpiar contenido previo del carrito
   carritoContainer.innerHTML = "";
 
-  // Si el carrito está vacío, mostrar un mensaje
   if (articulosCarrito.length === 0) {
     carritoContainer.innerHTML = "<p class='text-center'>El carrito está vacío.</p>";
+    return;
   }
 
-  // Iterar sobre los productos en el carrito y renderizarlos
-  articulosCarrito.forEach((producto) => {
+  articulosCarrito.forEach(producto => {
     const itemHTML = `
       <div class="container mb-3">
         <div class="row align-items-center border-bottom py-2">
@@ -123,169 +153,77 @@ function renderizarCarrito() {
             <p class="mb-0 detalles-product">Categoría: ${producto.categoria}</p>
           </div>
           <div class="col-3 text-end">
-            <!-- Mostrar cantidad y precio total del producto -->
-            <span class="fw-bold"><span class="fs-6 color-gris">${
-              producto.cantidad
-            }<span class="fs-5 precio">$${(producto.precio * producto.cantidad).toLocaleString("es-CO")}</span>
+            <span class="fw-bold">
+              ${producto.cantidad} × <span class="fs-5 precio">$${(producto.precio * producto.cantidad).toLocaleString("es-CO")}</span>
             </span>
-
-            <!-- Botón para eliminar el producto del carrito -->
-            <button class="btn btn-danger mt-2 btn-borrar" data-id="${
-              producto.id
-            }"><i class="bi bi-trash3"></i>
+            <button class="btn btn-danger mt-2 btn-borrar" data-id="${producto.id}">
+              <i class="bi bi-trash3"></i>
             </button>
           </div>
         </div>
       </div>
     `;
-    // Insertar el HTML del producto en el contenedor del carrito
     carritoContainer.insertAdjacentHTML("beforeend", itemHTML);
   });
-  // Agregar eventos de eliminación de producto
+
   agregarEventosBorrar();
 }
-// Función para eliminar un producto del carrito
+
+// Función para eliminar productos del carrito
 function agregarEventosBorrar() {
-  // Obtener todos los botones de eliminar del carrito
-  const botonesBorrar = document.querySelectorAll(".btn-borrar");
-
-  botonesBorrar.forEach((boton) => {
-    boton.addEventListener("click", (e) => {
-      // Obtener el id del producto a eliminar desde el atributo data-id del botón
+  document.querySelectorAll(".btn-borrar").forEach(boton => {
+    boton.addEventListener("click", e => {
       const productoId = e.target.closest("button").dataset.id;
-
-      // Actualizar el carrito, disminuyendo la cantidad o eliminando el producto si la cantidad es 1
       articulosCarrito = articulosCarrito
-        .map((producto) => {
-          if (producto.id === productoId) {
-            if (producto.cantidad > 1) {
-              producto.cantidad--; // Disminuir la cantidad si es mayor a 1
-              return producto; // Retornar el producto actualizado
-            }
-            return null; // Eliminar el producto si la cantidad es 1
-          }
-          return producto; // Dejar los demás productos sin cambios
-        })
-        .filter((producto) => producto !== null); // Filtrar los productos eliminados
+        .map(p => (p.id === productoId ? (p.cantidad > 1 ? { ...p, cantidad: p.cantidad - 1 } : null) : p))
+        .filter(p => p !== null);
 
-      // Volver a renderizar el carrito con los cambios
+      guardarCarrito();
       renderizarCarrito();
-      // Actualizar el subtotal del carrito
       actualizarSubtotal();
-      // Actualizar el contador de productos en el carrito
       actualizarContadorCarrito();
-
-      actualizarEstadoBotonWhatsApp(); // Actualizar el estado del botón de WhatsApp
+      actualizarEstadoBotonWhatsApp();
     });
   });
 }
-// Función para calcular y actualizar el subtotal
-function actualizarSubtotal() {
-  const subtotal = articulosCarrito.reduce((total, producto) => {
-    return total + producto.precio * producto.cantidad;
-  }, 0);
 
-  // Formatear el subtotal con separador de miles y decimales solo si son necesarios
+// Subtotal
+function actualizarSubtotal() {
+  const subtotal = articulosCarrito.reduce((total, p) => total + p.precio * p.cantidad, 0);
   const opciones = {
     minimumFractionDigits: subtotal % 1 === 0 ? 0 : 2,
     maximumFractionDigits: 2
   };
-
-  const subtotalFormateado = subtotal.toLocaleString("es-CO", opciones);
-
-  subtotalElement.textContent = `$${subtotalFormateado}`;
+  subtotalElement.textContent = `$${subtotal.toLocaleString("es-CO", opciones)}`;
 }
 
-// Función para actualizar el contador de productos en el carrito
+// Contador
 function actualizarContadorCarrito() {
-  const contador = document.getElementById("contador-carrito");
-  const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
-  contador.textContent = carrito.length;
+  contadorCarrito.textContent = articulosCarrito.length;
 }
 
-// Función para generar y enviar un pedido a través de WhatsApp
+// WhatsApp
 function generarPedidoWhatsApp() {
   if (articulosCarrito.length === 0) return alert("Tu carrito está vacío.");
 
   let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
-
-  articulosCarrito.forEach((producto, index) => {
-    mensaje += `*${index + 1}.* ${producto.nombre}\n`;
-    mensaje += `🔗 Imagen: ${producto.imagen}\n`; // No codifiques la URL aquí
-    mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
+  articulosCarrito.forEach((p, i) => {
+    mensaje += `*${i + 1}.* ${p.nombre}\n🔗 Imagen: ${p.imagen}\n💲 Precio: $${p.precio.toLocaleString("es-CO")}\n\n`;
   });
 
-  const total = articulosCarrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
-  mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
-  mensaje += "✅ *¡Gracias por tu atención!*";
+ const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
+mensaje += "✅ *¡Gracias por tu atención!*";
 
-  // Solo codifica el mensaje final, NO las URLs internas
-  const mensajeCodificado = encodeURIComponent(mensaje);
-  const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
-  window.open(urlWhatsApp, "_blank");
+// Codificar el mensaje para WhatsApp
+const mensajeCodificado = encodeURIComponent(mensaje);
+const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
+window.open(urlWhatsApp, "_blank");
 
-  // Limpiar carrito después de enviar
-  articulosCarrito = [];
-  guardarCarrito();
-  renderizarCarrito();
-  actualizarSubtotal();
-  actualizarContadorCarrito();
-  actualizarEstadoBotonWhatsApp();
-}
-// Función para mostrar/ocultar el carrito con animación
-function toggleOffcanvas(show) {
-  // Añadir transiciones para el efecto visual de apertura/cierre
-  offcanvas.style.transition = "transform 0.6s ease, opacity 0.6s ease";
-
-  // Mostrar el carrito si 'show' es true, ocultarlo si es false
-  if (show) {
-    offcanvas.classList.add("show");
-  } else {
-    offcanvas.classList.remove("show");
-    offcanvas.classList.add("hiding");
-    // Eliminar la clase 'hiding' después de la animación
-    setTimeout(() => offcanvas.classList.remove("hiding"), 600);
-  }
-}
-
-// Evento para mostrar/ocultar el carrito al hacer clic en el botón de compra
-btn_shopping.addEventListener("click", () => {
-  toggleOffcanvas(!offcanvas.classList.contains("show"));
-  // Añadir una animación de balanceo al botón
-  btn_shopping.classList.toggle("balanceo");
-});
-
-// Evento para cerrar el carrito al hacer clic en el botón de cerrar
-closeButton.addEventListener("click", () => toggleOffcanvas(false));
-
-// Deshabilitar el botón si el carrito está vacío
-const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
-
-function actualizarEstadoBotonWhatsApp() {
-  if (articulosCarrito.length === 0) {
-    btnWhatsApp.disabled = true; // Deshabilitar el botón si el carrito está vacío
-  } else {
-    btnWhatsApp.disabled = false; // Habilitar el botón si hay productos en el carrito
-  }
-}
-
-// Llamar a la función para actualizar el estado del botón cada vez que se actualice el carrito
+// Limpiar el carrito después de enviar
+articulosCarrito = [];
+guardarCarrito();
+renderizarCarrito();
+actualizarSubtotal();
+actualizarContadorCarrito();
 actualizarEstadoBotonWhatsApp();
-
-// Función para guardar el carrito en el almacenamiento local
-function guardarCarrito() {
-  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
-}
-
-// Función para actualizar el carrito
-function actualizarCarrito() {
-  const contenedor = document.getElementById("carrito-contenido");
-  const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
-  contenedor.innerHTML = "";
-  carrito.forEach((p, i) => {
-    // ...renderiza cada producto...
-  });
-  localStorage.setItem("carritoAnmago", JSON.stringify(carrito));
-  actualizarContadorCarrito();
-  actualizarCarrito();
-}
