@@ -225,3 +225,26 @@ function generarPedidoWhatsApp() {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarCatalogoGlobal();
+
+  const header = await fetch("HEADER.HTML").then(res => res.text());
+  document.getElementById("header-container").innerHTML = header;
+
+  // Esperar al siguiente ciclo de render para asegurar que #buscador existe
+  await new Promise(resolve => requestAnimationFrame(resolve));
+
+  if (typeof activarBuscador === "function") {
+    activarBuscador();
+  }
+
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
+
+  ajustarCarrito();
+  cargarCarritoDesdeStorage();
+
+  if (document.getElementById("contenido-productos")) {
+    renderizarProductos(window.catalogoGlobal);
+  }
+});
