@@ -116,8 +116,7 @@
 
     document.addEventListener("DOMContentLoaded", async () => {
       const header = await fetch("HEADER.HTML").then(res => res.text());
-      document.getElementById("header-container").innerHTML = header;
-
+     document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
       await new Promise(resolve => requestAnimationFrame(resolve));
       if (typeof activarBuscador === "function") {
         activarBuscador();
