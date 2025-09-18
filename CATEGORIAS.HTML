@@ -48,6 +48,7 @@
       </div>
     </div>
   </div>
+
   <!-- FOOTER -->
   <div id="footer-container"></div>
 
@@ -109,10 +110,20 @@
       });
     }
 
+    function ajustarCarrito() {
+      const header = document.querySelector(".header");
+      const carritoBtn = document.querySelector(".btn_shopping");
+      if (header && carritoBtn) {
+        const alturaHeader = header.offsetHeight;
+        carritoBtn.style.top = `${alturaHeader + 12}px`;
+      }
+    }
+
     document.addEventListener("DOMContentLoaded", async () => {
       const header = await fetch("HEADER.HTML").then(res => res.text());
       document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
       await new Promise(resolve => requestAnimationFrame(resolve));
+      ajustarCarrito();
 
       activarBuscadorGlobal();
 
@@ -128,4 +139,3 @@
   </script>
 </body>
 </html>
-
