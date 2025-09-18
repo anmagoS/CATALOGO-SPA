@@ -178,3 +178,21 @@
       if (header && carritoBtn) {
         const alturaHeader = header.offsetHeight;
         carritoBtn.style.top = `${alturaHeader + 12}px`;
+    }
+  }
+
+  function actualizarCarrito() {
+    // Esta función debe estar definida en carrito.js
+    // Aquí solo se asegura que se invoque al cargar
+    if (typeof cargarCarritoDesdeStorage === "function") {
+      cargarCarritoDesdeStorage();
+    }
+  }
+</script>
+
+<!-- Librerías externas -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="carrito.js"></script>
+</body>
+</html>
+
