@@ -63,7 +63,7 @@
   <div id="footer-container"></div>
 
   <!-- SCRIPTS -->
-  <script>
+ <script>
 // ✅ Paso 1: Agrupar productos jerárquicamente
 function agruparProductosJerarquicamente(productos) {
   const jerarquia = {};
@@ -144,147 +144,109 @@ function renderJerarquiaProductos(productos) {
   }
 }
 
-// ✅ Paso 3: Reemplazar renderCategoriasDestacadas por jerarquía
+// ✅ Paso 3: Cargar catálogo con vista jerárquica
 async function cargarCatalogo() {
   const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
   const respuesta = await fetch(url);
   const productos = await respuesta.json();
   window.catalogoGlobal = productos;
 
-  renderJerarquiaProductos(productos); // ← Aquí se usa la nueva vista jerárquica
-  renderMenuCategorias(productos);     // ← Puedes mantener el menú si lo usas
+  renderJerarquiaProductos(productos); // ← Vista jerárquica activa
+  renderMenuCategorias(productos);     // ← Menú por categoría
 }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      fetch('HEADER.HTML')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('HEADER.HTML')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
 
-          const toggle = document.getElementById("toggle-categorias");
-          if (toggle) {
-            toggle.addEventListener("click", () => {
-              const menu = document.getElementById("menu-categorias");
-              if (menu) {
-                menu.style.display = menu.style.display === "block" ? "none" : "block";
-              }
-            });
+      const toggle = document.getElementById("toggle-categorias");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          const menu = document.getElementById("menu-categorias");
+          if (menu) {
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
           }
+        });
+      }
 
-          const buscador = document.getElementById("buscador");
-          const sugerencias = document.getElementById("sugerencias");
+      const buscador = document.getElementById("buscador");
+      const sugerencias = document.getElementById("sugerencias");
 
-          if (buscador && sugerencias) {
-            buscador.addEventListener("input", () => {
-              const texto = buscador.value.toLowerCase().trim();
-              sugerencias.innerHTML = "";
+      if (buscador && sugerencias) {
+        buscador.addEventListener("input", () => {
+          const texto = buscador.value.toLowerCase().trim();
+          sugerencias.innerHTML = "";
 
-              if (texto.length < 2 || !window.catalogoGlobal) return;
+          if (texto.length < 2 || !window.catalogoGlobal) return;
 
-              const coincidencias = window.catalogoGlobal.filter(p =>
-                p.producto.toLowerCase().includes(texto) ||
-                p.categoria.toLowerCase().includes(texto) ||
-                p.subcategoria?.toLowerCase().includes(texto) ||
-                p.id.toLowerCase().includes(texto) ||
-                p.precio.toString().includes(texto)
-              );
+          const coincidencias = window.catalogoGlobal.filter(p =>
+            p.producto.toLowerCase().includes(texto) ||
+            p.categoria.toLowerCase().includes(texto) ||
+            p.subcategoria?.toLowerCase().includes(texto) ||
+            p.id.toLowerCase().includes(texto) ||
+            p.precio.toString().includes(texto)
+          );
 
-              coincidencias.slice(0, 5).forEach(p => {
-                const item = document.createElement("a");
-                item.className = "dropdown-item";
-                item.textContent = `${p.producto} (${p.categoria})`;
-                item.href = `producto.html?id=${p.id}`;
-                sugerencias.appendChild(item);
-              });
+          coincidencias.slice(0, 5).forEach(p => {
+            const item = document.createElement("a");
+            item.className = "dropdown-item";
+            item.textContent = `${p.producto} (${p.categoria})`;
+            item.href = `producto.html?id=${p.id}`;
+            sugerencias.appendChild(item);
+          });
 
-              sugerencias.classList.add("show");
-            });
-
-            document.addEventListener("click", () => {
-              sugerencias.classList.remove("show");
-            });
-          }
-
-          ajustarCarrito(); // Ajustar posición del botón flotante
+          sugerencias.classList.add("show");
         });
 
-      // ✅ Cargar catálogo fuera del fetch del header
-      cargarCatalogo();
-
-      fetch('footer.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
+        document.addEventListener("click", () => {
+          sugerencias.classList.remove("show");
         });
+      }
 
-      actualizarCarrito();
+      ajustarCarrito(); // Ajustar posición del botón flotante
     });
 
-    function ajustarCarrito() {
-      const header = document.querySelector(".header");
-      const carritoBtn = document.querySelector(".btn_shopping");
-      if (header && carritoBtn) {
-        const alturaHeader = header.offsetHeight;
-        carritoBtn.style.top = `${alturaHeader + 12}px`;
-      }
-    }
+  cargarCatalogo(); // ← Carga catálogo jerárquico
 
-    async function cargarCatalogo() {
-      const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
-      const respuesta = await fetch(url);
-      const productos = await respuesta.json();
-      window.catalogoGlobal = productos;
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
 
-      renderCategoriasDestacadas(productos);
-      renderMenuCategorias(productos);
-    }
+  actualizarCarrito();
+});
 
-    function renderCategoriasDestacadas(productos) {
-      const contenedor = document.getElementById("grid-categorias");
-      contenedor.innerHTML = "";
+function ajustarCarrito() {
+  const header = document.querySelector(".header");
+  const carritoBtn = document.querySelector(".btn_shopping");
+  if (header && carritoBtn) {
+    const alturaHeader = header.offsetHeight;
+    carritoBtn.style.top = `${alturaHeader + 12}px`;
+  }
+}
 
-      const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+function renderMenuCategorias(productos) {
+  const menu = document.getElementById("menu-categorias");
+  if (!menu) return;
 
-      categoriasUnicas.forEach(categoria => {
-        const productoDestacado = productos.find(p => p.categoria === categoria);
-        if (!productoDestacado) return;
+  menu.innerHTML = "";
+  const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
 
-        const imagen = productoDestacado.imagen;
-        const nombre = categoria;
-
-        const tarjeta = document.createElement("div");
-        tarjeta.className = "producto";
-        tarjeta.innerHTML = `
-          <a href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;" class="imagen-producto">
-            <img src="${imagen}" alt="${nombre}">
-          </a>
-          <div class="nombre-producto">${nombre}</div>
-          <a class="boton-comprar" href="INDEX.HTML" onclick="localStorage.setItem('categoriaSeleccionada', '${nombre}'); return true;">Ver más</a>
-        `;
-        contenedor.appendChild(tarjeta);
-      });
-    }
-
-    function renderMenuCategorias(productos) {
-      const menu = document.getElementById("menu-categorias");
-      if (!menu) return;
-
-      menu.innerHTML = "";
-      const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
-
-      categoriasUnicas.forEach(categoria => {
-        const item = document.createElement("a");
-        item.className = "dropdown-item";
-        item.textContent = categoria;
-        item.href = "INDEX.HTML";
-        item.onclick = () => {
-          localStorage.setItem('categoriaSeleccionada', categoria);
-        };
-        menu.appendChild(item);
-      });
-    }
-  </script>
-
+  categoriasUnicas.forEach(categoria => {
+    const item = document.createElement("a");
+    item.className = "dropdown-item";
+    item.textContent = categoria;
+    item.href = "INDEX.HTML";
+    item.onclick = () => {
+      localStorage.setItem('categoriaSeleccionada', categoria);
+    };
+    menu.appendChild(item);
+  });
+}
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="carrito.js"></script>
 </body>
