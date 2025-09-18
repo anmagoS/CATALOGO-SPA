@@ -6,7 +6,7 @@ const btn_shopping = document.querySelector(".btn_shopping");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.querySelector("#contador-carrito");
 const closeButton = document.querySelector(".btn-close");
-const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']);
+const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
 
 // Cargar catálogo global
 async function cargarCatalogoGlobal() {
@@ -217,7 +217,6 @@ function generarPedidoWhatsApp() {
   const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
   window.open(urlWhatsApp, "_blank");
 
-  // Limpiar el carrito después de enviar
   articulosCarrito = [];
     guardarCarrito();
   renderizarCarrito();
@@ -234,42 +233,6 @@ function guardarCarrito() {
 function cargarCarritoDesdeStorage() {
   // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
 }
-// Inicialización principal
-document.addEventListener("DOMContentLoaded", async () => {
-  await cargarCatalogoGlobal();
-
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-
-  await new Promise(resolve => requestAnimationFrame(resolve));
-
-  if (typeof activarBuscador === "function") {
-    activarBuscador();
-  }
-
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
-
-  ajustarCarrito();
-  cargarCarritoDesdeStorage();
-
-  if (document.getElementById("contenido-productos")) {
-    renderizarProductos(window.catalogoGlobal);
-  }
-
-  if (typeof renderMenuCategorias === "function" && window.catalogoGlobal) {
-    renderMenuCategorias(window.catalogoGlobal);
-  }
-
-  const toggle = document.getElementById("toggle-categorias");
-  const menu = document.getElementById("menu-categorias");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.style.display = menu.style.display === "none" ? "flex" : "none";
-    });
-  }
-});
 
 // Función para renderizar categorías en el menú lateral
 function renderMenuCategorias(productos) {
@@ -289,3 +252,42 @@ function renderMenuCategorias(productos) {
   });
 }
 
+// Inicialización principal
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarCatalogoGlobal();
+
+  const header = await fetch("HEADER.HTML").then(res => res.text());
+  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
+
+  // Esperar al siguiente ciclo de render para asegurar que el header esté en el DOM
+  await new Promise(resolve => requestAnimationFrame(resolve));
+
+  if (typeof activarBuscador === "function") {
+    activarBuscador();
+  }
+
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
+
+  ajustarCarrito();
+  cargarCarritoDesdeStorage();
+
+  if (document.getElementById("contenido-productos")) {
+    renderizarProductos(window.catalogoGlobal);
+  }
+
+  // Desplegar categorías en el menú lateral
+  if (typeof renderMenuCategorias === "function" && window.catalogoGlobal) {
+    renderMenuCategorias(window.catalogoGlobal);
+  }
+
+  // Activar despliegue visual del menú lateral
+  const toggle = document.getElementById("toggle-categorias");
+  const menu = document.getElementById("menu-categorias");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.style.display = menu.style.display === "none" ? "flex" : "none";
+    });
+  }
+});
