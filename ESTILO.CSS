@@ -8,6 +8,10 @@ html, body {
   font-family: 'Roboto', sans-serif;
   background-color: #f9f9f9;
 }
+body {
+  padding-top: 60px;
+}
+
 /* === HEADER FIJO === */
 .header {
   background-color: #1B4557;
