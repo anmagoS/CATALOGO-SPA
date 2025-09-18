@@ -479,3 +479,22 @@ footer {
   max-width: 100%;
   border-radius: 6px;
 }
+.contenedor-categoria {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 1rem; /* ✅ margen horizontal */
+}
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0 0.5rem; /* ✅ margen interno para evitar corte */
+}
+.imagen-producto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 6px;
+}
