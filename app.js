@@ -6,7 +6,7 @@ const btn_shopping = document.querySelector(".btn_shopping");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.querySelector("#contador-carrito");
 const closeButton = document.querySelector(".btn-close");
-const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
+const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']);
 
 // Cargar catálogo global
 async function cargarCatalogoGlobal() {
@@ -217,15 +217,16 @@ function generarPedidoWhatsApp() {
   const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
   window.open(urlWhatsApp, "_blank");
 
+  // Limpiar el carrito después de enviar
   articulosCarrito = [];
-    guardarCarrito();
+  guardarCarrito();
   renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
 
-// Función de respaldo para evitar errores si no está definida
+// Funciones de respaldo
 function guardarCarrito() {
   // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
 }
@@ -234,7 +235,11 @@ function cargarCarritoDesdeStorage() {
   // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
 }
 
-// Función para renderizar categorías en el menú lateral
+function actualizarEstadoBotonWhatsApp() {
+  // Puedes implementar lógica visual si el botón debe activarse/desactivarse.
+}
+
+// Renderizar menú lateral con categorías
 function renderMenuCategorias(productos) {
   const menu = document.getElementById("menu-categorias");
   if (!menu) return;
@@ -259,29 +264,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const header = await fetch("HEADER.HTML").then(res => res.text());
   document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
 
-  // Esperar al siguiente ciclo de render para asegurar que el header esté en el DOM
+  // Esperar a que el header se renderice
   await new Promise(resolve => requestAnimationFrame(resolve));
 
-  if (typeof activarBuscador === "function") {
-    activarBuscador();
-  }
-
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
-
-  ajustarCarrito();
-  cargarCarritoDesdeStorage();
-
-  if (document.getElementById("contenido-productos")) {
-    renderizarProductos(window.catalogoGlobal);
-  }
-
-  // Desplegar categorías en el menú lateral
-  if (typeof renderMenuCategorias === "function" && window.catalogoGlobal) {
-    renderMenuCategorias(window.catalogoGlobal);
-  }
-
-  // Activar despliegue visual del menú lateral
+  // Activar botón de categorías
   const toggle = document.getElementById("toggle-categorias");
   const menu = document.getElementById("menu-categorias");
 
@@ -290,4 +276,25 @@ document.addEventListener("DOMContentLoaded", async () => {
       menu.style.display = menu.style.display === "none" ? "flex" : "none";
     });
   }
+
+  // Activar buscador si existe
+  if (typeof activarBuscador === "function") {
+    activarBuscador();
+  }
+
+  // Cargar footer
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
+
+  // Carrito
+  ajustarCarrito();
+  cargarCarritoDesdeStorage();
+
+  // Renderizar productos si aplica
+  if (document.getElementById("contenido-productos")) {
+    renderizarProductos(window.catalogoGlobal);
+  }
+
+  // Renderizar menú de categorías
+  renderMenuCategorias(window.catalogoGlobal);
 });
