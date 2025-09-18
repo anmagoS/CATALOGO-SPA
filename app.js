@@ -218,6 +218,8 @@ function generarPedidoWhatsApp() {
   window.open(urlWhatsApp, "_blank");
 
   // Limpiar el carrito después de enviar
+  articulosCarrito = [];
+    guardarCarrito();
   renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
@@ -257,3 +259,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderizarProductos(window.catalogoGlobal);
   }
 });
+
