@@ -84,63 +84,54 @@
   });
   return jerarquia;
 }
-    function renderJerarquiaProductos(productos) {
-      const contenedor = document.getElementById("grid-categorias");
-      contenedor.innerHTML = "";
-      const jerarquia = agruparProductosJerarquicamente(productos);
+   function renderJerarquiaProductos(productos) {
+  const contenedor = document.getElementById("grid-categorias");
+  contenedor.innerHTML = "";
+  const jerarquia = agruparProductosJerarquicamente(productos);
 
-      for (const tipo in jerarquia) {
-        const tipoDiv = document.createElement("div");
-        tipoDiv.className = "bloque-tipo";
-        tipoDiv.innerHTML = `<h2>${tipo}</h2>`;
+  for (const tipo in jerarquia) {
+    const tipoDiv = document.createElement("div");
+    tipoDiv.className = "bloque-tipo";
+    tipoDiv.innerHTML = `<h2>${tipo}</h2>`;
 
-        for (const subtipo in jerarquia[tipo]) {
-          const subtipoDiv = document.createElement("div");
-          subtipoDiv.className = "bloque-subtipo";
-          subtipoDiv.innerHTML = `<h3>${subtipo}</h3>`;
+    for (const subtipo in jerarquia[tipo]) {
+      const subtipoDiv = document.createElement("div");
+      subtipoDiv.className = "bloque-subtipo";
+      subtipoDiv.innerHTML = `<h3>${subtipo}</h3>`;
 
-          for (const categoria in jerarquia[tipo][subtipo]) {
-            const categoriaDiv = document.createElement("div");
-            categoriaDiv.className = "bloque-categoria";
-            categoriaDiv.innerHTML = `<h4>${categoria}</h4>`;
+      for (const categoria in jerarquia[tipo][subtipo]) {
+        const categoriaDiv = document.createElement("div");
+        categoriaDiv.className = "bloque-categoria";
+        categoriaDiv.innerHTML = `<h4>${categoria}</h4>`;
 
-            for (const subcategoria in jerarquia[tipo][subtipo][categoria]) {
-              const subcatDiv = document.createElement("div");
-              subcatDiv.className = "bloque-subcategoria";
-              subcatDiv.innerHTML = `<h5>${subcategoria}</h5>`;
+        const productos = jerarquia[tipo][subtipo][categoria];
+        const grid = document.createElement("div");
+        grid.className = "grid-productos";
 
-              const productos = jerarquia[tipo][subtipo][categoria][subcategoria];
-              const grid = document.createElement("div");
-              grid.className = "grid-productos";
+        productos.forEach(p => {
+          const tarjeta = document.createElement("div");
+          tarjeta.className = "producto";
+          tarjeta.innerHTML = `
+            <a href="producto.html?id=${p.id}" class="imagen-producto">
+              <img src="${p.imagen}" alt="${p.producto}">
+            </a>
+            <div class="nombre-producto">${p.producto}</div>
+            <div class="precio-producto">$${p.precio.toLocaleString()}</div>
+            <a class="boton-comprar" href="producto.html?id=${p.id}">Ver más</a>
+          `;
+          grid.appendChild(tarjeta);
+        });
 
-              productos.forEach(p => {
-                const tarjeta = document.createElement("div");
-                tarjeta.className = "producto";
-                tarjeta.innerHTML = `
-                  <a href="producto.html?id=${p.id}" class="imagen-producto">
-                    <img src="${p.imagen}" alt="${p.producto}">
-                  </a>
-                  <div class="nombre-producto">${p.producto}</div>
-                  <div class="precio-producto">$${p.precio.toLocaleString()}</div>
-                  <a class="boton-comprar" href="producto.html?id=${p.id}">Ver más</a>
-                `;
-                grid.appendChild(tarjeta);
-              });
-
-              subcatDiv.appendChild(grid);
-              categoriaDiv.appendChild(subcatDiv);
-            }
-
-            subtipoDiv.appendChild(categoriaDiv);
-          }
-
-          tipoDiv.appendChild(subtipoDiv);
-        }
-
-        contenedor.appendChild(tipoDiv);
+        categoriaDiv.appendChild(grid);
+        subtipoDiv.appendChild(categoriaDiv);
       }
+
+      tipoDiv.appendChild(subtipoDiv);
     }
 
+    contenedor.appendChild(tipoDiv);
+  }
+}
     async function cargarCatalogo() {
       const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
       const respuesta = await fetch(url);
