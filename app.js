@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (document.getElementById("contenido-productos")) {
     renderizarProductos(window.catalogoGlobal);
   }
-  function renderMenuCategorias(productos) {
+ function renderMenuCategorias(productos) {
   const menu = document.getElementById("menu-categorias");
   if (!menu) return;
 
@@ -272,6 +272,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     item.textContent = categoria;
     item.href = `PRODUCTOS.HTML?categoria=${encodeURIComponent(categoria)}`;
     menu.appendChild(item);
+  });
 }
+
 });
 
