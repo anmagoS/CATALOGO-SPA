@@ -32,11 +32,12 @@
       window.catalogoGlobal = productos;
       renderSubtipos(productos);
     }
+
     function renderSubtipos(productos) {
       const tipoSeleccionado = getTipoDesdeURL();
       if (!tipoSeleccionado) return;
 
-      document.getElementById("titulo-subtipos").textContent = `SELECCION DE ${tipoSeleccionado}`;
+      document.getElementById("titulo-subtipos").textContent = `SELECCIÓN DE ${tipoSeleccionado}`;
 
       const contenedor = document.getElementById("grid-subtipos");
       contenedor.innerHTML = "";
@@ -61,23 +62,22 @@
       });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      fetch('HEADER.HTML')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
-        });
+    document.addEventListener("DOMContentLoaded", async () => {
+      const header = await fetch('HEADER.HTML').then(res => res.text());
+      document.getElementById('header-container').innerHTML = header;
 
-      fetch('footer.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
-        });
+      const footer = await fetch('footer.html').then(res => res.text());
+      document.getElementById('footer-container').innerHTML = footer;
 
-      cargarCatalogo();
+      await cargarCatalogo();
+
+      if (typeof activarBuscador === "function") {
+        activarBuscador(); // ✅ Se activa después de insertar el header y cargar el catálogo
+      }
     });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
