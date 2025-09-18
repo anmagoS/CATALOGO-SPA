@@ -11,6 +11,7 @@
 </head>
 <body>
   <div id="header-container"></div>
+
   <!-- BOTÓN FLOTANTE DEL CARRITO -->
   <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
     <i class="bi bi-bag-heart"></i>
@@ -63,7 +64,12 @@
 
   <div id="footer-container"></div>
 
-  <!-- SCRIPTS -->
+  <!-- SCRIPTS EXTERNOS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="carrito.js"></script>
+  <script src="app.js"></script>
+
+  <!-- INICIALIZACIÓN -->
   <script>
     const imagenesPorTipo = {
       "ROPA": "https://ik.imagekit.io/mbsk9dati/593678a2-9af5-47a8-a47c-34407d25bd60.jpg?updatedAt=1758216950422",
@@ -113,6 +119,12 @@
       document.getElementById('header-container').innerHTML = header;
       ajustarCarrito();
 
+      // Esperar al siguiente ciclo de render para que #buscador exista
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      if (typeof activarBuscador === "function") {
+        activarBuscador();
+      }
+
       const footer = await fetch('footer.html').then(res => res.text());
       document.getElementById('footer-container').innerHTML = footer;
 
@@ -121,16 +133,7 @@
       if (typeof cargarCarritoDesdeStorage === "function") {
         cargarCarritoDesdeStorage();
       }
-
-     await new Promise(resolve => requestAnimationFrame(resolve));
-if (typeof activarBuscador === "function") {
-  activarBuscador(); // ✅ Ahora sí se activa cuando #buscador existe
-}
     });
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="carrito.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
