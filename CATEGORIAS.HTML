@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categorías | Anmago Store</title>
+  <link rel="stylesheet" href="ESTILO.CSS" />
+  <link rel="icon" href="logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="contenedor-categoria">
+    <h1 class="titulo-categoria text-center" id="titulo-categorias">Categorías</h1>
+    <div id="grid-categorias" class="grid-productos"></div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script>
+    function getParametrosDesdeURL() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        tipo: params.get("tipo")?.trim(),
+        subtipo: params.get("subtipo")?.trim()
+      };
+    }
+
+    async function cargarCatalogo() {
+      const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
+      const respuesta = await fetch(url);
+      const productos = await respuesta.json();
+      window.catalogoGlobal = productos;
+      renderCategorias(productos);
+    }
+
+    function renderCategorias(productos) {
+      const { tipo, subtipo } = getParametrosDesdeURL();
+      if (!tipo || !subtipo) return;
+
+      document.getElementById("titulo-categorias").textContent = `CATEGORIAS DE ${subtipo}`;
+
+      const contenedor = document.getElementById("grid-categorias");
+      contenedor.innerHTML = "";
+
+      const productosFiltrados = productos.filter(p =>
+        p.tipo?.trim() === tipo && p.subtipo?.trim() === subtipo
+      );
+
+      const categoriasUnicas = [...new Set(productosFiltrados.map(p => p.categoria?.trim()).filter(Boolean))];
+
+      categoriasUnicas.forEach(categoria => {
+        const productosDeCategoria = productosFiltrados.filter(p => p.categoria?.trim() === categoria);
+        const productoRef = productosDeCategoria[0];
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "producto";
+        tarjeta.innerHTML = `
+          <a href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}" class="imagen-producto">
+            <img src="${productoRef.imagen}" alt="${categoria}">
+          </a>
+          <div class="nombre-producto">${categoria}</div>
+          <a class="boton-comprar" href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}">Ver productos</a>
+        `;
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('HEADER.HTML')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+
+      fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+
+      cargarCatalogo();
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
