@@ -214,22 +214,29 @@ function generarPedidoWhatsApp() {
   mensaje += "✅ *¡Gracias por tu atención!*";
 
   const mensajeCodificado = encodeURIComponent(mensaje);
-   const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
+  const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
   window.open(urlWhatsApp, "_blank");
 
   // Limpiar el carrito después de enviar
   articulosCarrito = [];
   guardarCarrito();
-  renderizarCarrito();
+    renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
+
+// Función de respaldo para evitar errores si no está definida
+function cargarCarritoDesdeStorage() {
+  // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
+}
+
+// Inicialización principal
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
 
   const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").innerHTML = header;
+  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
 
   // Esperar al siguiente ciclo de render para asegurar que #buscador existe
   await new Promise(resolve => requestAnimationFrame(resolve));
