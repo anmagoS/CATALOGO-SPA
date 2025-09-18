@@ -21,9 +21,23 @@
   <!-- CONTENIDO PRINCIPAL -->
   <main class="contenedor-categoria">
     <h1 class="titulo-categoria">Explora nuestras colecciones</h1>
-    <div id="menu-categorias" class="dropdown-menu"></div>
+
+    <!-- Buscador y sugerencias -->
+    <div class="buscador-container px-3 mb-4">
+      <input type="text" id="buscador" placeholder="Buscar productos..." class="form-control" />
+      <div id="sugerencias" class="dropdown-menu"></div>
+    </div>
+
+    <!-- Menú dinámico -->
+    <div class="text-center mb-3">
+      <button id="toggle-categorias" class="btn btn-outline-dark">Ver categorías</button>
+    </div>
+    <div id="menu-categorias" class="dropdown-menu show position-static w-100 text-center mb-4"></div>
+
+    <!-- Vista jerárquica -->
     <div id="grid-categorias" class="grid-productos"></div>
 
+    <!-- Secciones institucionales -->
     <section class="seccion-centrada">
       <h1 class="titulo-categoria">Conoce más sobre Anmago Store</h1>
       <iframe width="100%" height="315" src="https://www.youtube.com/embed/E8_rkF1957Y"
@@ -157,7 +171,7 @@
       const menu = document.getElementById("menu-categorias");
       if (!menu) return;
 
-      menu.innerHTML = "";
+           menu.innerHTML = "";
       const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
 
       categoriasUnicas.forEach(categoria => {
@@ -167,24 +181,10 @@
         item.href = "INDEX.HTML";
         item.onclick = () => {
           localStorage.setItem('categoriaSeleccionada', categoria);
+          return true;
         };
         menu.appendChild(item);
       });
-    }
-
-    function ajustarCarrito() {
-      const header = document.querySelector(".header");
-      const carritoBtn = document.querySelector(".btn_shopping");
-      if (header && carritoBtn) {
-        const alturaHeader = header.offsetHeight;
-        carritoBtn.style.top = `${alturaHeader + 12}px`;
-      }
-       }
-
-    function actualizarCarrito() {
-      if (typeof cargarCarritoDesdeStorage === "function") {
-        cargarCarritoDesdeStorage();
-      }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -250,6 +250,12 @@
 
       actualizarCarrito();
     });
+
+    function actualizarCarrito() {
+      if (typeof cargarCarritoDesdeStorage === "function") {
+        cargarCarritoDesdeStorage();
+      }
+    }
   </script>
 
   <!-- Librerías externas -->
@@ -257,3 +263,5 @@
   <script src="carrito.js"></script>
 </body>
 </html>
+
+     
