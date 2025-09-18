@@ -296,5 +296,52 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderizarProductos(window.catalogoGlobal);
   }
 });
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarCatalogoGlobal();
+
+  const header = await fetch("HEADER.HTML").then(res => res.text());
+  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
+
+  // Esperar a que el DOM reconozca los nuevos elementos
+  await new Promise(resolve => setTimeout(resolve, 100)); // más confiable que requestAnimationFrame
+
+  // Activar botón de categorías
+  const toggle = document.getElementById("toggle-categorias");
+  const menu = document.getElementById("menu-categorias");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.style.display = menu.style.display === "none" ? "flex" : "none";
+    });
+
+    // Renderizar categorías
+    const categoriasUnicas = [...new Set(window.catalogoGlobal.map(p => p.categoria).filter(Boolean))];
+    categoriasUnicas.forEach(categoria => {
+      const item = document.createElement("a");
+      item.className = "nav-link";
+      item.textContent = categoria;
+      item.href = `PRODUCTOS.HTML?categoria=${encodeURIComponent(categoria)}`;
+      menu.appendChild(item);
+    });
+  }
+
+  // Activar buscador si existe
+  if (typeof activarBuscador === "function") {
+    activarBuscador();
+  }
+
+  // Cargar footer
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
+
+  // Carrito
+  ajustarCarrito();
+  cargarCarritoDesdeStorage();
+
+  // Renderizar productos si aplica
+  if (document.getElementById("contenido-productos")) {
+    renderizarProductos(window.catalogoGlobal);
+  }
+});
 
 
