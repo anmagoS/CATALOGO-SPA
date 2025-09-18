@@ -271,9 +271,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
       menu.classList.toggle("show");
-    });
+
   }
-});
 
 // Función para renderizar categorías en el menú lateral
 function renderMenuCategorias(productos) {
@@ -286,7 +285,7 @@ function renderMenuCategorias(productos) {
 
   categoriasUnicas.forEach(categoria => {
     const item = document.createElement("a");
-    item.className = "dropdown-item";
+    item.className = "nav-link";
     item.textContent = categoria;
     item.href = `PRODUCTOS.HTML?categoria=${encodeURIComponent(categoria)}`;
     menu.appendChild(item);
