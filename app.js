@@ -6,7 +6,7 @@ const btn_shopping = document.querySelector(".btn_shopping");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.querySelector("#contador-carrito");
 const closeButton = document.querySelector(".btn-close");
-const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
+const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']);
 
 // Cargar catálogo global para buscador y productos
 async function cargarCatalogoGlobal() {
@@ -211,19 +211,48 @@ function generarPedidoWhatsApp() {
     mensaje += `*${i + 1}.* ${p.nombre}\n🔗 Imagen: ${p.imagen}\n💲 Precio: $${p.precio.toLocaleString("es-CO")}\n\n`;
   });
 
- const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
-mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
-mensaje += "✅ *¡Gracias por tu atención!*";
+  const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+  mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
+  mensaje += "✅ *¡Gracias por tu atención!*";
 
-// Codificar el mensaje para WhatsApp
-const mensajeCodificado = encodeURIComponent(mensaje);
-const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
-window.open(urlWhatsApp, "_blank");
+   const mensajeCodificado = encodeURIComponent(mensaje);
+  const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
+  window.open(urlWhatsApp, "_blank");
 
-// Limpiar el carrito después de enviar
-articulosCarrito = [];
-guardarCarrito();
-renderizarCarrito();
-actualizarSubtotal();
-actualizarContadorCarrito();
-actualizarEstadoBotonWhatsApp();
+  // Limpiar el carrito después de enviar
+  articulosCarrito = [];
+  guardarCarrito();
+  renderizarCarrito();
+  actualizarSubtotal();
+  actualizarContadorCarrito();
+  actualizarEstadoBotonWhatsApp();
+}
+// Restaurar carrito desde localStorage
+function cargarCarritoDesdeStorage() {
+  const guardado = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
+  articulosCarrito = guardado;
+  renderizarCarrito();
+  actualizarSubtotal();
+  actualizarContadorCarrito();
+  actualizarEstadoBotonWhatsApp();
+}
+
+// Inicialización global
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarCatalogoGlobal();
+
+  const header = await fetch("HEADER.HTML").then(res => res.text());
+  document.getElementById("header-container").innerHTML = header;
+
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
+
+  ajustarCarrito();
+  activarBuscador();
+  cargarCarritoDesdeStorage();
+
+  // Renderizar productos si aplica
+  if (document.getElementById("contenido-productos")) {
+    renderizarProductos(window.catalogoGlobal);
+  }
+});
