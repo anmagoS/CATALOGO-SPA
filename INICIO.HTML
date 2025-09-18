@@ -11,6 +11,7 @@
 </head>
 <body>
   <div id="header-container"></div>
+
   <!-- BOTÓN FLOTANTE DEL CARRITO -->
   <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
     <i class="bi bi-bag-heart"></i>
@@ -114,20 +115,19 @@
     }
 
     document.addEventListener("DOMContentLoaded", async () => {
-      const header = await fetch('HEADER.HTML').then(res => res.text());
-      document.getElementById('header-container').innerHTML = header;
-      ajustarCarrito();
+      const header = await fetch("HEADER.HTML").then(res => res.text());
+      document.getElementById("header-container").innerHTML = header;
 
-      // Esperar al siguiente ciclo de render para que #buscador exista
       await new Promise(resolve => requestAnimationFrame(resolve));
       if (typeof activarBuscador === "function") {
         activarBuscador();
       }
 
-      const footer = await fetch('footer.html').then(res => res.text());
-      document.getElementById('footer-container').innerHTML = footer;
+      const footer = await fetch("footer.html").then(res => res.text());
+      document.getElementById("footer-container").innerHTML = footer;
 
       await cargarCatalogo();
+      ajustarCarrito();
 
       if (typeof cargarCarritoDesdeStorage === "function") {
         cargarCarritoDesdeStorage();
