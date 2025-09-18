@@ -48,65 +48,23 @@
 
   <!-- SCRIPTS -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      fetch('HEADER.HTML')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
+    document.addEventListener("DOMContentLoaded", async () => {
+      const header = await fetch('HEADER.HTML').then(res => res.text());
+      document.getElementById('header-container').innerHTML = header;
 
-          const toggle = document.getElementById("toggle-categorias");
-          if (toggle) {
-            toggle.addEventListener("click", () => {
-              const menu = document.getElementById("menu-categorias");
-              if (menu) {
-                menu.style.display = menu.style.display === "block" ? "none" : "block";
-              }
-            });
-          }
+      const footer = await fetch('footer.html').then(res => res.text());
+      document.getElementById('footer-container').innerHTML = footer;
 
-          const buscador = document.getElementById("buscador");
-          const sugerencias = document.getElementById("sugerencias");
+      if (typeof activarBuscador === "function") {
+        activarBuscador(); // ✅ Se activa después de insertar el header
+      }
 
-          if (buscador && sugerencias) {
-            buscador.addEventListener("input", () => {
-              const texto = buscador.value.toLowerCase().trim();
-              sugerencias.innerHTML = "";
+      ajustarCarrito();
+      await cargarPromociones();
 
-              if (texto.length < 2 || !window.catalogoGlobal) return;
-
-              const coincidencias = window.catalogoGlobal.filter(p =>
-                p.producto.toLowerCase().includes(texto) ||
-                p.categoria.toLowerCase().includes(texto) ||
-                p.subcategoria?.toLowerCase().includes(texto) ||
-                p.id.toLowerCase().includes(texto) ||
-                p.precio.toString().includes(texto)
-              );
-
-              coincidencias.slice(0, 5).forEach(p => {
-                const item = document.createElement("a");
-                item.className = "dropdown-item";
-                item.textContent = `${p.producto} (${p.categoria})`;
-                item.href = `producto.html?id=${p.id}`;
-                sugerencias.appendChild(item);
-              });
-
-              sugerencias.classList.add("show");
-            });
-
-            document.addEventListener("click", () => {
-              sugerencias.classList.remove("show");
-            });
-          }
-
-          ajustarCarrito(); // ✅ Posiciona el botón flotante dinámicamente
-          cargarPromociones();
-        });
-
-      fetch('footer.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
-        });
+      if (typeof cargarCarritoDesdeStorage === "function") {
+        cargarCarritoDesdeStorage();
+      }
 
       const finPromo = new Date(Date.now() + 48 * 60 * 60 * 1000);
       const temporizador = document.getElementById("temporizador");
@@ -170,8 +128,9 @@
 
     function renderMenuCategorias(productos) {
       const menu = document.getElementById("menu-categorias");
+      if (!menu) return;
       menu.innerHTML = "";
-      const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+      const categoriasUnicas = [...new Set(productos.map(p => p.categoria).filter(Boolean))];
       categoriasUnicas.forEach(categoria => {
         const item = document.createElement("a");
         item.className = "dropdown-item";
@@ -187,5 +146,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="carrito.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
