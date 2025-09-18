@@ -69,24 +69,21 @@
   <div id="footer-container"></div>
   <!-- SCRIPTS -->
   <script>
-    function agruparProductosJerarquicamente(productos) {
-      const jerarquia = {};
-      productos.forEach(p => {
-        const tipo = p.tipo?.trim() || "Sin tipo";
-        const subtipo = p.subtipo?.trim() || "Sin subtipo";
-        const categoria = p.categoria?.trim() || "Sin categoría";
-        const subcategoria = p.subcategoria?.trim() || "Sin subcategoría";
+   function agruparProductosJerarquicamente(productos) {
+  const jerarquia = {};
+  productos.forEach(p => {
+    const tipo = p.tipo?.trim() || "Sin tipo";
+    const subtipo = p.subtipo?.trim() || "Sin subtipo";
+    const categoria = p.categoria?.trim() || "Sin categoría";
 
-        if (!jerarquia[tipo]) jerarquia[tipo] = {};
-        if (!jerarquia[tipo][subtipo]) jerarquia[tipo][subtipo] = {};
-        if (!jerarquia[tipo][subtipo][categoria]) jerarquia[tipo][subtipo][categoria] = {};
-        if (!jerarquia[tipo][subtipo][categoria][subcategoria]) jerarquia[tipo][subtipo][categoria][subcategoria] = [];
+    if (!jerarquia[tipo]) jerarquia[tipo] = {};
+    if (!jerarquia[tipo][subtipo]) jerarquia[tipo][subtipo] = {};
+    if (!jerarquia[tipo][subtipo][categoria]) jerarquia[tipo][subtipo][categoria] = [];
 
-        jerarquia[tipo][subtipo][categoria][subcategoria].push(p);
-      });
-      return jerarquia;
-    }
-
+    jerarquia[tipo][subtipo][categoria].push(p);
+  });
+  return jerarquia;
+}
     function renderJerarquiaProductos(productos) {
       const contenedor = document.getElementById("grid-categorias");
       contenedor.innerHTML = "";
