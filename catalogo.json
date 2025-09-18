@@ -1,6 +1,7 @@
 [
   {
     "id": "EE03DCC0",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CHAQUETAS",
     "subcategoria": "DAMA",
@@ -9,11 +10,12 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.092650.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_4.092653.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_IMAGES_EE03DCC0.IMAGEN_5.071550.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.092655.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_7.092656.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_4.092653.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_IMAGES_EE03DCC0.IMAGEN_5.071550.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.092655.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_7.092656.jpg"
   },
   {
     "id": "8F9CAE6D",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BODYS",
     "subcategoria": "MANGA LARGA",
@@ -22,11 +24,12 @@
     "tallas": "UNICA",
     "precio": 38000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_1.032401.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_1.032401.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_2.032401.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_3.032401.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_4.032404.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_5.032404.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_1.032401.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_2.032401.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_3.032401.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_4.032404.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8F9CAE6D.IMAGEN_5.032404.jpg"
   },
   {
     "id": "6A779E79",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "ENTERIZOS",
     "subcategoria": "ENTERIZO",
@@ -35,11 +38,12 @@
     "tallas": "UNICA",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_6A779E79.IMAGEN_1.101048.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_6A779E79.IMAGEN_1.101048.jpg, https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_6A779E79.IMAGEN_2.101048.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_6A779E79.IMAGEN_1.101048.jpg, https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_6A779E79.IMAGEN_2.101048.jpg"
   },
   {
     "id": "5CD57D5F",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "DEPORTIVA DAMA",
     "subcategoria": "DOS PIEZAS",
@@ -48,11 +52,12 @@
     "tallas": "SM,LXL",
     "precio": 69000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_1.102718.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_1.102718.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_2.102718.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_3.102718.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_4.102721.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_5.102721.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_6.102722.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_7.102723.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_1.102718.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_2.102718.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_3.102718.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_4.102721.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_5.102721.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_6.102722.jpg,https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_7.102723.jpg"
   },
   {
     "id": "C9E8EEF3",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "FALDA LARGA",
@@ -61,11 +66,12 @@
     "tallas": "UNICA",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_IMAGES_C9E8EEF3.IMAGEN_1.050437.JPG",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_2.101840.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_3.101840.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_4.101840.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_5.101843.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_6.101843.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_7.101843.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_2.101840.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_3.101840.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_4.101840.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_5.101843.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_6.101843.jpg, https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_C9E8EEF3.IMAGEN_7.101843.jpg"
   },
   {
     "id": "03B56FA8",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "FALDA LARGA",
@@ -74,11 +80,12 @@
     "tallas": "UNICA",
     "precio": 58000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_1.100917.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_1.100917.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_2.100917.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_3.100917.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_4.100920.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_5.100921.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_1.100917.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_2.100917.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_3.100917.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_4.100920.jpg, https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_5.100921.jpg"
   },
   {
     "id": "04C9FF63",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "CAPRI",
@@ -87,11 +94,12 @@
     "tallas": "UNICA",
     "precio": 49000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_1.102159.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_1.102159.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_2.102159.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_3.102159.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_4.102202.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_5.102202.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_1.102159.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_2.102159.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_3.102159.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_4.102202.jpg, https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_04c9ff63.IMAGEN_5.102202.jpg"
   },
   {
     "id": "2C26E2E2",
+    "tipo": "ROPA",
     "subtipo": "CABALLERO",
     "categoria": "SPORT CABALLERO",
     "subcategoria": "HOMBRES",
@@ -100,11 +108,12 @@
     "tallas": "UNICA",
     "precio": 43000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_1.103035.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_1.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_2.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_3.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_4.103038.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_5.103038.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_6.103041.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_7.103042.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_8.103044.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_1.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_2.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_3.103035.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_4.103038.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_5.103038.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_6.103041.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_7.103042.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_8.103044.jpg"
   },
   {
     "id": "2656291B",
+    "tipo": "ROPA",
     "subtipo": "CABALLERO",
     "categoria": "SPORT CABALLERO",
     "subcategoria": "HOMBRES",
@@ -113,11 +122,12 @@
     "tallas": "UNICA",
     "precio": 49000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_1.103520.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_1.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_2.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_3.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_4.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_5.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_6.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_7.103525.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_8.103525.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_9.103526.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_1.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_2.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_3.103520.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_4.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_5.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_6.103523.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_7.103525.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_8.103525.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_9.103526.jpg"
   },
   {
     "id": "2FBB715D",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "GEMELA",
@@ -126,11 +136,12 @@
     "tallas": "UNICA",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_1.214514.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_1.214514.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_2.214514.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_3.214514.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_4.214517.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_5.214517.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_6.214518.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_1.214514.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_2.214514.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_3.214514.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_4.214517.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_5.214517.jpg, https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2fbb715d.IMAGEN_6.214518.jpg"
   },
   {
     "id": "B914451E",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "ENTERIZOS",
     "subcategoria": "ENTERIZO",
@@ -139,11 +150,12 @@
     "tallas": "UNICA",
     "precio": 58000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_1.220719.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_1.220719.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_2.220719.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_3.220719.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_4.220721.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_1.220719.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_2.220719.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_3.220719.jpg, https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_4.220721.jpg"
   },
   {
     "id": "174600CB",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "LENCER?A",
     "subcategoria": "SENSUAL",
@@ -152,11 +164,12 @@
     "tallas": "UNICA",
     "precio": 50000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_1.030504.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_1.030504.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_2.030504.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_3.030505.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_4.030507.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_5.030507.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_6.030507.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_7.030510.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_1.030504.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_2.030504.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_3.030505.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_4.030507.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_5.030507.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_6.030507.jpg, https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_7.030510.jpg"
   },
   {
     "id": "E8949BF3",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BODYS",
     "subcategoria": "MANGA LARGA",
@@ -165,11 +178,12 @@
     "tallas": "UNICA",
     "precio": 35000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_1.164042.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_1.164042.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_2.164042.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_3.164042.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_4.164045.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_1.164042.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_2.164042.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_3.164042.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_4.164045.jpg"
   },
   {
     "id": "5E67F25C",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "ENTERIZOS",
     "subcategoria": "ENTERIZO",
@@ -178,11 +192,12 @@
     "tallas": "UNICA",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_1.164324.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_1.164324.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_2.164324.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_3.164324.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_4.164326.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_5.164327.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_6.164327.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_1.164324.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_2.164324.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_3.164324.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_4.164326.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_5.164327.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_6.164327.jpg"
   },
   {
     "id": "D82C91B9",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CONJUNTOS",
     "subcategoria": "DOS PIEZAS",
@@ -191,11 +206,12 @@
     "tallas": "UNICA",
     "precio": 60000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_2.164610.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_3.164610.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_4.164612.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_5.164613.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_2.164610.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_3.164610.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_4.164612.jpg, https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_5.164613.jpg"
   },
   {
     "id": "5D75C4E6",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "FALDA CORTA",
@@ -204,11 +220,12 @@
     "tallas": "UNICA",
     "precio": 48000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_1.164825.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_1.164825.jpg, https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_2.164825.jpg, https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_3.164825.jpg, https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_4.164827.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_1.164825.jpg, https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_2.164825.jpg, https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_3.164825.jpg, https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_4.164827.jpg"
   },
   {
     "id": "24E3B3A5",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BODYS",
     "subcategoria": "SIN MANGAS",
@@ -217,11 +234,12 @@
     "tallas": "UNICA",
     "precio": 35000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_1.230725.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_1.230725.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_2.230725.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_3.230725.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_4.230728.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_5.230728.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_1.230725.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_2.230725.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_3.230725.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_4.230728.jpg, https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_5.230728.jpg"
   },
   {
     "id": "ED44AF83",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "FALDA LARGA",
@@ -230,11 +248,12 @@
     "tallas": "UNICA",
     "precio": 53000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_1.231401.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_1.231401.jpg, https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_2.231401.jpg, https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_3.231401.jpg, https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_4.231404.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_1.231401.jpg, https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_2.231401.jpg, https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_3.231401.jpg, https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_4.231404.jpg"
   },
   {
     "id": "DACA5CB6",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "FALDA CORTA",
@@ -243,11 +262,12 @@
     "tallas": "UNICA",
     "precio": 70000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_1.231635.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_1.231635.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_2.231635.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_3.231635.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_4.231637.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_5.231637.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_6.231637.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_7.231639.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_8.231639.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_1.231635.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_2.231635.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_3.231635.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_4.231637.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_5.231637.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_6.231637.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_7.231639.jpg, https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_8.231639.jpg"
   },
   {
     "id": "342568EB",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BODYS",
     "subcategoria": "SIN MANGAS",
@@ -256,11 +276,12 @@
     "tallas": "UNICA",
     "precio": 35000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_1.232001.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_1.232001.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_2.232001.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_3.232001.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_4.232004.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_5.232004.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_6.232004.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_7.232006.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_1.232001.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_2.232001.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_3.232001.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_4.232004.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_5.232004.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_6.232004.jpg, https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_7.232006.jpg"
   },
   {
     "id": "5CBAF940",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BODYS",
     "subcategoria": "MANGA LARGA",
@@ -269,11 +290,12 @@
     "tallas": "UNICA",
     "precio": 35000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_1.232235.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_1.232235.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_2.232235.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_3.232235.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_4.232237.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_5.232237.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_6.232238.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_7.232239.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_8.232239.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_1.232235.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_2.232235.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_3.232235.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_4.232237.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_5.232237.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_6.232238.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_7.232239.jpg, https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_8.232239.jpg"
   },
   {
     "id": "D821A3F1",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BODYS",
     "subcategoria": "MANGA UNICA",
@@ -282,11 +304,12 @@
     "tallas": "UNICA",
     "precio": 35000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_1.232829.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_1.232829.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_2.232829.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_3.232829.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_4.232831.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_5.232831.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_1.232829.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_2.232829.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_3.232829.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_4.232831.jpg, https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_5.232831.jpg"
   },
   {
     "id": "93E5344B",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BLUSAS",
     "subcategoria": "STRAPLE",
@@ -295,11 +318,12 @@
     "tallas": "UNICA",
     "precio": 40000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_1.232954.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_1.232954.jpg, https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_2.232954.jpg, https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_3.232954.jpg, https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_4.232956.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_1.232954.jpg, https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_2.232954.jpg, https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_3.232954.jpg, https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_4.232956.jpg"
   },
   {
     "id": "85B16A0B",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "FALDA CORTA",
@@ -308,11 +332,12 @@
     "tallas": "UNICA",
     "precio": 70000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_1.233357.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_1.233357.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_2.233357.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_3.233357.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_4.233359.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_5.233359.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_6.233359.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_7.233401.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_8.233401.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_9.233401.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_10.233403.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_1.233357.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_2.233357.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_3.233357.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_4.233359.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_5.233359.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_6.233359.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_7.233401.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_8.233401.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_9.233401.jpg, https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_10.233403.jpg"
   },
   {
     "id": "DB723212",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "VESTIDOS",
     "subcategoria": "FALDA CORTA",
@@ -321,11 +346,12 @@
     "tallas": "UNICA",
     "precio": 58000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_1.233718.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_1.233718.jpg, https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_2.233718.jpg, https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_3.233718.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_1.233718.jpg, https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_2.233718.jpg, https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_3.233718.jpg"
   },
   {
     "id": "9EB99BAF",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "PANTALONES",
     "subcategoria": "PALAZZO",
@@ -334,11 +360,12 @@
     "tallas": "UNICA",
     "precio": 52000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_1.233903.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_1.233903.jpg, https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_2.233903.jpg, https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_3.233903.jpg, https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_4.233905.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_1.233903.jpg, https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_2.233903.jpg, https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_3.233903.jpg, https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_4.233905.jpg"
   },
   {
     "id": "C48DF983",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BODYS",
     "subcategoria": "COSTILLERO",
@@ -347,11 +374,12 @@
     "tallas": "UNICA",
     "precio": 38000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_1.234040.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_1.234040.jpg, https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_2.234040.jpg, https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_3.234040.jpg, https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_4.234041.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_1.234040.jpg, https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_2.234040.jpg, https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_3.234040.jpg, https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_4.234041.jpg"
   },
   {
     "id": "0EB21E71",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BLUSAS",
     "subcategoria": "STRAPLE",
@@ -360,11 +388,12 @@
     "tallas": "UNICA",
     "precio": 45000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_1.234209.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_1.234209.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_2.234209.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_3.234209.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_4.234211.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_5.234212.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_6.234212.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_1.234209.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_2.234209.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_3.234209.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_4.234211.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_5.234212.jpg, https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_6.234212.jpg"
   },
   {
     "id": "2B2B4BD1",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BLUSAS",
     "subcategoria": "CROP TOP",
@@ -373,11 +402,12 @@
     "tallas": "UNICA",
     "precio": 42000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_1.234314.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_1.234314.jpg, https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_2.234314.jpg, https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_3.234314.jpg, https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_4.234316.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_1.234314.jpg, https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_2.234314.jpg, https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_3.234314.jpg, https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_4.234316.jpg"
   },
   {
     "id": "C3B8E4BC",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "JEANS DAMA",
     "subcategoria": "BOTA RECTA",
@@ -386,11 +416,12 @@
     "tallas": "6,8,10,12,14",
     "precio": 73000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_2.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_3.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_4.022100.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_5.022100.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_6.022101.jpg",
-    "promo": true
+    "promo": true,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_2.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_3.022057.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_4.022100.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_5.022100.jpg, https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_6.022101.jpg"
   },
   {
     "id": "8C73E98E",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "JEANS DAMA",
     "subcategoria": "TELA CROCS",
@@ -399,11 +430,12 @@
     "tallas": "6,8,10,12,14",
     "precio": 73000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_1.193309.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_1.193309.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_2.193309.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_3.193309.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_4.193312.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_5.193316.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_6.193316.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_7.193318.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_8.193319.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_9.193320.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_10.193320.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_11.193323.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_12.193327.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_13.193327.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_14.193330.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_15.193332.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_1.193309.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_2.193309.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_3.193309.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_4.193312.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_5.193316.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_6.193316.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_7.193318.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_8.193319.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_9.193320.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_10.193320.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_11.193323.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_12.193327.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_13.193327.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_14.193330.jpg, https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_15.193332.jpg"
   },
   {
     "id": "93246AA1",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "JEANS DAMA",
     "subcategoria": "PALAZZO",
@@ -412,11 +444,12 @@
     "tallas": "6,8,10,12,14",
     "precio": 75000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_1.194805.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_1.194805.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_2.194805.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_3.194805.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_4.194808.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_5.194809.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_6.194809.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_7.194811.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_8.194812.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_9.194812.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_10.194814.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_11.194816.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_12.194817.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_1.194805.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_2.194805.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_3.194805.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_4.194808.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_5.194809.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_6.194809.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_7.194811.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_8.194812.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_9.194812.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_10.194814.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_11.194816.jpg, https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_12.194817.jpg"
   },
   {
     "id": "8FD69EEF",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "JEANS DAMA",
     "subcategoria": "OCHENTERO",
@@ -425,11 +458,12 @@
     "tallas": "6,8,10,12,14",
     "precio": 73000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_1.195056.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_1.195056.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_2.195056.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_3.195056.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_4.195059.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_5.195059.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_6.195059.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_7.195102.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_8.195103.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_9.195104.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_10.195106.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_11.195106.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_12.195109.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_13.195109.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_14.195110.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_15.195111.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_16.195112.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_17.195112.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_1.195056.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_2.195056.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_3.195056.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_4.195059.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_5.195059.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_6.195059.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_7.195102.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_8.195103.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_9.195104.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_10.195106.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_11.195106.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_12.195109.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_13.195109.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_14.195110.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_15.195111.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_16.195112.jpg, https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_17.195112.jpg"
   },
   {
     "id": "A057743F",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CHAQUETAS",
     "subcategoria": "DAMA",
@@ -438,11 +472,12 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_2.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_3.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_4.010357.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_5.010357.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_2.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_3.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_4.010357.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_5.010357.jpg"
   },
   {
     "id": "F5E6B846",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CHAQUETAS",
     "subcategoria": "DAMA",
@@ -451,11 +486,12 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_2.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_3.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_4.010622.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_2.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_3.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_4.010622.jpg"
   },
   {
     "id": "4077A93E",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CAMISAS DAMA",
     "subcategoria": "MANGA LARGA",
@@ -464,11 +500,12 @@
     "tallas": "S,M,L,XL",
     "precio": 54000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_1.215820.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_1.215820.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_2.215820.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_3.215820.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_4.215822.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_5.215823.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_6.215824.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_7.215826.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_8.215827.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_9.215827.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_10.215829.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_11.215829.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_12.215829.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_13.215831.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_14.215831.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_15.215832.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_16.215833.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_17.215835.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_18.215835.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_19.215836.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_1.215820.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_2.215820.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_3.215820.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_4.215822.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_5.215823.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_6.215824.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_7.215826.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_8.215827.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_9.215827.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_10.215829.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_11.215829.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_12.215829.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_13.215831.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_14.215831.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_15.215832.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_16.215833.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_17.215835.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_18.215835.jpg,https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_19.215836.jpg"
   },
   {
     "id": "91E832A3",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CAMISAS DAMA",
     "subcategoria": "OVERSIZE",
@@ -477,11 +514,12 @@
     "tallas": "UNICA",
     "precio": 49000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg,https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_1.191244.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_2.191244.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_3.191244.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_4.191247.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_5.191248.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_7.191250.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_8.191250.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_9.191250.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_11.191252.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_12.191253.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_13.191254.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_14.191255.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_15.191255.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_16.191257.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_17.191257.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_18.191257.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg,https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_1.191244.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_2.191244.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_3.191244.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_4.191247.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_5.191248.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_7.191250.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_8.191250.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_9.191250.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_11.191252.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_12.191253.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_13.191254.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_14.191255.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_15.191255.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_16.191257.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_17.191257.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_18.191257.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg"
   },
   {
     "id": "0386ADB6",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "ROPA DEPORTIVA",
     "subcategoria": "DAMAS",
@@ -490,11 +528,12 @@
     "tallas": "SM,LXL",
     "precio": 75000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_1.155314.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_1.155314.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_2.155314.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_3.155314.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_4.155318.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_5.155318.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_6.155318.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_7.155321.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_8.155322.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_9.155322.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_10.155324.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_11.155325.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_12.155325.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_13.155327.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_14.155328.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_15.155329.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_16.155330.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_1.155314.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_2.155314.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_3.155314.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_4.155318.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_5.155318.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_6.155318.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_7.155321.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_8.155322.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_9.155322.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_10.155324.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_11.155325.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_12.155325.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_13.155327.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_14.155328.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_15.155329.jpg, https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_16.155330.jpg"
   },
   {
     "id": "C3D9360D",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CHAQUETAS",
     "subcategoria": "DAMA",
@@ -503,11 +542,12 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_1.201542.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_1.201542.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_2.201542.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_3.201542.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_4.201544.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_5.201544.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_6.201544.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_1.201542.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_2.201542.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_3.201542.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_4.201544.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_5.201544.jpg, https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_6.201544.jpg"
   },
   {
     "id": "4639B3E3",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CHAQUETAS",
     "subcategoria": "DAMA",
@@ -516,11 +556,12 @@
     "tallas": "UNICA",
     "precio": 79000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_1.204435.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_1.204435.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_2.204435.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_3.204435.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_4.204438.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_5.204438.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_1.204435.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_2.204435.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_3.204435.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_4.204438.jpg, https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_4639b3e3.IMAGEN_5.204438.jpg"
   },
   {
     "id": "769D97C7",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CHAQUETAS",
     "subcategoria": "DAMA",
@@ -529,11 +570,12 @@
     "tallas": "S,M,L,XL",
     "precio": 59000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_1.234831.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_1.234831.jpg, https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_2.234831.jpg, https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_3.234831.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_1.234831.jpg, https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_2.234831.jpg, https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_3.234831.jpg"
   },
   {
     "id": "1D454348",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "JEANS DAMA",
     "subcategoria": "BOTA CAMPANA",
@@ -542,11 +584,12 @@
     "tallas": "6,8,10,12,14",
     "precio": 78000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_1.153635.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_1.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_2.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_3.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_4.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_5.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_6.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_7.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_8.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_9.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_10.153641.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_11.153641.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_12.153642.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_13.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_14.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_15.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_16.153645.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_1.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_2.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_3.153635.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_4.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_5.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_6.153637.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_7.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_8.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_9.153639.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_10.153641.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_11.153641.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_12.153642.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_13.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_14.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_15.153643.jpg, https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_16.153645.jpg"
   },
   {
     "id": "DCECAB13",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CONJUNTOS",
     "subcategoria": "TRES PIEZAS",
@@ -555,11 +598,12 @@
     "tallas": "UNICA",
     "precio": 83000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_1.014743.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_1.014743.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_2.014743.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_3.014743.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_4.014745.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_5.014746.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_6.014808.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_7.014808.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_8.014808.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_9.014810.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_1.014743.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_2.014743.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_3.014743.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_4.014745.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_5.014746.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_6.014808.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_7.014808.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_8.014808.jpg, https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_9.014810.jpg"
   },
   {
     "id": "67278AA1",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "ENTERIZOS",
     "subcategoria": "ENTERIZO",
@@ -568,11 +612,12 @@
     "tallas": "UNICA",
     "precio": 58000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_2.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_3.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_4.021654.jpg",
-    "promo": true
+    "promo": true,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_2.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_3.021651.jpg, https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_4.021654.jpg"
   },
   {
     "id": "9405735F",
+    "tipo": "ROPA",
     "subtipo": "CABALLERO",
     "categoria": "CAMISAS",
     "subcategoria": "SATIN",
@@ -581,11 +626,12 @@
     "tallas": "S,M,L,XL",
     "precio": 70000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_1.144758.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_1.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_2.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_3.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_4.144800.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_5.144801.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_6.144801.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_7.144803.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_8.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_9.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_10.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_11.144807.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_12.144807.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_13.144808.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_14.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_15.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_16.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_18.144813.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_19.144813.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_20.144815.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_1.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_2.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_3.144758.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_4.144800.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_5.144801.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_6.144801.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_7.144803.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_8.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_9.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_10.144805.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_11.144807.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_12.144807.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_13.144808.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_14.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_15.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_16.144810.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_18.144813.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_19.144813.jpg, https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_20.144815.jpg"
   },
   {
     "id": "D9594FB8",
+    "tipo": "RELOJERIA",
     "subtipo": "CABALLERO",
     "categoria": "CURREN",
     "subcategoria": "ANALOGO",
@@ -594,11 +640,12 @@
     "tallas": "N/A",
     "precio": 150000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_1.215515.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_1.215515.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_2.215515.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_3.215515.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_4.215517.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_5.215517.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_6.215517.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_7.215518.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_8.215519.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_9.215519.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_10.215520.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_11.215521.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_12.215521.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_1.215515.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_2.215515.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_3.215515.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_4.215517.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_5.215517.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_6.215517.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_7.215518.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_8.215519.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_9.215519.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_10.215520.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_11.215521.jpg, https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_12.215521.jpg"
   },
   {
     "id": "B395153E",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "ENTERIZOS",
     "subcategoria": "ENTERIZO",
@@ -607,11 +654,12 @@
     "tallas": "UNICA",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_1.163805.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_1.163805.jpg, https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_2.163805.jpg, https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_3.163805.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_1.163805.jpg, https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_2.163805.jpg, https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_3.163805.jpg"
   },
   {
     "id": "9359368Q",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BLUSAS",
     "subcategoria": "MANGA LARGA",
@@ -620,11 +668,12 @@
     "tallas": "UNICA",
     "precio": 38000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_1.164010.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_1.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_2.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_3.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_4.164013.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_1.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_2.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_3.164010.jpg, https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_4.164013.jpg"
   },
   {
     "id": "CD8E11A2",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CHALECOS",
     "subcategoria": "CUERINA",
@@ -633,11 +682,12 @@
     "tallas": "UNICA",
     "precio": 68000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_2.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_3.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_4.164143.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_2.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_3.164141.jpg, https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_4.164143.jpg"
   },
   {
     "id": "9BA4568F",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CAMISAS DAMA",
     "subcategoria": "MANGA LARGA",
@@ -646,11 +696,12 @@
     "tallas": "S,M,L,XL",
     "precio": 58000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_2.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_3.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_4.212909.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_5.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_6.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_7.212911.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_8.212912.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_2.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_3.212907.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_4.212909.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_5.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_6.212910.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_7.212911.jpg, https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_8.212912.jpg"
   },
   {
     "id": "084BC5B4",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "BLUSONES",
     "subcategoria": "MANGA CORTA",
@@ -659,11 +710,12 @@
     "tallas": "S,M,L,XL",
     "precio": 58000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_1.213220.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_1.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_2.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_3.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_4.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_5.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_6.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_7.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_8.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_9.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_10.213226.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_1.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_2.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_3.213220.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_4.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_5.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_6.213222.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_7.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_8.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_9.213224.jpg, https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_10.213226.jpg"
   },
   {
     "id": "9B1D26EB",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CAMISAS DAMA",
     "subcategoria": "RAYADA MANGA CORTA",
@@ -672,11 +724,12 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_2.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_3.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_4.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_5.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_6.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_8.213520.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_9.213520.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_2.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_3.213515.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_4.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_5.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_6.213517.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_8.213520.jpg, https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_9.213520.jpg"
   },
   {
     "id": "93B59852",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CAMISAS DAMA",
     "subcategoria": "OVERZISE RAYADA MANGA CORTA",
@@ -685,11 +738,12 @@
     "tallas": "UNICA",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_1.214406.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_1.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_2.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_3.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_4.214408.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_5.214408.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_6.214409.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_7.214410.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_8.214410.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_1.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_2.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_3.214406.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_4.214408.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_5.214408.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_6.214409.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_7.214410.jpg, https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_8.214410.jpg"
   },
   {
     "id": "C0B75B22",
+    "tipo": "ROPA",
     "subtipo": "DAMA ",
     "categoria": "CAMISAS DAMA",
     "subcategoria": "OVERZISE MANGA LARGA",
@@ -698,7 +752,7 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_1.214917.jpg",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_1.214917.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_2.214917.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_3.214917.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_4.214919.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_5.214919.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_6.214920.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_7.214921.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_8.214922.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_9.214922.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_10.214924.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_11.214924.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_12.214924.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_13.214925.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_14.214926.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_15.214926.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_16.214927.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_17.214928.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_18.214928.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_19.214929.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_20.214929.jpg",
-    "promo": false
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_1.214917.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_2.214917.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_3.214917.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_4.214919.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_5.214919.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_6.214920.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_7.214921.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_8.214922.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_9.214922.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_10.214924.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_11.214924.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_12.214924.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_13.214925.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_14.214926.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_15.214926.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_16.214927.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_17.214928.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_18.214928.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_19.214929.jpg, https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_20.214929.jpg"
   }
 ]
