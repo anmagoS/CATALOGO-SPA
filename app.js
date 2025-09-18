@@ -212,8 +212,10 @@ function generarPedidoWhatsApp() {
   const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
   mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
   mensaje += "✅ *¡Gracias por tu atención!*";
-    const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
-  window.open(urlWhatsApp, "_blank");
+
+  const mensajeCodificado = encodeURIComponent(mensaje);
+  const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
+    window.open(urlWhatsApp, "_blank");
 
   // Limpiar el carrito después de enviar
   articulosCarrito = [];
@@ -226,33 +228,15 @@ function generarPedidoWhatsApp() {
 
 // Funciones auxiliares
 function guardarCarrito() {
-  // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
+  // Puedes implementar almacenamiento local si lo deseas
 }
 
 function cargarCarritoDesdeStorage() {
-  // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
+  // Puedes implementar recuperación desde localStorage si lo deseas
 }
 
 function actualizarEstadoBotonWhatsApp() {
-  // Puedes implementar lógica visual si el botón debe activarse/desactivarse.
-}
-
-// Renderizar menú lateral con categorías
-function renderMenuCategorias(productos) {
-  const menu = document.getElementById("menu-categorias");
-  if (!menu) return;
-
-  menu.innerHTML = "";
-
-  const categoriasUnicas = [...new Set(productos.map(p => p.categoria).filter(Boolean))];
-
-  categoriasUnicas.forEach(categoria => {
-    const item = document.createElement("a");
-    item.className = "nav-link";
-    item.textContent = categoria;
-    item.href = `PRODUCTOS.HTML?categoria=${encodeURIComponent(categoria)}`;
-    menu.appendChild(item);
-  });
+  // Puedes activar/desactivar el botón según el estado del carrito
 }
 
 // Inicialización principal
@@ -262,50 +246,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const header = await fetch("HEADER.HTML").then(res => res.text());
   document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
 
-  // Esperar a que el DOM reconozca los nuevos elementos del header
-  await new Promise(resolve => requestAnimationFrame(resolve));
-
-  // Activar botón de categorías
-  const toggle = document.getElementById("toggle-categorias");
-  const menu = document.getElementById("menu-categorias");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.style.display = menu.style.display === "none" ? "flex" : "none";
-    });
-  }
-
-  // Renderizar categorías después de que el contenedor exista
-  renderMenuCategorias(window.catalogoGlobal);
-
-  // Activar buscador si existe
-  if (typeof activarBuscador === "function") {
-    activarBuscador();
-  }
-
-  // Cargar footer
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
-
-  // Carrito
-  ajustarCarrito();
-  cargarCarritoDesdeStorage();
-
-  // Renderizar productos si aplica
-  if (document.getElementById("contenido-productos")) {
-    renderizarProductos(window.catalogoGlobal);
-  }
-});
-document.addEventListener("DOMContentLoaded", async () => {
-  await cargarCatalogoGlobal();
-
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-
   // Esperar a que el DOM reconozca los nuevos elementos
-  await new Promise(resolve => setTimeout(resolve, 100)); // más confiable que requestAnimationFrame
+  await new Promise(resolve => setTimeout(resolve, 100));
 
-  // Activar botón de categorías
+  // Activar botón de categorías y renderizar menú
   const toggle = document.getElementById("toggle-categorias");
   const menu = document.getElementById("menu-categorias");
 
@@ -314,7 +258,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       menu.style.display = menu.style.display === "none" ? "flex" : "none";
     });
 
-    // Renderizar categorías
     const categoriasUnicas = [...new Set(window.catalogoGlobal.map(p => p.categoria).filter(Boolean))];
     categoriasUnicas.forEach(categoria => {
       const item = document.createElement("a");
@@ -335,13 +278,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("footer-container").innerHTML = footer;
 
   // Carrito
-  ajustarCarrito();
   cargarCarritoDesdeStorage();
+  renderizarCarrito();
+  actualizarSubtotal();
+  actualizarContadorCarrito();
+  actualizarEstadoBotonWhatsApp();
 
   // Renderizar productos si aplica
   if (document.getElementById("contenido-productos")) {
     renderizarProductos(window.catalogoGlobal);
   }
 });
-
 
