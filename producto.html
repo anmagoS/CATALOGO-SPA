@@ -78,17 +78,21 @@
       const header = await fetch("HEADER.HTML").then(res => res.text());
       document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
       await new Promise(resolve => requestAnimationFrame(resolve));
+      ajustarCarrito();
 
       activarBuscadorGlobal();
 
       const footer = await fetch("footer.html").then(res => res.text());
       document.getElementById("footer-container").innerHTML = footer;
 
-      ajustarCarrito();
       await cargarProducto();
 
       if (typeof cargarCarritoDesdeStorage === "function") {
         cargarCarritoDesdeStorage();
+      }
+
+      if (typeof actualizarCarrito === "function" && document.getElementById("contador-carrito")) {
+        actualizarCarrito(); // ✅ Refresca el contador y contenido del carrito
       }
     });
 
