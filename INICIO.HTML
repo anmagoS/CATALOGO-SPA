@@ -126,23 +126,28 @@
       }
     }
 
-    document.addEventListener("DOMContentLoaded", async () => {
-      const header = await fetch("HEADER.HTML").then(res => res.text());
-      document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-      await new Promise(resolve => requestAnimationFrame(resolve));
+  document.addEventListener("DOMContentLoaded", async () => {
+  const header = await fetch("HEADER.HTML").then(res => res.text());
+  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  ajustarCarrito();
 
-      activarBuscadorGlobal();
+  activarBuscadorGlobal();
 
-      const footer = await fetch("footer.html").then(res => res.text());
-      document.getElementById("footer-container").innerHTML = footer;
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
 
-      await cargarCatalogo();
-      ajustarCarrito();
+  await cargarCatalogo();
 
-      if (typeof cargarCarritoDesdeStorage === "function") {
-        cargarCarritoDesdeStorage();
-      }
-    });
+  if (typeof cargarCarritoDesdeStorage === "function") {
+    cargarCarritoDesdeStorage();
+  }
+
+  if (typeof actualizarCarrito === "function") {
+    actualizarCarrito(); // ✅ Esto refresca el contador y contenido
+  }
+});
+
   </script>
 </body>
 </html>
