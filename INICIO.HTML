@@ -122,9 +122,10 @@
         cargarCarritoDesdeStorage();
       }
 
-      if (typeof activarBuscador === "function") {
-        activarBuscador(); // ✅ Se activa después de insertar el header
-      }
+     await new Promise(resolve => requestAnimationFrame(resolve));
+if (typeof activarBuscador === "function") {
+  activarBuscador(); // ✅ Ahora sí se activa cuando #buscador existe
+}
     });
   </script>
 
