@@ -481,18 +481,29 @@ function cargarCarritoDesdeStorage() {
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
 
+  // 1. Insertar HEADER
   const header = await fetch("HEADER.HTML").then(res => res.text());
   document.getElementById("header-container").innerHTML = header;
 
+  // 2. Esperar a que el DOM reconozca los elementos insertados
+  await new Promise(resolve => requestAnimationFrame(resolve));
+
+  // 3. Activar buscador solo cuando #buscador y #sugerencias existen
+  if (typeof activarBuscador === "function") {
+    activarBuscador();
+  }
+
+  // 4. Insertar FOOTER
   const footer = await fetch("footer.html").then(res => res.text());
   document.getElementById("footer-container").innerHTML = footer;
 
+  // 5. Ajustar carrito y restaurar estado
   ajustarCarrito();
-  activarBuscador();
   cargarCarritoDesdeStorage();
 
-  // Renderizar productos si aplica
+  // 6. Renderizar productos si aplica
   if (document.getElementById("contenido-productos")) {
     renderizarProductos(window.catalogoGlobal);
   }
 });
+
