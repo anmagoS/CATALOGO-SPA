@@ -213,8 +213,8 @@ function generarPedidoWhatsApp() {
   mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n`;
   mensaje += "✅ *¡Gracias por tu atención!*";
 
-  const mensajeCodificado = encodeURIComponent(mensaje);
-  const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
+ const mensajeCodificado = encodeURIComponent(mensaje);
+const urlWhatsApp = `https://wa.me/573006498710?text=${mensajeCodificado}`;
   window.open(urlWhatsApp, "_blank");
 
   // Limpiar el carrito después de enviar
@@ -225,76 +225,3 @@ function generarPedidoWhatsApp() {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
-
-// Funciones de respaldo
-function guardarCarrito() {
-  // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
-}
-
-function cargarCarritoDesdeStorage() {
-  // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
-}
-
-function actualizarEstadoBotonWhatsApp() {
-  // Puedes implementar lógica visual si el botón debe activarse/desactivarse.
-}
-
-// Renderizar menú lateral con categorías
-function renderMenuCategorias(productos) {
-  const menu = document.getElementById("menu-categorias");
-  if (!menu) return;
-
-  menu.innerHTML = "";
-
-  const categoriasUnicas = [...new Set(productos.map(p => p.categoria).filter(Boolean))];
-
-  categoriasUnicas.forEach(categoria => {
-    const item = document.createElement("a");
-    item.className = "nav-link";
-    item.textContent = categoria;
-    item.href = `PRODUCTOS.HTML?categoria=${encodeURIComponent(categoria)}`;
-    menu.appendChild(item);
-  });
-}
-
-// Inicialización principal
-document.addEventListener("DOMContentLoaded", async () => {
-  await cargarCatalogoGlobal();
-
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-
-  // Esperar a que el header se renderice
-  await new Promise(resolve => requestAnimationFrame(resolve));
-
-  // Activar botón de categorías
-  const toggle = document.getElementById("toggle-categorias");
-  const menu = document.getElementById("menu-categorias");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.style.display = menu.style.display === "none" ? "flex" : "none";
-    });
-  }
-
-  // Activar buscador si existe
-  if (typeof activarBuscador === "function") {
-    activarBuscador();
-  }
-
-  // Cargar footer
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
-
-  // Carrito
-  ajustarCarrito();
-  cargarCarritoDesdeStorage();
-
-  // Renderizar productos si aplica
-  if (document.getElementById("contenido-productos")) {
-    renderizarProductos(window.catalogoGlobal);
-  }
-
-  // Renderizar menú de categorías
-  renderMenuCategorias(window.catalogoGlobal);
-});
