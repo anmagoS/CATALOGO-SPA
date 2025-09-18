@@ -66,6 +66,13 @@
 
   <!-- SCRIPTS -->
   <script>
+    const imagenesPorTipo = {
+      "Ropa": "https://ik.imagekit.io/mbsk9dati/593678a2-9af5-47a8-a47c-34407d25bd60.jpg?updatedAt=1758216950422",
+      "Zapatos": "https://ik.imagekit.io/mbsk9dati/zapatos.jpg",
+      "Accesorios": "https://ik.imagekit.io/mbsk9dati/accesorios.jpg"
+      // Agrega más tipos según tu catálogo
+    };
+
     async function cargarCatalogo() {
       const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
       const respuesta = await fetch(url);
@@ -81,17 +88,16 @@
       const tiposUnicos = [...new Set(productos.map(p => p.tipo?.trim()).filter(Boolean))];
 
       tiposUnicos.forEach(tipo => {
-        const productosDelTipo = productos.filter(p => p.tipo?.trim() === tipo);
-        const productoRef = productosDelTipo[0];
+        const imagenRef = imagenesPorTipo[tipo] || "imagen-default.jpg";
 
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.innerHTML = `
           <a href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}" class="imagen-producto">
-            <img src="${productoRef.imagen}" alt="${tipo}">
+            <img src="${imagenRef}" alt="${tipo}">
           </a>
           <div class="nombre-producto">${tipo}</div>
-          <a class="boton-comprar" href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}">Ver mas</a>
+          <a class="boton-comprar" href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}">Ver más</a>
         `;
         contenedor.appendChild(tarjeta);
       });
