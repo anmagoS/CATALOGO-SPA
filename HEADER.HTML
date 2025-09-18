@@ -1,20 +1,20 @@
-<header class="header d-flex justify-content-between align-items-center px-3 position-relative">
+<header class="header d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-white position-relative">
   <!-- LOGO -->
   <div class="logo">
     <a href="INICIO.HTML">
-      <img src="logo.jpg" alt="ANMAGO STORE" />
+      <img src="logo.jpg" alt="ANMAGO STORE" style="height: 48px;" />
     </a>
   </div>
 
   <!-- BARRA DE BÚSQUEDA -->
-  <div class="buscador-container w-50 position-relative">
+  <div class="buscador-container flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
     <input type="text" id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
-    <div id="sugerencias" class="dropdown-menu position-absolute mt-1 w-100"></div>
+    <div id="sugerencias" class="dropdown-menu position-absolute mt-1 w-100 z-3"></div>
   </div>
 
   <!-- BOTÓN HAMBURGUESA -->
-  <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
-    <i class="bi bi-list fs-1 text-white"></i>
+  <button class="navbar-toggler border-0 bg-transparent text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+    <i class="bi bi-list fs-1"></i>
   </button>
 </header>
 
