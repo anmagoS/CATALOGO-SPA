@@ -35,23 +35,29 @@
 
 <!-- SCRIPT DE BÚSQUEDA INTELIGENTE -->
 <script>
- buscador.addEventListener("input", () => {
-  const texto = buscador.value.toLowerCase().trim();
-  sugerencias.innerHTML = "";
+  document.addEventListener("DOMContentLoaded", () => {
+    const buscador = document.getElementById("buscador");
+    const sugerencias = document.getElementById("sugerencias");
 
-  if (texto.length < 2 || !window.catalogoGlobal) return;
+    if (!buscador || !sugerencias) return;
 
-  const coincidencias = window.catalogoGlobal.filter(p => {
-    const normalizar = str => str?.toString().toLowerCase().trim();
-    return (
-      normalizar(p.producto).includes(texto) ||
-      normalizar(p.tipo).includes(texto) ||
-      normalizar(p.subtipo).includes(texto) ||
-      normalizar(p.categoria).includes(texto) ||
-      normalizar(p.material).includes(texto) ||
-      normalizar(p.precio).includes(texto)
-    );
-  });
+    buscador.addEventListener("input", () => {
+      const texto = buscador.value.toLowerCase().trim();
+      sugerencias.innerHTML = "";
+
+      if (texto.length < 2 || !window.catalogoGlobal) return;
+
+      const coincidencias = window.catalogoGlobal.filter(p => {
+        const normalizar = str => str?.toString().toLowerCase().trim();
+        return (
+          normalizar(p.producto).includes(texto) ||
+          normalizar(p.tipo).includes(texto) ||
+          normalizar(p.subtipo).includes(texto) ||
+          normalizar(p.categoria).includes(texto) ||
+          normalizar(p.material).includes(texto) ||
+          normalizar(p.precio).includes(texto)
+        );
+      });
 
       coincidencias.slice(0, 6).forEach(p => {
         const item = document.createElement("a");
