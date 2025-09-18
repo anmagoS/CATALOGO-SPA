@@ -37,7 +37,7 @@
       const tipoSeleccionado = getTipoDesdeURL();
       if (!tipoSeleccionado) return;
 
-      document.getElementById("titulo-subtipos").textContent = `Subtipos de ${tipoSeleccionado}`;
+      document.getElementById("titulo-subtipos").textContent = `SELEECION DE ${tipoSeleccionado}`;
 
       const contenedor = document.getElementById("grid-subtipos");
       contenedor.innerHTML = "";
@@ -56,7 +56,7 @@
             <img src="${productoRef.imagen}" alt="${subtipo}">
           </a>
           <div class="nombre-producto">${subtipo}</div>
-          <a class="boton-comprar" href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}">Ver categorías</a>
+          <a class="boton-comprar" href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}">Ver más</a>
         `;
         contenedor.appendChild(tarjeta);
       });
