@@ -399,3 +399,53 @@ footer {
   width: 180px;
   text-align: center;
 }
+/* Centrado general */
+.contenedor-categoria {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Títulos jerárquicos */
+.bloque-tipo h2 {
+  font-size: 2rem;
+  color: #222;
+  border-left: 6px solid #111;
+  padding-left: 12px;
+  margin-top: 3rem;
+}
+
+.bloque-subtipo h3 {
+  font-size: 1.6rem;
+  color: #444;
+  border-left: 4px solid #555;
+  padding-left: 10px;
+  margin-top: 2rem;
+}
+
+/* Grid de productos */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Tarjeta de producto */
+.producto {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.imagen-producto img {
+  max-width: 100%;
+  border-radius: 6px;
+}
