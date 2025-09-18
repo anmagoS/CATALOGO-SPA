@@ -234,7 +234,6 @@ function guardarCarrito() {
 function cargarCarritoDesdeStorage() {
   // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
 }
-
 // Inicialización principal
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
@@ -242,7 +241,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const header = await fetch("HEADER.HTML").then(res => res.text());
   document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
 
-  // Esperar al siguiente ciclo de render para asegurar que #buscador y menú existen
   await new Promise(resolve => requestAnimationFrame(resolve));
 
   if (typeof activarBuscador === "function") {
@@ -259,20 +257,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderizarProductos(window.catalogoGlobal);
   }
 
-  // Desplegar categorías en el menú lateral
   if (typeof renderMenuCategorias === "function" && window.catalogoGlobal) {
     renderMenuCategorias(window.catalogoGlobal);
   }
 
-  // Activar despliegue visual del menú lateral
   const toggle = document.getElementById("toggle-categorias");
   const menu = document.getElementById("menu-categorias");
 
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
-      menu.classList.toggle("show");
-
+      menu.style.display = menu.style.display === "none" ? "flex" : "none";
+    });
   }
+});
 
 // Función para renderizar categorías en el menú lateral
 function renderMenuCategorias(productos) {
@@ -291,3 +288,4 @@ function renderMenuCategorias(productos) {
     menu.appendChild(item);
   });
 }
+
