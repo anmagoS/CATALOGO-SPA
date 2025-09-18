@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const header = await fetch("HEADER.HTML").then(res => res.text());
   document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
 
-  // Esperar al siguiente ciclo de render para asegurar que #buscador existe
+  // Esperar al siguiente ciclo de render para asegurar que #buscador y menú existen
   await new Promise(resolve => requestAnimationFrame(resolve));
 
   if (typeof activarBuscador === "function") {
@@ -258,7 +258,25 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (document.getElementById("contenido-productos")) {
     renderizarProductos(window.catalogoGlobal);
   }
- function renderMenuCategorias(productos) {
+
+  // Desplegar categorías en el menú lateral
+  if (typeof renderMenuCategorias === "function" && window.catalogoGlobal) {
+    renderMenuCategorias(window.catalogoGlobal);
+  }
+
+  // Activar despliegue visual del menú lateral
+  const toggle = document.getElementById("toggle-categorias");
+  const menu = document.getElementById("menu-categorias");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  }
+});
+
+// Función para renderizar categorías en el menú lateral
+function renderMenuCategorias(productos) {
   const menu = document.getElementById("menu-categorias");
   if (!menu) return;
 
@@ -274,6 +292,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     menu.appendChild(item);
   });
 }
-
-});
-
