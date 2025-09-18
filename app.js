@@ -70,7 +70,7 @@ function renderizarProductos(catalogo) {
   contenedor.innerHTML = "";
 
   catalogo.forEach(producto => {
-    const tallas = producto.tallas.split(",").map(t => t.trim());
+    const tallas = producto.tallas?.split(",").map(t => t.trim()) || [];
     const opcionesTalla = tallas.map(t => `<option value="${t}">${t}</option>`).join("");
 
     const productoHTML = `
@@ -218,15 +218,17 @@ function generarPedidoWhatsApp() {
   window.open(urlWhatsApp, "_blank");
 
   // Limpiar el carrito después de enviar
-  articulosCarrito = [];
-  guardarCarrito();
-    renderizarCarrito();
+  renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 }
 
 // Función de respaldo para evitar errores si no está definida
+function guardarCarrito() {
+  // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
+}
+
 function cargarCarritoDesdeStorage() {
   // Puedes implementar la lógica luego. Por ahora evita que se rompa el script.
 }
