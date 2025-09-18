@@ -380,3 +380,22 @@ footer {
     justify-content: center;
   }
 }
+.bloque-tipo h2,
+.bloque-subtipo h3,
+.bloque-categoria h4,
+.bloque-subcategoria h5 {
+  margin-top: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.grid-productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.producto {
+  width: 180px;
+  text-align: center;
+}
