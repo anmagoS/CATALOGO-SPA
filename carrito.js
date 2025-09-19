@@ -9,9 +9,7 @@ const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.getElementById("contador-carrito");
 const closeButton = document.querySelector(".btn-close");
 const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']);
-
 // === FUNCIONES ===
-
 function agregarAlCarrito(producto) {
   articulosCarrito.push(producto);
   guardarCarrito();
@@ -21,7 +19,6 @@ function agregarAlCarrito(producto) {
   actualizarEstadoBotonWhatsApp();
   abrirCarrito();
 }
-
 function renderizarCarrito() {
   carritoContainer.innerHTML = "";
 
