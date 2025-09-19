@@ -1,4 +1,13 @@
 let articulosCarrito = [];
+// Recuperar carrito guardado si existe
+const carritoGuardado = localStorage.getItem("carritoAnmago");
+if (carritoGuardado) {
+  articulosCarrito = JSON.parse(carritoGuardado);
+  renderizarCarrito();
+  actualizarSubtotal();
+  actualizarContadorCarrito();
+}
+
 const carritoContainer = document.getElementById("carrito-contenido");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.getElementById("contador-carrito");
