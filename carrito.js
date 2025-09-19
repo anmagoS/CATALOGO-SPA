@@ -145,3 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 });
+
+// ✅ Exponer función al contexto global
+window.agregarAlCarrito = agregarAlCarrito;
