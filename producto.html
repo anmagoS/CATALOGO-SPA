@@ -59,7 +59,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="carrito.js"></script>
   <script src="app.js"></script>
   <script src="buscador.js" type="module"></script>
 
@@ -151,24 +150,26 @@
         const boton = tarjeta.querySelector(".btn-cart");
         const selector = tarjeta.querySelector(".selector-talla");
 
-        boton.onclick = () => {
+        boton.addEventListener("click", () => {
           const tallaSeleccionada = selector?.value || "No especificada";
 
           const productoFinal = {
-            id: producto.id,
-            producto: producto.producto,
+            id: producto.id + "-" + tallaSeleccionada,
+            nombre: producto.producto,
             imagen: img,
             precio: precioFinal,
-            talla: tallaSeleccionada
+            talla: tallaSeleccionada,
+            categoria: producto.categoria + " - " + producto.subcategoria,
+            cantidad: 1
           };
 
           if (typeof window.agregarAlCarrito === "function") {
-            window.agregarAlCarrito(productoFinal);
+            window.agregarAlCarrito({ target: boton });
           }
 
           const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("offcanvasCarrito"));
           bsOffcanvas.show();
-        };
+        });
 
         galeria.appendChild(tarjeta);
       });
