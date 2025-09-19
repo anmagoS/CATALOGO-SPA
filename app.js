@@ -54,17 +54,14 @@ function agregarAlCarrito(e) {
   const btn = e.target.closest(".btn-cart");
   if (!btn) return;
 
-  const card = btn.closest(".producto");
-  const talla = card.querySelector(".selector-talla")?.value || "Sin talla";
-
   const producto = {
-    id: card.querySelector("img").alt + "-" + talla,
-    nombre: card.querySelector(".nombre-producto").textContent,
+    id: btn.dataset.id + "-" + btn.dataset.talla,
+    nombre: btn.dataset.nombre,
     categoria: btn.dataset.categoria + " - " + btn.dataset.subcategoria,
-    precio: parseFloat(card.querySelector(".precio-producto").textContent.replace(/[^\d]/g, "")),
+    precio: parseFloat(btn.dataset.precio),
     cantidad: 1,
-    imagen: card.querySelector("img").src,
-    talla
+    imagen: btn.dataset.imagen,
+    talla: btn.dataset.talla
   };
 
   const existe = articulosCarrito.find(p => p.id === producto.id);
@@ -78,6 +75,7 @@ function agregarAlCarrito(e) {
   actualizarSubtotal();
   actualizarContadorCarrito();
 }
+
 
 // Renderizar carrito
 function renderizarCarrito() {
