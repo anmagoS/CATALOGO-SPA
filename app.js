@@ -78,6 +78,7 @@ function agregarAlCarrito(e) {
   actualizarSubtotal();
   actualizarContadorCarrito();
 }
+
 // Renderizar carrito
 function renderizarCarrito() {
   carritoContainer.innerHTML = "";
