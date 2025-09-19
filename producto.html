@@ -150,26 +150,25 @@
         const boton = tarjeta.querySelector(".btn-cart");
         const selector = tarjeta.querySelector(".selector-talla");
 
-        boton.addEventListener("click", () => {
-          const tallaSeleccionada = selector?.value || "No especificada";
+       boton.addEventListener("click", (e) => {
+  const tallaSeleccionada = selector?.value || "No especificada";
 
-          const productoFinal = {
-            id: producto.id + "-" + tallaSeleccionada,
-            nombre: producto.producto,
-            imagen: img,
-            precio: precioFinal,
-            talla: tallaSeleccionada,
-            categoria: producto.categoria + " - " + producto.subcategoria,
-            cantidad: 1
-          };
+  // Inyectar datos en el botón para que app.js los lea
+  boton.dataset.id = producto.id;
+  boton.dataset.nombre = producto.producto;
+  boton.dataset.imagen = img;
+  boton.dataset.precio = precioFinal;
+  boton.dataset.talla = tallaSeleccionada;
+  boton.dataset.categoria = producto.categoria;
+  boton.dataset.subcategoria = producto.subcategoria;
 
-          if (typeof window.agregarAlCarrito === "function") {
-            window.agregarAlCarrito({ target: boton });
-          }
+  if (typeof window.agregarAlCarrito === "function") {
+    window.agregarAlCarrito(e);
+  }
 
-          const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("offcanvasCarrito"));
-          bsOffcanvas.show();
-        });
+  const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("offcanvasCarrito"));
+  bsOffcanvas.show();
+});
 
         galeria.appendChild(tarjeta);
       });
