@@ -153,9 +153,11 @@ function generarPedidoWhatsApp() {
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
 
+ const headerContainer = document.getElementById("header-container");
+if (!headerContainer.querySelector(".header")) {
   const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-
+  headerContainer.insertAdjacentHTML("afterbegin", header);
+}
   const esperarElemento = id => new Promise(resolve => {
     const intervalo = setInterval(() => {
       const el = document.getElementById(id);
