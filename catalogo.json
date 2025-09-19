@@ -866,5 +866,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_72853582.IMAGEN_1.181417.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_72853582.IMAGEN_1.181417.jpg, https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_72853582.IMAGEN_2.181417.png, https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_72853582.IMAGEN_3.181417.jpg"
+  },
+  {
+    "id": "C8386C7F",
+    "tipo": "ROPA",
+    "subtipo": "DAMA ",
+    "categoria": "RUANA",
+    "subcategoria": "TEJIESTILO",
+    "producto": "REF5239",
+    "material": "HILO ACRILICO",
+    "tallas": "UNICA",
+    "precio": 87000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_c8386c7f.IMAGEN_1.191703.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_c8386c7f.IMAGEN_1.191703.jpg, https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_c8386c7f.IMAGEN_2.191703.jpg, https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_c8386c7f.IMAGEN_3.191703.jpg"
   }
 ]
