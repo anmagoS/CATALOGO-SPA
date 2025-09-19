@@ -15,7 +15,7 @@ const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsAp
 // === FUNCIONES PRINCIPALES ===
 
 function agregarAlCarrito(producto) {
-  const existe = articulosCarrito.find((item) => item.id === producto.id);
+  const existe = articulosCarrito.find((item) => item.id === producto.id && item.talla === producto.talla);
   if (existe) {
     existe.cantidad++;
   } else {
@@ -47,7 +47,6 @@ function renderizarCarrito() {
           </div>
           <div class="col-6">
             <h6 class="mb-1 title-product">${producto.nombre}</h6>
-            <p class="mb-0 detalles-product">Categoría: ${producto.categoria || "Sin categoría"}</p>
             <p class="mb-0 detalles-product">Talla: ${producto.talla || "No especificada"}</p>
           </div>
           <div class="col-3 text-end">
@@ -55,7 +54,7 @@ function renderizarCarrito() {
               <span class="fs-6 color-gris">${producto.cantidad}</span>
               <span class="fs-5 precio">$${(producto.precio * producto.cantidad).toLocaleString("es-CO")}</span>
             </span>
-            <button class="btn btn-danger mt-2 btn-borrar" data-id="${producto.id}">
+            <button class="btn btn-danger mt-2 btn-borrar" data-id="${producto.id}" data-talla="${producto.talla}">
               <i class="bi bi-trash3"></i>
             </button>
           </div>
@@ -73,9 +72,11 @@ function agregarEventosBorrar() {
   botonesBorrar.forEach((boton) => {
     boton.addEventListener("click", (e) => {
       const productoId = e.target.closest("button").dataset.id;
+      const talla = e.target.closest("button").dataset.talla;
+
       articulosCarrito = articulosCarrito
         .map((producto) => {
-          if (producto.id === productoId) {
+          if (producto.id === productoId && producto.talla === talla) {
             if (producto.cantidad > 1) {
               producto.cantidad--;
               return producto;
@@ -115,7 +116,7 @@ function generarPedidoWhatsApp() {
 
   articulosCarrito.forEach((producto, index) => {
     mensaje += `*${index + 1}.* ${producto.nombre}\n`;
-    mensaje += `🔗 Imagen: ${producto.imagen}\n`;
+    mensaje += `🖼️ Imagen: ${producto.imagen}\n`;
     mensaje += `📏 Talla: ${producto.talla || "No especificada"}\n`;
     mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
   });
