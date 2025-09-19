@@ -10,7 +10,7 @@ const btn_shopping = document.querySelector(".btn_shopping");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.getElementById("contador-carrito");
 const closeButton = document.querySelector(".btn-close");
-const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']);
+const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
 
 // === FUNCIONES ===
 
@@ -39,15 +39,15 @@ function renderizarCarrito() {
       <div class="container mb-3">
         <div class="row align-items-center border-bottom py-2">
           <div class="col-3">
-            <img class="img-fluid rounded" src="${producto.imagen}" alt="${producto.nombre}" />
+            <img class="img-fluid rounded" src="${producto.imagen}" alt="${producto.producto}" />
           </div>
           <div class="col-6">
-            <h6 class="mb-1 title-product">${producto.nombre}</h6>
+            <h6 class="mb-1 title-product">${producto.producto}</h6>
             <p class="mb-0 detalles-product">Talla: ${producto.talla || "No especificada"}</p>
             <p class="mb-0 detalles-product">Precio: $${producto.precio.toLocaleString("es-CO")}</p>
           </div>
           <div class="col-3 text-end">
-            <button class="boton-eliminar" data-index="${index}">
+            <button class="boton-comprar" data-index="${index}">
               <i class="bi bi-trash3"></i>
             </button>
           </div>
@@ -62,7 +62,7 @@ function renderizarCarrito() {
 
 // Eliminar producto por índice
 function agregarEventosBorrar() {
-  const botonesBorrar = document.querySelectorAll(".boton-eliminar");
+  const botonesBorrar = document.querySelectorAll(".boton-comprar[data-index]");
   botonesBorrar.forEach((boton) => {
     boton.addEventListener("click", (e) => {
       const index = parseInt(e.target.closest("button").dataset.index);
@@ -98,7 +98,7 @@ function generarPedidoWhatsApp() {
   let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
 
   articulosCarrito.forEach((producto, index) => {
-    mensaje += `*${index + 1}.* ${producto.nombre}\n`;
+    mensaje += `*${index + 1}.* ${producto.producto}\n`;
     mensaje += `🖼️ Imagen: ${producto.imagen}\n`;
     mensaje += `📏 Talla: ${producto.talla || "No especificada"}\n`;
     mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
