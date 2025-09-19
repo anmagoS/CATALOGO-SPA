@@ -81,6 +81,8 @@ function agregarAlCarrito(e) {
   renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
+  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
+
 }
 
 // Renderizar carrito
@@ -127,8 +129,12 @@ function renderizarCarrito() {
       renderizarCarrito();
       actualizarSubtotal();
       actualizarContadorCarrito();
+      localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
+
     });
   });
+  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
+
 }
 
 // Subtotal y contador
@@ -160,6 +166,7 @@ function generarPedidoWhatsApp() {
   renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
+localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
 
 // Inicialización
