@@ -119,14 +119,16 @@ function generarPedidoWhatsApp() {
   actualizarEstadoBotonWhatsApp();
 }
 
-// Abrir carrito
+// Abrir carrito con Bootstrap
 function abrirCarrito() {
-  offcanvasCarrito.classList.add("show");
+  const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasCarrito);
+  bsOffcanvas.show();
 }
 
-// Cerrar carrito
+// Cerrar carrito con Bootstrap
 function cerrarCarrito() {
-  offcanvasCarrito.classList.remove("show");
+  const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasCarrito);
+  bsOffcanvas.hide();
 }
 
 // Activar/desactivar botón de WhatsApp
@@ -141,7 +143,8 @@ function guardarCarrito() {
 
 // === EVENTOS ===
 btn_shopping?.addEventListener("click", () => {
-  offcanvasCarrito.classList.toggle("show");
+  const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasCarrito);
+  bsOffcanvas.toggle();
   btn_shopping.classList.toggle("balanceo");
 });
 
@@ -154,4 +157,3 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 });
-
