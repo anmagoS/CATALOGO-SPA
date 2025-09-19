@@ -87,12 +87,8 @@
 
       await cargarProducto();
 
-      if (typeof cargarCarritoDesdeStorage === "function") {
-        cargarCarritoDesdeStorage();
-      }
-
-      if (typeof actualizarCarrito === "function" && document.getElementById("contador-carrito")) {
-        actualizarCarrito(); // ✅ Refresca el contador y contenido del carrito
+      if (typeof actualizarCarrito === "function") {
+        actualizarCarrito();
       }
     });
 
@@ -126,11 +122,11 @@
       if (producto.promo) {
         precioContainer.innerHTML = `
           <s>$${producto.precio.toLocaleString()} COP</s>
-          <span class="text-success fw-bold ms-2">$${precioFinal.toLocaleString()} COP</span>
+          <span class="text-success fw-bold ms-2 precio-final">$${precioFinal.toLocaleString()} COP</span>
           <span class="badge bg-danger ms-2">-10%</span>
         `;
       } else {
-        precioContainer.textContent = `$${producto.precio.toLocaleString()} COP`;
+        precioContainer.innerHTML = `<span class="precio-final">$${producto.precio.toLocaleString()} COP</span>`;
       }
 
       if (producto.tallas) {
@@ -157,10 +153,10 @@
           <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
             ${opcionesTalla}
           </select>
-          <button class="boton-comprar">Agregar al carrito</button>
+          <button class="btn btn-primary btn-cart">Agregar al carrito</button>
         `;
 
-        tarjeta.querySelector(".boton-comprar").onclick = () => {
+        tarjeta.querySelector(".btn-cart").onclick = () => {
           const selector = tarjeta.querySelector(".selector-talla");
           const tallaSeleccionada = selector?.value || "No especificada";
 
