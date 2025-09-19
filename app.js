@@ -51,7 +51,9 @@ function renderizarProductos(catalogo) {
 
 // Agregar al carrito
 function agregarAlCarrito(e) {
-  const btn = e.currentTarget;
+  const btn = e.target.classList.contains("btn-cart") ? e.target : e.target.closest(".btn-cart");
+  if (!btn) return;
+
   const card = btn.closest(".producto");
   const talla = card.querySelector(".selector-talla")?.value || "Sin talla";
 
@@ -76,6 +78,7 @@ function agregarAlCarrito(e) {
   actualizarSubtotal();
   actualizarContadorCarrito();
 }
+
 
 // Renderizar carrito
 function renderizarCarrito() {
