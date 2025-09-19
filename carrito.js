@@ -15,7 +15,9 @@ const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsAp
 // === FUNCIONES PRINCIPALES ===
 
 function agregarAlCarrito(producto) {
-  const existe = articulosCarrito.find((item) => item.id === producto.id && item.talla === producto.talla);
+  const existe = articulosCarrito.find(
+    (item) => item.id === producto.id && item.talla === producto.talla
+  );
   if (existe) {
     existe.cantidad++;
   } else {
