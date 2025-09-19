@@ -51,7 +51,7 @@ function renderizarProductos(catalogo) {
 
 // Agregar al carrito
 function agregarAlCarrito(e) {
-  const btn = e.target.classList.contains("btn-cart") ? e.target : e.target.closest(".btn-cart");
+  const btn = e.target.closest(".btn-cart");
   if (!btn) return;
 
   const card = btn.closest(".producto");
@@ -78,8 +78,6 @@ function agregarAlCarrito(e) {
   actualizarSubtotal();
   actualizarContadorCarrito();
 }
-
-
 // Renderizar carrito
 function renderizarCarrito() {
   carritoContainer.innerHTML = "";
