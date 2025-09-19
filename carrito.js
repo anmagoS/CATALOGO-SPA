@@ -1,3 +1,4 @@
+// === CARRITO ANMAGO STORE ===
 function actualizarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
   const contenedor = document.getElementById("carrito-contenido");
@@ -77,8 +78,35 @@ function generarPedidoWhatsApp() {
   mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
 
   window.open(`https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`, "_blank");
-
-  // Opcional: limpiar el carrito después de enviar
-  // localStorage.removeItem("carritoAnmago");
-  // actualizarCarrito();
 }
+
+// === INICIALIZACIÓN ===
+document.addEventListener("DOMContentLoaded", () => {
+  const btnAgregar = document.querySelector(".btn-cart");
+  if (btnAgregar) {
+    btnAgregar.addEventListener("click", () => {
+      const nombre = document.querySelector(".nombre-producto")?.textContent || "Sin nombre";
+      const imagen = document.querySelector(".imagen-producto img")?.src || "";
+      const talla = document.querySelector(".selector-talla")?.value || "No especificada";
+      const precioTexto = document.querySelector(".precio-producto .precio-final")?.textContent || "0";
+      const precioFinal = parseFloat(precioTexto.replace(/[^\d]/g, ""));
+      const promo = document.querySelector(".etiqueta-promo") ? true : false;
+      const precioOriginal = promo
+        ? parseFloat(document.querySelector(".precio-producto s")?.textContent.replace(/[^\d]/g, "")) || precioFinal
+        : precioFinal;
+
+      const producto = {
+        nombre,
+        imagen,
+        talla,
+        precioFinal,
+        precioOriginal,
+        promo
+      };
+
+      agregarAlCarrito(producto);
+    });
+  }
+
+  actualizarCarrito();
+});
