@@ -160,14 +160,14 @@
           const selector = tarjeta.querySelector(".selector-talla");
           const tallaSeleccionada = selector?.value || "No especificada";
 
-          agregarAlCarrito({
-            nombre: producto.producto,
-            imagen: img,
-            precioOriginal: producto.precio,
-            precioFinal: precioFinal,
-            promo: producto.promo === true,
-            talla: tallaSeleccionada
-          });
+         agregarAlCarrito({
+  id: producto.id,
+  nombre: producto.producto,
+  imagen: img,
+  precio: precioFinal,
+  talla: tallaSeleccionada
+});
+
 
           document.querySelector('[data-bs-target="#offcanvasRight"]').click();
         };
