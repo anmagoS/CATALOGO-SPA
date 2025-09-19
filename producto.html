@@ -20,7 +20,7 @@
   </div>
 
   <!-- BOTÓN FLOTANTE DEL CARRITO -->
-  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
     <i class="bi bi-bag-heart"></i>
     <span id="contador-carrito" class="contador-carrito">0</span>
   </a>
@@ -34,7 +34,7 @@
   </main>
 
   <!-- CARRITO OFFCANVAS -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
     <div class="offcanvas-header border-bottom">
       <h4 class="offcanvas-title text-center">Carrito de compras</h4>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
@@ -153,22 +153,29 @@
           <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
             ${opcionesTalla}
           </select>
-          <button class="btn btn-primary btn-cart">Agregar al carrito</button>
+          <button class="boton-comprar btn-cart">Agregar al carrito</button>
         `;
 
-        tarjeta.querySelector(".btn-cart").onclick = () => {
-          const selector = tarjeta.querySelector(".selector-talla");
+        const boton = tarjeta.querySelector(".btn-cart");
+        const selector = tarjeta.querySelector(".selector-talla");
+
+        boton.onclick = () => {
           const tallaSeleccionada = selector?.value || "No especificada";
 
-          agregarAlCarrito({
+          const productoFinal = {
             id: producto.id,
-            nombre: producto.producto,
+            producto: producto.producto,
             imagen: img,
             precio: precioFinal,
             talla: tallaSeleccionada
-          });
+          };
 
-          document.querySelector('[data-bs-target="#offcanvasRight"]').click();
+          if (typeof agregarAlCarrito === "function") {
+            agregarAlCarrito(productoFinal);
+          }
+
+          const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("offcanvasCarrito"));
+          bsOffcanvas.show();
         };
 
         galeria.appendChild(tarjeta);
