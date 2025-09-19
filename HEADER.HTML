@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header d-flex justify-content-between align-items-center px-3 py-2 bg-dark">
   <!-- LOGO -->
   <div class="logo">
     <a href="INICIO.HTML">
@@ -7,16 +7,16 @@
   </div>
 
   <!-- BOTÓN HAMBURGUESA -->
-  <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+  <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir menú">
     <i class="bi bi-list fs-1 text-white"></i>
   </button>
 </header>
 
 <!-- MENÚ LATERAL OFFCANVAS -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title">Menú</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    <h5 class="offcanvas-title" id="menuLateralLabel">Menú</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
   </div>
 
   <div class="offcanvas-body d-flex flex-column gap-3">
@@ -32,7 +32,7 @@
     <div id="menu-categorias"
          class="d-flex flex-column ps-3 gap-2"
          style="display: none; background: #f8f9fa; padding: 0.5rem 0;">
-      <!-- Las categorías se insertan dinámicamente desde app.js -->
+      <!-- Aquí se insertan dinámicamente los tipos, subtipos y categorías desde app.js -->
     </div>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
