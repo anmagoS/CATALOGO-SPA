@@ -170,8 +170,8 @@
             talla: tallaSeleccionada
           };
 
-          if (typeof agregarAlCarrito === "function") {
-            agregarAlCarrito(productoFinal);
+          if (typeof window.agregarAlCarrito === "function") {
+            window.agregarAlCarrito(productoFinal);
           }
 
           const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("offcanvasCarrito"));
