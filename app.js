@@ -63,7 +63,7 @@ function agregarAlCarrito(e) {
   if (!btn) return;
 
   const producto = {
-    id: btn.dataset.id + "-" + btn.dataset.variante + "-" + btn.dataset.talla,
+    id: btn.dataset.imagen + "-" + btn.dataset.talla,
     nombre: btn.dataset.nombre,
     precio: parseFloat(btn.dataset.precio),
     cantidad: 1,
