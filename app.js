@@ -188,13 +188,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     headerContainer.insertAdjacentHTML("afterbegin", header);
   }
 
-  const carritoGuardado = localStorage.getItem("carritoAnmago");
-  if (carritoGuardado) {
-    articulosCarrito = JSON.parse(carritoGuardado);
-    renderizarCarrito();
-    actualizarSubtotal();
-    actualizarContadorCarrito();
+ const carritoGuardado = localStorage.getItem("carritoAnmago");
+if (carritoGuardado) {
+  try {
+    const datos = JSON.parse(carritoGuardado);
+    const esValido = Array.isArray(datos) && datos.every(p =>
+      typeof p.id === "string" &&
+      typeof p.nombre === "string" &&
+      typeof p.imagen === "string" &&
+      typeof p.talla === "string" &&
+      typeof p.precio === "number" &&
+      typeof p.cantidad === "number"
+    );
+    articulosCarrito = esValido ? datos : [];
+  } catch {
+    articulosCarrito = [];
   }
+
+  renderizarCarrito();
+  actualizarSubtotal();
+  actualizarContadorCarrito();
+}
+
 
   const toggle = document.getElementById("toggle-categorias");
   const menu = document.getElementById("menu-categorias");
