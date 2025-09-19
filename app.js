@@ -1,12 +1,67 @@
 let articulosCarrito = [];
-// Recuperar carrito guardado si existe
-const carritoGuardado = localStorage.getItem("carritoAnmago");
-if (carritoGuardado) {
-  articulosCarrito = JSON.parse(carritoGuardado);
-  renderizarCarrito();
-  actualizarSubtotal();
-  actualizarContadorCarrito();
-}
+
+// Recuperar carrito guardado si existe (después del DOM)
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarCatalogoGlobal();
+
+  const headerContainer = document.getElementById("header-container");
+  if (!headerContainer.querySelector(".header")) {
+    const header = await fetch("HEADER.HTML").then(res => res.text());
+    headerContainer.insertAdjacentHTML("afterbegin", header);
+  }
+
+  const carritoGuardado = localStorage.getItem("carritoAnmago");
+  if (carritoGuardado) {
+    articulosCarrito = JSON.parse(carritoGuardado);
+    renderizarCarrito();
+    actualizarSubtotal();
+    actualizarContadorCarrito();
+  }
+
+  const toggle = document.getElementById("toggle-categorias");
+  const menu = document.getElementById("menu-categorias");
+
+  toggle?.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "none" ? "flex" : "none";
+  });
+
+  const mapa = {};
+  window.catalogoGlobal.forEach(p => {
+    if (!p.tipo || !p.subtipo || !p.categoria) return;
+    if (!mapa[p.tipo]) mapa[p.tipo] = {};
+    if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
+    mapa[p.tipo][p.subtipo].add(p.categoria);
+  });
+
+  Object.entries(mapa).forEach(([tipo, subtipos]) => {
+    const bloqueTipo = document.createElement("details");
+    bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
+
+    Object.entries(subtipos).forEach(([subtipo, categorias]) => {
+      const bloqueSubtipo = document.createElement("details");
+      bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
+
+      categorias.forEach(categoria => {
+        const link = document.createElement("a");
+        link.className = "nav-link ps-3";
+        link.textContent = categoria;
+        link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
+        bloqueSubtipo.appendChild(link);
+      });
+
+      bloqueTipo.appendChild(bloqueSubtipo);
+    });
+
+    menu.appendChild(bloqueTipo);
+  });
+
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
+
+  if (document.getElementById("contenido-productos")) {
+    renderizarProductos(window.catalogoGlobal);
+  }
+});
 
 const carritoContainer = document.getElementById("carrito-contenido");
 const subtotalElement = document.getElementById("subtotal");
@@ -91,11 +146,12 @@ function agregarAlCarrito(e) {
   actualizarSubtotal();
   actualizarContadorCarrito();
   localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
-
 }
 
 // Renderizar carrito
 function renderizarCarrito() {
+  if (!carritoContainer) return;
+
   carritoContainer.innerHTML = "";
 
   if (articulosCarrito.length === 0) {
@@ -139,30 +195,35 @@ function renderizarCarrito() {
       actualizarSubtotal();
       actualizarContadorCarrito();
       localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
-
     });
   });
-  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 
+  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
 
 // Subtotal y contador
 function actualizarSubtotal() {
+  if (!subtotalElement) return;
   const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
   subtotalElement.textContent = `$${total.toLocaleString("es-CO")}`;
 }
 
 function actualizarContadorCarrito() {
+  if (!contadorCarrito) return;
   contadorCarrito.textContent = articulosCarrito.length;
 }
 
 // WhatsApp
 function generarPedidoWhatsApp() {
-  if (articulosCarrito.length === 0) return alert("Tu carrito está vacío.");
+  if (articulosCarrito.length === 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
 
   let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
+
   articulosCarrito.forEach((p, i) => {
-    mensaje += `*${i + 1}.* ${p.nombre}\n📏 Talla: ${p.talla}\n🔗 Imagen: ${p.imagen}\n💲 Precio: $${p.precio.toLocaleString("es-CO")}\n\n`;
+    mensaje += `*${i + 1}.* ${p.nombre}\n📏 Talla: ${p.talla}\n🔗 Imagen: ${p.imagen}\n💲 Precio: $${p.precio.toLocaleString("es-CO")}\n🧮 Cantidad: ${p.cantidad}\n\n`;
   });
 
   const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
@@ -171,77 +232,10 @@ function generarPedidoWhatsApp() {
   const url = `https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 
+  // Vaciar carrito
   articulosCarrito = [];
   renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
-localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
+  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
-
-// Inicialización
-document.addEventListener("DOMContentLoaded", async () => {
-  await cargarCatalogoGlobal();
-
-  const headerContainer = document.getElementById("header-container");
-  if (!headerContainer.querySelector(".header")) {
-    const header = await fetch("HEADER.HTML").then(res => res.text());
-    headerContainer.insertAdjacentHTML("afterbegin", header);
-  }
-
-  const esperarElemento = id => new Promise(resolve => {
-    const intervalo = setInterval(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        clearInterval(intervalo);
-        resolve(el);
-      }
-    }, 50);
-  });
-
-  const toggle = await esperarElemento("toggle-categorias");
-  const menu = await esperarElemento("menu-categorias");
-
-  toggle.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "none" ? "flex" : "none";
-  });
-
-  const mapa = {};
-  window.catalogoGlobal.forEach(p => {
-    if (!p.tipo || !p.subtipo || !p.categoria) return;
-    if (!mapa[p.tipo]) mapa[p.tipo] = {};
-    if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
-    mapa[p.tipo][p.subtipo].add(p.categoria);
-  });
-
-  Object.entries(mapa).forEach(([tipo, subtipos]) => {
-    const bloqueTipo = document.createElement("details");
-    bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
-
-    Object.entries(subtipos).forEach(([subtipo, categorias]) => {
-      const bloqueSubtipo = document.createElement("details");
-      bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
-
-      categorias.forEach(categoria => {
-        const link = document.createElement("a");
-        link.className = "nav-link ps-3";
-        link.textContent = categoria;
-        link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
-        bloqueSubtipo.appendChild(link);
-      });
-
-      bloqueTipo.appendChild(bloqueSubtipo);
-    });
-
-    menu.appendChild(bloqueTipo);
-  });
-
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
-
- if (document.getElementById("contenido-productos")) {
-  renderizarProductos(window.catalogoGlobal);
-}
-if (document.getElementById("contenido-productos")) {
-  renderizarProductos(window.catalogoGlobal);
-}
-});
