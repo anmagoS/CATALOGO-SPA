@@ -59,8 +59,8 @@ function renderizarCarrito() {
 function agregarEventosBorrar() {
   const botonesBorrar = document.querySelectorAll(".boton-comprar[data-index]");
   botonesBorrar.forEach((boton) => {
-    boton.addEventListener("click", (e) => {
-      const index = parseInt(e.target.closest("button").dataset.index);
+   boton.addEventListener("click", (e) => {
+  const index = parseInt(e.currentTarget.dataset.index);
       articulosCarrito.splice(index, 1);
       guardarCarrito();
       renderizarCarrito();
