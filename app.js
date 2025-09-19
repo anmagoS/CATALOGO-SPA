@@ -55,7 +55,7 @@ function agregarAlCarrito(e) {
   if (!btn) return;
 
   const producto = {
-    id: btn.dataset.id + "-" + btn.dataset.talla,
+    id: btn.dataset.id + "-" + btn.dataset.variante + "-" + btn.dataset.talla,
     nombre: btn.dataset.nombre,
     categoria: btn.dataset.categoria + " - " + btn.dataset.subcategoria,
     precio: parseFloat(btn.dataset.precio),
@@ -79,44 +79,43 @@ function agregarAlCarrito(e) {
 
 // Renderizar carrito
 function renderizarCarrito() {
+  // Limpiar contenido previo del carrito
   carritoContainer.innerHTML = "";
 
+  // Si el carrito está vacío, mostrar un mensaje
   if (articulosCarrito.length === 0) {
     carritoContainer.innerHTML = "<p class='text-center'>El carrito está vacío.</p>";
-    return;
   }
 
-  articulosCarrito.forEach(p => {
-    carritoContainer.insertAdjacentHTML("beforeend", `
+  // Iterar sobre los productos en el carrito y renderizarlos
+  articulosCarrito.forEach((producto) => {
+    const itemHTML = `
       <div class="container mb-3">
         <div class="row align-items-center border-bottom py-2">
-          <div class="col-3"><img class="img-fluid rounded" src="${p.imagen}" alt="${p.nombre}" /></div>
+          <div class="col-3">
+            <img class="img-fluid rounded" src="${producto.imagen}" alt="${producto.nombre}" />
+          </div>
           <div class="col-6">
-            <h6 class="mb-1">${p.nombre}</h6>
-            <p class="mb-0">Categoría: ${p.categoria}</p>
+            <h6 class="mb-1 title-product">${producto.nombre}</h6>
+            <p class="mb-0 detalles-product">Categoría: ${producto.categoria}</p>
           </div>
           <div class="col-3 text-end">
-            <span class="fw-bold">${p.cantidad} × $${(p.precio * p.cantidad).toLocaleString("es-CO")}</span>
-            <button class="btn btn-danger mt-2 btn-borrar" data-id="${p.id}"><i class="bi bi-trash3"></i></button>
+            <!-- Mostrar cantidad y precio total del producto -->
+            <span class="fw-bold"><span class="fs-6 color-gris">${
+              producto.cantidad
+            }<span class="fs-5 precio">$${(producto.precio * producto.cantidad).toLocaleString("es-CO")}</span>
+            </span>
+
+            <!-- Botón para eliminar el producto del carrito -->
+            <button class="btn btn-danger mt-2 btn-borrar" data-id="${
+              producto.id
+            }"><i class="bi bi-trash3"></i>
+            </button>
           </div>
         </div>
       </div>
-    `);
-  });
+    `;
 
-  document.querySelectorAll(".btn-borrar").forEach(btn => {
-    btn.addEventListener("click", e => {
-      const id = e.currentTarget.dataset.id;
-      articulosCarrito = articulosCarrito
-        .map(p => p.id === id ? (p.cantidad > 1 ? { ...p, cantidad: p.cantidad - 1 } : null) : p)
-        .filter(p => p !== null);
-
-      renderizarCarrito();
-      actualizarSubtotal();
-      actualizarContadorCarrito();
-    });
-  });
-}
 
 // Subtotal y contador
 function actualizarSubtotal() {
