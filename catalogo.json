@@ -796,5 +796,33 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_64/PRODUCTOS_Images_1776df82.IMAGEN_1.172825.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_64/PRODUCTOS_Images_1776df82.IMAGEN_1.172825.jpg, https://ik.imagekit.io/mbsk9dati/producto_64/PRODUCTOS_Images_1776df82.IMAGEN_2.172825.png, https://ik.imagekit.io/mbsk9dati/producto_64/PRODUCTOS_Images_1776df82.IMAGEN_3.172825.jpg, https://ik.imagekit.io/mbsk9dati/producto_64/PRODUCTOS_Images_1776df82.IMAGEN_4.172828.jpg"
+  },
+  {
+    "id": "6610CA04",
+    "tipo": "ROPA",
+    "subtipo": "DAMA ",
+    "categoria": "BUSOS DAMA",
+    "subcategoria": "TEJIESTILO",
+    "producto": "REF109",
+    "material": "VISCOSA-NYLON",
+    "tallas": "UNICA",
+    "precio": 57000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_65/PRODUCTOS_Images_6610ca04.IMAGEN_1.173222.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_65/PRODUCTOS_Images_6610ca04.IMAGEN_1.173222.jpg, https://ik.imagekit.io/mbsk9dati/producto_65/PRODUCTOS_Images_6610ca04.IMAGEN_2.173222.jpg, https://ik.imagekit.io/mbsk9dati/producto_65/PRODUCTOS_Images_6610ca04.IMAGEN_3.173222.jpg"
+  },
+  {
+    "id": "B8718700",
+    "tipo": "ROPA",
+    "subtipo": "DAMA ",
+    "categoria": "BUSOS DAMA",
+    "subcategoria": "TEJIESTILO",
+    "producto": "REF110",
+    "material": "VISCOSA-NYLON",
+    "tallas": "UNICA",
+    "precio": 68000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_66/PRODUCTOS_Images_b8718700.IMAGEN_1.173342.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_66/PRODUCTOS_Images_b8718700.IMAGEN_1.173342.jpg, https://ik.imagekit.io/mbsk9dati/producto_66/PRODUCTOS_Images_b8718700.IMAGEN_2.173342.jpg, https://ik.imagekit.io/mbsk9dati/producto_66/PRODUCTOS_Images_b8718700.IMAGEN_3.173342.jpg"
   }
 ]
