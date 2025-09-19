@@ -44,14 +44,14 @@ function renderizarProductos(catalogo) {
     `);
   });
 
-  contenedor.addEventListener("click", agregarAlCarrito);
+  contenedor.querySelectorAll(".btn-cart").forEach(boton => {
+    boton.addEventListener("click", agregarAlCarrito);
+  });
 }
 
 // Agregar al carrito
 function agregarAlCarrito(e) {
-  const btn = e.target.classList.contains("btn-cart") ? e.target : e.target.closest(".btn-cart");
-  if (!btn) return;
-
+  const btn = e.currentTarget;
   const card = btn.closest(".producto");
   const talla = card.querySelector(".selector-talla")?.value || "Sin talla";
 
@@ -106,7 +106,7 @@ function renderizarCarrito() {
 
   document.querySelectorAll(".btn-borrar").forEach(btn => {
     btn.addEventListener("click", e => {
-      const id = e.target.closest("button").dataset.id;
+      const id = e.currentTarget.dataset.id;
       articulosCarrito = articulosCarrito
         .map(p => p.id === id ? (p.cantidad > 1 ? { ...p, cantidad: p.cantidad - 1 } : null) : p)
         .filter(p => p !== null);
@@ -153,11 +153,12 @@ function generarPedidoWhatsApp() {
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
 
- const headerContainer = document.getElementById("header-container");
-if (!headerContainer.querySelector(".header")) {
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  headerContainer.insertAdjacentHTML("afterbegin", header);
-}
+  const headerContainer = document.getElementById("header-container");
+  if (!headerContainer.querySelector(".header")) {
+    const header = await fetch("HEADER.HTML").then(res => res.text());
+    headerContainer.insertAdjacentHTML("afterbegin", header);
+  }
+
   const esperarElemento = id => new Promise(resolve => {
     const intervalo = setInterval(() => {
       const el = document.getElementById(id);
@@ -175,7 +176,6 @@ if (!headerContainer.querySelector(".header")) {
     menu.style.display = menu.style.display === "none" ? "flex" : "none";
   });
 
-  // Construcción jerárquica por tipo → subtipo → categoría
   const mapa = {};
   window.catalogoGlobal.forEach(p => {
     if (!p.tipo || !p.subtipo || !p.categoria) return;
