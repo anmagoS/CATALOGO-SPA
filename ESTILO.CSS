@@ -501,3 +501,67 @@ footer {
   margin: auto;
   border-radius: 6px;
 }
+/* Estilo base del offcanvas */
+.offcanvas-body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+}
+
+/* Links del menú */
+.nav-link {
+  color: #212529;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #e9ecef;
+}
+
+/* Bloques desplegables */
+details {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background-color: #f1f3f5;
+  transition: background 0.2s ease;
+}
+
+summary:hover {
+  background-color: #e2e6ea;
+}
+
+/* Subniveles */
+details details summary {
+  font-weight: 500;
+  background-color: #f8f9fa;
+}
+
+details details .nav-link {
+  padding-left: 16px;
+  font-size: 15px;
+}
+
+/* Indicador visual de despliegue */
+summary::marker {
+  display: none;
+}
+
+summary::after {
+  content: "▸";
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+details[open] > summary::after {
+  transform: rotate(90deg);
+}
