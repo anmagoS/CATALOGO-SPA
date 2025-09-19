@@ -1,20 +1,17 @@
 // === CARRITO ANMAGO STORE ===
 
-// Inicializar carrito desde localStorage
 let articulosCarrito = JSON.parse(localStorage.getItem("carritoAnmago")) || [];
 
-// Elementos clave
 const carritoContainer = document.getElementById("carrito-contenido");
 const offcanvasCarrito = document.getElementById("offcanvasCarrito");
 const btn_shopping = document.querySelector(".btn_shopping");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.getElementById("contador-carrito");
 const closeButton = document.querySelector(".btn-close");
-const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
+const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']);
 
 // === FUNCIONES ===
 
-// Agregar producto al carrito (sin agrupar)
 function agregarAlCarrito(producto) {
   articulosCarrito.push(producto);
   guardarCarrito();
@@ -25,7 +22,6 @@ function agregarAlCarrito(producto) {
   abrirCarrito();
 }
 
-// Renderizar productos en el carrito
 function renderizarCarrito() {
   carritoContainer.innerHTML = "";
 
@@ -47,7 +43,7 @@ function renderizarCarrito() {
             <p class="mb-0 detalles-product">Precio: $${producto.precio.toLocaleString("es-CO")}</p>
           </div>
           <div class="col-3 text-end">
-            <button class="boton-comprar" data-index="${index}">
+            <button class="boton-comprar" data-index="${index}" title="Eliminar">
               <i class="bi bi-trash3"></i>
             </button>
           </div>
@@ -60,7 +56,6 @@ function renderizarCarrito() {
   agregarEventosBorrar();
 }
 
-// Eliminar producto por índice
 function agregarEventosBorrar() {
   const botonesBorrar = document.querySelectorAll(".boton-comprar[data-index]");
   botonesBorrar.forEach((boton) => {
@@ -76,7 +71,6 @@ function agregarEventosBorrar() {
   });
 }
 
-// Calcular subtotal
 function actualizarSubtotal() {
   const subtotal = articulosCarrito.reduce((total, producto) => total + producto.precio, 0);
   const opciones = {
@@ -86,12 +80,10 @@ function actualizarSubtotal() {
   subtotalElement.textContent = `$${subtotal.toLocaleString("es-CO", opciones)}`;
 }
 
-// Contador de productos
 function actualizarContadorCarrito() {
   contadorCarrito.textContent = articulosCarrito.length;
 }
 
-// Generar mensaje de WhatsApp
 function generarPedidoWhatsApp() {
   if (articulosCarrito.length === 0) return alert("Tu carrito está vacío.");
 
@@ -119,29 +111,26 @@ function generarPedidoWhatsApp() {
   actualizarEstadoBotonWhatsApp();
 }
 
-// Abrir carrito con Bootstrap
 function abrirCarrito() {
   const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasCarrito);
   bsOffcanvas.show();
 }
 
-// Cerrar carrito con Bootstrap
 function cerrarCarrito() {
   const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasCarrito);
   bsOffcanvas.hide();
 }
 
-// Activar/desactivar botón de WhatsApp
 function actualizarEstadoBotonWhatsApp() {
   btnWhatsApp.disabled = articulosCarrito.length === 0;
 }
 
-// Guardar en localStorage
 function guardarCarrito() {
   localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
 
 // === EVENTOS ===
+
 btn_shopping?.addEventListener("click", () => {
   const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasCarrito);
   bsOffcanvas.toggle();
@@ -150,7 +139,6 @@ btn_shopping?.addEventListener("click", () => {
 
 closeButton?.addEventListener("click", () => cerrarCarrito());
 
-// === INICIALIZACIÓN ===
 document.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
   actualizarSubtotal();
