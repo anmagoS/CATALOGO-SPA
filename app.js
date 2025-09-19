@@ -173,20 +173,35 @@ document.addEventListener("DOMContentLoaded", async () => {
     menu.style.display = menu.style.display === "none" ? "flex" : "none";
   });
 
-  const categoriasUnicas = [...new Set(window.catalogoGlobal.map(p => p.categoria).filter(Boolean))];
-  categoriasUnicas.forEach(categoria => {
-    const ejemplo = window.catalogoGlobal.find(p => p.categoria === categoria);
-    if (!ejemplo) return;
+  // Construcción jerárquica por tipo → subtipo → categoría
+  const mapa = {};
+  window.catalogoGlobal.forEach(p => {
+    if (!p.tipo || !p.subtipo || !p.categoria) return;
+    if (!mapa[p.tipo]) mapa[p.tipo] = {};
+    if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
+    mapa[p.tipo][p.subtipo].add(p.categoria);
+  });
 
-    const tipo = encodeURIComponent(ejemplo.tipo);
-    const subtipo = encodeURIComponent(ejemplo.subtipo);
-    const cat = encodeURIComponent(categoria);
+  Object.entries(mapa).forEach(([tipo, subtipos]) => {
+    const bloqueTipo = document.createElement("details");
+    bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
 
-    const item = document.createElement("a");
-    item.className = "nav-link";
-    item.textContent = categoria;
-    item.href = `PRODUCTOS.HTML?tipo=${tipo}&subtipo=${subtipo}&categoria=${cat}`;
-    menu.appendChild(item);
+    Object.entries(subtipos).forEach(([subtipo, categorias]) => {
+      const bloqueSubtipo = document.createElement("details");
+      bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
+
+      categorias.forEach(categoria => {
+        const link = document.createElement("a");
+        link.className = "nav-link ps-3";
+        link.textContent = categoria;
+        link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
+        bloqueSubtipo.appendChild(link);
+      });
+
+      bloqueTipo.appendChild(bloqueSubtipo);
+    });
+
+    menu.appendChild(bloqueTipo);
   });
 
   const footer = await fetch("footer.html").then(res => res.text());
