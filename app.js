@@ -1,4 +1,3 @@
-// Variables globales
 let articulosCarrito = [];
 const carritoContainer = document.getElementById("carrito-contenido");
 const subtotalElement = document.getElementById("subtotal");
@@ -36,7 +35,8 @@ function renderizarProductos(catalogo) {
           <select class="selector-talla form-select mb-2">${opciones}</select>
           <button class="btn btn-primary btn-cart"
             data-categoria="${p.categoria}"
-            data-subcategoria="${p.subcategoria}">
+            data-subcategoria="${p.subcategoria}"
+            data-tipo="${p.tipo}">
             Agregar al carrito
           </button>
         </div>
@@ -175,10 +175,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const categoriasUnicas = [...new Set(window.catalogoGlobal.map(p => p.categoria).filter(Boolean))];
   categoriasUnicas.forEach(categoria => {
+    const ejemplo = window.catalogoGlobal.find(p => p.categoria === categoria);
+    if (!ejemplo) return;
+
+    const tipo = encodeURIComponent(ejemplo.tipo);
+    const subtipo = encodeURIComponent(ejemplo.subtipo);
+    const cat = encodeURIComponent(categoria);
+
     const item = document.createElement("a");
     item.className = "nav-link";
     item.textContent = categoria;
-    item.href = `PRODUCTOS.HTML?categoria=${encodeURIComponent(categoria)}`;
+    item.href = `PRODUCTOS.HTML?tipo=${tipo}&subtipo=${subtipo}&categoria=${cat}`;
     menu.appendChild(item);
   });
 
