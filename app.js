@@ -1,68 +1,5 @@
 let articulosCarrito = [];
 
-// Recuperar carrito guardado si existe (después del DOM)
-document.addEventListener("DOMContentLoaded", async () => {
-  await cargarCatalogoGlobal();
-
-  const headerContainer = document.getElementById("header-container");
-  if (!headerContainer.querySelector(".header")) {
-    const header = await fetch("HEADER.HTML").then(res => res.text());
-    headerContainer.insertAdjacentHTML("afterbegin", header);
-  }
-
-  const carritoGuardado = localStorage.getItem("carritoAnmago");
-  if (carritoGuardado) {
-    articulosCarrito = JSON.parse(carritoGuardado);
-    renderizarCarrito();
-    actualizarSubtotal();
-    actualizarContadorCarrito();
-  }
-
-  const toggle = document.getElementById("toggle-categorias");
-  const menu = document.getElementById("menu-categorias");
-
-  toggle?.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "none" ? "flex" : "none";
-  });
-
-  const mapa = {};
-  window.catalogoGlobal.forEach(p => {
-    if (!p.tipo || !p.subtipo || !p.categoria) return;
-    if (!mapa[p.tipo]) mapa[p.tipo] = {};
-    if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
-    mapa[p.tipo][p.subtipo].add(p.categoria);
-  });
-
-  Object.entries(mapa).forEach(([tipo, subtipos]) => {
-    const bloqueTipo = document.createElement("details");
-    bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
-
-    Object.entries(subtipos).forEach(([subtipo, categorias]) => {
-      const bloqueSubtipo = document.createElement("details");
-      bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
-
-      categorias.forEach(categoria => {
-        const link = document.createElement("a");
-        link.className = "nav-link ps-3";
-        link.textContent = categoria;
-        link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
-        bloqueSubtipo.appendChild(link);
-      });
-
-      bloqueTipo.appendChild(bloqueSubtipo);
-    });
-
-    menu.appendChild(bloqueTipo);
-  });
-
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
-
-  if (document.getElementById("contenido-productos")) {
-    renderizarProductos(window.catalogoGlobal);
-  }
-});
-
 const carritoContainer = document.getElementById("carrito-contenido");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.getElementById("contador-carrito");
@@ -126,10 +63,12 @@ function agregarAlCarrito(e) {
   const btn = e.target.closest(".btn-cart");
   if (!btn) return;
 
+  const idUnico = btn.dataset.imagen + "-" + btn.dataset.talla;
+
   const producto = {
-    id: btn.dataset.imagen + "-" + btn.dataset.talla,
+    id: idUnico,
     nombre: btn.dataset.nombre,
-    precio: parseFloat(btn.dataset.precio),
+    precio: Number(btn.dataset.precio) || 0,
     cantidad: 1,
     imagen: btn.dataset.imagen,
     talla: btn.dataset.talla
@@ -232,10 +171,72 @@ function generarPedidoWhatsApp() {
   const url = `https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 
-  // Vaciar carrito
   articulosCarrito = [];
   renderizarCarrito();
   actualizarSubtotal();
   actualizarContadorCarrito();
   localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
+
+// Inicialización
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarCatalogoGlobal();
+
+  const headerContainer = document.getElementById("header-container");
+  if (!headerContainer.querySelector(".header")) {
+    const header = await fetch("HEADER.HTML").then(res => res.text());
+    headerContainer.insertAdjacentHTML("afterbegin", header);
+  }
+
+  const carritoGuardado = localStorage.getItem("carritoAnmago");
+  if (carritoGuardado) {
+    articulosCarrito = JSON.parse(carritoGuardado);
+    renderizarCarrito();
+    actualizarSubtotal();
+    actualizarContadorCarrito();
+  }
+
+  const toggle = document.getElementById("toggle-categorias");
+  const menu = document.getElementById("menu-categorias");
+
+  toggle?.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "none" ? "flex" : "none";
+  });
+
+  const mapa = {};
+  window.catalogoGlobal.forEach(p => {
+    if (!p.tipo || !p.subtipo || !p.categoria) return;
+    if (!mapa[p.tipo]) mapa[p.tipo] = {};
+    if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
+    mapa[p.tipo][p.subtipo].add(p.categoria);
+  });
+
+  Object.entries(mapa).forEach(([tipo, subtipos]) => {
+    const bloqueTipo = document.createElement("details");
+    bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
+
+    Object.entries(subtipos).forEach(([subtipo, categorias]) => {
+      const bloqueSubtipo = document.createElement("details");
+      bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
+
+           categorias.forEach(categoria => {
+        const link = document.createElement("a");
+        link.className = "nav-link ps-3";
+        link.textContent = categoria;
+        link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
+        bloqueSubtipo.appendChild(link);
+      });
+
+      bloqueTipo.appendChild(bloqueSubtipo);
+    });
+
+    menu.appendChild(bloqueTipo);
+  });
+
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
+
+  if (document.getElementById("contenido-productos")) {
+    renderizarProductos(window.catalogoGlobal);
+  }
+});
