@@ -894,5 +894,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_fe0ee604.IMAGEN_1.231506.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_fe0ee604.IMAGEN_1.231506.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_fe0ee604.IMAGEN_2.231506.png, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_fe0ee604.IMAGEN_3.231506.png, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_fe0ee604.IMAGEN_4.231509.jpg"
+  },
+  {
+    "id": "8BE737A3",
+    "tipo": "ROPA",
+    "subtipo": "UNISEX",
+    "categoria": "NAVIDAD",
+    "subcategoria": "TEJIESTILO",
+    "producto": "REF. D 00\n DAMA\n ROJO\n TALLAS: (S - M) (L - XL) $72000\n REF. H 01\n HOMBRE \nROJO\n TALLAS: (S - M) (L - XL) $72000\n REF. N 02\n NI?OS\n ROJO\n TALLAS: 4 - 6 - 8 - 10 \n12 - 14 - 1 6  $65000\n REF. M 03\n MASCOTAS\n ROJO\n TALLAS: S - M - L - XL $33000",
+    "material": "HILO ACRILICO",
+    "tallas": "N/A",
+    "precio": 1,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_8be737a3.IMAGEN_1.234139.png",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_8be737a3.IMAGEN_1.234139.png"
   }
 ]
