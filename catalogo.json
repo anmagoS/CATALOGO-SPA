@@ -950,5 +950,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_f88a5abe.IMAGEN_1.012353.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_f88a5abe.IMAGEN_1.012353.jpg, https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_f88a5abe.IMAGEN_2.012353.jpg"
+  },
+  {
+    "id": "0149AAAE",
+    "tipo": "ROPA",
+    "subtipo": "CABALLERO",
+    "categoria": "CAMISETAS",
+    "subcategoria": "CUELLO PULO",
+    "producto": "CAMISETA POLO",
+    "material": "ALGONDON LICRADO",
+    "tallas": "M,L,XL",
+    "precio": 52000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_1.013056.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_1.013056.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_2.013056.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_3.013056.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_4.013058.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_5.013059.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_6.013059.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_7.013101.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_8.013101.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_9.013102.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_10.013103.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_11.013103.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_12.013105.jpg"
   }
 ]
