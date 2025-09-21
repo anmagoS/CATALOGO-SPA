@@ -162,21 +162,32 @@
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
 
-        const opcionesTalla = producto.tallas
-          .split(",")
-          .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
-          .join("");
+        const tallas = String(producto.tallas).toLowerCase();
+const requiereSelector = !(tallas.includes("única") || tallas.includes("unica") || tallas.includes("n/a"));
 
-        tarjeta.innerHTML = `
-          <div class="imagen-producto">
-            <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
-          </div>
-          <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
-          <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
-            ${opcionesTalla}
-          </select>
-          <button class="boton-comprar btn-cart">Agregar al carrito</button>
-        `;
+let selectorHTML = "";
+if (requiereSelector) {
+  const opcionesTalla = producto.tallas
+    .split(",")
+    .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
+    .join("");
+
+  selectorHTML = `
+    <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
+    <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
+      ${opcionesTalla}
+    </select>
+  `;
+}
+
+tarjeta.innerHTML = `
+  <div class="imagen-producto">
+    <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
+  </div>
+  ${selectorHTML}
+  <button class="boton-comprar btn-cart">Agregar al carrito</button>
+`;
+
 
         const boton = tarjeta.querySelector(".btn-cart");
         const selector = tarjeta.querySelector(".selector-talla");
