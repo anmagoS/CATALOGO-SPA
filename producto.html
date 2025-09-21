@@ -93,13 +93,21 @@
     }
 
     function generarDescripcionCorta(producto) {
-      const nombre = producto.producto || "";
-      const subtipo = producto.subtipo || "";
-      const categoria = producto.categoria || "";
-      const precio = producto.precio ? `$${producto.precio.toLocaleString()} COP` : "precio no disponible";
+  const nombre = producto.producto || "";
+  const tipo = producto.subcategoria || ""; // tipo de prenda
+  const publico = producto.subtipo?.toLowerCase() || ""; // público objetivo
+  const categoria = producto.categoria?.toLowerCase() || "";
+  const precio = producto.precio ? `$${producto.precio.toLocaleString()} COP` : "precio no disponible";
 
-      return `Explora ${nombre}, una ${subtipo.toLowerCase()} de la categoría ${categoria.toLowerCase()}, diseñada para destacar tu estilo con elegancia. Disponible por ${precio}.`;
-    }
+  let publicoTexto = "";
+  if (publico === "dama") publicoTexto = "para mujer";
+  else if (publico === "hombre") publicoTexto = "para hombre";
+  else if (publico === "niño") publicoTexto = "para niños";
+  else if (publico === "unisex") publicoTexto = "unisex";
+
+  return `Descubre ${nombre}, una ${tipo.toLowerCase()} ${publicoTexto} de la categoría ${categoria}. Disponible por ${precio}.`;
+}
+
 
     async function cargarProducto() {
       const params = new URLSearchParams(window.location.search);
