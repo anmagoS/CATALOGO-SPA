@@ -908,5 +908,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_8be737a3.IMAGEN_1.234139.png",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_8be737a3.IMAGEN_1.234139.png"
+  },
+  {
+    "id": "12FD8AAD",
+    "tipo": "ROPA",
+    "subtipo": "DAMA ",
+    "categoria": "GABANES",
+    "subcategoria": "TEJIESTILO",
+    "producto": "REF5249",
+    "material": "HILO ACRILICO",
+    "tallas": "UNICA",
+    "precio": 73000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_1.011449.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_1.011449.jpg, https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_2.011449.jpg, https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_3.011449.png"
   }
 ]
