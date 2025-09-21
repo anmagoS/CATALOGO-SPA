@@ -956,13 +956,41 @@
     "tipo": "ROPA",
     "subtipo": "CABALLERO",
     "categoria": "CAMISETAS",
-    "subcategoria": "CUELLO PULO",
-    "producto": "CAMISETA POLO",
+    "subcategoria": "MANGA CORTA",
+    "producto": "CAMISETA POLO CUELLO PULO",
     "material": "ALGONDON LICRADO",
     "tallas": "M,L,XL",
     "precio": 52000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_1.013056.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_1.013056.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_2.013056.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_3.013056.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_4.013058.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_5.013059.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_6.013059.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_7.013101.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_8.013101.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_9.013102.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_10.013103.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_11.013103.jpg, https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_12.013105.jpg"
+  },
+  {
+    "id": "13125EC2",
+    "tipo": "ROPA",
+    "subtipo": "CABALLERO",
+    "categoria": "CAMISETAS",
+    "subcategoria": "MANGA CORTA",
+    "producto": "CUELLO HENLEY",
+    "material": "ALGODON LICRADO",
+    "tallas": "M,L,XL",
+    "precio": 52000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_1.013707.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_1.013707.jpg, https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_2.013707.jpg, https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_3.013707.jpg, https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_4.013710.jpg, https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_5.013710.jpg, https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_6.013711.jpg, https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_7.013713.jpg"
+  },
+  {
+    "id": "797B12AF",
+    "tipo": "ROPA",
+    "subtipo": "CABALLERO",
+    "categoria": "BUSOS",
+    "subcategoria": "CUELLO HENLEY",
+    "producto": "BUSO MANGA LARGA CUELLO HENLEY",
+    "material": "ALGONDON LICRADO",
+    "tallas": "M,L,XL",
+    "precio": 55000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_1.014014.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_1.014014.jpg, https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_2.014014.jpg, https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_3.014014.jpg, https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_4.014016.jpg, https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_5.014016.jpg, https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_6.014016.jpg"
   }
 ]
