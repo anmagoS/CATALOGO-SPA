@@ -565,3 +565,8 @@ summary::after {
 details[open] > summary::after {
   transform: rotate(90deg);
 }
+@media (max-width: 576px) {
+  #galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
