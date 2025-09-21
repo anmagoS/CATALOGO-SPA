@@ -1006,5 +1006,33 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_1.164315.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_1.164315.jpg, https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_2.164315.jpg, https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_3.164315.jpg, https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_4.164318.jpg, https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_5.164318.jpg, https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_6.164318.jpg, https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_7.164320.jpg, https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_8.164320.jpg"
+  },
+  {
+    "id": "5773C142",
+    "tipo": "ROPA",
+    "subtipo": "NI?OS",
+    "categoria": "CAMISETAS",
+    "subcategoria": "POLO",
+    "producto": "CAMISETA POLO",
+    "material": "SEDA FRIA",
+    "tallas": "6,8,10,12,14,16",
+    "precio": 39000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_1.171618.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_1.171618.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_2.171618.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_3.171618.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_4.171621.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_5.171621.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_6.171621.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_7.171623.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_8.171624.jpg, https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_9.171624.jpg"
+  },
+  {
+    "id": "0DD4CACA",
+    "tipo": "ROPA",
+    "subtipo": "DAMA ",
+    "categoria": "CAMISAS",
+    "subcategoria": "MANGA CORTA",
+    "producto": "CAMISA MANGA CORTA",
+    "material": "POPELINA LICRADA",
+    "tallas": "M,L,XL",
+    "precio": 57000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg, https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_2.171855.jpg, https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_3.171855.jpg, https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_5.171858.jpg, https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_6.171858.jpg, https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_7.171900.jpg"
   }
 ]
