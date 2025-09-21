@@ -570,3 +570,22 @@ details[open] > summary::after {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.redes-sociales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.redes-sociales a img {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.redes-sociales a:hover img {
+  transform: scale(1.1);
+}
