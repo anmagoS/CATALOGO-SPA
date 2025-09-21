@@ -922,5 +922,33 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_1.011449.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_1.011449.jpg, https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_2.011449.jpg, https://ik.imagekit.io/mbsk9dati/producto_68/PRODUCTOS_Images_12fd8aad.IMAGEN_3.011449.png"
+  },
+  {
+    "id": "9B3597F4",
+    "tipo": "ROPA",
+    "subtipo": "DAMA ",
+    "categoria": "CHALECOS",
+    "subcategoria": "TEJIESTILO",
+    "producto": "REF5242",
+    "material": "HILO LICRADO",
+    "tallas": "UNICA",
+    "precio": 52000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_9b3597f4.IMAGEN_1.012229.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_9b3597f4.IMAGEN_1.012229.jpg, https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_9b3597f4.IMAGEN_2.012229.png, https://ik.imagekit.io/mbsk9dati/producto_69/PRODUCTOS_Images_9b3597f4.IMAGEN_3.012229.jpg"
+  },
+  {
+    "id": "F88A5ABE",
+    "tipo": "ROPA",
+    "subtipo": "DAMA ",
+    "categoria": "BUSOS",
+    "subcategoria": "TEJIESTILO",
+    "producto": "REF5248",
+    "material": "HILO LICRADO",
+    "tallas": "UNICA",
+    "precio": 68000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_f88a5abe.IMAGEN_1.012353.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_f88a5abe.IMAGEN_1.012353.jpg, https://ik.imagekit.io/mbsk9dati/producto_70/PRODUCTOS_Images_f88a5abe.IMAGEN_2.012353.jpg"
   }
 ]
