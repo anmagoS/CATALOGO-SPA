@@ -92,21 +92,23 @@
       }
     }
 
-    function generarDescripcionCorta(producto) {
+   function generarDescripcionCorta(producto) {
+  const categoria = producto.categoria || "";
+  const subtipo = producto.subtipo?.toLowerCase() || "";
   const nombre = producto.producto || "";
-  const tipo = producto.subcategoria || ""; // tipo de prenda
-  const publico = producto.subtipo?.toLowerCase() || ""; // público objetivo
-  const categoria = producto.categoria?.toLowerCase() || "";
-  const precio = producto.precio ? `$${producto.precio.toLocaleString()} COP` : "precio no disponible";
+  const material = producto.material || "material premium";
+  const tallas = producto.tallas || "varias tallas";
 
-  let publicoTexto = "";
-  if (publico === "dama") publicoTexto = "para mujer";
-  else if (publico === "hombre") publicoTexto = "para hombre";
-  else if (publico === "niño") publicoTexto = "para niños";
-  else if (publico === "unisex") publicoTexto = "unisex";
+  let publico = "";
+  if (subtipo === "dama") publico = "mujer";
+  else if (subtipo === "hombre") publico = "hombre";
+  else if (subtipo === "niño") publico = "niños";
+  else if (subtipo === "unisex") publico = "todos";
+  else publico = subtipo;
 
-  return `Descubre ${nombre}, una ${tipo.toLowerCase()} ${publicoTexto} de la categoría ${categoria}. Disponible por ${precio}.`;
+  return `¡Descubre lo nuevo en ${categoria} para ${publico}! Presentamos la ${nombre} en ${material}, disponible en tallas ${tallas}. Calidad profesional y entrega inmediata. Solo en ANMAGO Store.`;
 }
+
 
 
     async function cargarProducto() {
