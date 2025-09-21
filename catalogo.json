@@ -1034,5 +1034,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_4.171858.jpg"
+  },
+  {
+    "id": "058384B0",
+    "tipo": "RELOJERIA",
+    "subtipo": "CABALLERO",
+    "categoria": "RELOJES",
+    "subcategoria": "ANALOGO",
+    "producto": "RELOJ ONOLA",
+    "material": "CAJA METALIZADA PULSO EN GOMA",
+    "tallas": "N/A",
+    "precio": 175000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_77/PRODUCTOS_Images_058384B0.IMAGEN_1.175005.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_77/PRODUCTOS_Images_058384B0.IMAGEN_1.175005.jpg, https://ik.imagekit.io/mbsk9dati/producto_77/PRODUCTOS_Images_058384B0.IMAGEN_2.175005.jpg, https://ik.imagekit.io/mbsk9dati/producto_77/PRODUCTOS_Images_058384B0.IMAGEN_3.175005.jpg, https://ik.imagekit.io/mbsk9dati/producto_77/PRODUCTOS_Images_058384B0.IMAGEN_4.175007.jpg"
   }
 ]
