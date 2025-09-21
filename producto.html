@@ -92,24 +92,33 @@
       }
     }
 
-   function generarDescripcionCorta(producto) {
-  const categoria = producto.categoria || "";
+  function generarDescripcionCorta(producto) {
+  const categoria = producto.categoria?.toUpperCase() || "CATÁLOGO";
   const subtipo = producto.subtipo?.toLowerCase() || "";
-  const nombre = producto.producto || "";
-  const material = producto.material || "material premium";
-  const tallas = producto.tallas || "varias tallas";
+  const nombre = producto.producto?.toUpperCase() || "PRODUCTO DESTACADO";
+  const material = producto.material?.toUpperCase() || "";
+  const tallas = producto.tallas?.toUpperCase() || "";
 
+  // Público objetivo
   let publico = "";
   if (subtipo === "dama") publico = "mujer";
-  else if (subtipo === "hombre") publico = "hombre";
+  else if (subtipo === "hombre" || subtipo === "caballero") publico = "caballero";
   else if (subtipo === "niño") publico = "niños";
   else if (subtipo === "unisex") publico = "todos";
-  else publico = subtipo;
+  else if (subtipo) publico = subtipo;
 
-  return `¡Descubre lo nuevo en ${categoria} para ${publico}! Presentamos la ${nombre} en ${material}, disponible en tallas ${tallas}. Calidad profesional y entrega inmediata. Solo en ANMAGO Store.`;
+  // Tallas
+  let tallasTexto = "";
+  if (tallas && tallas !== "N/A") {
+    tallasTexto = `disponible en tallas ${tallas}`;
+  }
+
+  // Material
+  let materialTexto = material ? `en ${material}` : "";
+
+  // Construcción final
+  return `¡Descubre lo nuevo en ${categoria} para ${publico}! Presentamos ${nombre} ${materialTexto}${tallasTexto ? `, ${tallasTexto}` : ""}. Calidad profesional y entrega inmediata. Solo en ANMAGO Store.`;
 }
-
-
 
     async function cargarProducto() {
       const params = new URLSearchParams(window.location.search);
