@@ -1076,5 +1076,33 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_1.190027.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_1.190027.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_2.190027.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_3.190027.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_4.190030.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_5.190030.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_6.190030.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_7.190032.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_8.190033.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_9.190033.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_10.190035.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_11.190035.jpg, https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_12.190035.jpg"
+  },
+  {
+    "id": "041F88D2",
+    "tipo": "HOGAR",
+    "subtipo": "HOGAR",
+    "categoria": "LAMPARAS",
+    "subcategoria": "PARLANTE RECARGABLE BLUETOTH",
+    "producto": "ASTRONAUTA PROYECTOR",
+    "material": "PLASTICO",
+    "tallas": "N/A",
+    "precio": 67500,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_80/PRODUCTOS_Images_041f88d2.IMAGEN_1.002203.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_80/PRODUCTOS_Images_041f88d2.IMAGEN_1.002203.jpg, https://ik.imagekit.io/mbsk9dati/producto_80/PRODUCTOS_Images_041f88d2.IMAGEN_2.002203.jpg"
+  },
+  {
+    "id": "24DBE567",
+    "tipo": "HOGAR",
+    "subtipo": "HOGAR",
+    "categoria": "COCINA",
+    "subcategoria": "JARRAS",
+    "producto": "JARRA HERVIDORA ELECTRICA",
+    "material": "ACERO INOXIDABLE Y PL?STICO DE GRADO ALIMENTICIO",
+    "tallas": "N/A",
+    "precio": 50000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_81/PRODUCTOS_Images_24dbe567.IMAGEN_1.002619.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_81/PRODUCTOS_Images_24dbe567.IMAGEN_1.002619.jpg"
   }
 ]
