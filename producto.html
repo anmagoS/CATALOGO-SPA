@@ -11,6 +11,7 @@
 </head>
 <body>
   <div id="header-container"></div>
+
   <div class="container mt-4 position-relative" style="max-width: 500px;">
     <input id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
     <div id="sugerencias" class="dropdown-menu position-absolute mt-1 w-100 z-3"></div>
@@ -27,6 +28,7 @@
     <p id="descripcion-corta" class="descripcion-corta text-muted fst-italic mt-2"></p>
     <div id="tallas" class="descripcion-producto"></div>
     <div id="galeria" class="grid-productos"></div>
+    <div id="descripcion-completa" class="descripcion-producto mt-4"></div>
   </main>
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
@@ -92,33 +94,29 @@
       }
     }
 
-  function generarDescripcionCorta(producto) {
-  const categoria = producto.categoria?.toUpperCase() || "CATÁLOGO";
-  const subtipo = producto.subtipo?.toLowerCase() || "";
-  const nombre = producto.producto?.toUpperCase() || "PRODUCTO DESTACADO";
-  const material = producto.material?.toUpperCase() || "";
-  const tallas = producto.tallas?.toUpperCase() || "";
+    function generarDescripcionCorta(producto) {
+      const categoria = producto.categoria?.toUpperCase() || "CATÁLOGO";
+      const subtipo = producto.subtipo?.toLowerCase() || "";
+      const nombre = producto.producto?.toUpperCase() || "PRODUCTO DESTACADO";
+      const material = producto.material?.toUpperCase() || "";
+      const tallas = producto.tallas?.toUpperCase() || "";
 
-  // Público objetivo
-  let publico = "";
-  if (subtipo === "dama") publico = "mujer";
-  else if (subtipo === "hombre" || subtipo === "caballero") publico = "caballero";
-  else if (subtipo === "niño") publico = "niños";
-  else if (subtipo === "unisex") publico = "todos";
-  else if (subtipo) publico = subtipo;
+      let publico = "";
+      if (subtipo === "dama") publico = "mujer";
+      else if (subtipo === "hombre" || subtipo === "caballero") publico = "caballero";
+      else if (subtipo === "niño") publico = "niños";
+      else if (subtipo === "unisex") publico = "todos";
+      else if (subtipo) publico = subtipo;
 
-  // Tallas
-  let tallasTexto = "";
-  if (tallas && tallas !== "N/A") {
-    tallasTexto = `disponible en tallas ${tallas}`;
-  }
+      let tallasTexto = "";
+      if (tallas && tallas !== "N/A") {
+        tallasTexto = `disponible en tallas ${tallas}`;
+      }
 
-  // Material
-  let materialTexto = material ? `en ${material}` : "";
+      let materialTexto = material ? `en ${material}` : "";
 
-  // Construcción final
-  return `¡Descubre lo nuevo en ${categoria} para ${publico}! Presentamos ${nombre} ${materialTexto}${tallasTexto ? `, ${tallasTexto}` : ""}. Calidad profesional y entrega inmediata. Solo en ANMAGO Store.`;
-}
+      return `¡Descubre lo nuevo en ${categoria} para ${publico}! Presentamos ${nombre} ${materialTexto}${tallasTexto ? `, ${tallasTexto}` : ""}. Calidad profesional y entrega inmediata. Solo en ANMAGO Store.`;
+    }
 
     async function cargarProducto() {
       const params = new URLSearchParams(window.location.search);
@@ -151,8 +149,28 @@
       const descripcionGenerada = generarDescripcionCorta(producto);
       document.getElementById("descripcion-corta").textContent = descripcionGenerada;
 
-      if (producto.tallas) {
-        document.getElementById("tallas").textContent = `Tallas disponibles: ${producto.tallas}`;
+      const tallasLower = String(producto.tallas).toLowerCase();
+      const esTallaNA = tallasLower === "n/a" || tallasLower === "única" || tallasLower === "unica";
+
+      if (!esTallaNA && producto.tallas) {
+        document.getElementById("tallas").textContent = producto.tallas;
+      } else if (producto.variables) {
+        const selectorVariables = document.createElement("div");
+        selectorVariables.className = "mt-3";
+
+        const opciones = producto.variables
+          .split(",")
+          .map(v => `<option value="${v.trim()}">${v.trim()}</option>`)
+          .join("");
+
+        selectorVariables.innerHTML = `
+          <label for="selector-variable" class="form-label">Selecciona variante:</label>
+          <select id="selector-variable" class="form-select mb-2">
+            ${opciones}
+          </select>
+        `;
+
+        document.getElementById("tallas").replaceWith(selectorVariables);
       }
 
       const galeria = document.getElementById("galeria");
@@ -162,38 +180,41 @@
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
 
-        const tallas = String(producto.tallas).toLowerCase();
-const requiereSelector = !(tallas.includes("única") || tallas.includes("unica") || tallas.includes("n/a"));
+               const tallas = String(producto.tallas).toLowerCase();
+        const requiereSelector = !(tallas.includes("única") || tallas.includes("unica") || tallas.includes("n/a"));
 
-let selectorHTML = "";
-if (requiereSelector) {
-  const opcionesTalla = producto.tallas
-    .split(",")
-    .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
-    .join("");
+        let selectorHTML = "";
+        if (requiereSelector) {
+          const opcionesTalla = producto.tallas
+            .split(",")
+            .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
+            .join("");
 
-  selectorHTML = `
-    <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
-    <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
-      ${opcionesTalla}
-    </select>
-  `;
-}
+          selectorHTML = `
+            <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
+            <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
+              ${opcionesTalla}
+            </select>
+          `;
+        }
 
-tarjeta.innerHTML = `
-  <div class="imagen-producto">
-    <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
-  </div>
-  ${selectorHTML}
-  <button class="boton-comprar btn-cart">Agregar al carrito</button>
-`;
-
+        tarjeta.innerHTML = `
+          <div class="imagen-producto">
+            <img src="${img}" alt="${producto.producto} - Variante ${i + 1}" class="zoomable" style="cursor: zoom-in;">
+          </div>
+          ${selectorHTML}
+          <button class="boton-comprar btn-cart">Agregar al carrito</button>
+        `;
 
         const boton = tarjeta.querySelector(".btn-cart");
         const selector = tarjeta.querySelector(".selector-talla");
 
         boton.addEventListener("click", (e) => {
-          const tallaSeleccionada = selector?.value || "No especificada";
+          let tallaSeleccionada = "No especificada";
+          if (selector) tallaSeleccionada = selector.value;
+          else if (document.getElementById("selector-variable")) {
+            tallaSeleccionada = document.getElementById("selector-variable").value;
+          }
 
           boton.dataset.id = producto.id;
           boton.dataset.nombre = producto.producto;
@@ -213,6 +234,11 @@ tarjeta.innerHTML = `
 
         galeria.appendChild(tarjeta);
       });
+
+      // Mostrar descripción completa debajo del grid
+      if (producto.descripcion) {
+        document.getElementById("descripcion-completa").textContent = producto.descripcion;
+      }
     }
 
     document.addEventListener("click", function (e) {
