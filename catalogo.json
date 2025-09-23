@@ -1103,7 +1103,8 @@
     "precio": 50000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_81/PRODUCTOS_Images_24dbe567.IMAGEN_1.002619.jpg",
     "promo": false,
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_81/PRODUCTOS_Images_24dbe567.IMAGEN_1.002619.jpg"
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_81/PRODUCTOS_Images_24dbe567.IMAGEN_1.002619.jpg",
+    "variables": "AZUL , VERDE , ROSADO"
   },
   {
     "id": "CC2EFAB1",
