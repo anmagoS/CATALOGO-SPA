@@ -26,7 +26,6 @@
     <h1 id="nombre" class="titulo-categoria">Cargando...</h1>
     <p class="precio" id="precio"></p>
     <p id="descripcion-corta" class="descripcion-corta text-muted fst-italic mt-2"></p>
-    <div id="tallas" class="descripcion-producto"></div>
     <div id="galeria" class="grid-productos"></div>
     <div id="descripcion-completa" class="descripcion-producto mt-4"></div>
   </main>
@@ -149,30 +148,6 @@
       const descripcionGenerada = generarDescripcionCorta(producto);
       document.getElementById("descripcion-corta").textContent = descripcionGenerada;
 
-      const tallasLower = String(producto.tallas).toLowerCase();
-      const esTallaNA = tallasLower === "n/a" || tallasLower === "única" || tallasLower === "unica";
-
-      if (!esTallaNA && producto.tallas) {
-        document.getElementById("tallas").textContent = producto.tallas;
-      } else if (producto.variables) {
-        const selectorVariables = document.createElement("div");
-        selectorVariables.className = "mt-3";
-
-        const opciones = producto.variables
-          .split(",")
-          .map(v => `<option value="${v.trim()}">${v.trim()}</option>`)
-          .join("");
-
-        selectorVariables.innerHTML = `
-          <label for="selector-variable" class="form-label">Selecciona variante:</label>
-          <select id="selector-variable" class="form-select mb-2">
-            ${opciones}
-          </select>
-        `;
-
-        document.getElementById("tallas").replaceWith(selectorVariables);
-      }
-
       const galeria = document.getElementById("galeria");
       const imagenes = producto.url?.split(",").map(url => url.trim()).filter(Boolean) || [];
 
@@ -180,11 +155,13 @@
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
 
-               const tallas = String(producto.tallas).toLowerCase();
-        const requiereSelector = !(tallas.includes("única") || tallas.includes("unica") || tallas.includes("n/a"));
+        const tallas = String(producto.tallas).toLowerCase();
+        const requiereSelectorTalla = !(tallas.includes("única") || tallas.includes("unica") || tallas.includes("n/a"));
+        const tieneVariables = producto.variables && producto.variables.trim() !== "";
 
         let selectorHTML = "";
-        if (requiereSelector) {
+
+        if (requiereSelectorTalla) {
           const opcionesTalla = producto.tallas
             .split(",")
             .map(t => `<option value="${t.trim()}">${t.trim()}</option>`)
@@ -194,6 +171,18 @@
             <label for="selector-talla-${i}" class="mt-2">Selecciona talla:</label>
             <select id="selector-talla-${i}" class="form-select mb-2 selector-talla">
               ${opcionesTalla}
+            </select>
+          `;
+        } else if (tieneVariables) {
+          const opcionesVariante = producto.variables
+            .split(",")
+            .map(v => `<option value="${v.trim()}">${v.trim()}</option>`)
+            .join("");
+
+          selectorHTML = `
+            <label for="selector-variable-${i}" class="mt-2">Selecciona variante:</label>
+                       <select id="selector-variable-${i}" class="form-select mb-2 selector-variable">
+              ${opcionesVariante}
             </select>
           `;
         }
@@ -207,14 +196,13 @@
         `;
 
         const boton = tarjeta.querySelector(".btn-cart");
-        const selector = tarjeta.querySelector(".selector-talla");
+        const selectorTalla = tarjeta.querySelector(".selector-talla");
+        const selectorVariable = tarjeta.querySelector(".selector-variable");
 
         boton.addEventListener("click", (e) => {
           let tallaSeleccionada = "No especificada";
-          if (selector) tallaSeleccionada = selector.value;
-          else if (document.getElementById("selector-variable")) {
-            tallaSeleccionada = document.getElementById("selector-variable").value;
-          }
+          if (selectorTalla) tallaSeleccionada = selectorTalla.value;
+          else if (selectorVariable) tallaSeleccionada = selectorVariable.value;
 
           boton.dataset.id = producto.id;
           boton.dataset.nombre = producto.producto;
@@ -235,9 +223,13 @@
         galeria.appendChild(tarjeta);
       });
 
-      // Mostrar descripción completa debajo del grid
+      // Mostrar descripción completa con título
       if (producto.descripcion) {
-        document.getElementById("descripcion-completa").textContent = producto.descripcion;
+        const descripcionCompleta = document.getElementById("descripcion-completa");
+        descripcionCompleta.innerHTML = `
+          <h4 class="mt-4 mb-2">Descripción del producto</h4>
+          <p>${producto.descripcion.replace(/\n/g, "<br>")}</p>
+        `;
       }
     }
 
