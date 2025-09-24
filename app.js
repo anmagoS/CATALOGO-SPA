@@ -4,7 +4,7 @@ const carritoContainer = document.getElementById("carrito-contenido");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.getElementById("contador-carrito");
 
-// Cargar catálogo
+// === Cargar catálogo ===
 async function cargarCatalogoGlobal() {
   try {
     const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
@@ -16,7 +16,19 @@ async function cargarCatalogoGlobal() {
   }
 }
 
-// Renderizar productos
+// === Cargar accesos ===
+async function cargarAccesosGlobal() {
+  try {
+    const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/accesos.json";
+    const res = await fetch(url);
+    const accesos = await res.json();
+    window.accesosGlobal = accesos;
+  } catch (err) {
+    console.error("Error al cargar accesos:", err);
+  }
+}
+
+// === Renderizar productos ===
 function renderizarProductos(catalogo) {
   const contenedor = document.getElementById("contenido-productos");
   if (!contenedor) return;
@@ -58,7 +70,7 @@ function renderizarProductos(catalogo) {
   });
 }
 
-// Agregar al carrito
+// === Agregar al carrito ===
 function agregarAlCarrito(e) {
   const btn = e.target.closest(".btn-cart");
   if (!btn) return;
@@ -87,7 +99,7 @@ function agregarAlCarrito(e) {
   localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
 
-// Renderizar carrito
+// === Renderizar carrito ===
 function renderizarCarrito() {
   if (!carritoContainer) return;
 
@@ -140,7 +152,7 @@ function renderizarCarrito() {
   localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
 
-// Subtotal y contador
+// === Subtotal y contador ===
 function actualizarSubtotal() {
   if (!subtotalElement) return;
   const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
@@ -152,7 +164,7 @@ function actualizarContadorCarrito() {
   contadorCarrito.textContent = articulosCarrito.length;
 }
 
-// WhatsApp
+// === WhatsApp ===
 function generarPedidoWhatsApp() {
   if (articulosCarrito.length === 0) {
     alert("Tu carrito está vacío.");
@@ -178,9 +190,10 @@ function generarPedidoWhatsApp() {
   localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
 
-// Inicialización
+// === Inicialización ===
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
+  await cargarAccesosGlobal();
 
   const headerContainer = document.getElementById("header-container");
   if (!headerContainer.querySelector(".header")) {
@@ -188,28 +201,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     headerContainer.insertAdjacentHTML("afterbegin", header);
   }
 
- const carritoGuardado = localStorage.getItem("carritoAnmago");
-if (carritoGuardado) {
-  try {
-    const datos = JSON.parse(carritoGuardado);
-    const esValido = Array.isArray(datos) && datos.every(p =>
-      typeof p.id === "string" &&
-      typeof p.nombre === "string" &&
-      typeof p.imagen === "string" &&
-      typeof p.talla === "string" &&
-      typeof p.precio === "number" &&
-      typeof p.cantidad === "number"
-    );
-    articulosCarrito = esValido ? datos : [];
-  } catch {
-    articulosCarrito = [];
+  const carritoGuardado = localStorage.getItem("carritoAnmago");
+  if (carritoGuardado) {
+    try {
+      const datos = JSON.parse(carritoGuardado);
+      const esValido = Array.isArray(datos) && datos.every(p =>
+        typeof p.id === "string" &&
+        typeof p.nombre === "string" &&
+        typeof p.imagen === "string" &&
+        typeof p.talla === "string" &&
+        typeof p.precio === "number" &&
+        typeof p.cantidad === "number"
+      );
+      articulosCarrito = esValido ? datos : [];
+    } catch {
+      articulosCarrito = [];
+    }
+
+    renderizarCarrito();
+    actualizarSubtotal();
+    actualizarContadorCarrito();
   }
-
-  renderizarCarrito();
-  actualizarSubtotal();
-  actualizarContadorCarrito();
-}
-
 
   const toggle = document.getElementById("toggle-categorias");
   const menu = document.getElementById("menu-categorias");
@@ -234,7 +246,7 @@ if (carritoGuardado) {
       const bloqueSubtipo = document.createElement("details");
       bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
 
-           categorias.forEach(categoria => {
+      categorias.forEach(categoria => {
         const link = document.createElement("a");
         link.className = "nav-link ps-3";
         link.textContent = categoria;
@@ -251,7 +263,13 @@ if (carritoGuardado) {
   const footer = await fetch("footer.html").then(res => res.text());
   document.getElementById("footer-container").innerHTML = footer;
 
+  // === Renderizado contextual por ruta ===
   if (document.getElementById("contenido-productos")) {
-    renderizarProductos(window.catalogoGlobal);
+    const rutaActual = window.location.pathname;
+    const accesosRuta = window.accesosGlobal?.filter(a => a.ruta === rutaActual) || [];
+    const idsRuta = accesosRuta.map(a => a.id_producto);
+
+    const productosFiltrados = window.catalogoGlobal.filter(p => idsRuta.includes(p.id));
+    renderizarProductos(productosFiltrados.length ? productosFiltrados : window.catalogoGlobal);
   }
 });
