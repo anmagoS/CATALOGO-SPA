@@ -334,5 +334,13 @@
   {
     "id_producto": "CC2EFAB1",
     "ruta": "/HOGAR/COCINA/JARRAS"
+  },
+  {
+    "id_producto": "0C55C555",
+    "ruta": "/HOGAR/HOGAR/COCINA/VASOS"
+  },
+  {
+    "id_producto": "0C55C555",
+    "ruta": "/HOGAR/COCINA/VASOS"
   }
 ]
