@@ -86,9 +86,10 @@
       const contenedor = document.getElementById("grid-categorias");
       contenedor.innerHTML = "";
 
-      const productosFiltrados = productos.filter(p =>
-        p.tipo?.trim() === tipo && p.subtipo?.trim() === subtipo
-      );
+     const productosFiltrados = productos.filter(p =>
+  (p.tipo?.trim() === tipo || p.subtipo?.trim() === tipo) &&
+  p.subtipo?.trim() === subtipo
+);
 
       const categoriasUnicas = [...new Set(productosFiltrados.map(p => p.categoria?.trim()).filter(Boolean))];
 
