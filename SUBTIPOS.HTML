@@ -84,7 +84,10 @@
       const contenedor = document.getElementById("grid-subtipos");
       contenedor.innerHTML = "";
 
-      const productosFiltrados = productos.filter(p => p.tipo?.trim() === tipoSeleccionado);
+     const productosFiltrados = productos.filter(p =>
+  p.tipo?.trim() === tipoSeleccionado || p.subtipo?.trim() === tipoSeleccionado
+);
+
       const subtiposUnicos = [...new Set(productosFiltrados.map(p => p.subtipo?.trim()).filter(Boolean))];
 
       subtiposUnicos.forEach(subtipo => {
