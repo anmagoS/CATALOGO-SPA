@@ -1259,5 +1259,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_92/PRODUCTOS_Images_18f86512.IMAGEN_1.193444.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_92/PRODUCTOS_Images_18f86512.IMAGEN_1.193444.jpg, https://ik.imagekit.io/mbsk9dati/producto_92/PRODUCTOS_Images_18f86512.IMAGEN_2.193444.jpg, https://ik.imagekit.io/mbsk9dati/producto_92/PRODUCTOS_Images_18f86512.IMAGEN_3.193444.jpg, https://ik.imagekit.io/mbsk9dati/producto_92/PRODUCTOS_Images_18f86512.IMAGEN_4.193447.jpg"
+  },
+  {
+    "id": "1993ED67",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "BLUSAS",
+    "subcategoria": "CROP TOP",
+    "producto": "CROP MARIPOSA VARILLA EN ENCAJE",
+    "material": ".",
+    "tallas": "UNICA",
+    "precio": 38000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_93/PRODUCTOS_Images_1993ed67.IMAGEN_1.210707.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_93/PRODUCTOS_Images_1993ed67.IMAGEN_1.210707.jpg, https://ik.imagekit.io/mbsk9dati/producto_93/PRODUCTOS_Images_1993ed67.IMAGEN_2.210707.jpg, https://ik.imagekit.io/mbsk9dati/producto_93/PRODUCTOS_Images_1993ed67.IMAGEN_3.210707.jpg"
   }
 ]
