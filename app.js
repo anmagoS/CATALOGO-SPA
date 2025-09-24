@@ -119,7 +119,7 @@ function renderizarCarrito() {
           </div>
           <div class="col-6">
             <h6 class="mb-1 title-product">${producto.nombre}</h6>
-            <p class="mb-0 detalles-product">Talla: ${producto.talla}</p>
+            <p class="mb-0 detalles-product">Opcion: ${producto.talla}</p>
           </div>
           <div class="col-3 text-end">
             <span class="fw-bold">
