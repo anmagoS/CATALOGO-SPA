@@ -1,4 +1,5 @@
 let articulosCarrito = [];
+
 const carritoContainer = document.getElementById("carrito-contenido");
 const subtotalElement = document.getElementById("subtotal");
 const contadorCarrito = document.getElementById("contador-carrito");
@@ -37,29 +38,29 @@ function renderizarProductos(catalogo) {
     const tallas = p.tallas?.split(",").map(t => t.trim()) || [];
     const opciones = tallas.map(t => `<option value="${t}">${t}</option>`).join("");
 
-contenedor.insertAdjacentHTML("beforeend", `
-  <div class="producto" data-id="${p.id}">
-    <a href="producto.html?id=${p.id}" class="imagen-producto">
-      <img src="${p.imagen}" alt="${p.producto}" />
-    </a>
-    <div class="nombre-producto">${p.producto}</div>
-    <p class="precio-producto">$${p.precio.toLocaleString("es-CO")}</p>
-    ${tallas.length ? `
-      <label>Opción:</label>
-      <select class="selector-talla form-select mb-2">
-        ${opciones}
-      </select>
-    ` : ""}
-    <button class="boton-comprar btn-cart"
-      data-id="${p.id}"
-      data-nombre="${p.producto}"
-      data-imagen="${p.imagen}"
-      data-precio="${p.precio}"
-      data-variante="${p.imagen}">
-      Agregar al carrito
-    </button>
-  </div>
-`);
+    contenedor.insertAdjacentHTML("beforeend", `
+      <div class="producto" data-id="${p.id}">
+        <a href="producto.html?id=${p.id}" class="imagen-producto">
+          <img src="${p.imagen}" alt="${p.producto}" />
+        </a>
+        <div class="nombre-producto">${p.producto}</div>
+        <p class="precio-producto">$${p.precio.toLocaleString("es-CO")}</p>
+        ${tallas.length ? `
+          <label>Opción:</label>
+          <select class="selector-talla form-select mb-2">
+            ${opciones}
+          </select>
+        ` : ""}
+        <button class="boton-comprar btn-cart"
+          data-id="${p.id}"
+          data-nombre="${p.producto}"
+          data-imagen="${p.imagen}"
+          data-precio="${p.precio}"
+          data-variante="${p.imagen}">
+          Agregar al carrito
+        </button>
+      </div>
+    `);
   });
 
   contenedor.querySelectorAll(".btn-cart").forEach(boton => {
@@ -122,7 +123,7 @@ function renderizarCarrito() {
           </div>
           <div class="col-6">
             <h6 class="mb-1 title-product">${producto.nombre}</h6>
-            <p class="mb-0 detalles-product">Opcion: ${producto.talla}</p>
+            <p class="mb-0 detalles-product">Opción: ${producto.talla}</p>
           </div>
           <div class="col-3 text-end">
             <span class="fw-bold">
@@ -191,6 +192,90 @@ function generarPedidoWhatsApp() {
   actualizarSubtotal();
   actualizarContadorCarrito();
   localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
+}
+
+// === Renderizar secciones inferiores ===
+function renderizarTiposDesdeCatalogo(productos) {
+  const contenedor = document.getElementById("seccion-tipos");
+  if (!contenedor) return;
+
+  const tiposUnicos = [...new Set(productos.map(p => p.tipo?.trim()).filter(Boolean))];
+
+  tiposUnicos.forEach(tipo => {
+    const productoRef = productos.find(p => p.tipo?.trim() === tipo);
+    if (!productoRef) return;
+
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "producto";
+    tarjeta.innerHTML = `
+      <a href="subtipos.html?tipo=${encodeURIComponent(tipo)}" class="imagen-producto">
+        <img src="${productoRef.imagen}" alt="${tipo}">
+      </a>
+      <div class="nombre-producto">${tipo}</div>
+      <a class="boton-comprar" href="subtipos.html?tipo=${encodeURIComponent(tipo)}">Ver subtipos</a>
+    `;
+    contenedor.appendChild(tarjeta);
+  });
+}
+function renderizarSubtiposDesdeCatalogo(productos, tipoSeleccionado) {
+  const contenedor = document.getElementById("seccion-subtipos");
+  if (!contenedor || !tipoSeleccionado) return;
+
+  const productosFiltrados = productos.filter(p => p.tipo?.trim() === tipoSeleccionado);
+  const subtiposUnicos = [...new Set(productosFiltrados.map(p => p.subtipo?.trim()).filter(Boolean))];
+
+  subtiposUnicos.forEach(subtipo => {
+    const productoRef = productosFiltrados.find(p => p.subtipo?.trim() === subtipo);
+    if (!productoRef) return;
+
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "producto";
+    tarjeta.innerHTML = `
+      <a href="categorias.html?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}" class="imagen-producto">
+        <img src="${productoRef.imagen}" alt="${subtipo}">
+      </a>
+      <div class="nombre-producto">${subtipo}</div>
+      <a class="boton-comprar" href="categorias.html?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}">Ver categorías</a>
+    `;
+    contenedor.appendChild(tarjeta);
+  });
+}
+
+function renderizarCategoriasDesdeCatalogo(productos, tipo, subtipo) {
+  const contenedor = document.getElementById("seccion-categorias");
+  if (!contenedor || !tipo || !subtipo) return;
+
+  const productosFiltrados = productos.filter(p =>
+    p.tipo?.trim() === tipo && p.subtipo?.trim() === subtipo
+  );
+
+  const categoriasUnicas = [...new Set(productosFiltrados.map(p => p.categoria?.trim()).filter(Boolean))];
+
+  categoriasUnicas.forEach(categoria => {
+    const productoRef = productosFiltrados.find(p => p.categoria?.trim() === categoria);
+    if (!productoRef) return;
+
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "producto";
+    tarjeta.innerHTML = `
+      <a href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}" class="imagen-producto">
+        <img src="${productoRef.imagen}" alt="${categoria}">
+      </a>
+      <div class="nombre-producto">${categoria}</div>
+      <a class="boton-comprar" href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}">Ver productos</a>
+    `;
+    contenedor.appendChild(tarjeta);
+  });
+}
+
+// === Obtener parámetros desde URL ===
+function getParametrosDesdeURL() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    tipo: params.get("tipo")?.trim(),
+    subtipo: params.get("subtipo")?.trim(),
+    categoria: params.get("categoria")?.trim()
+  };
 }
 
 // === Inicialización ===
@@ -267,6 +352,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("footer-container").innerHTML = footer;
 
   // === Renderizado contextual por ruta ===
+  const { tipo, subtipo, categoria } = getParametrosDesdeURL();
+
   if (document.getElementById("contenido-productos")) {
     const rutaActual = window.location.pathname;
     const accesosRuta = window.accesosGlobal?.filter(a => a.ruta === rutaActual) || [];
@@ -275,4 +362,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const productosFiltrados = window.catalogoGlobal.filter(p => idsRuta.includes(p.id));
     renderizarProductos(productosFiltrados.length ? productosFiltrados : window.catalogoGlobal);
   }
+
+  if (document.getElementById("seccion-tipos")) {
+    renderizarTiposDesdeCatalogo(window.catalogoGlobal);
+  }
+
+  if (document.getElementById("seccion-subtipos")) {
+    renderizarSubtiposDesdeCatalogo(window.catalogoGlobal, tipo);
+  }
+
+  if (document.getElementById("seccion-categorias")) {
+    renderizarCategoriasDesdeCatalogo(window.catalogoGlobal, tipo, subtipo);
+  }
 });
+
