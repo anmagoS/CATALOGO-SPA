@@ -32,10 +32,11 @@
   </main>
 
   <!-- SECCIÓN INFERIOR: TIPOS -->
-  <section class="contenedor-categoria">
-    <h2 class="titulo-categoria text-center">Explora mas prodcutos</h2>
-    <div id="seccion-tipos" class="row"></div>
-  </section>
+  <div class="container mt-4 position-relative" style="max-width: 500px;">
+    <input id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
+    <div id="sugerencias" class="dropdown-menu position-absolute mt-1 w-100 z-3"></div>
+  </div>
+
 
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
