@@ -11,7 +11,6 @@ html, body {
 body {
   padding-top: 60px;
 }
-
 /* === HEADER FIJO === */
 .header {
   background-color: #1B4557;
@@ -31,7 +30,6 @@ body {
   height: 40px;
   margin-right: 8px;
 }
-
 /* === BOTÓN FLOTANTE DEL CARRITO === */
 .btn_shopping {
   position: fixed;
@@ -50,7 +48,6 @@ body {
   gap: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .btn_shopping:hover {
   background-color: #198754;
   color: #ffffff;
@@ -72,7 +69,6 @@ body {
   line-height: 1;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
-
 /* === NAVEGACIÓN === */
 .nav-link {
   color: white;
@@ -117,7 +113,6 @@ body {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
 /* === CATÁLOGO Y PRODUCTOS === */
 .contenedor-categoria {
   margin-top: 80px;
