@@ -33,7 +33,7 @@
 
   <!-- SECCIÓN INFERIOR: TIPOS -->
   <section class="contenedor-categoria">
-    <h1 class="titulo-categoria text-center">Explora más productos</h1>
+    <h2 class="titulo-categoria text-center">Explora más productos</h2>
     <div id="seccion-tipos" class="grid-productos"></div>
   </section>
 
@@ -104,8 +104,8 @@
       const subtiposUnicos = [...new Set(productosFiltrados.map(p => p.subtipo?.trim()).filter(Boolean))];
 
       subtiposUnicos.forEach(subtipo => {
-        const productosDelSubtipo = productosFiltrados.filter(p => p.subtipo?.trim() === subtipo);
-        const productoRef = productosDelSubtipo[0];
+        const productoRef = productosFiltrados.find(p => p.subtipo?.trim() === subtipo);
+        if (!productoRef) return;
 
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
@@ -135,7 +135,7 @@
             <img src="${imagenRef}" alt="${tipo}">
           </a>
           <div class="nombre-producto">${tipo}</div>
-          <a class="boton-comprar" href="subtipos.html?tipo=${encodeURIComponent(tipo)}"> Ver </a>
+          <a class="boton-comprar" href="subtipos.html?tipo=${encodeURIComponent(tipo)}">Ver subtipos</a>
         `;
         contenedor.appendChild(tarjeta);
       });
