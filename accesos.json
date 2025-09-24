@@ -350,5 +350,13 @@
   {
     "id_producto": "629FA20D",
     "ruta": "/HOGAR/COCINA/VASOS"
+  },
+  {
+    "id_producto": "216A9768",
+    "ruta": "/BELLEZA/DAMA/BIOAQUA/GEL"
+  },
+  {
+    "id_producto": "E8C85FB5",
+    "ruta": "/BELLEZA/DAMA/BIOAQUA/PROTECTORES SOLARES"
   }
 ]
