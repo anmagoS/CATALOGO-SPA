@@ -12,6 +12,7 @@
 <body>
   <!-- HEADER -->
   <div id="header-container"></div>
+
   <!-- BUSCADOR MODULAR -->
   <div class="container mt-4 position-relative" style="max-width: 500px;">
     <input id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
@@ -32,7 +33,7 @@
 
   <!-- SECCIÓN INFERIOR: TIPOS -->
   <section class="contenedor-categoria">
-    <h1 class="titulo-categoria text-center">Explora mas productos</h1>
+    <h1 class="titulo-categoria text-center">Explora más productos</h1>
     <div id="seccion-tipos" class="grid-productos"></div>
   </section>
 
@@ -66,6 +67,13 @@
   <!-- INICIALIZACIÓN -->
   <script type="module">
     import { activarBuscadorGlobal } from './buscador.js';
+
+    const imagenesPorTipo = {
+      "ROPA": "https://ik.imagekit.io/mbsk9dati/593678a2-9af5-47a8-a47c-34407d25bd60.jpg?updatedAt=1758216950422",
+      "RELOJERIA": "https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_12.215521.jpg?updatedAt=1757714222484",
+      "HOGAR": "REDES_IMAGES/portad1-1.webp",
+      "BELLEZA": "REDES_IMAGES/R.jpg"
+    };
 
     function getTipoDesdeURL() {
       const params = new URLSearchParams(window.location.search);
@@ -119,21 +127,15 @@
       const tiposUnicos = [...new Set(productos.map(p => p.tipo?.trim()).filter(Boolean))];
 
       tiposUnicos.forEach(tipo => {
-        const productoRef = productos.find(p => p.tipo?.trim() === tipo);
-        if (!productoRef) return;
-
+        const imagenRef = imagenesPorTipo[tipo] || "imagen-default.jpg";
         const tarjeta = document.createElement("div");
-        tarjeta.className = "col-md-4 mb-4";
+        tarjeta.className = "producto";
         tarjeta.innerHTML = `
-          <div class="card h-100">
-            <a href="subtipos.html?tipo=${encodeURIComponent(tipo)}">
-              <img src="${productoRef.imagen}" class="card-img-top" alt="${tipo}">
-            </a>
-            <div class="card-body text-center">
-              <h6 class="card-title">${tipo}</h6>
-              <a href="subtipos.html?tipo=${encodeURIComponent(tipo)}" class="btn btn-outline-primary btn-sm">Ver subtipos</a>
-            </div>
-          </div>
+          <a href="subtipos.html?tipo=${encodeURIComponent(tipo)}" class="imagen-producto">
+            <img src="${imagenRef}" alt="${tipo}">
+          </a>
+          <div class="nombre-producto">${tipo}</div>
+          <a class="boton-comprar" href="subtipos.html?tipo=${encodeURIComponent(tipo)}">Ver subtipos</a>
         `;
         contenedor.appendChild(tarjeta);
       });
