@@ -589,3 +589,13 @@ details[open] > summary::after {
 .redes-sociales a:hover img {
   transform: scale(1.1);
 }
+.grid-productos-secundaria .producto {
+  padding: 10px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+.grid-productos-secundaria .imagen-producto img {
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
