@@ -88,11 +88,11 @@
       const contenedor = document.getElementById("grid-productos");
       contenedor.innerHTML = "";
 
-      const productosFiltrados = productos.filter(p =>
-        p.tipo?.trim() === tipo &&
-        p.subtipo?.trim() === subtipo &&
-        p.categoria?.trim() === categoria
-      );
+    const productosFiltrados = productos.filter(p =>
+  (p.tipo?.trim() === tipo || p.subtipo?.trim() === tipo) &&
+  p.subtipo?.trim() === subtipo &&
+  p.categoria?.trim() === categoria
+);
 
       if (productosFiltrados.length === 0) {
         contenedor.innerHTML = `<p class="text-center text-muted">No se encontraron productos en esta categoría.</p>`;
