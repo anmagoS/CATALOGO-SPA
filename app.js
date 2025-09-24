@@ -38,25 +38,29 @@ function renderizarProductos(catalogo) {
     const tallas = p.tallas?.split(",").map(t => t.trim()) || [];
     const opciones = tallas.map(t => `<option value="${t}">${t}</option>`).join("");
 
-    contenedor.insertAdjacentHTML("beforeend", `
-      <div class="producto card mb-3" data-id="${p.id}">
-        <img src="${p.imagen}" alt="${p.id}" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="nombre-producto">${p.producto}</h5>
-          <p class="precio-producto">$${p.precio.toLocaleString("es-CO")}</p>
-          <label>Talla:</label>
-          <select class="selector-talla form-select mb-2">${opciones}</select>
-          <button class="btn btn-primary btn-cart"
-            data-id="${p.id}"
-            data-nombre="${p.producto}"
-            data-imagen="${p.imagen}"
-            data-precio="${p.precio}"
-            data-variante="${p.imagen}">
-            Agregar al carrito
-          </button>
-        </div>
-      </div>
-    `);
+contenedor.insertAdjacentHTML("beforeend", `
+  <div class="producto" data-id="${p.id}">
+    <a href="producto.html?id=${p.id}" class="imagen-producto">
+      <img src="${p.imagen}" alt="${p.producto}" />
+    </a>
+    <div class="nombre-producto">${p.producto}</div>
+    <p class="precio-producto">$${p.precio.toLocaleString("es-CO")}</p>
+    ${tallas.length ? `
+      <label>Opción:</label>
+      <select class="selector-talla form-select mb-2">
+        ${opciones}
+      </select>
+    ` : ""}
+    <button class="boton-comprar btn-cart"
+      data-id="${p.id}"
+      data-nombre="${p.producto}"
+      data-imagen="${p.imagen}"
+      data-precio="${p.precio}"
+      data-variante="${p.imagen}">
+      Agregar al carrito
+    </button>
+  </div>
+`);
   });
 
   contenedor.querySelectorAll(".btn-cart").forEach(boton => {
