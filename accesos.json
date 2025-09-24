@@ -362,5 +362,13 @@
   {
     "id_producto": "8072734C",
     "ruta": "/BELLEZA/DAMA/COSMETICOS/SOMBRAS"
+  },
+  {
+    "id_producto": "04647DFC",
+    "ruta": "/BELLEZA/DAMA/BIOAQUA/CREMAS"
+  },
+  {
+    "id_producto": "718DAEE8",
+    "ruta": "/BELLEZA/DAMA/BIOAQUA/CREMAS"
   }
 ]
