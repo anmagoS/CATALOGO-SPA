@@ -208,11 +208,11 @@ function renderizarTiposDesdeCatalogo(productos) {
     const tarjeta = document.createElement("div");
     tarjeta.className = "producto";
     tarjeta.innerHTML = `
-      <a href="subtipos.html?tipo=${encodeURIComponent(tipo)}" class="imagen-producto">
+      <a href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}" class="imagen-producto">
         <img src="${productoRef.imagen}" alt="${tipo}">
       </a>
       <div class="nombre-producto">${tipo}</div>
-      <a class="boton-comprar" href="subtipos.html?tipo=${encodeURIComponent(tipo)}">Ver subtipos</a>
+      <a class="boton-comprar" href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}">Ver subtipos</a>
     `;
     contenedor.appendChild(tarjeta);
   });
@@ -231,11 +231,11 @@ function renderizarSubtiposDesdeCatalogo(productos, tipoSeleccionado) {
     const tarjeta = document.createElement("div");
     tarjeta.className = "producto";
     tarjeta.innerHTML = `
-      <a href="categorias.html?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}" class="imagen-producto">
+      <a href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}" class="imagen-producto">
         <img src="${productoRef.imagen}" alt="${subtipo}">
       </a>
       <div class="nombre-producto">${subtipo}</div>
-      <a class="boton-comprar" href="categorias.html?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}">Ver categorías</a>
+      <a class="boton-comprar" href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}">Ver categorías</a>
     `;
     contenedor.appendChild(tarjeta);
   });
@@ -258,11 +258,11 @@ function renderizarCategoriasDesdeCatalogo(productos, tipo, subtipo) {
     const tarjeta = document.createElement("div");
     tarjeta.className = "producto";
     tarjeta.innerHTML = `
-      <a href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}" class="imagen-producto">
+      <a href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}" class="imagen-producto">
         <img src="${productoRef.imagen}" alt="${categoria}">
       </a>
       <div class="nombre-producto">${categoria}</div>
-      <a class="boton-comprar" href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}">Ver productos</a>
+      <a class="boton-comprar" href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}">Ver productos</a>
     `;
     contenedor.appendChild(tarjeta);
   });
