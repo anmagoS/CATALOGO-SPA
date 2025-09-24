@@ -1287,5 +1287,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_1.211801.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_1.211801.jpg, https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_2.211801.jpg, https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_3.211801.jpg, https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_4.211803.jpg, https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_5.211804.jpg, https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_6.211804.jpg"
+  },
+  {
+    "id": "ED5F855B",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "BODYS",
+    "subcategoria": "MANGA LARGA",
+    "producto": "BODY CLÁSICO CON TOP",
+    "material": "MALLA TEX",
+    "tallas": "UNICA",
+    "precio": 38000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_95/PRODUCTOS_Images_ed5f855b.IMAGEN_1.212129.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_95/PRODUCTOS_Images_ed5f855b.IMAGEN_1.212129.jpg, https://ik.imagekit.io/mbsk9dati/producto_95/PRODUCTOS_Images_ed5f855b.IMAGEN_2.212129.jpg, https://ik.imagekit.io/mbsk9dati/producto_95/PRODUCTOS_Images_ed5f855b.IMAGEN_3.212129.jpg"
   }
 ]
