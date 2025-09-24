@@ -31,6 +31,12 @@
     <div id="grid-subtipos" class="grid-productos"></div>
   </main>
 
+  <!-- SECCIÓN INFERIOR: TIPOS -->
+  <section class="container mt-5">
+    <h2 class="text-center mb-4">Explora otros tipos</h2>
+    <div id="seccion-tipos" class="row"></div>
+  </section>
+
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header border-bottom">
@@ -73,6 +79,7 @@
       const productos = await respuesta.json();
       window.catalogoGlobal = productos;
       renderSubtipos(productos);
+      renderizarTiposDesdeCatalogo(productos);
     }
 
     function renderSubtipos(productos) {
@@ -80,13 +87,12 @@
       if (!tipoSeleccionado) return;
 
       document.getElementById("titulo-subtipos").textContent = `SELECCIÓN DE ${tipoSeleccionado}`;
-
       const contenedor = document.getElementById("grid-subtipos");
       contenedor.innerHTML = "";
 
-     const productosFiltrados = productos.filter(p =>
-  p.tipo?.trim() === tipoSeleccionado || p.subtipo?.trim() === tipoSeleccionado
-);
+      const productosFiltrados = productos.filter(p =>
+        p.tipo?.trim() === tipoSeleccionado || p.subtipo?.trim() === tipoSeleccionado
+      );
 
       const subtiposUnicos = [...new Set(productosFiltrados.map(p => p.subtipo?.trim()).filter(Boolean))];
 
@@ -107,6 +113,33 @@
       });
     }
 
+    function renderizarTiposDesdeCatalogo(productos) {
+      const contenedor = document.getElementById("seccion-tipos");
+      if (!contenedor) return;
+
+      const tiposUnicos = [...new Set(productos.map(p => p.tipo?.trim()).filter(Boolean))];
+
+      tiposUnicos.forEach(tipo => {
+        const productoRef = productos.find(p => p.tipo?.trim() === tipo);
+        if (!productoRef) return;
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "col-md-4 mb-4";
+        tarjeta.innerHTML = `
+          <div class="card h-100">
+            <a href="subtipos.html?tipo=${encodeURIComponent(tipo)}">
+              <img src="${productoRef.imagen}" class="card-img-top" alt="${tipo}">
+            </a>
+            <div class="card-body text-center">
+              <h6 class="card-title">${tipo}</h6>
+              <a href="subtipos.html?tipo=${encodeURIComponent(tipo)}" class="btn btn-outline-primary btn-sm">Ver subtipos</a>
+            </div>
+          </div>
+        `;
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
     function ajustarCarrito() {
       const header = document.querySelector(".header");
       const carritoBtn = document.querySelector(".btn_shopping");
@@ -116,28 +149,27 @@
       }
     }
 
-   document.addEventListener("DOMContentLoaded", async () => {
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-  await new Promise(resolve => requestAnimationFrame(resolve));
-  ajustarCarrito();
+    document.addEventListener("DOMContentLoaded", async () => {
+      const header = await fetch("HEADER.HTML").then(res => res.text());
+      document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      ajustarCarrito();
 
-  activarBuscadorGlobal();
+      activarBuscadorGlobal();
 
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
+      const footer = await fetch("footer.html").then(res => res.text());
+      document.getElementById("footer-container").innerHTML = footer;
 
-  await cargarCatalogo();
+      await cargarCatalogo();
 
-  if (typeof cargarCarritoDesdeStorage === "function") {
-    cargarCarritoDesdeStorage();
-  }
+      if (typeof cargarCarritoDesdeStorage === "function") {
+        cargarCarritoDesdeStorage();
+      }
 
-  if (typeof actualizarCarrito === "function") {
-    actualizarCarrito(); // ✅ Esto refresca el contador y contenido
-  }
-});
-
+      if (typeof actualizarCarrito === "function") {
+        actualizarCarrito();
+      }
+    });
   </script>
 </body>
 </html>
