@@ -342,5 +342,13 @@
   {
     "id_producto": "0C55C555",
     "ruta": "/HOGAR/COCINA/VASOS"
+  },
+  {
+    "id_producto": "629FA20D",
+    "ruta": "/HOGAR/HOGAR/COCINA/VASOS"
+  },
+  {
+    "id_producto": "629FA20D",
+    "ruta": "/HOGAR/COCINA/VASOS"
   }
 ]
