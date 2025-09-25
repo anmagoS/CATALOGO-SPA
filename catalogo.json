@@ -1345,5 +1345,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181abb.IMAGEN_1.235428.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181abb.IMAGEN_11.235437.jpg, https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181abb.IMAGEN_12.235438.jpg, https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181abb.IMAGEN_13.235438.jpg"
+  },
+  {
+    "id": "67AE6DB4",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "CAMISETA",
+    "subcategoria": "OTROS",
+    "producto": "CAMISETA DAMA",
+    "material": "ALGODON LICRADO",
+    "tallas": "S,M,L,XL",
+    "precio": 35000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_1.235635.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_1.235635.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_2.235635.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_3.235635.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_4.235638.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_5.235638.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_7.235639.jpg"
   }
 ]
