@@ -1373,5 +1373,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_1.000857.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_1.000857.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_2.000857.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_3.000857.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_4.000859.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_5.000859.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_6.000900.jpg"
+  },
+  {
+    "id": "78B323AF",
+    "tipo": "ROPA",
+    "subtipo": "UNISEX",
+    "categoria": "BUSOS",
+    "subcategoria": "PAREJAS",
+    "producto": "BUSOS PAREJAS",
+    "material": "BURDA",
+    "tallas": "S,M,L,XL",
+    "precio": 89900,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_1.001710.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_6.001713.jpg, https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_10.001716.jpg"
   }
 ]
