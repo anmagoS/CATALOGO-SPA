@@ -1359,5 +1359,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_1.235635.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_1.235635.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_2.235635.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_3.235635.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_4.235638.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_5.235638.jpg, https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_7.235639.jpg"
+  },
+  {
+    "id": "8F5C6822",
+    "tipo": "ROPA",
+    "subtipo": "NIÑOS",
+    "categoria": "CONJUNTOS",
+    "subcategoria": "JOGGER",
+    "producto": "CONJUNTO JOGGER CAMISETA",
+    "material": "JOGGER BURDA CAMISETA ALGODON",
+    "tallas": "2-4,6-8,10-12,14-16",
+    "precio": 53000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_1.000857.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_1.000857.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_2.000857.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_3.000857.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_4.000859.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_5.000859.jpg, https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_6.000900.jpg"
   }
 ]
