@@ -73,6 +73,28 @@ function renderizarProductos(catalogo) {
     });
   });
 }
+function renderCategorias(catalogo) {
+  const { tipo, subtipo, categoria } = getParametrosDesdeURL?.() || {};
+  const contenedor = document.getElementById("seccion-categorias");
+  if (!contenedor) return;
+
+  contenedor.innerHTML = "";
+
+  const categoriasUnicas = [...new Set(catalogo.map(p => p.categoria?.trim()).filter(Boolean))]
+    .filter(cat => cat !== categoria);
+
+  categoriasUnicas.forEach(cat => {
+    contenedor.insertAdjacentHTML("beforeend", `
+      <div class="producto">
+        <a href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(cat)}" class="imagen-producto">
+          <img src="REDES_IMAGES/default-categoria.jpg" alt="${cat}" />
+        </a>
+        <div class="nombre-producto">${cat}</div>
+        <a class="boton-comprar" href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(cat)}">Ver más</a>
+      </div>
+    `);
+  });
+}
 
 // === Agregar al carrito ===
 function agregarAlCarrito(e) {
@@ -281,6 +303,7 @@ function getParametrosDesdeURL() {
 // === Inicialización ===
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
+  renderCategorias(window.catalogoGlobal);
   await cargarAccesosGlobal();
 
   const headerContainer = document.getElementById("header-container");
