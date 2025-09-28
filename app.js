@@ -212,7 +212,7 @@ function renderizarTiposDesdeCatalogo(productos) {
         <img src="${productoRef.imagen}" alt="${tipo}">
       </a>
       <div class="nombre-producto">${tipo}</div>
-      <a class="boton-comprar" href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}">Ver subtipos</a>
+      <a class="boton-comprar" href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}">Ver Más</a>
     `;
     contenedor.appendChild(tarjeta);
   });
