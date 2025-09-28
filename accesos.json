@@ -405,7 +405,7 @@
   },
   {
     "id_producto": "67AE6DB4",
-    "ruta": "/ROPA/DAMA/CAMISETA/OTROS"
+    "ruta": "/ROPA/DAMA/CAMISETAS/MANGA CORTA"
   },
   {
     "id_producto": "8F5C6822",
@@ -418,5 +418,9 @@
   {
     "id_producto": "5F28828E",
     "ruta": "/ROPA/NIÑOS/CONJUNTOS/PANTALONETA CAMISETA"
+  },
+  {
+    "id_producto": "C1FBB280",
+    "ruta": "/RELOJERIA/CABALLERO/QYQ/ANALOGO"
   }
 ]
