@@ -168,7 +168,6 @@
         carritoBtn.style.top = `${alturaHeader + 12}px`;
       }
     }
-
     document.addEventListener("DOMContentLoaded", async () => {
       const header = await fetch("HEADER.HTML").then(res => res.text());
       document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
