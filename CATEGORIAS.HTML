@@ -12,6 +12,7 @@
 <body>
   <!-- HEADER -->
   <div id="header-container"></div>
+
   <!-- BUSCADOR MODULAR -->
   <div class="container mt-4 position-relative" style="max-width: 500px;">
     <input id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
@@ -30,6 +31,14 @@
     <div id="grid-categorias" class="grid-productos"></div>
   </main>
 
+  <!-- SECCIÓN INFERIOR: SUBTIPOS -->
+  <section class="contenedor-categoria">
+    <h2 class="titulo-categoria text-center">Explora más subtipos</h2>
+    <div id="seccion-subtipos" class="grid-productos"></div>
+  </section>
+
+
+
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header border-bottom">
@@ -47,11 +56,6 @@
       </div>
     </div>
   </div>
-<!-- SECCIÓN INFERIOR: SUBTIPOS -->
-<section class="contenedor-categoria">
-  <h2 class="titulo-categoria text-center">Explora más subtipos</h2>
-  <div id="seccion-subtipos" class="grid-productos"></div>
-</section>
 
   <!-- FOOTER -->
   <div id="footer-container"></div>
@@ -80,6 +84,8 @@
       const productos = await respuesta.json();
       window.catalogoGlobal = productos;
       renderCategorias(productos);
+      renderizarSubtiposRelacionados(productos);
+      renderMenuLateral(productos);
     }
 
     function renderCategorias(productos) {
@@ -87,20 +93,19 @@
       if (!tipo || !subtipo) return;
 
       document.getElementById("titulo-categorias").textContent = `CATEGORÍAS DE ${subtipo}`;
-
       const contenedor = document.getElementById("grid-categorias");
       contenedor.innerHTML = "";
 
-     const productosFiltrados = productos.filter(p =>
-  (p.tipo?.trim() === tipo || p.subtipo?.trim() === tipo) &&
-  p.subtipo?.trim() === subtipo
-);
+      const productosFiltrados = productos.filter(p =>
+        (p.tipo?.trim() === tipo || p.subtipo?.trim() === tipo) &&
+        p.subtipo?.trim() === subtipo
+      );
 
       const categoriasUnicas = [...new Set(productosFiltrados.map(p => p.categoria?.trim()).filter(Boolean))];
 
       categoriasUnicas.forEach(categoria => {
-        const productosDeCategoria = productosFiltrados.filter(p => p.categoria?.trim() === categoria);
-        const productoRef = productosDeCategoria[0];
+        const productoRef = productosFiltrados.find(p => p.categoria?.trim() === categoria);
+        if (!productoRef) return;
 
         const tarjeta = document.createElement("div");
         tarjeta.className = "producto";
@@ -115,6 +120,74 @@
       });
     }
 
+    function renderizarSubtiposRelacionados(productos) {
+      const { tipo, subtipo: subtipoActual } = getParametrosDesdeURL();
+      const contenedor = document.getElementById("seccion-subtipos");
+      if (!contenedor || !tipo) return;
+
+      const productosFiltrados = productos.filter(p => p.tipo?.trim() === tipo);
+      const subtiposUnicos = [...new Set(productosFiltrados.map(p => p.subtipo?.trim()).filter(Boolean))]
+        .filter(sub => sub && sub !== subtipoActual);
+
+      contenedor.innerHTML = "";
+
+      if (subtiposUnicos.length === 0) {
+        contenedor.innerHTML = `<p class="text-center text-muted">No hay otros subtipos disponibles.</p>`;
+        return;
+      }
+
+      subtiposUnicos.forEach(subtipo => {
+        const productoRef = productosFiltrados.find(p => p.subtipo?.trim() === subtipo);
+        const imagen = productoRef?.imagen || "REDES_IMAGES/default-categoria.jpg";
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "producto";
+        tarjeta.innerHTML = `
+          <a href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}" class="imagen-producto">
+            <img src="${imagen}" alt="${subtipo}">
+          </a>
+          <div class="nombre-producto">${subtipo}</div>
+          <a class="boton-comprar" href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}">Ver categorías</a>
+        `;
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+    function renderMenuLateral(productos) {
+      const menu = document.getElementById("menu-categorias");
+      if (!menu) return;
+
+      const mapa = {};
+      productos.forEach(p => {
+        if (!p.tipo || !p.subtipo || !p.categoria) return;
+        if (!mapa[p.tipo]) mapa[p.tipo] = {};
+        if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
+        mapa[p.tipo][p.subtipo].add(p.categoria);
+      });
+
+      Object.entries(mapa).forEach(([tipo, subtipos]) => {
+                const bloqueTipo = document.createElement("details");
+        bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
+
+        Object.entries(subtipos).forEach(([subtipo, categorias]) => {
+          const bloqueSubtipo = document.createElement("details");
+          bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
+
+          categorias.forEach(categoria => {
+            const link = document.createElement("a");
+            link.className = "nav-link ps-3";
+            link.textContent = categoria;
+            link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
+            bloqueSubtipo.appendChild(link);
+          });
+
+          bloqueTipo.appendChild(bloqueSubtipo);
+        });
+
+        menu.appendChild(bloqueTipo);
+      });
+    }
+
     function ajustarCarrito() {
       const header = document.querySelector(".header");
       const carritoBtn = document.querySelector(".btn_shopping");
@@ -124,27 +197,27 @@
       }
     }
 
-   document.addEventListener("DOMContentLoaded", async () => {
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-  await new Promise(resolve => requestAnimationFrame(resolve));
-  ajustarCarrito();
+    document.addEventListener("DOMContentLoaded", async () => {
+      const header = await fetch("HEADER.HTML").then(res => res.text());
+      document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      ajustarCarrito();
 
-  activarBuscadorGlobal();
+      activarBuscadorGlobal();
 
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
+      const footer = await fetch("footer.html").then(res => res.text());
+      document.getElementById("footer-container").innerHTML = footer;
 
-  await cargarCatalogo();
+      await cargarCatalogo();
 
-  if (typeof cargarCarritoDesdeStorage === "function") {
-    cargarCarritoDesdeStorage();
-  }
+      if (typeof cargarCarritoDesdeStorage === "function") {
+        cargarCarritoDesdeStorage();
+      }
 
-  if (typeof actualizarCarrito === "function") {
-    actualizarCarrito(); // ✅ Esto refresca el contador y contenido
-  }
-});
+      if (typeof actualizarCarrito === "function") {
+        actualizarCarrito();
+      }
+    });
   </script>
 </body>
 </html>
