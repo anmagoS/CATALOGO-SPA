@@ -37,6 +37,8 @@
     <div id="seccion-tipos" class="grid-productos"></div>
   </section>
 
+ 
+
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header border-bottom">
@@ -79,7 +81,8 @@
       const productos = await respuesta.json();
       window.catalogoGlobal = productos;
       renderSubtipos(productos);
-      // ✅ Ya no se llama renderizarTiposDesdeCatalogo aquí
+      renderizarTiposDesdeCatalogo(productos);
+      renderMenuLateral(productos); // ✅ menú hamburguesa
     }
 
     function renderSubtipos(productos) {
@@ -112,6 +115,40 @@
         contenedor.appendChild(tarjeta);
       });
     }
+
+    function renderizarTiposDesdeCatalogo(productos) {
+      const tipoActual = getTipoDesdeURL();
+      const contenedor = document.getElementById("seccion-tipos");
+      if (!contenedor) return;
+
+      const tiposUnicos = [...new Set(productos.map(p => p.tipo?.trim()).filter(Boolean))]
+        .filter(tipo => tipo && tipo !== tipoActual);
+
+      contenedor.innerHTML = "";
+
+      if (tiposUnicos.length === 0) {
+        contenedor.innerHTML = `<p class="text-center text-muted">No hay otros tipos disponibles en este momento.</p>`;
+        return;
+      }
+
+      tiposUnicos.forEach(tipo => {
+        const productoRef = productos.find(p => p.tipo?.trim() === tipo);
+        const imagen = productoRef?.imagen || "REDES_IMAGES/default-categoria.jpg";
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "producto";
+        tarjeta.innerHTML = `
+          <a href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}" class="imagen-producto">
+            <img src="${imagen}" alt="${tipo}">
+          </a>
+          <div class="nombre-producto">${tipo}</div>
+          <a class="boton-comprar" href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}">Ver Más</a>
+        `;
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+    
 
     function ajustarCarrito() {
       const header = document.querySelector(".header");
