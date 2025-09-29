@@ -1080,7 +1080,7 @@
   {
     "id": "041F88D2",
     "tipo": "HOGAR",
-    "subtipo": "HOGAR",
+    "subtipo": "VARIOS",
     "categoria": "LAMPARAS",
     "subcategoria": "PARLANTE RECARGABLE BLUETOTH",
     "producto": "ASTRONAUTA PROYECTOR",
@@ -1096,7 +1096,7 @@
   {
     "id": "24DBE567",
     "tipo": "HOGAR",
-    "subtipo": "HOGAR",
+    "subtipo": "VARIOS",
     "categoria": "COCINA",
     "subcategoria": "JARRAS",
     "producto": "JARRA HERVIDORA ELECTRICA",
@@ -1112,7 +1112,7 @@
   {
     "id": "CC2EFAB1",
     "tipo": "HOGAR",
-    "subtipo": "HOGAR",
+    "subtipo": "VARIOS",
     "categoria": "COCINA",
     "subcategoria": "JARRAS",
     "producto": "TETERA ELECTRICA SOKANY 2.5 LT",
@@ -1128,7 +1128,7 @@
   {
     "id": "0C55C555",
     "tipo": "HOGAR",
-    "subtipo": "HOGAR",
+    "subtipo": "VARIOS",
     "categoria": "COCINA",
     "subcategoria": "VASOS",
     "producto": "VASO METALICO MEZCLADOR",
@@ -1144,7 +1144,7 @@
   {
     "id": "629FA20D",
     "tipo": "HOGAR",
-    "subtipo": "HOGAR",
+    "subtipo": "VARIOS",
     "categoria": "COCINA",
     "subcategoria": "VASOS",
     "producto": "VASO TERMO VIAJERO",
