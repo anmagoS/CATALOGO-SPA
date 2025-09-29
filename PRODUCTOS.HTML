@@ -12,6 +12,7 @@
 <body>
   <!-- HEADER -->
   <div id="header-container"></div>
+
   <!-- BUSCADOR MODULAR -->
   <div class="container mt-4 position-relative" style="max-width: 500px;">
     <input id="buscador" class="form-control" placeholder="Buscar productos, categorías, precios..." autocomplete="off">
@@ -30,10 +31,13 @@
     <div id="grid-productos" class="grid-productos"></div>
   </main>
 
-<section class="contenedor-categoria">
-  <h1 class="titulo-categoria text-center">Explora más categorías</h1>
-  <div id="seccion-categorias" class="grid-productos"></div>
-</section>
+  <!-- SECCIÓN INFERIOR: CATEGORÍAS -->
+  <section class="contenedor-categoria">
+    <h2 class="titulo-categoria text-center">Explora más categorías</h2>
+    <div id="seccion-categorias" class="grid-productos"></div>
+  </section>
+
+
 
   <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
@@ -81,6 +85,8 @@
       const productos = await respuesta.json();
       window.catalogoGlobal = productos;
       renderProductos(productos);
+      renderizarCategoriasRelacionadas(productos);
+      renderMenuLateral(productos);
     }
 
     function renderProductos(productos) {
@@ -91,11 +97,13 @@
 
       const contenedor = document.getElementById("grid-productos");
       contenedor.innerHTML = "";
-    const productosFiltrados = productos.filter(p =>
-  (p.tipo?.trim() === tipo || p.subtipo?.trim() === tipo) &&
-  p.subtipo?.trim() === subtipo &&
-  p.categoria?.trim() === categoria
-   );
+
+      const productosFiltrados = productos.filter(p =>
+        (p.tipo?.trim() === tipo || p.subtipo?.trim() === tipo) &&
+        p.subtipo?.trim() === subtipo &&
+        p.categoria?.trim() === categoria
+      );
+
       if (productosFiltrados.length === 0) {
         contenedor.innerHTML = `<p class="text-center text-muted">No se encontraron productos en esta categoría.</p>`;
         return;
@@ -109,13 +117,49 @@
             <img src="${p.imagen}" alt="${p.producto}">
           </a>
           <div class="nombre-producto">${p.producto}</div>
-          <div class="precio-producto">$${p.precio.toLocaleString()} COP</div>
-          <a class="boton-comprar" href="producto.html?id=${p.id}">Ver Detalle</a>
+          <div class="precio-producto">$${p.precio.toLocaleString("es-CO")}</div>
+          <a class="boton-comprar" href="producto.html?id=${p.id}">Ver Colores</a>
         `;
         contenedor.appendChild(tarjeta);
       });
     }
 
+    function renderizarCategoriasRelacionadas(productos) {
+      const { tipo, subtipo, categoria: categoriaActual } = getParametrosDesdeURL();
+      const contenedor = document.getElementById("seccion-categorias");
+      if (!contenedor || !tipo || !subtipo) return;
+
+      const productosFiltrados = productos.filter(p =>
+        p.tipo?.trim() === tipo && p.subtipo?.trim() === subtipo
+      );
+
+      const categoriasUnicas = [...new Set(productosFiltrados.map(p => p.categoria?.trim()).filter(Boolean))]
+        .filter(cat => cat && cat !== categoriaActual);
+
+      contenedor.innerHTML = "";
+
+      if (categoriasUnicas.length === 0) {
+        contenedor.innerHTML = `<p class="text-center text-muted">No hay otras categorías disponibles.</p>`;
+        return;
+      }
+
+      categoriasUnicas.forEach(categoria => {
+        const productoRef = productosFiltrados.find(p => p.categoria?.trim() === categoria);
+        const imagen = productoRef?.imagen || "REDES_IMAGES/default-categoria.jpg";
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "producto";
+        tarjeta.innerHTML = `
+          <a href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}" class="imagen-producto">
+            <img src="${imagen}" alt="${categoria}">
+          </a>
+          <div class="nombre-producto">${categoria}</div>
+          <a class="boton-comprar" href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}">Ver productos</a>
+        `;
+        contenedor.appendChild(tarjeta);
+      });
+    }
+    
     function ajustarCarrito() {
       const header = document.querySelector(".header");
       const carritoBtn = document.querySelector(".btn_shopping");
@@ -125,28 +169,27 @@
       }
     }
 
-   document.addEventListener("DOMContentLoaded", async () => {
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-  await new Promise(resolve => requestAnimationFrame(resolve));
-  ajustarCarrito();
+    document.addEventListener("DOMContentLoaded", async () => {
+      const header = await fetch("HEADER.HTML").then(res => res.text());
+      document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      ajustarCarrito();
 
-  activarBuscadorGlobal();
+      activarBuscadorGlobal();
 
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
+      const footer = await fetch("footer.html").then(res => res.text());
+      document.getElementById("footer-container").innerHTML = footer;
 
-  await cargarCatalogo();
+      await cargarCatalogo();
 
-  if (typeof cargarCarritoDesdeStorage === "function") {
-    cargarCarritoDesdeStorage();
-  }
+      if (typeof cargarCarritoDesdeStorage === "function") {
+        cargarCarritoDesdeStorage();
+      }
 
-  if (typeof actualizarCarrito === "function") {
-    actualizarCarrito(); // ✅ Esto refresca el contador y contenido
-  }
-});
-
+      if (typeof actualizarCarrito === "function") {
+        actualizarCarrito();
+      }
+    });
   </script>
 </body>
 </html>
