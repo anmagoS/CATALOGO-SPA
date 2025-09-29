@@ -150,40 +150,7 @@
       });
     }
 
-    function renderMenuLateral(productos) {
-      const menu = document.getElementById("menu-categorias");
-      if (!menu) return;
-
-      const mapa = {};
-      productos.forEach(p => {
-        if (!p.tipo || !p.subtipo || !p.categoria) return;
-        if (!mapa[p.tipo]) mapa[p.tipo] = {};
-        if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
-        mapa[p.tipo][p.subtipo].add(p.categoria);
-      });
-
-      Object.entries(mapa).forEach(([tipo, subtipos]) => {
-                const bloqueTipo = document.createElement("details");
-        bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
-
-        Object.entries(subtipos).forEach(([subtipo, categorias]) => {
-          const bloqueSubtipo = document.createElement("details");
-          bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
-
-          categorias.forEach(categoria => {
-            const link = document.createElement("a");
-            link.className = "nav-link ps-3";
-            link.textContent = categoria;
-            link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
-            bloqueSubtipo.appendChild(link);
-          });
-
-          bloqueTipo.appendChild(bloqueSubtipo);
-        });
-
-        menu.appendChild(bloqueTipo);
-      });
-    }
+    
 
     function ajustarCarrito() {
       const header = document.querySelector(".header");
