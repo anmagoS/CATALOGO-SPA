@@ -1628,17 +1628,31 @@
     "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_b222b716.IMAGEN_1.194319.jpg"
   },
   {
-    "id": "8338ccc8",
+    "id": "8338CCC8",
     "tipo": "BELLEZA",
     "subtipo": "DAMA",
     "categoria": "COSMETICOS",
     "subcategoria": "SOMBRAS",
-    "producto": "Sombra DoDo Girl x12  Ref: 3169",
+    "producto": "SOMBRA DODO GIRL X12  REF: 3169",
     "material": "SOMBRAS",
     "tallas": "N/A",
     "precio": 16000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_8338ccc8.IMAGEN_1.194627.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_8338ccc8.IMAGEN_1.194627.jpg"
+  },
+  {
+    "id": "E769D779",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS",
+    "subcategoria": "SOMBRAS",
+    "producto": "SOMBRA TOPCOLOR X12 REF: TC3022",
+    "material": "SOMBRAS",
+    "tallas": "N/A",
+    "precio": 19000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_e769d779.IMAGEN_1.194907.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_e769d779.IMAGEN_1.194907.jpg"
   }
 ]
