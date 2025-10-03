@@ -1767,5 +1767,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_4f8e3bdd.IMAGEN_1.200610.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_4f8e3bdd.IMAGEN_1.200610.jpg"
+  },
+  {
+    "id": "4D0CF37C",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS ILUMINADORES",
+    "subcategoria": "ILUMINADORES",
+    "producto": "ILUMINADOR  ROMANTIC QUEEN X24 REF: B758",
+    "material": "ILUMINADOR",
+    "tallas": "N/A",
+    "precio": 14500,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_4d0cf37c.IMAGEN_1.200728.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_4d0cf37c.IMAGEN_1.200728.jpg"
   }
 ]
