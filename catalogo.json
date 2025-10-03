@@ -1753,5 +1753,19 @@
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_9850ae8d.IMAGEN_1.200342.jpg",
     "descripcion": "ESPEJO"
+  },
+  {
+    "id": "4F8E3BDD",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS ILUMINADORES",
+    "subcategoria": "ILUMINADORES",
+    "producto": "ILUMINADOR PINK  X24  REF: PINK020",
+    "material": "ILUMNADOR",
+    "tallas": "N/A",
+    "precio": 15000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_4f8e3bdd.IMAGEN_1.200610.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_4f8e3bdd.IMAGEN_1.200610.jpg"
   }
 ]
