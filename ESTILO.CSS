@@ -608,3 +608,26 @@ details[open] > summary::after {
   margin-bottom: 8px;
   font-weight: bold;
 }
+.footer {
+  background-color: #222; /* Fondo oscuro */
+  color: #f2f2f2;          /* Texto claro */
+  padding: 20px;
+}
+
+.footer a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin: 4px 0;
+}
