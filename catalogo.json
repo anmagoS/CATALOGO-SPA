@@ -1809,5 +1809,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_a5271a75.IMAGEN_1.201635.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_a5271a75.IMAGEN_1.201635.jpg"
+  },
+  {
+    "id": "41EA5BE5",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS RUBORES",
+    "subcategoria": "RUBORES",
+    "producto": "RUBOR MISS BETTY  REF: L1136",
+    "material": "RUBOR",
+    "tallas": "N/A",
+    "precio": 9500,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_41ea5be5.IMAGEN_1.203556.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_41ea5be5.IMAGEN_1.203556.jpg"
   }
 ]
