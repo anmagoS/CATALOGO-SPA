@@ -1542,5 +1542,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_1.163513.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_1.163513.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_2.163513.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_3.163513.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_4.163516.jpg, https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_5.163516.jpg"
+  },
+  {
+    "id": "B1DE86D8",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "VESTIDOS",
+    "subcategoria": "FALDA LARGA",
+    "producto": "VESTIDO GOTA LARGO",
+    "material": "ENERGICA",
+    "tallas": "UNICA",
+    "precio": 51900,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_1.164225.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_1.164225.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_2.164225.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_3.164225.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_4.164228.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_5.164228.jpg, https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_6.164229.jpg"
   }
 ]
