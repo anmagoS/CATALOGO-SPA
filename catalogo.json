@@ -1682,5 +1682,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_5310849b.IMAGEN_1.195230.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_5310849b.IMAGEN_1.195230.jpg"
+  },
+  {
+    "id": "799906B7",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS",
+    "subcategoria": "POLVO DE HADA",
+    "producto": "POLVO DE HADA X12  REF: S311",
+    "material": "POLVO DE HADA",
+    "tallas": "N/A",
+    "precio": 19000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_799906b7.IMAGEN_1.195557.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_799906b7.IMAGEN_1.195557.jpg"
   }
 ]
