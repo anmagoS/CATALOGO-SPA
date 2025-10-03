@@ -598,3 +598,13 @@ details[open] > summary::after {
   max-width: 1200px;
   margin: 0 auto;
 }
+.datos-contacto {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+.datos-contacto h4 {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
