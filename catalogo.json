@@ -1668,5 +1668,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_f52092b6.IMAGEN_1.195029.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_f52092b6.IMAGEN_1.195029.jpg"
+  },
+  {
+    "id": "5310849B",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS",
+    "subcategoria": "POLVO DE HADA",
+    "producto": "POLVO DE HADA X12 REF: 995",
+    "material": "POLVO DE HADA",
+    "tallas": "N/A",
+    "precio": 6000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_5310849b.IMAGEN_1.195230.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_5310849b.IMAGEN_1.195230.jpg"
   }
 ]
