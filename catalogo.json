@@ -1696,5 +1696,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_799906b7.IMAGEN_1.195557.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_799906b7.IMAGEN_1.195557.jpg"
+  },
+  {
+    "id": "D0B5FEF4",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS",
+    "subcategoria": "POLVO DE HADA",
+    "producto": "PINK X25 REF: PINK003",
+    "material": "POLVO DE HADA",
+    "tallas": "N/A",
+    "precio": 12000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg"
   }
 ]
