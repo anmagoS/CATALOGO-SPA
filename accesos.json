@@ -518,5 +518,13 @@
   {
     "id_producto": "41EA5BE5",
     "ruta": "/BELLEZA/DAMA/COSMETICOS RUBORES/RUBORES"
+  },
+  {
+    "id_producto": "DF4EC51F",
+    "ruta": "/HOGAR/HOGAR/KAWAII/COBIJAS"
+  },
+  {
+    "id_producto": "DF4EC51F",
+    "ruta": "/HOGAR/KAWAII/COBIJAS"
   }
 ]
