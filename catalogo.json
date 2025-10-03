@@ -1724,5 +1724,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_7fa6ddaf.IMAGEN_1.200101.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_7fa6ddaf.IMAGEN_1.200101.jpg"
+  },
+  {
+    "id": "2AF2A1C6",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS BASES",
+    "subcategoria": "BASES",
+    "producto": "BASE BABE SKIN  REF: GZ8060137",
+    "material": "BASE",
+    "tallas": "N/A",
+    "precio": 8000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_2af2a1c6.IMAGEN_1.200200.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_2af2a1c6.IMAGEN_1.200200.jpg"
   }
 ]
