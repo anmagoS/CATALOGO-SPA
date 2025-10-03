@@ -1710,5 +1710,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg"
+  },
+  {
+    "id": "7FA6DDAF",
+    "tipo": "BELLEZA",
+    "subtipo": "DAMA",
+    "categoria": "COSMETICOS BASES",
+    "subcategoria": "BASES",
+    "producto": "BASE PINK X24  REF: PINK037  UNIDAD",
+    "material": "BASE",
+    "tallas": "N/A",
+    "precio": 11000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_7fa6ddaf.IMAGEN_1.200101.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_7fa6ddaf.IMAGEN_1.200101.jpg"
   }
 ]
