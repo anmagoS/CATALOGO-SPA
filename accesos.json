@@ -464,7 +464,11 @@
     "ruta": "/BELLEZA/DAMA/COSMETICOS/SOMBRAS"
   },
   {
-    "id_producto": "8338ccc8",
+    "id_producto": "8338CCC8",
+    "ruta": "/BELLEZA/DAMA/COSMETICOS/SOMBRAS"
+  },
+  {
+    "id_producto": "E769D779",
     "ruta": "/BELLEZA/DAMA/COSMETICOS/SOMBRAS"
   }
 ]
