@@ -601,13 +601,27 @@ details[open] > summary::after {
 .datos-contacto {
   text-align: center;
   margin-top: 20px;
-  font-size: 14px;
-  color: #444;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
+
 .datos-contacto h4 {
-  margin-bottom: 8px;
-  font-weight: bold;
+  font-size: 17px;
+  color: #00ffd5;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
+
+.datos-contacto p {
+  margin: 6px 0;
+  color: #e0e0e0;
+}
+
 .footer {
   background-color: #222; /* Fondo oscuro */
   color: #f2f2f2;          /* Texto claro */
