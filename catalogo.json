@@ -1868,5 +1868,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_a0cf36f3.IMAGEN_1.173416.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_a0cf36f3.IMAGEN_1.173416.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_a0cf36f3.IMAGEN_2.173416.jpg"
+  },
+  {
+    "id": "660854B9",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "CHAQUETAS",
+    "subcategoria": "GABAN",
+    "producto": "GABARDINA LARGA",
+    "material": "CUERTOTEX",
+    "tallas": "S,M,L,XL",
+    "precio": 122000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_1.173710.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_1.173710.jpg, https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_2.173710.jpg, https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_3.173710.jpg"
   }
 ]
