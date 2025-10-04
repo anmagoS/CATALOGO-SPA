@@ -1865,9 +1865,9 @@
     "material": "CUEROTEX",
     "tallas": "S,M,L,XL",
     "precio": 64000,
-    "imagen": "PRODUCTOS_Images/A0CF36F3.IMAGEN 1.181623.jpg",
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg",
     "promo": false,
-    "url": "Sin imágenes válidas"
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_2.181623.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_3.181623.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_4.181626.jpg"
   },
   {
     "id": "660854B9",
