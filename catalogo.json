@@ -1882,5 +1882,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_1.173710.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_1.173710.jpg, https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_2.173710.jpg, https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_3.173710.jpg"
+  },
+  {
+    "id": "9686E2CB",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "PANTALONES",
+    "subcategoria": "LEGGINS",
+    "producto": "LEGGINS CUEROTEX  STRECH",
+    "material": "CUEROTEX STRECH",
+    "tallas": "N/A",
+    "precio": 55000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_1.224634.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_1.224634.jpg, https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_2.224634.jpg"
   }
 ]
