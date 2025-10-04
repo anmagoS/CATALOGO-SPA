@@ -1896,5 +1896,19 @@
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_1.224634.jpg",
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_1.224634.jpg, https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_2.224634.jpg"
+  },
+  {
+    "id": "BA5579D2",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "PANTALONES",
+    "subcategoria": "CARGO",
+    "producto": "CARGO CUEROTEX",
+    "material": "CURTOTEX",
+    "tallas": "S,M,L,XL",
+    "precio": 55000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_ba5579d2.IMAGEN_1.235423.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_ba5579d2.IMAGEN_1.235423.jpg, https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_ba5579d2.IMAGEN_2.235423.jpg, https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_ba5579d2.IMAGEN_3.235423.jpg, https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_ba5579d2.IMAGEN_4.235426.jpg"
   }
 ]
