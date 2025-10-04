@@ -1854,5 +1854,19 @@
     "promo": false,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_7491fefb.IMAGEN_1.215140.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_7491fefb.IMAGEN_2.215140.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_7491fefb.IMAGEN_3.215140.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_7491fefb.IMAGEN_4.215143.jpg",
     "descripcion": "CANTIDAD MÍNIMA DE VENTA: 4 UNIDADES"
+  },
+  {
+    "id": "A0CF36F3",
+    "tipo": "ROPA",
+    "subtipo": "DAMA",
+    "categoria": "CHAQUETAS",
+    "subcategoria": "PELUCHE",
+    "producto": "CHAQUETA PIXEL RAYO CUEROTEX  PELUCHE",
+    "material": "CUEROTEX",
+    "tallas": "S,M,L,XL",
+    "precio": 64000,
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_a0cf36f3.IMAGEN_1.173416.jpg",
+    "promo": false,
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_a0cf36f3.IMAGEN_1.173416.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_a0cf36f3.IMAGEN_2.173416.jpg"
   }
 ]
