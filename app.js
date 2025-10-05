@@ -61,6 +61,7 @@ function renderizarProductos(catalogo) {
       const btn = e.currentTarget;
       const card = btn.closest(".producto");
       const talla = card.querySelector(".selector-talla")?.value || "Sin talla";
+
       const producto = {
         id: btn.dataset.imagen + "-" + talla,
         nombre: btn.dataset.nombre,
@@ -85,78 +86,39 @@ function renderizarProductos(catalogo) {
   });
 }
 
-// === Renderizar secciones inferiores ===
-function renderizarTiposDesdeCatalogo(productos) {
-  const contenedor = document.getElementById("seccion-tipos");
-  if (!contenedor) return;
+// === Renderizar menú lateral desde catálogo ===
+function renderizarMenuLateral(catalogo) {
+  const menu = document.getElementById("menu-categorias");
+  if (!menu) return;
 
-  const tiposUnicos = [...new Set(productos.map(p => p.tipo?.trim()).filter(Boolean))];
-
-  tiposUnicos.forEach(tipo => {
-    const productoRef = productos.find(p => p.tipo?.trim() === tipo);
-    if (!productoRef) return;
-
-    const tarjeta = document.createElement("div");
-    tarjeta.className = "producto";
-    tarjeta.innerHTML = `
-      <a href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}" class="imagen-producto">
-        <img src="${productoRef.imagen}" alt="${tipo}">
-      </a>
-      <div class="nombre-producto">${tipo}</div>
-      <a class="boton-comprar" href="SUBTIPOS.HTML?tipo=${encodeURIComponent(tipo)}">Ver Más</a>
-    `;
-    contenedor.appendChild(tarjeta);
+  const mapa = {};
+  catalogo.forEach(p => {
+    if (!p.tipo || !p.subtipo || !p.categoria) return;
+    if (!mapa[p.tipo]) mapa[p.tipo] = {};
+    if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
+    mapa[p.tipo][p.subtipo].add(p.categoria);
   });
-}
 
-function renderizarSubtiposDesdeCatalogo(productos, tipoSeleccionado) {
-  const contenedor = document.getElementById("seccion-subtipos");
-  if (!contenedor || !tipoSeleccionado) return;
+  Object.entries(mapa).forEach(([tipo, subtipos]) => {
+    const bloqueTipo = document.createElement("details");
+    bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
 
-  const productosFiltrados = productos.filter(p => p.tipo?.trim() === tipoSeleccionado);
-  const subtiposUnicos = [...new Set(productosFiltrados.map(p => p.subtipo?.trim()).filter(Boolean))];
+    Object.entries(subtipos).forEach(([subtipo, categorias]) => {
+      const bloqueSubtipo = document.createElement("details");
+      bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
 
-  subtiposUnicos.forEach(subtipo => {
-    const productoRef = productosFiltrados.find(p => p.subtipo?.trim() === subtipo);
-    if (!productoRef) return;
+      categorias.forEach(categoria => {
+        const link = document.createElement("a");
+        link.className = "nav-link ps-3";
+        link.textContent = categoria;
+        link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
+        bloqueSubtipo.appendChild(link);
+      });
 
-    const tarjeta = document.createElement("div");
-    tarjeta.className = "producto";
-    tarjeta.innerHTML = `
-      <a href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}" class="imagen-producto">
-        <img src="${productoRef.imagen}" alt="${subtipo}">
-      </a>
-      <div class="nombre-producto">${subtipo}</div>
-      <a class="boton-comprar" href="CATEGORIAS.HTML?tipo=${encodeURIComponent(tipoSeleccionado)}&subtipo=${encodeURIComponent(subtipo)}">Ver categorías</a>
-    `;
-    contenedor.appendChild(tarjeta);
-  });
-}
+      bloqueTipo.appendChild(bloqueSubtipo);
+    });
 
-function renderizarCategoriasDesdeCatalogo(productos, tipo, subtipo) {
-  const contenedor = document.getElementById("seccion-categorias");
-  if (!contenedor || !tipo || !subtipo) return;
-
-  const productosFiltrados = productos.filter(p =>
-    p.tipo?.trim() === tipo && p.subtipo?.trim() === subtipo
-  );
-
-  const categoriasUnicas = [...new Set(productosFiltrados.map(p => p.categoria?.trim()).filter(Boolean))];
-
-  categoriasUnicas.forEach(categoria => {
-    const productoRef = productosFiltrados.find(p => p.categoria?.trim() === categoria);
-    if (!productoRef) return;
-
-    const tarjeta = document.createElement("div");
-    tarjeta.className = "producto";
-    tarjeta.innerHTML = `
-      <a href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}" class="imagen-producto">
-        <img src="${productoRef.imagen}" alt="${categoria}">
-      </a>
-      <div class="nombre-producto">${categoria}</div>
-      <a class="boton-comprar" href="PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}">Ver productos</a>
-    `;
-    contenedor.appendChild(tarjeta);
+    menu.appendChild(bloqueTipo);
   });
 }
 
@@ -174,9 +136,12 @@ function getParametrosDesdeURL() {
 let articulosCarrito = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const { tipo, subtipo, categoria } = getParametrosDesdeURL();
+
   await cargarCatalogoGlobal();
-  renderCategorias(window.catalogoGlobal);
   await cargarAccesosGlobal();
+
+  renderizarMenuLateral(window.catalogoGlobal);
 
   const headerContainer = document.getElementById("header-container");
   if (!headerContainer.querySelector(".header")) {
@@ -208,37 +173,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const toggle = document.getElementById("toggle-categorias");
   const menu = document.getElementById("menu-categorias");
-
   toggle?.addEventListener("click", () => {
     menu.style.display = menu.style.display === "none" ? "flex" : "none";
   });
 
-const mapa = {};
-window.catalogoGlobal.forEach(p => {
-  if (!p.tipo || !p.subtipo || !p.categoria) return;
-  if (!mapa[p.tipo]) mapa[p.tipo] = {};
-  if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
-  mapa[p.tipo][p.subtipo].add(p.categoria);
-});
+  const footer = await fetch("footer.html").then(res => res.text());
+  document.getElementById("footer-container").innerHTML = footer;
 
-Object.entries(mapa).forEach(([tipo, subtipos]) => {
-  const bloqueTipo = document.createElement("details");
-  bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
-
-  Object.entries(subtipos).forEach(([subtipo, categorias]) => {
-    const bloqueSubtipo = document.createElement("details");
-    bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
-
-    categorias.forEach(categoria => {
-      const link = document.createElement("a");
-      link.className = "nav-link ps-3";
-      link.textContent = categoria;
-      link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
-      bloqueSubtipo.appendChild(link);
-    });
-
-    bloqueTipo.appendChild(bloqueSubtipo);
-  });
-
-  menu.appendChild(bloqueTipo);
+  // === Renderizado contextual por ruta ===
+  if (document.getElementById("contenido-productos")) {
+    const rutaActual = window.location.pathname;
+    const accesosRuta = window.accesosGlobal?.filter(a => a.ruta === rutaActual) || [];
+    const idsRuta = accesosRuta.map(a => a.id_producto);
+    const productosFiltrados = window.catalogoGlobal.filter(p => idsRuta.includes(p.id));
+    renderizarProductos(productosFiltrados.length ? productosFiltrados : window.catalogoGlobal);
+  }
 });
