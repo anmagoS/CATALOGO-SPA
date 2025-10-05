@@ -10,7 +10,7 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.092650.jpg",
-    "promo": false,
+    "promo": true,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.092650.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_4.092653.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_IMAGES_EE03DCC0.IMAGEN_5.071550.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.092655.jpg, https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_EE03DCC0.IMAGEN_7.092656.jpg"
   },
   {
@@ -472,7 +472,7 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg",
-    "promo": false,
+    "promo": true,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_2.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_3.010353.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_4.010357.jpg, https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_5.010357.jpg"
   },
   {
@@ -486,7 +486,7 @@
     "tallas": "S,M,L,XL",
     "precio": 55000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg",
-    "promo": false,
+    "promo": true,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_2.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_3.010620.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_4.010622.jpg"
   },
   {
@@ -1866,7 +1866,7 @@
     "tallas": "S,M,L,XL",
     "precio": 64000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg",
-    "promo": false,
+    "promo": true,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_2.181623.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_3.181623.jpg, https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_4.181626.jpg"
   },
   {
@@ -1880,7 +1880,7 @@
     "tallas": "S,M,L,XL",
     "precio": 122000,
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_1.173710.jpg",
-    "promo": false,
+    "promo": true,
     "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_1.173710.jpg, https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_2.173710.jpg, https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_660854b9.IMAGEN_3.173710.jpg"
   },
   {
