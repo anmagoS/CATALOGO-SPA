@@ -1,4 +1,5 @@
-{  "name": "Anmago Store",
+{
+  "name": "Anmago Store",
   "short_name": "Anmago",
   "start_url": "INICIO.HTML",
   "display": "standalone",
