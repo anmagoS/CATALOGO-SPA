@@ -12,7 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnWhatsApp = document.querySelector("button[onclick='generarPedidoWhatsApp()']");
 
   function agregarAlCarrito(producto) {
-    articulosCarrito.push(producto);
+    const existe = articulosCarrito.find(p => p.id === producto.id);
+    if (existe) {
+      existe.cantidad = (existe.cantidad || 1) + 1;
+    } else {
+      producto.cantidad = 1;
+      articulosCarrito.push(producto);
+    }
+
     guardarCarrito();
     renderizarCarrito();
     actualizarSubtotal();
@@ -34,11 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container mb-3">
           <div class="row align-items-center border-bottom py-2">
             <div class="col-3">
-              <img class="img-fluid rounded" src="${producto.imagen}" alt="${producto.producto}" />
+              <img class="img-fluid rounded" src="${producto.imagen}" alt="${producto.nombre}" />
             </div>
             <div class="col-6">
-              <h6 class="mb-1 title-product">${producto.producto}</h6>
+              <h6 class="mb-1 title-product">${producto.nombre}</h6>
               <p class="mb-0 detalles-product">Talla: ${producto.talla || "No especificada"}</p>
+              <p class="mb-0 detalles-product">Cantidad: ${producto.cantidad}</p>
               <p class="mb-0 detalles-product">Precio: $${producto.precio.toLocaleString("es-CO")}</p>
             </div>
             <div class="col-3 text-end">
@@ -71,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function actualizarSubtotal() {
-    const subtotal = articulosCarrito.reduce((total, producto) => total + producto.precio, 0);
+    const subtotal = articulosCarrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
     const opciones = {
       minimumFractionDigits: subtotal % 1 === 0 ? 0 : 2,
       maximumFractionDigits: 2
@@ -89,13 +97,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
 
     articulosCarrito.forEach((producto, index) => {
-      mensaje += `*${index + 1}.* ${producto.producto}\n`;
+      mensaje += `*${index + 1}.* ${producto.nombre}\n`;
       mensaje += `🖼️ Imagen: ${producto.imagen}\n`;
       mensaje += `📏 Talla: ${producto.talla || "No especificada"}\n`;
-      mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n\n`;
+      mensaje += `💲 Precio: $${producto.precio.toLocaleString("es-CO")}\n`;
+      mensaje += `🔢 Cantidad: ${producto.cantidad}\n\n`;
     });
 
-    const total = articulosCarrito.reduce((acc, p) => acc + p.precio, 0);
+    const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
     mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
 
     const mensajeCodificado = encodeURIComponent(mensaje);
@@ -142,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarContadorCarrito();
   actualizarEstadoBotonWhatsApp();
 
-  // ✅ Exponer función al contexto global
+  // ✅ Exponer funciones al contexto global
   window.agregarAlCarrito = agregarAlCarrito;
   window.generarPedidoWhatsApp = generarPedidoWhatsApp;
 });
