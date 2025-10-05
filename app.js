@@ -49,8 +49,7 @@ function renderizarProductos(catalogo) {
           data-id="${p.id}"
           data-nombre="${p.producto}"
           data-imagen="${p.imagen}"
-          data-precio="${p.precio}"
-          data-variante="${p.imagen}">
+          data-precio="${p.precio}">
           Agregar al carrito
         </button>
       </div>
@@ -62,105 +61,21 @@ function renderizarProductos(catalogo) {
       const btn = e.currentTarget;
       const card = btn.closest(".producto");
       const talla = card.querySelector(".selector-talla")?.value || "Sin talla";
-      btn.dataset.talla = talla;
-      agregarAlCarrito({ target: btn });
-    });
-  });
-}
-function renderCategorias(catalogo) {
-  const { tipo, subtipo, categoria } = getParametrosDesdeURL?.() || {};
-  const contenedor = document.getElementById("seccion-categorias");
-  if (!contenedor) return;
+      const producto = {
+        id: btn.dataset.imagen + "-" + talla,
+        nombre: btn.dataset.nombre,
+        precio: Number(btn.dataset.precio) || 0,
+        cantidad: 1,
+        imagen: btn.dataset.imagen,
+        talla: talla
+      };
 
-  contenedor.innerHTML = "";
-
-  const categoriasUnicas = [...new Set(catalogo.map(p => p.categoria?.trim()).filter(Boolean))]
-    .filter(cat => cat !== categoria);
-
-  categoriasUnicas.forEach(cat => {
-    contenedor.insertAdjacentHTML("beforeend", `
-      <div class="producto">
-        <a href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(cat)}" class="imagen-producto">
-          <img src="REDES_IMAGES/default-categoria.jpg" alt="${cat}" />
-        </a>
-        <div class="nombre-producto">${cat}</div>
-        <a class="boton-comprar" href="productos.html?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(cat)}">Ver más</a>
-      </div>
-    `);
-  });
-}
-
-// === Agregar al carrito ===
-function agregarAlCarrito(e) {
-  const btn = e.target.closest(".btn-cart");
-  if (!btn) return;
-
-  const idUnico = btn.dataset.imagen + "-" + btn.dataset.talla;
-
-  const producto = {
-    id: idUnico,
-    nombre: btn.dataset.nombre,
-    precio: Number(btn.dataset.precio) || 0,
-    cantidad: 1,
-    imagen: btn.dataset.imagen,
-    talla: btn.dataset.talla
-  };
-
-  const existe = articulosCarrito.find(p => p.id === producto.id);
-  if (existe) {
-    existe.cantidad++;
-  } else {
-    articulosCarrito.push(producto);
-  }
-
-  renderizarCarrito();
-  actualizarSubtotal();
-  actualizarContadorCarrito();
-  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
-}
-
-// === Renderizar carrito ===
-function renderizarCarrito() {
-  if (!carritoContainer) return;
-
-  carritoContainer.innerHTML = "";
-
-  if (articulosCarrito.length === 0) {
-    carritoContainer.innerHTML = "<p class='text-center'>El carrito está vacío.</p>";
-    return;
-  }
-
-  articulosCarrito.forEach(producto => {
-    const itemHTML = `
-      <div class="container mb-3">
-        <div class="row align-items-center border-bottom py-2">
-          <div class="col-3">
-            <img class="img-fluid rounded" src="${producto.imagen}" alt="${producto.nombre}" />
-          </div>
-          <div class="col-6">
-            <h6 class="mb-1 title-product">${producto.nombre}</h6>
-            <p class="mb-0 detalles-product">Opción: ${producto.talla}</p>
-          </div>
-          <div class="col-3 text-end">
-            <span class="fw-bold">
-              ${producto.cantidad} × $${(producto.precio * producto.cantidad).toLocaleString("es-CO")}
-            </span>
-            <button class="btn btn-danger mt-2 btn-borrar" data-id="${producto.id}">
-              <i class="bi bi-trash3"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    `;
-    carritoContainer.insertAdjacentHTML("beforeend", itemHTML);
-  });
-
-  document.querySelectorAll(".btn-borrar").forEach(btn => {
-    btn.addEventListener("click", e => {
-      const id = e.currentTarget.dataset.id;
-      articulosCarrito = articulosCarrito
-        .map(p => p.id === id ? (p.cantidad > 1 ? { ...p, cantidad: p.cantidad - 1 } : null) : p)
-        .filter(p => p !== null);
+      const existe = articulosCarrito.find(p => p.id === producto.id);
+      if (existe) {
+        existe.cantidad++;
+      } else {
+        articulosCarrito.push(producto);
+      }
 
       renderizarCarrito();
       actualizarSubtotal();
@@ -168,46 +83,6 @@ function renderizarCarrito() {
       localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
     });
   });
-
-  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
-}
-
-// === Subtotal y contador ===
-function actualizarSubtotal() {
-  if (!subtotalElement) return;
-  const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
-  subtotalElement.textContent = `$${total.toLocaleString("es-CO")}`;
-}
-
-function actualizarContadorCarrito() {
-  if (!contadorCarrito) return;
-  contadorCarrito.textContent = articulosCarrito.length;
-}
-
-// === WhatsApp ===
-function generarPedidoWhatsApp() {
-  if (articulosCarrito.length === 0) {
-    alert("Tu carrito está vacío.");
-    return;
-  }
-
-  let mensaje = "🛍️ *¡Hola! Quiero realizar el siguiente pedido:*\n\n";
-
-  articulosCarrito.forEach((p, i) => {
-    mensaje += `*${i + 1}.* ${p.nombre}\n📏 Talla: ${p.talla}\n🔗 Imagen: ${p.imagen}\n💲 Precio: $${p.precio.toLocaleString("es-CO")}\n🧮 Cantidad: ${p.cantidad}\n\n`;
-  });
-
-  const total = articulosCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
-  mensaje += `*🧾 Total del pedido:* $${total.toLocaleString("es-CO")}\n\n✅ *¡Gracias por tu atención!*`;
-
-  const url = `https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, "_blank");
-
-  articulosCarrito = [];
-  renderizarCarrito();
-  actualizarSubtotal();
-  actualizarContadorCarrito();
-  localStorage.setItem("carritoAnmago", JSON.stringify(articulosCarrito));
 }
 
 // === Renderizar secciones inferiores ===
@@ -233,6 +108,7 @@ function renderizarTiposDesdeCatalogo(productos) {
     contenedor.appendChild(tarjeta);
   });
 }
+
 function renderizarSubtiposDesdeCatalogo(productos, tipoSeleccionado) {
   const contenedor = document.getElementById("seccion-subtipos");
   if (!contenedor || !tipoSeleccionado) return;
@@ -295,6 +171,8 @@ function getParametrosDesdeURL() {
 }
 
 // === Inicialización ===
+let articulosCarrito = [];
+
 document.addEventListener("DOMContentLoaded", async () => {
   await cargarCatalogoGlobal();
   renderCategorias(window.catalogoGlobal);
@@ -335,61 +213,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     menu.style.display = menu.style.display === "none" ? "flex" : "none";
   });
 
-  const mapa = {};
-  window.catalogoGlobal.forEach(p => {
-    if (!p.tipo || !p.subtipo || !p.categoria) return;
-    if (!mapa[p.tipo]) mapa[p.tipo] = {};
-    if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
-    mapa[p.tipo][p.subtipo].add(p.categoria);
-  });
-
-  Object.entries(mapa).forEach(([tipo, subtipos]) => {
-    const bloqueTipo = document.createElement("details");
-    bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
-
-    Object.entries(subtipos).forEach(([subtipo, categorias]) => {
-      const bloqueSubtipo = document.createElement("details");
-      bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
-
-      categorias.forEach(categoria => {
-        const link = document.createElement("a");
-        link.className = "nav-link ps-3";
-        link.textContent = categoria;
-        link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
-        bloqueSubtipo.appendChild(link);
-      });
-
-      bloqueTipo.appendChild(bloqueSubtipo);
-    });
-
-    menu.appendChild(bloqueTipo);
-  });
-
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
-
-  // === Renderizado contextual por ruta ===
-  const { tipo, subtipo, categoria } = getParametrosDesdeURL();
-
-  if (document.getElementById("contenido-productos")) {
-    const rutaActual = window.location.pathname;
-    const accesosRuta = window.accesosGlobal?.filter(a => a.ruta === rutaActual) || [];
-    const idsRuta = accesosRuta.map(a => a.id_producto);
-
-    const productosFiltrados = window.catalogoGlobal.filter(p => idsRuta.includes(p.id));
-    renderizarProductos(productosFiltrados.length ? productosFiltrados : window.catalogoGlobal);
-  }
-
-  if (document.getElementById("seccion-tipos")) {
-    renderizarTiposDesdeCatalogo(window.catalogoGlobal);
-  }
-
-  if (document.getElementById("seccion-subtipos")) {
-    renderizarSubtiposDesdeCatalogo(window.catalogoGlobal, tipo);
-  }
-
-  if (document.getElementById("seccion-categorias")) {
-    renderizarCategoriasDesdeCatalogo(window.catalogoGlobal, tipo, subtipo);
-  }
+const mapa = {};
+window.catalogoGlobal.forEach(p => {
+  if (!p.tipo || !p.subtipo || !p.categoria) return;
+  if (!mapa[p.tipo]) mapa[p.tipo] = {};
+  if (!mapa[p.tipo][p.subtipo]) mapa[p.tipo][p.subtipo] = new Set();
+  mapa[p.tipo][p.subtipo].add(p.categoria);
 });
 
+Object.entries(mapa).forEach(([tipo, subtipos]) => {
+  const bloqueTipo = document.createElement("details");
+  bloqueTipo.innerHTML = `<summary class="fw-bold">${tipo}</summary>`;
+
+  Object.entries(subtipos).forEach(([subtipo, categorias]) => {
+    const bloqueSubtipo = document.createElement("details");
+    bloqueSubtipo.innerHTML = `<summary>${subtipo}</summary>`;
+
+    categorias.forEach(categoria => {
+      const link = document.createElement("a");
+      link.className = "nav-link ps-3";
+      link.textContent = categoria;
+      link.href = `PRODUCTOS.HTML?tipo=${encodeURIComponent(tipo)}&subtipo=${encodeURIComponent(subtipo)}&categoria=${encodeURIComponent(categoria)}`;
+      bloqueSubtipo.appendChild(link);
+    });
+
+    bloqueTipo.appendChild(bloqueSubtipo);
+  });
+
+  menu.appendChild(bloqueTipo);
+});
