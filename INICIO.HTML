@@ -21,7 +21,7 @@
   </div>
 
   <!-- BOTÓN FLOTANTE DEL CARRITO -->
-  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+  <a href="#" class="btn btn_shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
     <i class="bi bi-bag-heart"></i>
     <span id="contador-carrito" class="contador-carrito">0</span>
   </a>
@@ -54,7 +54,7 @@
   </main>
 
   <!-- CARRITO OFFCANVAS -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
     <div class="offcanvas-header border-bottom">
       <h4 class="offcanvas-title text-center">Carrito de compras</h4>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
@@ -90,7 +90,8 @@
       "HOGAR": "REDES_IMAGES/portad1-1.webp",
       "BELLEZA": "REDES_IMAGES/R.jpg",
       "ESCOLAR": "REDES_IMAGES/fondo-vuelta-al-cole-elementos_23-2147848492.jpg"
-};
+    };
+
     async function cargarCatalogo() {
       const url = "https://raw.githubusercontent.com/anmagoS/CATALOGO-SPA/main/catalogo.json";
       const respuesta = await fetch(url);
@@ -129,28 +130,20 @@
       }
     }
 
-  document.addEventListener("DOMContentLoaded", async () => {
-  const header = await fetch("HEADER.HTML").then(res => res.text());
-  document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
-  await new Promise(resolve => requestAnimationFrame(resolve));
-  ajustarCarrito();
+    document.addEventListener("DOMContentLoaded", async () => {
+      const header = await fetch("HEADER.HTML").then(res => res.text());
+      document.getElementById("header-container").insertAdjacentHTML("afterbegin", header);
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      ajustarCarrito();
 
-  activarBuscadorGlobal();
+      activarBuscadorGlobal();
 
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("footer-container").innerHTML = footer;
+      const footer = await fetch("footer.html").then(res => res.text());
+      document.getElementById("footer-container").innerHTML = footer;
 
-  await cargarCatalogo();
-
-  if (typeof cargarCarritoDesdeStorage === "function") {
-    cargarCarritoDesdeStorage();
-  }
-
-  if (typeof actualizarCarrito === "function") {
-    actualizarCarrito(); // ✅ Esto refresca el contador y contenido
-  }
-});
-
+      await cargarCatalogo();
+    });
   </script>
 </body>
 </html>
+
